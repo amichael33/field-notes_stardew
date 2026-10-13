@@ -5,6 +5,8 @@ export function stripWikitext(input) {
 
   // Templates whose first argument is the text we want.
   s = s.replace(/\{\{\s*(?:Name|Season|Quality)\s*\|([^|}]*)[^}]*\}\}/gi, '$1')
+  // A price is a gold amount.
+  s = s.replace(/\{\{\s*Price\s*\|\s*([\d,]+)\s*\}\}/gi, (_, n) => `${Number(n.replace(/,/g, '')).toLocaleString('en-US')}g`)
   // Any other template carries nothing we use.
   s = s.replace(/\{\{[^}]*\}\}/g, '')
 

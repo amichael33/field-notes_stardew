@@ -1,42 +1,5 @@
 import { stripWikitext } from './wikitext.mjs'
-
-/** Splits text into its top-level wikitext tables, keeping nested tables inside their parent. */
-function topLevelTables(text) {
-  const tables = []
-  let depth = 0
-  let current = []
-  for (const line of text.split('\n')) {
-    if (/^\{\|/.test(line)) depth++
-    if (depth > 0) current.push(line)
-    if (/^\|\}/.test(line) && depth > 0) {
-      depth--
-      if (depth === 0) {
-        tables.push(current.join('\n'))
-        current = []
-      }
-    }
-  }
-  return tables
-}
-
-/** Splits a table body into rows at `|-` lines that are not inside a nested table. */
-function splitRows(tableText) {
-  const rows = []
-  let depth = 0
-  let current = []
-  for (const line of tableText.split('\n')) {
-    if (/^\{\|/.test(line)) depth++
-    if (depth === 0 && /^\|-\s*$/.test(line)) {
-      rows.push(current.join('\n'))
-      current = []
-      continue
-    }
-    current.push(line)
-    if (/^\|\}/.test(line) && depth > 0) depth--
-  }
-  rows.push(current.join('\n'))
-  return rows
-}
+import { cellText, splitRows, topLevelTables } from './tables.mjs'
 
 const slugify = (name) =>
   name
@@ -46,12 +9,6 @@ const slugify = (name) =>
     .replace(/^-|-$/g, '')
 
 const formatGold = (amount) => `${Number(amount).toLocaleString('en-US')}g`
-
-function cellText(line) {
-  const attrs = /^\|\s*(?:\w+="[^"]*"\s*)+\|/.exec(line)
-  const body = attrs ? line.slice(attrs[0].length) : line.replace(/^\|/, '')
-  return body.trim()
-}
 
 // The wiki writes a few item names differently from the game.
 const NAME_FIXES = { 'Warp Totem Beach': 'Warp Totem: Beach' }

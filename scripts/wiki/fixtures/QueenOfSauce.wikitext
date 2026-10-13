@@ -1,0 +1,229 @@
+[[File:Queen of Sauce.png|The Queen of Sauce|right|thumb]]
+{{Quote|Greetings! It is I, the queen of sauce... here to teach you a new mouth-watering recipe from my secret cookbook. This week's dish...}}
+'''The Queen of Sauce''' is a [[Television|television]] channel which teaches the player [[Cooking|cooking]] recipes. Beginning on Spring 7, a new recipe airs each Sunday for the first 2 years of the game. On Wednesdays a random recipe that aired on a previous Sunday airs as a "Re-run". During reruns, recipes which at least one player doesn't know are prioritized. Simply watching the channel will teach the player the recipe if it's not yet known. The rotation of Sunday recipes repeats on a 2-year schedule with 32 recipes in total.
+
+The player can also read the [[Queen Of Sauce Cookbook]] to learn all of the recipes immediately (including those that have not yet been aired).
+{{Clear|right}}
+
+==Recipes==
+{| class="wikitable sortable"
+! class="unsortable"|Image
+! Recipe
+! Description
+! Original Air Date
+! Other Sources
+|-
+|[[File:Stir Fry.png|center]] 
+|[[Stir Fry]]
+|Stir Fry! It's a perfect way to get some healthy greens on your plate. Sautee the greens in a little sesame oil and make sure to add plenty of fresh ginger and garlic. Now breathe deeply... Oh, that's good.
+|data-sort-value="Year 1, Month 1, day 07"|7 Spring, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Coleslaw.png|center]]
+|[[Coleslaw]]
+|Coleslaw! Envisioning bland mounds of limp cabbage? You're not alone. But a great coleslaw can be so much more. Make sure you have [[Red Cabbage|juicy fresh cabbage]] for this one. Toss with a little [[vinegar]] and [[mayonnaise]] and you're all set. Ah, that's crisp.
+|data-sort-value="Year 1, Month 1, day 14"|14 Spring, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Radish Salad.png|center]]
+|[[Radish Salad]]
+|Radish Salad! There's nothing like a fresh, peppery [[radish]]. It reminds me of the late spring... my mother would slice up our fresh radishes and serve them on grainy bread with a little salt and pepper. Ah, those were the days... but I digress. Now, watch closely...
+|data-sort-value="Year 1, Month 1, day 21"|21 Spring, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Omelet.png|center]]
+|[[Omelet]]
+|Omelet! This is such a simple dish, but so often done incorrectly! A perfect omelet is a thing of beauty. It's a pure golden angel of gleaming [[egg]], and I'm going to show you my secret method...
+|data-sort-value="Year 1, Month 1, day 28"|28 Spring, Year 1
+|data-sort-value="100" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|100}}
+|-
+|[[File:Baked Fish.png|center]]
+|[[Baked Fish]]
+|Baked Fish! Whenever I make this one at home, my two cats go bananas. I need a second chef around just to keep them from hopping on the counter for a bite! Just make sure the fish is fresh, preferably caught with your own rod! Now watch as I place the fish on a bed of spring greens...
+|data-sort-value="Year 1, Month 2, day 07"|7 Summer, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Pancakes.png|center]]
+|[[Pancakes]]
+|Pancakes! Sometimes I get carried away with fancy, complicated dishes... but there's something comforting about a simple pancake. You'll want plenty of butter and maple syrup to slather over these warm stacks... mmmm....
+|data-sort-value="Year 1, Month 2, day 14"|14 Summer, Year 1
+|data-sort-value="100" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|100}}
+|-
+|[[File:Maki Roll.png|center]]
+|[[Maki Roll]]
+|Maki Roll! The delicate flavor of the ocean, sealed within a pillowy cloud of [[rice]]. Maybe a bit of wasabi for the adventurous. My mouth is watering as we speak. Oh, how I love sushi...
+|data-sort-value="Year 1, Month 2, day 21"|21 Summer, Year 1
+|data-sort-value="300" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|300}}
+|-
+|[[File:Bread.png|center]]
+|[[Bread]]
+|Bread! Breadmaking can be a very complex form of art, but I'll make it simple for you. The most important ingredient is [[Wheat Flour|flour]], of course. But before we create the dough we'll need to activate our yeast. They prefer warm water and a little something to feed on. I use plain sugar, but honey or maple syrup will do!
+|data-sort-value="Year 1, Month 2, day 28"|28 Summer, Year 1
+|data-sort-value="100" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|100}}
+|-
+|[[File:Tortilla.png|center]]
+|[[Tortilla]]
+|Tortillas! How many of you are gnawing on a microwaved convenience-burrito while watching this program? Shame on you! You might as well wrap your beans in an old wash rag. Now, listen up. Once you've tried my fresh, rustic [[corn]] tortillas you'll never go back...
+|data-sort-value="Year 1, Month 3, day 07"|7 Fall, Year 1
+|data-sort-value="100" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|100}}
+|-
+|[[File:Trout Soup.png|center]]
+|[[Trout Soup]]
+|Trout Soup! There's something about [[Rainbow Trout|fresh-caught trout]] that just gets me buzzing. Maybe it's the subtle taste of the river. At any rate, I've got a wonderful trout soup recipe to share with you today...
+|data-sort-value="Year 1, Month 3, day 14"|14 Fall, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Glazed Yams.png|center]]
+|[[Glazed Yams]]
+|Glazed Yams! It's yam season, and what better way to enjoy these delightful tubers than by slathering them in a sweet, sticky glaze? You'll need a nice, ripe [[yam]] and a whole bunch of [[sugar]]. Now, here's how you do it... 
+|data-sort-value="Year 1, Month 3, day 21"|21 Fall, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Artichoke Dip.png|center]]
+|[[Artichoke Dip]]
+|Artichoke Dip! This is a delightful way to get more [[artichoke]]s into your body. Personally, I don't even dip anything in there. I just guzzle the sauce down like it's a milkshake. Delicious.
+|data-sort-value="Year 1, Month 3, day 28"|28 Fall, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Plum Pudding.png|center]]
+|[[Plum Pudding]]
+|Plum Pudding! Little Jack Horner is chomping at the bit for this ooey-gooey delight. And who can blame him? The [[Wild Plum|plums]] are floral and sweet, with just the right amount of tartness to fully activate every last one of your eager taste buds. You'll just have to try it and see for yourself...
+|data-sort-value="Year 1, Month 4, day 07"|7 Winter, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Chocolate Cake.png|center]]
+|[[Chocolate Cake]]
+|Chocolate Cake! What better way to spend these cold winter nights than digging your way through a rich chocolate mountain? With my help, you'll be well on your way to creating the finest cake you've ever laid eyes on. Now, you're going to need a lot of [[sugar]]...
+|data-sort-value="Year 1, Month 4, day 14"|14 Winter, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Pumpkin Pie.png|center]]
+|[[Pumpkin Pie]]
+|Pumpkin Pie! In my house, it's a tradition to eat pumpkin pie during the [[Feast of the Winter Star]]. The season just isn't complete without that wonderful flavor you can only achieve with the finest farm-fresh [[pumpkin]]s. A little nutmeg, cinnamon, and clove will sweep you off to a land of crimson and gold... 
+|data-sort-value="Year 1, Month 4, day 21"|21 Winter, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Cranberry Candy.png|center]]
+|[[Cranberry Candy]]
+|Cranberry Candy! Here's a fun one to help you celebrate the new year. [[Cranberries]] are quite bitter on their own, but submerge them in an ocean of [[sugar]] they'll taste like angel's tears. Here's how you do it...
+|data-sort-value="Year 1, Month 4, day 28"|28 Winter, Year 1
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Pizza.png|center]]
+|[[Pizza]]
+|Pizza! There's a reason pizza is a timeless culinary classic. You've got an artisan golden-brown crust, you've got a tangy, garlic-infused marinara sauce, and you're topping it all with a mouth-watering three-cheese blend. And we're just getting started! Let's throw some fresh pepper and [[tomato]] on the top. Oh, my!
+|data-sort-value="Year 2, Month 1, day 07"|7 Spring, Year 2
+|data-sort-value="150" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|150}}
+|-
+|[[File:Hashbrowns.png|center]]
+|[[Hashbrowns]]
+|Hashbrowns! This one's simple, but that's a good thing! You'll just want to shred some [[potato]]es, add a liberal amount of salt, and fry to perfection in your favorite high-heat [[oil]]. Sounds easy, right? Well, I've got some pointers that'll make your job a lot easier...
+|data-sort-value="Year 2, Month 1, day 14"|14 Spring, Year 2
+|data-sort-value="050" style="background-color: palegreen;"|[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|50}}
+|-
+|[[File:Complete Breakfast.png|center]]
+|class="no-wrap"|[[Complete Breakfast]]
+|Complete Breakfast! Last week I taught you how to make [[hashbrowns]]. This week I'll show you how to combine them with other ingredients to create a hearty complete breakfast. This meal will really fill you up and give you the energy you need to get in a hard day's work.
+|data-sort-value="Year 2, Month 1, day 21"|21 Spring, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Lucky Lunch.png|center]]
+|[[Lucky Lunch]]
+|Lucky Lunch! An old legend has it that this meal is irresistible to spirits of [[luck]] and fortune. After consuming it, you're likely to attract a good spirit into your belly, where it will bless you with good fortune until the meal is digested! Sounds weird, huh? I can't say I believe it, but the meal is delicious nonetheless!
+|data-sort-value="Year 2, Month 1, day 28"|28 Spring, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Carp Surprise.png|center]]
+|[[Carp Surprise]]
+|Hey, ever have a bunch of [[carp]] laying around and no idea what to do with them? Yeah, me too. Well, I've devised a great solution to this all-too-common problem. I call it... Carp surprise. It's quite easy to make, but you'll need a lot of carp...
+|data-sort-value="Year 2, Month 2, day 07"|7 Summer, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Maple Bar.png|center]]
+|[[Maple Bar]]
+|Maple Bars! Ever notice how the maple bars are always first to disappear from the doughnut box? Perplexing, because your average maple bar tastes like a sweet hockey puck. Agree? Well, just wait until you try my recipe. You can really taste the forest in these bars. Okay, you're going to need real, quality [[Maple Syrup|maple syrup]]...
+|data-sort-value="Year 2, Month 2, day 07"|14 Summer, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Pink Cake.png|center]]
+|[[Pink Cake]]
+|A viewer from [[Pelican Town]] wrote to me recently... let's see... Her name's [[Haley]]. She wrote, 'I tried your pink cake last time I was in Zuzu City and I fell in love with it. Could you share the recipe on your next episode?'. Well, why not? It's a marvelous cake. And you'll never guess the secret ingredient... [[melon]]!
+|data-sort-value="Year 2, Month 2, day 21"|21 Summer, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Roasted Hazelnuts.png|center]]
+|[[Roasted Hazelnuts]]
+|Roasted Hazelnuts! I've got a nice old [[hazelnut]] tree behind my house, and every year I invite the family over for a nut roasting party! Once we start roasting, it's inevitable that the neighbors will show up. That rich, nutty smell is irresistible. Now, here's the family recipe...
+|data-sort-value="Year 2, Month 2, day 28"|28 Summer, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Fruit Salad.png|center]]
+|[[Fruit Salad]]
+|Fruit Salad! Here's a healthy and delicious treat to brighten up your day. The most important thing to remember is that you need ripe fruit. Forget the bland stuff they sell at the supermarket... I'm talking fresh-picked, juicy, bursting-with-flavor fruit. Okay, now watch closely...
+|data-sort-value="Year 2, Month 3, day 07"|7 Fall, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Blackberry Cobbler.png|center]]
+|[[Blackberry Cobbler]]
+|Blackberry Cobbler! This one always reminds me of Stardew Valley. There's a few days in fall where the valley is overflowing with the most delicious [[Blackberry|blackberries]] I've ever tasted. If you can get your hands on some, I'd highly recommend them for this simple cobbler.
+|data-sort-value="Year 2, Month 3, day 14"|14 Fall, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Crab Cakes.png|center]]
+|[[Crab Cakes]]
+|Crab Cakes! [[Crab]] meat is very flimsy on its own, but mixing it with bread crumbs and egg is a great way to give them some body. That's why these cakes are my favorite way to eat crab! But before you go cracking any shells, stay tuned for my essential seasoning mixture...
+|data-sort-value="Year 2, Month 3, day 21"|21 Fall, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Fiddlehead Risotto.png|center]]
+|[[Fiddlehead Risotto]]
+|Fiddlehead Risotto! [[Fiddlehead Fern|Fiddlehead ferns]] are beautiful, but actually quite bland on their own. That's why you have to pay careful attention to the spices you add. I'll be honest, it's not very easy to make a good fiddlehead risotto. But with my help, you'll have the best chance at achieving it.
+|data-sort-value="Year 2, Month 3, day 28"|28 Fall, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Poppyseed Muffin.png|center]]
+|[[Poppyseed Muffin]]
+|Poppyseed Muffin! [[Poppy|Poppies]] make beautiful ornamental flowers... but why not make full use of the plant with these delightful muffins? I'm a huge fan of poppy seeds. They're subtle, but they add a nice flavor and a great texture to bready desserts. And they're healthy!
+|data-sort-value="Year 2, Month 4, day 07"|7 Winter, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Lobster Bisque.png|center]]
+|[[Lobster Bisque]]
+|Lobster Bisque! You could serve this one to the [[Governor|governor]] himself. It's rich, creamy and delicious, with just the right amount of oceanic flavor. The hardest part is finding some [[lobster]], but I'm sure you can do it. Heck, if you're feeling crafty you could catch one yourself with a [[Crab Pot|crab pot]]!
+|data-sort-value="Year 2, Month 4, day 14"|14 Winter, Year 2
+|data-sort-value="0" style="background-color: palegreen;"|{{NPC|Willy|Mail - 9+ [[File:HeartIconLarge.png|16px|link=]]}}
+|-
+|[[File:Bruschetta.png|center]]
+|[[Bruschetta]]
+|Bruschetta! It's a wonderfully simple appetizer that really showcases the quality of the ingredients. You'll need [[bread]], [[tomato]], and [[oil]]. First, you'll need to grill the bread. Slice the tomato and place onto the grilled bread. Then drizzle with oil and serve. I told you it was simple!
+|data-sort-value="Year 2, Month 4, day 21"|21 Winter, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|-
+|[[File:Shrimp Cocktail.png|center]]
+|[[Shrimp Cocktail]]
+|Shrimp Cocktail! Here's another good appetizer for you and your dinner guests. My cocktail sauce is extra zesty, and I'm sure you'll love it. Now, the first step...
+|data-sort-value="Year 2, Month 4, day 28"|28 Winter, Year 2
+|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce
+|}
+
+==Notes==
+If [[Weather#Green Rain|Green Rain event]] happens on a Sunday (or Wednesday), the corresponding recipe will not be available for the player on that day.
+
+==History==
+{{History|1.3.27|Fixed bug that caused a new recipe to air as a rerun on a Wednesday instead of the following Sunday.}}
+{{History|1.4|Improved rerun system so that it prioritizes unknown recipes from the pool of previously aired recipes instead of previously aired recipes from even/odd years.}}
+{{History|1.6|Corrected spelling and grammar to descriptions.}}
+
+[[Category:Television]]
+
+[[de:Die Königin der Soßen]]
+[[es:La reina de la salsa‎]]
+[[fr:La reine des sauces]]
+[[it:La Regina del sugo]]
+[[ja:ソースの女王]]
+[[ko:소스의 여왕]]
+[[hu:A szószok királynője]]
+[[pt:Rainha do Molho]]
+[[ru:Королева соуса]]
+[[tr:Soslar Kraliçesi]]
+[[zh:酱料女皇]]

@@ -80,3 +80,20 @@ describe('review fixes', () => {
     expect(reward('night-fishing')).toBe('Glow Ring')
   })
 })
+
+describe('wiki-generated recipes and achievements', () => {
+  it('recipes cover both years of the Queen of Sauce rotation, in order', () => {
+    expect(recipes).toHaveLength(32)
+    expect(recipes.map((r) => r.order)).toEqual(Array.from({ length: 32 }, (_, i) => i + 1))
+    expect(recipes.filter((r) => r.year === 1)).toHaveLength(16)
+    expect(recipes.filter((r) => r.year === 2)).toHaveLength(16)
+  })
+  it('every recipe has an air day and a unique name', () => {
+    for (const r of recipes) expect([7, 14, 21, 28], r.name).toContain(r.day)
+    expect(new Set(recipes.map((r) => r.name)).size).toBe(recipes.length)
+  })
+  it('there are 49 achievements with unique names', () => {
+    expect(achievements).toHaveLength(49)
+    expect(new Set(achievements.map((a) => a.name)).size).toBe(49)
+  })
+})

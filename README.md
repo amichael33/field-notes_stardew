@@ -34,21 +34,21 @@ npm run build    # production build into dist/
 
 ## Where the data comes from
 
-Villager birthdays and gift tastes and the Community Center bundles are generated from the [Stardew Valley Wiki](https://stardewvalleywiki.com) by a script, not typed by hand:
+Villager birthdays and gift tastes, the Community Center bundles, the achievements and the Queen of Sauce recipes are generated from the [Stardew Valley Wiki](https://stardewvalleywiki.com) by a script, not typed by hand:
 
 ```bash
 npm run data:wiki
 ```
 
-The script (in `scripts/wiki/`) fetches each page once through the wiki's MediaWiki API, waits a second between requests, identifies itself in its user-agent, and saves pages in `scripts/.cache/` (git-ignored) so they are never fetched twice. It rewrites `src/data/villagers.json` and `src/data/bundles.json`, prints every difference from the previous files, and refuses to write anything if a page fails to parse. Run it again only after a game update. The site itself never contacts the wiki.
+The script (in `scripts/wiki/`) fetches each page once through the wiki's MediaWiki API, waits a second between requests, identifies itself in its user-agent, and saves pages in `scripts/.cache/` (git-ignored) so they are never fetched twice. It rewrites `villagers.json`, `bundles.json`, `achievements.json` and `recipes.json` in `src/data/`, prints every difference from the previous files, and refuses to write anything if a page fails to parse. Run it again only after a game update. The site itself never contacts the wiki.
 
-The achievements, the Queen of Sauce recipes and the opening-route steps are still hand-written in `src/data/`. Bundle item seasons are kept from the hand-curated file; the script only derives seasons for brand-new items and lists them for checking.
+Only the opening-route steps are still hand-written in `src/data/path-steps.json`. Bundle item seasons are kept from the hand-curated file; the script only derives seasons for brand-new items and lists them for checking.
 
 `npm test` runs the parser tests (against saved wiki pages in `scripts/wiki/fixtures/`) and the data-integrity tests.
 
 Known limits of the data today:
 - Gift lists keep the wiki's wording, e.g. "All Universal Loves (except ...)".
-- Only the first-year Queen of Sauce recipes are listed.
+- Recipes are the 32 from The Queen of Sauce (both years) with the other places each can be bought; recipes learned from villagers or other sources are not included yet.
 - The path has no villager schedule times yet.
 
 ## License

@@ -1,5 +1,7 @@
 import { parseBundles } from './parse-bundles.mjs'
 import { parseVillager } from './parse-villager.mjs'
+import { parseAchievements } from './parse-achievements.mjs'
+import { parseQueenOfSauce } from './parse-recipes.mjs'
 
 const SEASONS = ['spring', 'summer', 'fall', 'winter']
 
@@ -106,4 +108,44 @@ export async function buildVillagers(client, names) {
 export async function buildBundles(client, existing) {
   const generated = parseBundles(await client.getWikitext('Bundles'))
   return mergeBundleSeasons(generated, existing)
+}
+
+/** Lists what changed between two achievement lists, one line per change. */
+export function diffAchievements(before, after) {
+  const lines = []
+  for (const old of before) {
+    const now = after.find((a) => a.name === old.name)
+    if (!now) lines.push(`${old.name}: removed`)
+    else if (now.requirement !== old.requirement) {
+      lines.push(`${old.name}: requirement "${old.requirement}" -> "${now.requirement}"`)
+    }
+  }
+  for (const now of after) {
+    if (!before.some((a) => a.name === now.name)) lines.push(`${now.name}: new achievement`)
+  }
+  return lines
+}
+
+/** Lists what changed between two recipe lists, one line per change. */
+export function diffRecipes(before, after) {
+  const lines = []
+  for (const old of before) {
+    const now = after.find((r) => r.name === old.name)
+    if (!now) lines.push(`${old.name}: removed`)
+    else if (now.source !== old.source) lines.push(`${old.name}: source "${old.source}" -> "${now.source}"`)
+  }
+  for (const now of after) {
+    if (!before.some((r) => r.name === now.name)) lines.push(`${now.name}: new recipe`)
+  }
+  return lines
+}
+
+/** Builds the achievement list from the wiki's Achievements page. */
+export async function buildAchievements(client) {
+  return parseAchievements(await client.getWikitext('Achievements'))
+}
+
+/** Builds the recipe list from The Queen of Sauce page. */
+export async function buildRecipes(client) {
+  return parseQueenOfSauce(await client.getWikitext('The Queen of Sauce'))
 }

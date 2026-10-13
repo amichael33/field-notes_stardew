@@ -42,5 +42,7 @@ export interface Recipe {
   order: number
   name: string
   season: Season | 'any'
+  year?: 1 | 2
+  day?: number
   source: string
 }

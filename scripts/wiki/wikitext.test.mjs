@@ -26,3 +26,20 @@ describe('stripWikitext templates with extra arguments', () => {
     expect(stripWikitext('{{Name|Jelly|link=Jellies and Pickles{{!}}Jelly}}')).toBe('Jelly')
   })
 })
+
+describe('stripWikitext prices and table cells', () => {
+  it('writes a Price template as gold', () => {
+    expect(stripWikitext('[[The Stardrop Saloon#Menu|Stardrop Saloon]] for {{Price|100}}')).toBe('Stardrop Saloon for 100g')
+    expect(stripWikitext('{{Price|2500}}')).toBe('2,500g')
+  })
+})
+
+describe('cellText', () => {
+  it('drops cell attributes, including hyphenated ones', async () => {
+    const { cellText } = await import('./tables.mjs')
+    expect(cellText('|data-sort-value="no" style="background-color: salmon;"|Exclusive to The Queen of Sauce')).toBe(
+      'Exclusive to The Queen of Sauce',
+    )
+    expect(cellText('| plain [[Link|text]] cell')).toBe('plain [[Link|text]] cell')
+  })
+})

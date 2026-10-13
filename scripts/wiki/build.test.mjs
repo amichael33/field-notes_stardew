@@ -69,3 +69,45 @@ describe('diffVillagers', () => {
     ])
   })
 })
+
+describe('diffAchievements', () => {
+  const a = { name: 'Greenhorn', requirement: 'Earn 15,000g' }
+  it('reports nothing when they match', async () => {
+    const { diffAchievements } = await import('./build.mjs')
+    expect(diffAchievements([a], [a])).toEqual([])
+  })
+  it('reports changed, added and removed achievements', async () => {
+    const { diffAchievements } = await import('./build.mjs')
+    expect(
+      diffAchievements(
+        [a, { name: 'Gone', requirement: 'x' }],
+        [{ name: 'Greenhorn', requirement: 'Earn 20,000g' }, { name: 'New', requirement: 'y' }],
+      ),
+    ).toEqual([
+      'Greenhorn: requirement "Earn 15,000g" -> "Earn 20,000g"',
+      'Gone: removed',
+      'New: new achievement',
+    ])
+  })
+})
+
+describe('diffRecipes', () => {
+  const r = { order: 1, name: 'Stir Fry', season: 'spring', year: 1, day: 7, source: 'The Queen of Sauce, Spring 7, Year 1' }
+  it('reports nothing when they match', async () => {
+    const { diffRecipes } = await import('./build.mjs')
+    expect(diffRecipes([r], [r])).toEqual([])
+  })
+  it('reports changed sources, new recipes and removed recipes', async () => {
+    const { diffRecipes } = await import('./build.mjs')
+    expect(
+      diffRecipes(
+        [r, { ...r, name: 'Gone' }],
+        [{ ...r, source: 'elsewhere' }, { ...r, name: 'New' }],
+      ),
+    ).toEqual([
+      'Stir Fry: source "The Queen of Sauce, Spring 7, Year 1" -> "elsewhere"',
+      'Gone: removed',
+      'New: new recipe',
+    ])
+  })
+})

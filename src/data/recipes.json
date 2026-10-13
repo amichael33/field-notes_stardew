@@ -3,96 +3,256 @@
     "order": 1,
     "name": "Stir Fry",
     "season": "spring",
+    "year": 1,
+    "day": 7,
     "source": "The Queen of Sauce, Spring 7, Year 1"
   },
   {
     "order": 2,
     "name": "Coleslaw",
     "season": "spring",
+    "year": 1,
+    "day": 14,
     "source": "The Queen of Sauce, Spring 14, Year 1"
   },
   {
     "order": 3,
     "name": "Radish Salad",
     "season": "spring",
+    "year": 1,
+    "day": 21,
     "source": "The Queen of Sauce, Spring 21, Year 1"
   },
   {
     "order": 4,
     "name": "Omelet",
     "season": "spring",
-    "source": "The Queen of Sauce, Spring 28, Year 1"
+    "year": 1,
+    "day": 28,
+    "source": "The Queen of Sauce, Spring 28, Year 1; also Stardrop Saloon for 100g"
   },
   {
     "order": 5,
     "name": "Baked Fish",
     "season": "summer",
+    "year": 1,
+    "day": 7,
     "source": "The Queen of Sauce, Summer 7, Year 1"
   },
   {
     "order": 6,
     "name": "Pancakes",
     "season": "summer",
-    "source": "The Queen of Sauce, Summer 14, Year 1"
+    "year": 1,
+    "day": 14,
+    "source": "The Queen of Sauce, Summer 14, Year 1; also Stardrop Saloon for 100g"
   },
   {
     "order": 7,
     "name": "Maki Roll",
     "season": "summer",
-    "source": "The Queen of Sauce, Summer 21, Year 1"
+    "year": 1,
+    "day": 21,
+    "source": "The Queen of Sauce, Summer 21, Year 1; also Stardrop Saloon for 300g"
   },
   {
     "order": 8,
     "name": "Bread",
     "season": "summer",
-    "source": "The Queen of Sauce, Summer 28, Year 1"
+    "year": 1,
+    "day": 28,
+    "source": "The Queen of Sauce, Summer 28, Year 1; also Stardrop Saloon for 100g"
   },
   {
     "order": 9,
     "name": "Tortilla",
     "season": "fall",
-    "source": "The Queen of Sauce, Fall 7, Year 1"
+    "year": 1,
+    "day": 7,
+    "source": "The Queen of Sauce, Fall 7, Year 1; also Stardrop Saloon for 100g"
   },
   {
     "order": 10,
     "name": "Trout Soup",
     "season": "fall",
+    "year": 1,
+    "day": 14,
     "source": "The Queen of Sauce, Fall 14, Year 1"
   },
   {
     "order": 11,
     "name": "Glazed Yams",
     "season": "fall",
+    "year": 1,
+    "day": 21,
     "source": "The Queen of Sauce, Fall 21, Year 1"
   },
   {
     "order": 12,
     "name": "Artichoke Dip",
     "season": "fall",
+    "year": 1,
+    "day": 28,
     "source": "The Queen of Sauce, Fall 28, Year 1"
   },
   {
     "order": 13,
     "name": "Plum Pudding",
     "season": "winter",
+    "year": 1,
+    "day": 7,
     "source": "The Queen of Sauce, Winter 7, Year 1"
   },
   {
     "order": 14,
     "name": "Chocolate Cake",
     "season": "winter",
+    "year": 1,
+    "day": 14,
     "source": "The Queen of Sauce, Winter 14, Year 1"
   },
   {
     "order": 15,
     "name": "Pumpkin Pie",
     "season": "winter",
+    "year": 1,
+    "day": 21,
     "source": "The Queen of Sauce, Winter 21, Year 1"
   },
   {
     "order": 16,
     "name": "Cranberry Candy",
     "season": "winter",
+    "year": 1,
+    "day": 28,
     "source": "The Queen of Sauce, Winter 28, Year 1"
+  },
+  {
+    "order": 17,
+    "name": "Pizza",
+    "season": "spring",
+    "year": 2,
+    "day": 7,
+    "source": "The Queen of Sauce, Spring 7, Year 2; also Stardrop Saloon for 150g"
+  },
+  {
+    "order": 18,
+    "name": "Hashbrowns",
+    "season": "spring",
+    "year": 2,
+    "day": 14,
+    "source": "The Queen of Sauce, Spring 14, Year 2; also Stardrop Saloon for 50g"
+  },
+  {
+    "order": 19,
+    "name": "Complete Breakfast",
+    "season": "spring",
+    "year": 2,
+    "day": 21,
+    "source": "The Queen of Sauce, Spring 21, Year 2"
+  },
+  {
+    "order": 20,
+    "name": "Lucky Lunch",
+    "season": "spring",
+    "year": 2,
+    "day": 28,
+    "source": "The Queen of Sauce, Spring 28, Year 2"
+  },
+  {
+    "order": 21,
+    "name": "Carp Surprise",
+    "season": "summer",
+    "year": 2,
+    "day": 7,
+    "source": "The Queen of Sauce, Summer 7, Year 2"
+  },
+  {
+    "order": 22,
+    "name": "Maple Bar",
+    "season": "summer",
+    "year": 2,
+    "day": 14,
+    "source": "The Queen of Sauce, Summer 14, Year 2"
+  },
+  {
+    "order": 23,
+    "name": "Pink Cake",
+    "season": "summer",
+    "year": 2,
+    "day": 21,
+    "source": "The Queen of Sauce, Summer 21, Year 2"
+  },
+  {
+    "order": 24,
+    "name": "Roasted Hazelnuts",
+    "season": "summer",
+    "year": 2,
+    "day": 28,
+    "source": "The Queen of Sauce, Summer 28, Year 2"
+  },
+  {
+    "order": 25,
+    "name": "Fruit Salad",
+    "season": "fall",
+    "year": 2,
+    "day": 7,
+    "source": "The Queen of Sauce, Fall 7, Year 2"
+  },
+  {
+    "order": 26,
+    "name": "Blackberry Cobbler",
+    "season": "fall",
+    "year": 2,
+    "day": 14,
+    "source": "The Queen of Sauce, Fall 14, Year 2"
+  },
+  {
+    "order": 27,
+    "name": "Crab Cakes",
+    "season": "fall",
+    "year": 2,
+    "day": 21,
+    "source": "The Queen of Sauce, Fall 21, Year 2"
+  },
+  {
+    "order": 28,
+    "name": "Fiddlehead Risotto",
+    "season": "fall",
+    "year": 2,
+    "day": 28,
+    "source": "The Queen of Sauce, Fall 28, Year 2"
+  },
+  {
+    "order": 29,
+    "name": "Poppyseed Muffin",
+    "season": "winter",
+    "year": 2,
+    "day": 7,
+    "source": "The Queen of Sauce, Winter 7, Year 2"
+  },
+  {
+    "order": 30,
+    "name": "Lobster Bisque",
+    "season": "winter",
+    "year": 2,
+    "day": 14,
+    "source": "The Queen of Sauce, Winter 14, Year 2"
+  },
+  {
+    "order": 31,
+    "name": "Bruschetta",
+    "season": "winter",
+    "year": 2,
+    "day": 21,
+    "source": "The Queen of Sauce, Winter 21, Year 2"
+  },
+  {
+    "order": 32,
+    "name": "Shrimp Cocktail",
+    "season": "winter",
+    "year": 2,
+    "day": 28,
+    "source": "The Queen of Sauce, Winter 28, Year 2"
   }
 ]
