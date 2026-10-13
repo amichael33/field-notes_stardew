@@ -5,6 +5,7 @@ import PathView from './views/PathView'
 import BundlesView from './views/BundlesView'
 import VillagersView from './views/VillagersView'
 import AchievementsView from './views/AchievementsView'
+import ComingSoonView from './views/ComingSoonView'
 
 export default function App() {
   return (
@@ -12,11 +13,19 @@ export default function App() {
       <HashRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/path" element={<PathView />} />
-            <Route path="/bundles" element={<BundlesView />} />
-            <Route path="/villagers" element={<VillagersView />} />
-            <Route path="/achievements" element={<AchievementsView />} />
-            <Route path="*" element={<Navigate to="/path" replace />} />
+            <Route path="/today" element={<PathView />} />
+            <Route path="/community-center" element={<BundlesView />} />
+            <Route path="/goals" element={<AchievementsView />} />
+            <Route path="/people" element={<VillagersView />} />
+            <Route
+              path="/farm"
+              element={<ComingSoonView title="Farm" note="Upload your planned farm layout here." />}
+            />
+            <Route
+              path="/notes"
+              element={<ComingSoonView title="Notes" note="Notes and reminders for tomorrow will save here." />}
+            />
+            <Route path="*" element={<Navigate to="/today" replace />} />
           </Route>
         </Routes>
       </HashRouter>

@@ -1,4 +1,4 @@
-# Stardew Field Notes: Core Site Design (Sub-project 1)
+# Field Notes: Core Site Design (Sub-project 1)
 
 ## Purpose
 A public website that works as a Stardew Valley todo and tracker for an efficient playthrough. It is for the author and other players, and is hosted free on GitHub Pages. The full wishlist is split into sub-projects, and this spec covers only the first.
@@ -56,3 +56,14 @@ Out of scope: saving anything (including the profile and character customization
 - `npm run build` and `npm test` pass.
 - The deployed Pages URL loads all five views.
 - Bundles and a sample of villagers are spot-checked against the wiki.
+
+## Design update (2026-10-12)
+The site is named **Field Notes**. The visual direction comes from the author's "Valley Path" mockup: dark green header with gold accents, Pixelify Sans headings, Nunito Sans body, white cards on a pale sage page, 44px touch targets.
+
+Tabs: Today, Community Center, Goals, People, Farm, Notes.
+- Today shows the opening route (formerly Beginner Path). The live clock, timed timeline and "where is everyone" panel arrive with sub-project 3.
+- Community Center, Goals and People are the former Bundles, Achievements and Villagers views.
+- Farm and Notes are "Coming soon" placeholders until sub-projects 2 and 4.
+- The header has a Print page button. Export and Import arrive with sub-project 2.
+
+Mockup parts that need later sub-projects: game clock, walking times and shop-open status (3); checkboxes, bundle progress bars, gold goal and saved notes (2).

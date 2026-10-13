@@ -28,7 +28,7 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
 
   return (
     <section>
-      <h1>Villagers</h1>
+      <h1>People</h1>
       <h2>Birthday calendar</h2>
       {birthdays.length === 0 ? (
         <p>No birthdays this season.</p>
@@ -46,13 +46,15 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
         Universal Loves and Likes apply to most villagers even when they are not listed below; lists show
         villager-specific items and the wiki's exceptions.
       </p>
+      <div className="cols">
       {villagers.map((v) => (
-        <article key={v.name} aria-label={v.name}>
+        <article key={v.name} aria-label={v.name} className="card">
           <h3>{v.name}</h3>
           <TasteList title="Loves" items={v.loves} />
           <TasteList title="Likes" items={v.likes} />
         </article>
       ))}
+      </div>
     </section>
   )
 }

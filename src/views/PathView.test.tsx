@@ -30,3 +30,11 @@ describe('PathView', () => {
     expect(screen.getByText('Plum Pudding')).toBeInTheDocument()
   })
 })
+
+describe('PathView heading', () => {
+  it('is titled Today and says live day tracking is not built yet', () => {
+    renderWithState(<PathView />)
+    expect(screen.getByRole('heading', { name: 'Today' })).toBeInTheDocument()
+    expect(screen.getByText(/Live day tracking comes later/)).toBeInTheDocument()
+  })
+})

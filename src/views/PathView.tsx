@@ -20,8 +20,9 @@ export default function PathView() {
     .sort((a, b) => a.order - b.order)
 
   return (
-    <section>
-      <h1>Beginner Path</h1>
+    <section className="card">
+      <h1>Today</h1>
+      <p className="when">Opening route for Spring, Year 1. Live day tracking comes later.</p>
       <ol aria-label="Path steps">
         {sortedPathSteps(steps).map((step) => (
           <li key={step.order}>

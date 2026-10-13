@@ -1,4 +1,4 @@
-# Stardew Field Notes
+# Field Notes
 
 A todo list and planner for Stardew Valley. The goal is an optimized, day-by-day plan for the most efficient first year, with the reference data you need beside it, in a site you can use (or print) while you play.
 
@@ -6,11 +6,12 @@ This is an early version. Right now it is a **read-only reference** with the ope
 
 ## Features (current)
 
-- **Beginner Path**: the opening route as plain-text steps (Willy's pole, the rainy-day fishing plan, early money goals) plus the Queen of Sauce recipes in air order.
-- **Bundles**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
-- **Villagers**: a birthday calendar and every villager's loved and liked gifts.
-- **Achievements**: what each achievement requires.
-- **Print-friendly**: navigation and controls are hidden when you print the page.
+- **Today**: the opening route as plain-text steps (Willy's pole, the rainy-day fishing plan, early money goals) plus the Queen of Sauce recipes in air order.
+- **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
+- **People**: a birthday calendar and every villager's loved and liked gifts.
+- **Goals**: what each achievement requires.
+- **Farm and Notes** tabs are placeholders for now (see the roadmap).
+- **Print-friendly**: the header, controls and footer are hidden when you print, and a Print page button is in the header.
 
 ## Roadmap
 

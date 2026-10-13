@@ -9,7 +9,7 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
   if (route === 'joja') {
     return (
       <section>
-        <h1>Bundles</h1>
+        <h1>Community Center</h1>
         <p>Bundles are not used on the Joja route.</p>
       </section>
     )
@@ -23,12 +23,13 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
 
   return (
     <section>
-      <h1>Bundles</h1>
+      <h1>Community Center</h1>
       {grouped.size === 0 ? (
         <p>No bundle items available this season.</p>
       ) : (
-        [...grouped.entries()].map(([bundle, items]) => (
-          <article key={bundle.id}>
+        <div className="cols">
+          {[...grouped.entries()].map(([bundle, items]) => (
+          <article key={bundle.id} className="card">
             <h2>
               {bundle.name} <span className="when">{bundle.room}, reward: {bundle.reward}</span>
             </h2>
@@ -45,7 +46,8 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
               ))}
             </ul>
           </article>
-        ))
+          ))}
+        </div>
       )}
     </section>
   )
