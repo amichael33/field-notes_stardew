@@ -16,7 +16,7 @@ This is an early version. Right now it is a **read-only reference** with the ope
 ## Roadmap
 
 1. Core site and static reference data (this release)
-2. Saving: notes, checklist progress, a new-save profile (character look, Joja or Community Center route, farm type), and JSON export/import. Everything stays in your browser, with no accounts.
+2. Saving: notes, checklist progress, a new-save profile (Joja or Community Center route, farm type), and JSON export/import. Everything stays in your browser, with no accounts.
 3. Game-clock sync with villager locations and a structured day-by-day year 1 plan
 4. Farm layout and avatar photo uploads
 5. Later: layout optimizer and save-file import

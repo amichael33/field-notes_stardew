@@ -8,8 +8,7 @@ This is a todo list, but in the first year it is an optimized day-by-day plan of
 
 Sub-project 1 only hardcodes the **opening route** as plain-text path steps. The real structured schedule data (villager locations by time, per-day plans through year 1) comes in later sub-projects.
 
-A new save starts with a profile setup:
-- Customize your character, shown in a corner of the UI the way Stardew shows the player.
+A new save starts with a profile setup (character customization was dropped from scope on 2026-10-12):
 - Choose the **Joja route or the Community Center route**. This changes the bundles view and the plan.
 - Farm type, which feeds the later layout suggestions.
 
@@ -21,7 +20,7 @@ A new save starts with a profile setup:
 
 ## Roadmap
 1. Core site and static reference data (this spec)
-2. Persistence and new-save profile (character customization shown in the corner, Joja or Community Center route, farm type), notes, checklist progress, export/import, and print-to-PDF styling
+2. Persistence and new-save profile (Joja or Community Center route, farm type), notes, checklist progress, export/import, and print-to-PDF styling
 3. Game-clock sync with villager locations and schedules, plus the structured day-by-day year 1 plan
 4. Farm layout image upload and avatar photo upload
 5. Optional later: layout optimizer, save-file import
@@ -34,7 +33,7 @@ Read-only reference views plus the app shell:
 - **Achievements**: requirements for each achievement.
 - **App shell**: navigation, season filter, responsive layout, print-friendly base CSS.
 
-Out of scope: saving anything (including the profile and character customization), clock sync, structured schedule data, uploads, the optimizer.
+Out of scope: saving anything (including the profile), clock sync, structured schedule data, uploads, the optimizer.
 
 ## Architecture
 - `src/data/*.json` with matching `src/data/types.ts`: bundles, villagers, achievements, path steps, recipes. Data is checked against the types at build time.
