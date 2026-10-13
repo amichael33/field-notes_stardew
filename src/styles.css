@@ -46,3 +46,16 @@ nav a.active {
     background: #fff;
   }
 }
+
+.badge {
+  margin-left: 0.5rem;
+  padding: 0 0.4rem;
+  border-radius: 4px;
+  background: #5b8fb9;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.when {
+  color: #666;
+  font-size: 0.9rem;
+}
