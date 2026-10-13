@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f6f1e4;
+  color: #2b2b2b;
+}
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.site-title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+nav {
+  display: flex;
+  gap: 0.75rem;
+}
+nav a {
+  color: #3d5a2b;
+  text-decoration: none;
+}
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+@media print {
+  nav,
+  .controls {
+    display: none;
+  }
+  body {
+    background: #fff;
+  }
+}
