@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Stardew Field Notes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A todo list and planner for Stardew Valley. The goal is an optimized, day-by-day plan for the most efficient first year, with the reference data you need beside it, in a site you can use (or print) while you play.
 
-Currently, two official plugins are available:
+This is an early version. Right now it is a **read-only reference** with the opening route, bundles, villager gifts and birthdays, and achievements.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features (current)
 
-## Expanding the ESLint configuration
+- **Beginner Path**: the opening route as plain-text steps (Willy's pole, the rainy-day fishing plan, early money goals) plus the Queen of Sauce recipes in air order.
+- **Bundles**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
+- **Villagers**: a birthday calendar and every villager's loved and liked gifts.
+- **Achievements**: what each achievement requires.
+- **Print-friendly**: navigation and controls are hidden when you print the page.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Roadmap
 
-- Configure the top-level `parserOptions` property like this:
+1. Core site and static reference data (this release)
+2. Saving: notes, checklist progress, a new-save profile (character look, Joja or Community Center route, farm type), and JSON export/import. Everything stays in your browser, with no accounts.
+3. Game-clock sync with villager locations and a structured day-by-day year 1 plan
+4. Farm layout and avatar photo uploads
+5. Later: layout optimizer and save-file import
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Run it locally
+
+Requires Node.js 18 or newer.
+
+```bash
+npm install
+npm run dev      # start the dev server
+npm test         # run the tests
+npm run build    # production build into dist/
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contributing data
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+All game data lives in `src/data/*.json` with types in `src/data/types.ts`. Edit the JSON, then run `npm test`: the data-integrity tests check for missing sources, invalid seasons and bad birthdays.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Known limits of the data today:
+- Gift lists keep the wiki's wording, e.g. "All Universal Loves" and "except" notes.
+- Only the first-year Queen of Sauce recipes are listed.
+- The path has no villager schedule times yet.
+
+Corrections are welcome. Please cite the wiki page.
+
+## Deploying
+
+Pushes to `main` build and deploy to GitHub Pages through `.github/workflows/deploy.yml`. In the repo settings, set Pages source to **GitHub Actions**.
+
+## Credits
+
+Game data is transcribed from the [Stardew Valley Wiki](https://stardewvalleywiki.com), which is community-written. Thank you to its editors.
+
+## Disclaimer
+
+This is an unofficial fan project. It is not affiliated with or endorsed by ConcernedApe or Stardew Valley. Stardew Valley is a trademark of ConcernedApe.
