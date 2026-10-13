@@ -41,3 +41,10 @@ describe('VillagersView', () => {
     expect(cal.queryByText(/Abe/)).not.toBeInTheDocument()
   })
 })
+
+describe('VillagersView universal tastes note', () => {
+  it('explains that universal loves and likes are not repeated per villager', () => {
+    renderWithState(<VillagersView villagers={[]} />)
+    expect(screen.getByText(/Universal Loves and Likes apply to most villagers/)).toBeInTheDocument()
+  })
+})

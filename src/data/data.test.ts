@@ -63,3 +63,20 @@ describe('recipes', () => {
     }
   })
 })
+
+describe('review fixes', () => {
+  it('vault bundle rewards are items, not gold amounts', () => {
+    const rewards = Object.fromEntries(bundles.filter((b) => b.room === 'Vault').map((b) => [b.id, b.reward]))
+    expect(rewards).toEqual({
+      'vault-2500': '3 Chocolate Cake',
+      'vault-5000': '30 Quality Fertilizer',
+      'vault-10000': 'Lightning Rod',
+      'vault-25000': 'Crystalarium',
+    })
+  })
+  it('river fish and night fishing rewards match the wiki-reviewed values', () => {
+    const reward = (id: string) => bundles.find((b) => b.id === id)!.reward
+    expect(reward('river-fish')).toBe('30 Bait')
+    expect(reward('night-fishing')).toBe('Small Glow Ring')
+  })
+})

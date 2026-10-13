@@ -560,7 +560,7 @@
     "id": "river-fish",
     "room": "Fish Tank",
     "name": "River Fish",
-    "reward": "30 Deluxe Bait",
+    "reward": "30 Bait",
     "slotsRequired": 4,
     "items": [
       {
@@ -692,7 +692,7 @@
     "id": "night-fishing",
     "room": "Fish Tank",
     "name": "Night Fishing",
-    "reward": "Glow Ring",
+    "reward": "Small Glow Ring",
     "slotsRequired": 3,
     "items": [
       {
@@ -1122,7 +1122,7 @@
     "id": "vault-2500",
     "room": "Vault",
     "name": "2,500g",
-    "reward": "2,500g",
+    "reward": "3 Chocolate Cake",
     "slotsRequired": 1,
     "items": [
       {
@@ -1137,7 +1137,7 @@
     "id": "vault-5000",
     "room": "Vault",
     "name": "5,000g",
-    "reward": "5,000g",
+    "reward": "30 Quality Fertilizer",
     "slotsRequired": 1,
     "items": [
       {
@@ -1152,7 +1152,7 @@
     "id": "vault-10000",
     "room": "Vault",
     "name": "10,000g",
-    "reward": "10,000g",
+    "reward": "Lightning Rod",
     "slotsRequired": 1,
     "items": [
       {
@@ -1167,7 +1167,7 @@
     "id": "vault-25000",
     "room": "Vault",
     "name": "25,000g",
-    "reward": "25,000g",
+    "reward": "Crystalarium",
     "slotsRequired": 1,
     "items": [
       {

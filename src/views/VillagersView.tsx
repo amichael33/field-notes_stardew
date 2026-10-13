@@ -42,6 +42,10 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
         </ul>
       )}
       <h2>Gift tastes</h2>
+      <p className="when">
+        Universal Loves and Likes apply to most villagers even when they are not listed below; lists show
+        villager-specific items and the wiki's exceptions.
+      </p>
       {villagers.map((v) => (
         <article key={v.name} aria-label={v.name}>
           <h3>{v.name}</h3>
