@@ -1,0 +1,159 @@
+{{Infobox villager
+|portrait  = Linus.png
+|birthday  = {{Season|Winter}} 3
+|location  = The Mountain
+|address   = [[Tent]]
+|marriage  = No
+|favorites = {{Name|Blueberry Tart}}{{Name|Cactus Fruit}}{{Name|Coconut}}{{Name|Dish O' The Sea}}{{Name|The Alleyway Buffet}}{{Name|Yam}}
+}}
+
+==Gifts==
+{{GiftHeader}}
+
+===Love===
+{{Squote|This is wonderful! You've really made my day special.}}
+''Stardrop Tea''
+{{Squote|This means a lot to me, (Name). I'll save it for a quiet day in the tent. Thank you!}}
+''The Alleyway Buffet''
+{{Squote|I don't usually read books... But this one is right up my 'alley'... Thank you!}}
+
+{|class="wikitable roundedborder" style="width: 65%; min-width: 500px;"
+!style="width: 48px;"|Image
+!Name
+!Description
+!Source
+!Ingredients
+|-
+| [[File:Linus Happy.png|48px|center]]
+| colspan="4"| <ul><li>'''All [[Friendship#Universal Loves|Universal Loves]]'''</li></ul>
+
+|-
+|[[File:Blueberry Tart.png|center]]
+|[[Blueberry Tart]]
+|{{Description|Blueberry Tart}}
+|[[Cooking]]
+|{{Name|Blueberry|1}}{{Name|Wheat Flour|1}}{{Name|Sugar|1}}{{Name|Egg|1}}
+|-
+|[[File:Cactus Fruit.png|center]]
+|[[Cactus Fruit]]
+|{{Description|Cactus Fruit}}
+|[[Foraging#The Desert|Foraging]] - [[The Desert]]
+|
+|-
+|[[File:Coconut.png|center]]
+|[[Coconut]]
+|{{Description|Coconut}}
+|[[Foraging#The Desert|Foraging]] - [[The Desert]]
+|
+|-
+|[[File:Dish O' The Sea.png|center]]
+|[[Dish O' The Sea]]
+|{{Description|Dish O' The Sea}}
+|[[Cooking]]
+|{{Name|Sardine|2}}{{Name|Hashbrowns|1}}
+|-
+|[[File:The Alleyway Buffet.png|center]]
+|[[The Alleyway Buffet]]
+|{{Description|The Alleyway Buffet}}
+|[[Books]]
+|
+|-
+|[[File:Yam.png|center]]
+|[[Yam]]
+|{{Description|Yam}}
+|[[Farming]] - [[Fall]]
+|
+|}
+
+===Like===
+{{Squote|This is a great gift. Thank you!}}
+''Most Edible Foraged Items (except Flowers, Fruit, Seaweed, or Vegetables)''
+{{Squote|That's a good find! I'm always happy when eating wild food. Thank you.}}
+
+{|class="wikitable sortable roundedborder" style="width: 65%; min-width: 500px;"
+!style="width: 48px;" class="unsortable"| Image
+!Name
+!Description
+!Source
+|-
+| [[File:Linus Happy.png|48px|center]]
+| colspan="3"| <ul><li>'''All [[Friendship#Universal Likes|Universal Likes]]''' ''(except [[Treasure Chest]], '''[[Minerals#Foraged Minerals|Foraged Minerals]]''', &amp; '''[[Minerals#Gems|Gems]]''' other than [[Diamond]] &amp; [[Prismatic Shard]])''</li><li>'''All Eggs''' ''(except [[Void Egg]])*''</li><li>'''All [[Fruits|Fruit]]''' ''(except [[Cactus Fruit]] &amp; [[Coconut]])''</li><li>'''All Milk'''</li></ul>
+|-
+|[[File:Chanterelle.png|center]]
+|[[Chanterelle]]
+|{{Description|Chanterelle}}
+|[[Foraging]] - [[Fall]]
+|-
+|[[File:Common Mushroom.png|center]]
+|[[Common Mushroom]]
+|{{Description|Common Mushroom}}
+|[[Foraging]] - [[Fall]]
+|-
+|[[File:Daffodil.png|center]]
+|[[Daffodil]]
+|{{Description|Daffodil}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Dandelion.png|center]]
+|[[Dandelion]]
+|{{Description|Dandelion}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Ginger.png|center]]
+|[[Ginger]]
+|{{Description|Ginger}}
+|[[Foraging]] - [[Ginger Island]]
+|-
+|[[File:Hazelnut.png|center]]
+|[[Hazelnut]]
+|{{Description|Hazelnut}}
+|[[Foraging]] - [[Fall]]
+|-
+|[[File:Holly.png|center]]
+|[[Holly]]
+|{{Description|Holly}}
+|[[Foraging]] - [[Winter]]
+|-
+|[[File:Leek.png|center]]
+|[[Leek]]
+|{{Description|Leek}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Magma Cap.png|center]]
+|[[Magma Cap]]
+|{{Description|Magma Cap}}
+|[[Foraging]] - [[Volcano Dungeon]]
+|-
+|[[File:Morel.png|center]]
+|[[Morel]]
+|{{Description|Morel}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Purple Mushroom.png|center]]
+|[[Purple Mushroom]]
+|{{Description|Purple Mushroom}}
+|[[Foraging]] - [[The Mines]]
+|-
+|[[File:Snow Yam.png|center]]
+|[[Snow Yam]]
+|{{Description|Snow Yam}}
+|[[Foraging]] - [[Winter]]
+|-
+|[[File:Spring Onion.png|center]]
+|[[Spring Onion]]
+|{{Description|Spring Onion}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Wild Horseradish.png|center]]
+|[[Wild Horseradish]]
+|{{Description|Wild Horseradish}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Winter Root.png|center]]
+|[[Winter Root]]
+|{{Description|Winter Root}}
+|[[Foraging]] - [[Winter]]
+|}
+<nowiki>*</nowiki>''Note that the following are not considered Eggs for gifting purposes: [[Dinosaur Egg]] is an [[Artifacts|Artifact]]; [[Frog Egg]] and [[Parrot Egg]] are considered [[Trinkets]].''
+
+

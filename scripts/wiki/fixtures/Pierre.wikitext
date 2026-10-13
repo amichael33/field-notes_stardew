@@ -1,0 +1,68 @@
+{{Infobox villager
+|portrait  = Pierre.png
+|birthday  = {{Season|Spring}} 26
+|location  = Pelican Town
+|address   = [[Pierre's General Store]]
+|family    = {{NPC|Caroline|Wife}}{{NPC|Abigail|Daughter}}
+|marriage  = No
+|favorites = {{Name|Fried Calamari}}{{Name|Price Catalogue}}
+}}
+
+==Gifts==
+{{GiftHeader}}
+
+===Love===
+{{Squote|This is my all-time favorite! Thank you!}}
+''Price Catalogue''
+{{Squote|Gripping! Fascinating! It's the perfect book for me!}}
+''Stardrop Tea''
+{{Squote|Wow, I can't believe you'd give this to me. It must've cost you a fortune! Thanks!}}
+
+{| class="wikitable roundedborder" style="width: 65%; min-width: 500px;"
+!style="width: 48px;"|Image
+!Name
+!Description
+!Source
+!Ingredients
+|-
+| [[File:Pierre Happy.png|48px|center]]
+| colspan="4"| <ul><li>'''All [[Friendship#Universal Loves|Universal Loves]]'''</li></ul>
+|-
+|[[File:Fried Calamari.png|center]]
+|[[Fried Calamari]]
+|{{Description|Fried Calamari}}
+|[[Cooking]]
+|{{Name|Squid|1}}{{Name|Wheat Flour|1}}{{Name|Oil|1}}
+|-
+|[[File:Price Catalogue.png|center]]
+|[[Price Catalogue]]
+|{{Description|Price Catalogue}}
+|[[Bookseller]]
+|
+|}
+
+===Like===
+{{Squote|That's very kind of you. I like this.}}
+
+{| class="wikitable roundedborder" style="width: 65%; min-width: 500px;"
+!style="width: 48px;"|Image
+!Name
+!Description
+!Source
+|-
+| [[File:Pierre Happy.png|48px|center]]
+| colspan="3"| <ul><li>'''All [[Friendship#Universal Likes|Universal Likes]]''' ''(except [[Corn]], [[Garlic]], '''[[Minerals#Foraged Minerals|Foraged Minerals]]''', '''[[Minerals#Gems|Gems]]''' other than [[Diamond]] &amp; [[Prismatic Shard]], [[Parsnip Soup]], &amp; [[Tortilla]])''</li><li>'''All Eggs''' ''(except [[Void Egg]])*''</li><li>'''All Milk'''</li></ul>
+|-
+|[[File:Daffodil.png|center]]
+|[[Daffodil]]
+|{{Description|Daffodil}}
+|[[Foraging]] - [[Spring]]
+|-
+|[[File:Dandelion.png|center]]
+|[[Dandelion]]
+|{{Description|Dandelion}}
+|[[Foraging]] - [[Spring]]
+|}
+<nowiki>*</nowiki>''Note that the following are not considered Eggs for gifting purposes: [[Dinosaur Egg]] is an [[Artifacts|Artifact]]; [[Frog Egg]] and [[Parrot Egg]] are considered [[Trinkets]].''
+
+

@@ -32,16 +32,28 @@ npm test         # run the tests
 npm run build    # production build into dist/
 ```
 
-## Contributing data
+## Where the data comes from
 
-All game data lives in `src/data/*.json` with types in `src/data/types.ts`. Edit the JSON, then run `npm test`: the data-integrity tests check for missing sources, invalid seasons and bad birthdays.
+Villager birthdays and gift tastes and the Community Center bundles are generated from the [Stardew Valley Wiki](https://stardewvalleywiki.com) by a script, not typed by hand:
+
+```bash
+npm run data:wiki
+```
+
+The script (in `scripts/wiki/`) fetches each page once through the wiki's MediaWiki API, waits a second between requests, identifies itself in its user-agent, and saves pages in `scripts/.cache/` (git-ignored) so they are never fetched twice. It rewrites `src/data/villagers.json` and `src/data/bundles.json`, prints every difference from the previous files, and refuses to write anything if a page fails to parse. Run it again only after a game update. The site itself never contacts the wiki.
+
+The achievements, the Queen of Sauce recipes and the opening-route steps are still hand-written in `src/data/`. Bundle item seasons are kept from the hand-curated file; the script only derives seasons for brand-new items and lists them for checking.
+
+`npm test` runs the parser tests (against saved wiki pages in `scripts/wiki/fixtures/`) and the data-integrity tests.
 
 Known limits of the data today:
-- Gift lists keep the wiki's wording, e.g. "All Universal Loves" and "except" notes.
+- Gift lists keep the wiki's wording, e.g. "All Universal Loves (except ...)".
 - Only the first-year Queen of Sauce recipes are listed.
 - The path has no villager schedule times yet.
 
-Corrections are welcome. Please cite the wiki page.
+## License
+
+The wiki's text is available under [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). The data files and fixtures derived from it, and this site, are therefore non-commercial and should be shared under the same license, with credit to the Stardew Valley Wiki and its editors.
 
 ## Deploying
 
@@ -49,7 +61,7 @@ Pushes to `main` build and deploy to GitHub Pages through `.github/workflows/dep
 
 ## Credits
 
-Game data is transcribed from the [Stardew Valley Wiki](https://stardewvalleywiki.com), which is community-written. Thank you to its editors.
+Game data comes from the [Stardew Valley Wiki](https://stardewvalleywiki.com), which is community-written (see License above). Thank you to its editors.
 
 ## Disclaimer
 

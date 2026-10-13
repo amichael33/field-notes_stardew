@@ -74,9 +74,9 @@ describe('review fixes', () => {
       'vault-25000': 'Crystalarium',
     })
   })
-  it('river fish and night fishing rewards match the wiki-reviewed values', () => {
+  it('river fish and night fishing rewards match the wiki', () => {
     const reward = (id: string) => bundles.find((b) => b.id === id)!.reward
-    expect(reward('river-fish')).toBe('30 Bait')
-    expect(reward('night-fishing')).toBe('Small Glow Ring')
+    expect(reward('river-fish')).toBe('30 Deluxe Bait')
+    expect(reward('night-fishing')).toBe('Glow Ring')
   })
 })

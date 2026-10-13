@@ -6,18 +6,20 @@
       "day": 13
     },
     "loves": [
+      "All Universal Loves",
       "Amethyst",
       "Banana Pudding",
       "Blackberry Cobbler",
       "Chocolate Cake",
-      "Magic Rock Candy",
       "Monster Compendium",
       "Pufferfish",
       "Pumpkin",
       "Spicy Eel",
+      "Magic Rock Candy",
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Vegetables)",
       "Ancient Sword",
       "Basilisk Paw",
       "Bone Flute",
@@ -32,18 +34,22 @@
       "day": 13
     },
     "loves": [
+      "All Universal Loves",
       "Complete Breakfast",
-      "Jack Be Nimble Jack Be Thick",
-      "Salmon Dinner"
+      "Jack Be Nimble, Jack Be Thick",
+      "Salmon Dinner",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes",
       "All Eggs (except Void Egg)",
       "Dinosaur Egg",
-      "Duck Egg",
       "Field Snack",
+      "Parrot Egg",
+      "Any Egg (from Chickens)",
+      "Duck Egg",
       "Golden Egg",
-      "Ostrich Egg",
-      "Parrot Egg"
+      "Ostrich Egg"
     ]
   },
   {
@@ -53,21 +59,22 @@
       "day": 5
     },
     "loves": [
+      "All Universal Loves",
       "Crab Cakes",
       "Duck Feather",
       "Lobster",
       "Pomegranate",
       "Squid Ink",
       "Tom Kha Soup",
-      "Stardrop Tea",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Any Book",
+      "All Universal Likes (except Amaranth, Pizza, & Rainbow Shell)",
+      "All Books",
+      "All Fruit (except Pomegranate & Salmonberry)",
       "Octopus",
       "Squid",
-      "All Fruit (except Pomegranate and Salmonberry)",
-      "All Universal Likes (except Amaranth, Pizza, and Rainbow Shell)"
+      "Any Book"
     ]
   },
   {
@@ -77,6 +84,7 @@
       "day": 27
     },
     "loves": [
+      "All Universal Loves",
       "Amethyst",
       "Aquamarine",
       "Cloth",
@@ -86,9 +94,11 @@
       "Ruby",
       "Survival Burger",
       "Topaz",
-      "Wool"
+      "Wool",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Fish Taco, Fried Eel, Ice Cream, Maki Roll, Rice Pudding, Salmon Dinner, Spicy Eel, & Sashimi)",
       "Daffodil",
       "Quartz"
     ]
@@ -100,15 +110,16 @@
       "day": 14
     },
     "loves": [
+      "All Universal Loves (except Prismatic Shard)",
       "Coconut",
       "Fruit Salad",
       "Pink Cake",
       "Sunflower",
-      "All Universal Loves (except Prismatic Shard)"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Daffodil",
-      "All Universal Likes (except Vegetables)"
+      "All Universal Likes (except Vegetables)",
+      "Daffodil"
     ]
   },
   {
@@ -118,15 +129,17 @@
       "day": 14
     },
     "loves": [
+      "All Universal Loves",
       "Coffee",
       "Pickles",
       "Super Meal",
       "Truffle Oil",
       "Wine",
-      "Stardrop Tea",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Cheese, Goat Cheese, Rainbow Shell, and the following cooked dishes: Blueberry Tart, Chocolate Cake, Cookie, Cranberry Sauce, Fried Mushroom, Glazed Yams, Hashbrowns, Ice Cream, Pancakes, Pink Cake, Pizza, Rhubarb Pie, & Rice Pudding)",
+      "All Fruit (except Salmonberry & Spice Berry)",
       "Chanterelle",
       "Common Mushroom",
       "Daffodil",
@@ -146,9 +159,7 @@
       "Snow Yam",
       "Spring Onion",
       "Wild Horseradish",
-      "Winter Root",
-      "All Fruit",
-      "All Universal Likes"
+      "Winter Root"
     ]
   },
   {
@@ -158,21 +169,26 @@
       "day": 23
     },
     "loves": [
+      "All Universal Loves",
       "Goat Cheese",
       "Poppyseed Muffin",
       "Salad",
-      "Stardrop Tea",
       "Stir Fry",
       "Truffle",
       "Vegetable Medley",
-      "Wine"
+      "Wine",
+      "Stardrop Tea"
     ],
     "likes": [
-      "Driftwood",
+      "All Universal Likes (except: Foraged Minerals other than Earth Crystal, Gems other than Diamond & Prismatic Shard, Carp Surprise, Cookie, Hashbrowns, Ice Cream, Pancakes, Pink Cake, Pizza, Rice Pudding, Survival Burger, & Tortilla)",
+      "All Eggs (except Void Egg)",
+      "All Fruit",
+      "All Milk",
       "Chanterelle",
       "Common Mushroom",
       "Daffodil",
       "Dandelion",
+      "Driftwood",
       "Ginger",
       "Hazelnut",
       "Holly",
@@ -183,10 +199,7 @@
       "Snow Yam",
       "Spring Onion",
       "Wild Horseradish",
-      "Winter Root",
-      "All Fruit",
-      "All Eggs (except Void Egg)",
-      "All Milk"
+      "Winter Root"
     ]
   },
   {
@@ -196,6 +209,7 @@
       "day": 10
     },
     "loves": [
+      "All Universal Loves",
       "Battery Pack",
       "Cauliflower",
       "Cheese Cauliflower",
@@ -207,9 +221,11 @@
       "Pepper Poppers",
       "Radioactive Bar",
       "Rhubarb Pie",
-      "Strawberry"
+      "Strawberry",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Honey, Maple Syrup, & Pickles)",
       "Chanterelle",
       "Copper Bar",
       "Iron Bar",
@@ -229,7 +245,8 @@
       "day": 2
     },
     "loves": [
-      "Any Book",
+      "All Universal Loves (except Rabbit's Foot)",
+      "All Books",
       "Diamond",
       "Emerald",
       "Melon",
@@ -239,18 +256,15 @@
       "Roots Platter",
       "Sandfish",
       "Tom Kha Soup",
+      "Any Book",
       "Stardrop Tea"
     ],
     "likes": [
-      "Ancient Drum",
-      "Ancient Sword",
-      "Chewing Stick",
-      "Chipped Amphora",
-      "Dandelion",
-      "Leek",
-      "All Universal Likes (except Algae Soup, Beer, Mead, Pale Ale, Pale Broth, Pina Colada, and Wine)",
+      "All Universal Likes (except Algae Soup, Beer, Mead, Pale Ale, Pale Broth, Piña Colada, & Wine)",
       "All Artifacts",
-      "All Milk"
+      "All Milk",
+      "Dandelion",
+      "Leek"
     ]
   },
   {
@@ -260,6 +274,7 @@
       "day": 17
     },
     "loves": [
+      "All Universal Loves",
       "Cactus Fruit",
       "Maple Bar",
       "Pizza",
@@ -267,8 +282,9 @@
       "Stardrop Tea"
     ],
     "likes": [
-      "Joja Cola",
-      "All Eggs (except Void Egg)"
+      "All Universal Likes (except Duck Mayonnaise, Mayonnaise, Pickles, & Vegetables)",
+      "All Eggs (except Void Egg)",
+      "Joja Cola"
     ]
   },
   {
@@ -278,15 +294,17 @@
       "day": 10
     },
     "loves": [
+      "All Universal Loves",
       "Frog Egg",
       "Frozen Tear",
       "Obsidian",
       "Pumpkin Soup",
       "Sashimi",
-      "Stardrop Tea",
-      "Void Egg"
+      "Void Egg",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Flowers, Complete Breakfast, Farmer's Lunch, Omelet, Piña Colada, & Artisan Goods other than Coffee, Green Tea, & Oil)",
       "Combat Quarterly",
       "Flounder",
       "Monster Compendium",
@@ -300,12 +318,12 @@
       "day": 20
     },
     "loves": [
+      "All Universal Loves",
       "Beer",
       "Hot Pepper",
       "Pepper Poppers",
       "Pizza",
-      "Stardrop Tea",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
       "All Universal Likes (except Pickles)",
@@ -320,6 +338,7 @@
       "day": 7
     },
     "loves": [
+      "All Universal Loves",
       "Fish Taco",
       "Green Tea",
       "Summer Spangle",
@@ -327,6 +346,7 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Amaranth, Duck Mayonnaise, & Mayonnaise)",
       "Daffodil",
       "Tea Leaves",
       "Wild Horseradish"
@@ -339,6 +359,7 @@
       "day": 26
     },
     "loves": [
+      "All Universal Loves",
       "Amethyst",
       "Aquamarine",
       "Artichoke Dip",
@@ -353,6 +374,7 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Flowers)",
       "Copper Bar",
       "Iron Bar",
       "Mining Monthly"
@@ -365,18 +387,19 @@
       "day": 19
     },
     "loves": [
+      "All Universal Loves",
       "Bean Hotpot",
       "Ice Cream",
       "Rice Pudding",
       "Strawberry",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Dinosaur Egg",
-      "Purple Mushroom",
       "All Universal Likes",
       "All Eggs (except Void Egg)",
-      "All Fruit (except Strawberry)"
+      "All Fruit (except Strawberry)",
+      "Dinosaur Egg",
+      "Purple Mushroom"
     ]
   },
   {
@@ -386,6 +409,7 @@
       "day": 22
     },
     "loves": [
+      "All Universal Loves",
       "Amethyst",
       "Aquamarine",
       "Emerald",
@@ -395,13 +419,13 @@
       "Omni Geode",
       "Ruby",
       "Topaz",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Cave Carrot",
-      "Quartz",
       "All Universal Likes",
-      "All Artifacts"
+      "All Artifacts",
+      "Cave Carrot",
+      "Quartz"
     ]
   },
   {
@@ -411,6 +435,7 @@
       "day": 20
     },
     "loves": [
+      "All Universal Loves",
       "Beet",
       "Chocolate Cake",
       "Diamond",
@@ -421,16 +446,18 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Fried Eel, Garlic, Maki Roll, Sashimi, Spicy Eel, & Trout Soup)",
+      "All Milk",
       "Broken Glasses",
       "Clam",
       "Cockle",
       "Coral",
       "Daffodil",
-      "Milk",
       "Mussel",
       "Nautilus Shell",
       "Oyster",
-      "Sea Urchin"
+      "Sea Urchin",
+      "Any Forage from the Beach (except Seaweed)"
     ]
   },
   {
@@ -440,11 +467,13 @@
       "day": 24
     },
     "loves": [
-      "Stardrop Tea",
+      "All Universal Loves",
       "Fried Mushroom",
-      "Leek"
+      "Leek",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Flowers)",
       "Daffodil"
     ]
   },
@@ -455,6 +484,7 @@
       "day": 8
     },
     "loves": [
+      "All Universal Loves",
       "Diamond",
       "Escargot",
       "Fish Taco",
@@ -463,8 +493,10 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Coleslaw)",
       "Daffodil",
-      "Truffle"
+      "Truffle",
+      "Any Cooked Dish"
     ]
   },
   {
@@ -474,6 +506,7 @@
       "day": 4
     },
     "loves": [
+      "All Universal Loves",
       "Ancient Doll",
       "Fairy Box",
       "Fairy Rose",
@@ -481,14 +514,13 @@
       "Plum Pudding",
       "Strange Doll (green)",
       "Strange Doll (yellow)",
-      "Stardrop Tea",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Coconut",
-      "Daffodil",
+      "All Universal Likes (except Piña Colada, Triple Shot Espresso, Vegetables and Artisan Goods other than Honey, Jelly, & Oil)",
       "All Milk",
-      "All Universal Likes (except Pina Colada, Triple Shot Espresso, Vegetables, and Artisan Goods other than Honey, Jelly, and Oil)"
+      "Coconut",
+      "Daffodil"
     ]
   },
   {
@@ -498,6 +530,7 @@
       "day": 11
     },
     "loves": [
+      "All Universal Loves",
       "Chocolate Cake",
       "Crispy Bass",
       "Diamond",
@@ -522,28 +555,17 @@
       "day": 4
     },
     "loves": [
-      "Stardrop Tea",
+      "All Universal Loves",
       "Fiddlehead Risotto",
       "Roasted Hazelnuts",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Dwarvish Safety Manual",
-      "Daffodil",
-      "All Universal Likes (except Algae Soup, Pina Colada, Sashimi, Tortilla)",
+      "All Universal Likes (except Algae Soup, Piña Colada, Sashimi, & Tortilla)",
       "All Eggs (except Void Egg)",
       "All Fruit",
-      "Chanterelle",
-      "Common Mushroom",
-      "Dandelion",
-      "Ginger",
-      "Hazelnut",
-      "Leek",
-      "Magma Cap",
-      "Morel",
-      "Purple Mushroom",
-      "Wild Horseradish",
-      "Winter Root"
+      "Daffodil",
+      "Dwarvish Safety Manual"
     ]
   },
   {
@@ -553,6 +575,7 @@
       "day": 1
     },
     "loves": [
+      "All Universal Loves",
       "Diamond",
       "Iridium Bar",
       "Monster Compendium",
@@ -560,9 +583,11 @@
       "Pumpkin",
       "Void Egg",
       "Void Mayonnaise",
-      "Wild Horseradish"
+      "Wild Horseradish",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Life Elixir and All Cooking excluding Seafoam Pudding & Strange Bun)",
       "Gold Bar",
       "Quartz",
       "Seafoam Pudding",
@@ -576,6 +601,7 @@
       "day": 26
     },
     "loves": [
+      "All Universal Loves",
       "Duck Feather",
       "Mango",
       "Ostrich Egg",
@@ -584,6 +610,7 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Beer, Coffee, Life Elixir, Mead, Pale Ale, Pickles, Piña Colada, Wine, and Cooking other than Bread, Fried Egg, Poi, Mango Sticky Rice, & Triple Shot Espresso)",
       "Dragon Tooth",
       "Mango Sticky Rice",
       "Nautilus Shell",
@@ -599,6 +626,7 @@
       "day": 7
     },
     "loves": [
+      "All Universal Loves",
       "Autumn's Bounty",
       "Glazed Yams",
       "Green Tea",
@@ -607,6 +635,7 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes",
       "Blueberry",
       "Cactus Fruit",
       "Coconut"
@@ -619,6 +648,7 @@
       "day": 3
     },
     "loves": [
+      "All Universal Loves",
       "Blueberry Tart",
       "Cactus Fruit",
       "Coconut",
@@ -628,6 +658,10 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Treasure Chest, Foraged Minerals, & Gems other than Diamond & Prismatic Shard)",
+      "All Eggs (except Void Egg)",
+      "All Fruit (except Cactus Fruit & Coconut)",
+      "All Milk",
       "Chanterelle",
       "Common Mushroom",
       "Daffodil",
@@ -643,11 +677,7 @@
       "Spring Onion",
       "Wild Horseradish",
       "Winter Root",
-      "All Eggs (except Void Egg)",
-      "All Fruit (except Cactus Fruit and Coconut)",
-      "All Milk",
-      "Most Edible Foraged Items",
-      "All Universal Likes"
+      "Most Edible Foraged Items (except Flowers, Fruit, Seaweed, or Vegetables)"
     ]
   },
   {
@@ -657,18 +687,19 @@
       "day": 18
     },
     "loves": [
+      "All Universal Loves",
       "Diamond",
       "Farmer's Lunch",
       "Pink Cake",
       "Pumpkin Pie",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "Stardew Valley Almanac",
-      "Quartz",
+      "All Universal Likes",
       "All Eggs (except Void Egg)",
       "All Milk",
-      "All Universal Likes"
+      "Stardew Valley Almanac",
+      "Quartz"
     ]
   },
   {
@@ -678,6 +709,7 @@
       "day": 18
     },
     "loves": [
+      "All Universal Loves",
       "Beer",
       "Cactus Fruit",
       "Glazed Yams",
@@ -685,12 +717,14 @@
       "Pale Ale",
       "Parsnip",
       "Parsnip Soup",
-      "Pina Colada"
+      "Piña Colada",
+      "Stardrop Tea"
     ],
     "likes": [
-      "Daffodil",
+      "All Universal Likes",
       "All Fruit (except Cactus Fruit)",
-      "All Milk"
+      "All Milk",
+      "Daffodil"
     ]
   },
   {
@@ -700,13 +734,13 @@
       "day": 26
     },
     "loves": [
+      "All Universal Loves",
       "Fried Calamari",
       "Price Catalogue",
-      "Stardrop Tea",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
-      "All Universal Likes (except Corn, Garlic, Foraged Minerals, Gems other than Diamond and Prismatic Shard, Parsnip Soup, and Tortilla)",
+      "All Universal Likes (except Corn, Garlic, Foraged Minerals, Gems other than Diamond & Prismatic Shard, Parsnip Soup, & Tortilla)",
       "All Eggs (except Void Egg)",
       "All Milk",
       "Daffodil",
@@ -720,6 +754,7 @@
       "day": 21
     },
     "loves": [
+      "All Universal Loves",
       "Goat Cheese",
       "Peach",
       "Spaghetti",
@@ -727,11 +762,12 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes",
+      "All Fruit (except Peach)",
+      "All Milk",
       "Hardwood",
       "Quartz",
-      "Woodcutter's Weekly",
-      "All Fruit (except Peach)",
-      "All Milk"
+      "Woodcutter's Weekly"
     ]
   },
   {
@@ -741,20 +777,20 @@
       "day": 15
     },
     "loves": [
+      "All Universal Loves",
       "Crocus",
       "Daffodil",
       "Mango Sticky Rice",
-      "Stardrop Tea",
       "Sweet Pea",
-      "All Universal Loves"
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes",
+      "All Fruit",
       "Goat Milk",
       "Large Goat Milk",
       "Quartz",
-      "Wool",
-      "All Universal Likes",
-      "All Fruit"
+      "Wool"
     ]
   },
   {
@@ -764,6 +800,7 @@
       "day": 10
     },
     "loves": [
+      "All Universal Loves",
       "Cranberry Candy",
       "Frog Egg",
       "Ginger Ale",
@@ -773,9 +810,10 @@
       "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Piña Colada, Triple Shot Espresso, Vegetables and Artisan Goods other than Honey, Jelly, & Oil)",
+      "All Milk",
       "Coconut",
-      "Daffodil",
-      "All Milk"
+      "Daffodil"
     ]
   },
   {
@@ -785,6 +823,7 @@
       "day": 24
     },
     "loves": [
+      "All Universal Loves",
       "Catfish",
       "Diamond",
       "Gold Bar",
@@ -795,9 +834,11 @@
       "Pumpkin",
       "Sea Cucumber",
       "Sturgeon",
-      "The Art O' Crabbing"
+      "The Art O' Crabbing",
+      "Stardrop Tea"
     ],
     "likes": [
+      "All Universal Likes (except Life Elixir, and All Cooking except for the fish dishes he is neutral towards: Dish O' The Sea, Maki Roll, & Sashimi; and the fish dishes he likes, shown below).",
       "Bait And Bobber",
       "Baked Fish",
       "Carp Surprise",
@@ -815,7 +856,8 @@
       "Salmon Dinner",
       "Seafoam Pudding",
       "Tiger Trout",
-      "Trout Soup"
+      "Trout Soup",
+      "Coffee"
     ]
   },
   {
@@ -830,7 +872,8 @@
       "Purple Mushroom",
       "Solar Essence",
       "Super Cucumber",
-      "Void Essence"
+      "Void Essence",
+      "Stardrop Tea"
     ],
     "likes": [
       "All Universal Likes",
