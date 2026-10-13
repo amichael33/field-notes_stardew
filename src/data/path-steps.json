@@ -1,0 +1,67 @@
+[
+  {
+    "order": 1,
+    "season": "spring",
+    "day": 1,
+    "title": "Plant your starting seeds",
+    "detail": "Clear a patch near the farmhouse, plant the 15 Parsnip Seeds you start with and water them. Spend your remaining energy clearing debris."
+  },
+  {
+    "order": 2,
+    "season": "spring",
+    "day": 1,
+    "title": "Meet the town",
+    "detail": "Walk into Pelican Town and introduce yourself to as many villagers as you can. Note that Pierre sells seeds. (Exact villager locations by time arrive with the schedule data in a later update.)"
+  },
+  {
+    "order": 3,
+    "season": "spring",
+    "day": 2,
+    "title": "Get your fishing pole from Willy",
+    "detail": "Per the wiki, Willy's letter arrives on Spring 2 asking you to meet him on the beach, and the quest reward is the Bamboo Pole. Go to the beach (Willy's Fish Shop) and collect it."
+  },
+  {
+    "order": 4,
+    "season": "spring",
+    "title": "Rainy day: go fishing",
+    "detail": "On a rainy day your crops are watered for you, so take your pole to the river, lake or ocean. Rain fish like Catfish, Shad and Eel are needed for Fish Tank bundles.",
+    "rainy": true
+  },
+  {
+    "order": 5,
+    "season": "spring",
+    "day": 7,
+    "title": "Watch The Queen of Sauce",
+    "detail": "Spring 7 airs Stir Fry on TV; recipes air each Sunday, with the first-year list on the Path page below."
+  },
+  {
+    "order": 6,
+    "season": "spring",
+    "title": "Forage for the Spring Foraging bundle",
+    "detail": "Collect Wild Horseradish, Daffodil, Leek and Dandelion while spring lasts (Community Center route). See the Bundles page."
+  },
+  {
+    "order": 7,
+    "season": "spring",
+    "day": 13,
+    "title": "Egg Festival",
+    "detail": "Spring 13 is the Egg Festival; plan the day around it."
+  },
+  {
+    "order": 8,
+    "season": "spring",
+    "day": 24,
+    "title": "Flower Dance",
+    "detail": "Spring 24 is the Flower Dance; plan the day around it."
+  },
+  {
+    "order": 9,
+    "title": "Save for the Large Pack",
+    "detail": "Money goal: the backpack upgrade at Pierre's General Store (Large Pack, 2,000g) gives you more inventory slots early. Sell crops and fish to reach it."
+  },
+  {
+    "order": 10,
+    "title": "Check the birthday calendar",
+    "detail": "Give each villager a loved gift on their birthday for the most friendship. See the Villagers page."
+  }
+]

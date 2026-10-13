@@ -1,0 +1,843 @@
+[
+  {
+    "name": "Abigail",
+    "birthday": {
+      "season": "fall",
+      "day": 13
+    },
+    "loves": [
+      "Amethyst",
+      "Banana Pudding",
+      "Blackberry Cobbler",
+      "Chocolate Cake",
+      "Magic Rock Candy",
+      "Monster Compendium",
+      "Pufferfish",
+      "Pumpkin",
+      "Spicy Eel",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Ancient Sword",
+      "Basilisk Paw",
+      "Bone Flute",
+      "Combat Quarterly",
+      "Quartz"
+    ]
+  },
+  {
+    "name": "Alex",
+    "birthday": {
+      "season": "summer",
+      "day": 13
+    },
+    "loves": [
+      "Complete Breakfast",
+      "Jack Be Nimble Jack Be Thick",
+      "Salmon Dinner"
+    ],
+    "likes": [
+      "All Eggs (except Void Egg)",
+      "Dinosaur Egg",
+      "Duck Egg",
+      "Field Snack",
+      "Golden Egg",
+      "Ostrich Egg",
+      "Parrot Egg"
+    ]
+  },
+  {
+    "name": "Elliott",
+    "birthday": {
+      "season": "fall",
+      "day": 5
+    },
+    "loves": [
+      "Crab Cakes",
+      "Duck Feather",
+      "Lobster",
+      "Pomegranate",
+      "Squid Ink",
+      "Tom Kha Soup",
+      "Stardrop Tea",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Any Book",
+      "Octopus",
+      "Squid",
+      "All Fruit (except Pomegranate and Salmonberry)",
+      "All Universal Likes (except Amaranth, Pizza, and Rainbow Shell)"
+    ]
+  },
+  {
+    "name": "Emily",
+    "birthday": {
+      "season": "spring",
+      "day": 27
+    },
+    "loves": [
+      "Amethyst",
+      "Aquamarine",
+      "Cloth",
+      "Emerald",
+      "Jade",
+      "Parrot Egg",
+      "Ruby",
+      "Survival Burger",
+      "Topaz",
+      "Wool"
+    ],
+    "likes": [
+      "Daffodil",
+      "Quartz"
+    ]
+  },
+  {
+    "name": "Haley",
+    "birthday": {
+      "season": "spring",
+      "day": 14
+    },
+    "loves": [
+      "Coconut",
+      "Fruit Salad",
+      "Pink Cake",
+      "Sunflower",
+      "All Universal Loves (except Prismatic Shard)"
+    ],
+    "likes": [
+      "Daffodil",
+      "All Universal Likes (except Vegetables)"
+    ]
+  },
+  {
+    "name": "Harvey",
+    "birthday": {
+      "season": "winter",
+      "day": 14
+    },
+    "loves": [
+      "Coffee",
+      "Pickles",
+      "Super Meal",
+      "Truffle Oil",
+      "Wine",
+      "Stardrop Tea",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Chanterelle",
+      "Common Mushroom",
+      "Daffodil",
+      "Dandelion",
+      "Duck Egg",
+      "Duck Feather",
+      "Ginger",
+      "Goat Milk",
+      "Hazelnut",
+      "Holly",
+      "Large Goat Milk",
+      "Leek",
+      "Magma Cap",
+      "Morel",
+      "Purple Mushroom",
+      "Quartz",
+      "Snow Yam",
+      "Spring Onion",
+      "Wild Horseradish",
+      "Winter Root",
+      "All Fruit",
+      "All Universal Likes"
+    ]
+  },
+  {
+    "name": "Leah",
+    "birthday": {
+      "season": "winter",
+      "day": 23
+    },
+    "loves": [
+      "Goat Cheese",
+      "Poppyseed Muffin",
+      "Salad",
+      "Stardrop Tea",
+      "Stir Fry",
+      "Truffle",
+      "Vegetable Medley",
+      "Wine"
+    ],
+    "likes": [
+      "Driftwood",
+      "Chanterelle",
+      "Common Mushroom",
+      "Daffodil",
+      "Dandelion",
+      "Ginger",
+      "Hazelnut",
+      "Holly",
+      "Leek",
+      "Magma Cap",
+      "Morel",
+      "Purple Mushroom",
+      "Snow Yam",
+      "Spring Onion",
+      "Wild Horseradish",
+      "Winter Root",
+      "All Fruit",
+      "All Eggs (except Void Egg)",
+      "All Milk"
+    ]
+  },
+  {
+    "name": "Maru",
+    "birthday": {
+      "season": "summer",
+      "day": 10
+    },
+    "loves": [
+      "Battery Pack",
+      "Cauliflower",
+      "Cheese Cauliflower",
+      "Diamond",
+      "Dwarf Gadget",
+      "Gold Bar",
+      "Iridium Bar",
+      "Miner's Treat",
+      "Pepper Poppers",
+      "Radioactive Bar",
+      "Rhubarb Pie",
+      "Strawberry"
+    ],
+    "likes": [
+      "Chanterelle",
+      "Copper Bar",
+      "Iron Bar",
+      "Magma Cap",
+      "Morel",
+      "Oak Resin",
+      "Pine Tar",
+      "Purple Mushroom",
+      "Quartz",
+      "Radioactive Ore"
+    ]
+  },
+  {
+    "name": "Penny",
+    "birthday": {
+      "season": "fall",
+      "day": 2
+    },
+    "loves": [
+      "Any Book",
+      "Diamond",
+      "Emerald",
+      "Melon",
+      "Poppy",
+      "Poppyseed Muffin",
+      "Red Plate",
+      "Roots Platter",
+      "Sandfish",
+      "Tom Kha Soup",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Ancient Drum",
+      "Ancient Sword",
+      "Chewing Stick",
+      "Chipped Amphora",
+      "Dandelion",
+      "Leek",
+      "All Universal Likes (except Algae Soup, Beer, Mead, Pale Ale, Pale Broth, Pina Colada, and Wine)",
+      "All Artifacts",
+      "All Milk"
+    ]
+  },
+  {
+    "name": "Sam",
+    "birthday": {
+      "season": "summer",
+      "day": 17
+    },
+    "loves": [
+      "Cactus Fruit",
+      "Maple Bar",
+      "Pizza",
+      "Tigerseye",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Joja Cola",
+      "All Eggs (except Void Egg)"
+    ]
+  },
+  {
+    "name": "Sebastian",
+    "birthday": {
+      "season": "winter",
+      "day": 10
+    },
+    "loves": [
+      "Frog Egg",
+      "Frozen Tear",
+      "Obsidian",
+      "Pumpkin Soup",
+      "Sashimi",
+      "Stardrop Tea",
+      "Void Egg"
+    ],
+    "likes": [
+      "Combat Quarterly",
+      "Flounder",
+      "Monster Compendium",
+      "Quartz"
+    ]
+  },
+  {
+    "name": "Shane",
+    "birthday": {
+      "season": "spring",
+      "day": 20
+    },
+    "loves": [
+      "Beer",
+      "Hot Pepper",
+      "Pepper Poppers",
+      "Pizza",
+      "Stardrop Tea",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "All Universal Likes (except Pickles)",
+      "All Eggs (except Void Egg)",
+      "All Fruit (except Hot Pepper)"
+    ]
+  },
+  {
+    "name": "Caroline",
+    "birthday": {
+      "season": "winter",
+      "day": 7
+    },
+    "loves": [
+      "Fish Taco",
+      "Green Tea",
+      "Summer Spangle",
+      "Tropical Curry",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Daffodil",
+      "Tea Leaves",
+      "Wild Horseradish"
+    ]
+  },
+  {
+    "name": "Clint",
+    "birthday": {
+      "season": "winter",
+      "day": 26
+    },
+    "loves": [
+      "Amethyst",
+      "Aquamarine",
+      "Artichoke Dip",
+      "Emerald",
+      "Fiddlehead Risotto",
+      "Gold Bar",
+      "Iridium Bar",
+      "Jade",
+      "Omni Geode",
+      "Ruby",
+      "Topaz",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Copper Bar",
+      "Iron Bar",
+      "Mining Monthly"
+    ]
+  },
+  {
+    "name": "Demetrius",
+    "birthday": {
+      "season": "summer",
+      "day": 19
+    },
+    "loves": [
+      "Bean Hotpot",
+      "Ice Cream",
+      "Rice Pudding",
+      "Strawberry",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Dinosaur Egg",
+      "Purple Mushroom",
+      "All Universal Likes",
+      "All Eggs (except Void Egg)",
+      "All Fruit (except Strawberry)"
+    ]
+  },
+  {
+    "name": "Dwarf",
+    "birthday": {
+      "season": "summer",
+      "day": 22
+    },
+    "loves": [
+      "Amethyst",
+      "Aquamarine",
+      "Emerald",
+      "Jade",
+      "Lava Eel",
+      "Lemon Stone",
+      "Omni Geode",
+      "Ruby",
+      "Topaz",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Cave Carrot",
+      "Quartz",
+      "All Universal Likes",
+      "All Artifacts"
+    ]
+  },
+  {
+    "name": "Evelyn",
+    "birthday": {
+      "season": "winter",
+      "day": 20
+    },
+    "loves": [
+      "Beet",
+      "Chocolate Cake",
+      "Diamond",
+      "Fairy Rose",
+      "Raisins",
+      "Stuffing",
+      "Tulip",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Broken Glasses",
+      "Clam",
+      "Cockle",
+      "Coral",
+      "Daffodil",
+      "Milk",
+      "Mussel",
+      "Nautilus Shell",
+      "Oyster",
+      "Sea Urchin"
+    ]
+  },
+  {
+    "name": "George",
+    "birthday": {
+      "season": "fall",
+      "day": 24
+    },
+    "loves": [
+      "Stardrop Tea",
+      "Fried Mushroom",
+      "Leek"
+    ],
+    "likes": [
+      "Daffodil"
+    ]
+  },
+  {
+    "name": "Gus",
+    "birthday": {
+      "season": "summer",
+      "day": 8
+    },
+    "loves": [
+      "Diamond",
+      "Escargot",
+      "Fish Taco",
+      "Orange",
+      "Tropical Curry",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Daffodil",
+      "Truffle"
+    ]
+  },
+  {
+    "name": "Jas",
+    "birthday": {
+      "season": "summer",
+      "day": 4
+    },
+    "loves": [
+      "Ancient Doll",
+      "Fairy Box",
+      "Fairy Rose",
+      "Pink Cake",
+      "Plum Pudding",
+      "Strange Doll (green)",
+      "Strange Doll (yellow)",
+      "Stardrop Tea",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Coconut",
+      "Daffodil",
+      "All Milk",
+      "All Universal Likes (except Pina Colada, Triple Shot Espresso, Vegetables, and Artisan Goods other than Honey, Jelly, and Oil)"
+    ]
+  },
+  {
+    "name": "Jodi",
+    "birthday": {
+      "season": "fall",
+      "day": 11
+    },
+    "loves": [
+      "Chocolate Cake",
+      "Crispy Bass",
+      "Diamond",
+      "Eggplant Parmesan",
+      "Fried Eel",
+      "Pancakes",
+      "Rhubarb Pie",
+      "Vegetable Medley",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "All Universal Likes (except Garlic)",
+      "All Eggs (except Void Egg)",
+      "All Fruit (except Spice Berry)",
+      "All Milk"
+    ]
+  },
+  {
+    "name": "Kent",
+    "birthday": {
+      "season": "spring",
+      "day": 4
+    },
+    "loves": [
+      "Stardrop Tea",
+      "Fiddlehead Risotto",
+      "Roasted Hazelnuts",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Dwarvish Safety Manual",
+      "Daffodil",
+      "All Universal Likes (except Algae Soup, Pina Colada, Sashimi, Tortilla)",
+      "All Eggs (except Void Egg)",
+      "All Fruit",
+      "Chanterelle",
+      "Common Mushroom",
+      "Dandelion",
+      "Ginger",
+      "Hazelnut",
+      "Leek",
+      "Magma Cap",
+      "Morel",
+      "Purple Mushroom",
+      "Wild Horseradish",
+      "Winter Root"
+    ]
+  },
+  {
+    "name": "Krobus",
+    "birthday": {
+      "season": "winter",
+      "day": 1
+    },
+    "loves": [
+      "Diamond",
+      "Iridium Bar",
+      "Monster Compendium",
+      "Monster Musk",
+      "Pumpkin",
+      "Void Egg",
+      "Void Mayonnaise",
+      "Wild Horseradish"
+    ],
+    "likes": [
+      "Gold Bar",
+      "Quartz",
+      "Seafoam Pudding",
+      "Strange Bun"
+    ]
+  },
+  {
+    "name": "Leo",
+    "birthday": {
+      "season": "summer",
+      "day": 26
+    },
+    "loves": [
+      "Duck Feather",
+      "Mango",
+      "Ostrich Egg",
+      "Parrot Egg",
+      "Poi",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Dragon Tooth",
+      "Mango Sticky Rice",
+      "Nautilus Shell",
+      "Quartz",
+      "Sea Urchin",
+      "Spice Berry"
+    ]
+  },
+  {
+    "name": "Lewis",
+    "birthday": {
+      "season": "spring",
+      "day": 7
+    },
+    "loves": [
+      "Autumn's Bounty",
+      "Glazed Yams",
+      "Green Tea",
+      "Hot Pepper",
+      "Vegetable Medley",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Blueberry",
+      "Cactus Fruit",
+      "Coconut"
+    ]
+  },
+  {
+    "name": "Linus",
+    "birthday": {
+      "season": "winter",
+      "day": 3
+    },
+    "loves": [
+      "Blueberry Tart",
+      "Cactus Fruit",
+      "Coconut",
+      "Dish O' The Sea",
+      "The Alleyway Buffet",
+      "Yam",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Chanterelle",
+      "Common Mushroom",
+      "Daffodil",
+      "Dandelion",
+      "Ginger",
+      "Hazelnut",
+      "Holly",
+      "Leek",
+      "Magma Cap",
+      "Morel",
+      "Purple Mushroom",
+      "Snow Yam",
+      "Spring Onion",
+      "Wild Horseradish",
+      "Winter Root",
+      "All Eggs (except Void Egg)",
+      "All Fruit (except Cactus Fruit and Coconut)",
+      "All Milk",
+      "Most Edible Foraged Items",
+      "All Universal Likes"
+    ]
+  },
+  {
+    "name": "Marnie",
+    "birthday": {
+      "season": "fall",
+      "day": 18
+    },
+    "loves": [
+      "Diamond",
+      "Farmer's Lunch",
+      "Pink Cake",
+      "Pumpkin Pie",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Stardew Valley Almanac",
+      "Quartz",
+      "All Eggs (except Void Egg)",
+      "All Milk",
+      "All Universal Likes"
+    ]
+  },
+  {
+    "name": "Pam",
+    "birthday": {
+      "season": "spring",
+      "day": 18
+    },
+    "loves": [
+      "Beer",
+      "Cactus Fruit",
+      "Glazed Yams",
+      "Mead",
+      "Pale Ale",
+      "Parsnip",
+      "Parsnip Soup",
+      "Pina Colada"
+    ],
+    "likes": [
+      "Daffodil",
+      "All Fruit (except Cactus Fruit)",
+      "All Milk"
+    ]
+  },
+  {
+    "name": "Pierre",
+    "birthday": {
+      "season": "spring",
+      "day": 26
+    },
+    "loves": [
+      "Fried Calamari",
+      "Price Catalogue",
+      "Stardrop Tea",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "All Universal Likes (except Corn, Garlic, Foraged Minerals, Gems other than Diamond and Prismatic Shard, Parsnip Soup, and Tortilla)",
+      "All Eggs (except Void Egg)",
+      "All Milk",
+      "Daffodil",
+      "Dandelion"
+    ]
+  },
+  {
+    "name": "Robin",
+    "birthday": {
+      "season": "fall",
+      "day": 21
+    },
+    "loves": [
+      "Goat Cheese",
+      "Peach",
+      "Spaghetti",
+      "Woody's Secret",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Hardwood",
+      "Quartz",
+      "Woodcutter's Weekly",
+      "All Fruit (except Peach)",
+      "All Milk"
+    ]
+  },
+  {
+    "name": "Sandy",
+    "birthday": {
+      "season": "fall",
+      "day": 15
+    },
+    "loves": [
+      "Crocus",
+      "Daffodil",
+      "Mango Sticky Rice",
+      "Stardrop Tea",
+      "Sweet Pea",
+      "All Universal Loves"
+    ],
+    "likes": [
+      "Goat Milk",
+      "Large Goat Milk",
+      "Quartz",
+      "Wool",
+      "All Universal Likes",
+      "All Fruit"
+    ]
+  },
+  {
+    "name": "Vincent",
+    "birthday": {
+      "season": "spring",
+      "day": 10
+    },
+    "loves": [
+      "Cranberry Candy",
+      "Frog Egg",
+      "Ginger Ale",
+      "Grape",
+      "Pink Cake",
+      "Snail",
+      "Stardrop Tea"
+    ],
+    "likes": [
+      "Coconut",
+      "Daffodil",
+      "All Milk"
+    ]
+  },
+  {
+    "name": "Willy",
+    "birthday": {
+      "season": "summer",
+      "day": 24
+    },
+    "loves": [
+      "Catfish",
+      "Diamond",
+      "Gold Bar",
+      "Iridium Bar",
+      "Jewels Of The Sea",
+      "Mead",
+      "Octopus",
+      "Pumpkin",
+      "Sea Cucumber",
+      "Sturgeon",
+      "The Art O' Crabbing"
+    ],
+    "likes": [
+      "Bait And Bobber",
+      "Baked Fish",
+      "Carp Surprise",
+      "Chowder",
+      "Crab Cakes",
+      "Crispy Bass",
+      "Escargot",
+      "Fish Stew",
+      "Fish Taco",
+      "Fried Calamari",
+      "Fried Eel",
+      "Lingcod",
+      "Lobster Bisque",
+      "Quartz",
+      "Salmon Dinner",
+      "Seafoam Pudding",
+      "Tiger Trout",
+      "Trout Soup"
+    ]
+  },
+  {
+    "name": "Wizard",
+    "birthday": {
+      "season": "winter",
+      "day": 17
+    },
+    "loves": [
+      "All Universal Loves",
+      "Book of Mysteries",
+      "Purple Mushroom",
+      "Solar Essence",
+      "Super Cucumber",
+      "Void Essence"
+    ],
+    "likes": [
+      "All Universal Likes",
+      "All Geode Minerals",
+      "All Trinkets",
+      "Iridium Bar",
+      "Quartz"
+    ]
+  }
+]

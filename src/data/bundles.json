@@ -1,0 +1,1226 @@
+[
+  {
+    "id": "spring-foraging",
+    "room": "Crafts Room",
+    "name": "Spring Foraging",
+    "reward": "30 Spring Seeds",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Wild Horseradish",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Forage in spring"
+      },
+      {
+        "name": "Daffodil",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Forage in spring"
+      },
+      {
+        "name": "Leek",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Forage in spring"
+      },
+      {
+        "name": "Dandelion",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Forage in spring"
+      }
+    ]
+  },
+  {
+    "id": "summer-foraging",
+    "room": "Crafts Room",
+    "name": "Summer Foraging",
+    "reward": "30 Summer Seeds",
+    "slotsRequired": 3,
+    "items": [
+      {
+        "name": "Grape",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Forage in summer, or grow in fall"
+      },
+      {
+        "name": "Spice Berry",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Forage in summer"
+      },
+      {
+        "name": "Sweet Pea",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Forage in summer"
+      }
+    ]
+  },
+  {
+    "id": "fall-foraging",
+    "room": "Crafts Room",
+    "name": "Fall Foraging",
+    "reward": "30 Fall Seeds",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Common Mushroom",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Forage in fall"
+      },
+      {
+        "name": "Wild Plum",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Forage in fall"
+      },
+      {
+        "name": "Hazelnut",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Forage in fall"
+      },
+      {
+        "name": "Blackberry",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Forage in fall"
+      }
+    ]
+  },
+  {
+    "id": "winter-foraging",
+    "room": "Crafts Room",
+    "name": "Winter Foraging",
+    "reward": "30 Winter Seeds",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Winter Root",
+        "quantity": 1,
+        "seasons": [
+          "winter"
+        ],
+        "source": "Dig up with a hoe in winter"
+      },
+      {
+        "name": "Crystal Fruit",
+        "quantity": 1,
+        "seasons": [
+          "winter"
+        ],
+        "source": "Forage in winter"
+      },
+      {
+        "name": "Snow Yam",
+        "quantity": 1,
+        "seasons": [
+          "winter"
+        ],
+        "source": "Dig up with a hoe in winter"
+      },
+      {
+        "name": "Crocus",
+        "quantity": 1,
+        "seasons": [
+          "winter"
+        ],
+        "source": "Forage in winter"
+      }
+    ]
+  },
+  {
+    "id": "construction",
+    "room": "Crafts Room",
+    "name": "Construction",
+    "reward": "Charcoal Kiln",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Wood",
+        "quantity": 99,
+        "seasons": "any",
+        "source": "Chop trees"
+      },
+      {
+        "name": "Wood",
+        "quantity": 99,
+        "seasons": "any",
+        "source": "Chop trees"
+      },
+      {
+        "name": "Stone",
+        "quantity": 99,
+        "seasons": "any",
+        "source": "Break rocks"
+      },
+      {
+        "name": "Hardwood",
+        "quantity": 10,
+        "seasons": "any",
+        "source": "Large stumps and logs, Secret Woods"
+      }
+    ]
+  },
+  {
+    "id": "exotic-foraging",
+    "room": "Crafts Room",
+    "name": "Exotic Foraging",
+    "reward": "5 Autumn's Bounty",
+    "slotsRequired": 5,
+    "items": [
+      {
+        "name": "Coconut",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Calico Desert"
+      },
+      {
+        "name": "Cactus Fruit",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Calico Desert"
+      },
+      {
+        "name": "Cave Carrot",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "The Mines"
+      },
+      {
+        "name": "Red Mushroom",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Secret Woods or The Mines"
+      },
+      {
+        "name": "Purple Mushroom",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "The Mines"
+      },
+      {
+        "name": "Maple Syrup",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Tapper on a maple tree"
+      },
+      {
+        "name": "Oak Resin",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Tapper on an oak tree"
+      },
+      {
+        "name": "Pine Tar",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Tapper on a pine tree"
+      },
+      {
+        "name": "Morel",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Secret Woods"
+      }
+    ]
+  },
+  {
+    "id": "spring-crops",
+    "room": "Pantry",
+    "name": "Spring Crops",
+    "reward": "20 Speed-Gro",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Parsnip",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Grow from Parsnip Seeds"
+      },
+      {
+        "name": "Green Bean",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Grow from Bean Starter"
+      },
+      {
+        "name": "Cauliflower",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Grow from Cauliflower Seeds"
+      },
+      {
+        "name": "Potato",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Grow from Potato Seeds"
+      }
+    ]
+  },
+  {
+    "id": "summer-crops",
+    "room": "Pantry",
+    "name": "Summer Crops",
+    "reward": "Quality Sprinkler",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Tomato",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Tomato Seeds"
+      },
+      {
+        "name": "Hot Pepper",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Pepper Seeds"
+      },
+      {
+        "name": "Blueberry",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Blueberry Seeds"
+      },
+      {
+        "name": "Melon",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Melon Seeds"
+      }
+    ]
+  },
+  {
+    "id": "fall-crops",
+    "room": "Pantry",
+    "name": "Fall Crops",
+    "reward": "Bee House",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Corn",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Grow from Corn Seeds"
+      },
+      {
+        "name": "Eggplant",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Grow from Eggplant Seeds"
+      },
+      {
+        "name": "Pumpkin",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Grow from Pumpkin Seeds"
+      },
+      {
+        "name": "Yam",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Grow from Yam Seeds"
+      }
+    ]
+  },
+  {
+    "id": "quality-crops",
+    "room": "Pantry",
+    "name": "Quality Crops",
+    "reward": "Preserves Jar",
+    "slotsRequired": 3,
+    "items": [
+      {
+        "name": "Parsnip (gold quality)",
+        "quantity": 5,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Grow from Parsnip Seeds"
+      },
+      {
+        "name": "Melon (gold quality)",
+        "quantity": 5,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Melon Seeds"
+      },
+      {
+        "name": "Pumpkin (gold quality)",
+        "quantity": 5,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Grow from Pumpkin Seeds"
+      },
+      {
+        "name": "Corn (gold quality)",
+        "quantity": 5,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Grow from Corn Seeds"
+      }
+    ]
+  },
+  {
+    "id": "animal",
+    "room": "Pantry",
+    "name": "Animal",
+    "reward": "Cheese Press",
+    "slotsRequired": 5,
+    "items": [
+      {
+        "name": "Large Milk",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Cow"
+      },
+      {
+        "name": "Large Egg (brown)",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Brown chicken"
+      },
+      {
+        "name": "Large Egg (white)",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "White chicken"
+      },
+      {
+        "name": "Large Goat Milk",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Goat"
+      },
+      {
+        "name": "Wool",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Sheep or Rabbit"
+      },
+      {
+        "name": "Duck Egg",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Duck"
+      }
+    ]
+  },
+  {
+    "id": "artisan",
+    "room": "Pantry",
+    "name": "Artisan",
+    "reward": "Keg",
+    "slotsRequired": 6,
+    "items": [
+      {
+        "name": "Truffle Oil",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Oil Maker with a Truffle"
+      },
+      {
+        "name": "Cloth",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Loom with Wool"
+      },
+      {
+        "name": "Goat Cheese",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Cheese Press with Goat Milk"
+      },
+      {
+        "name": "Cheese",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Cheese Press with Milk"
+      },
+      {
+        "name": "Honey",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Bee House"
+      },
+      {
+        "name": "Jelly",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Preserves Jar with fruit"
+      },
+      {
+        "name": "Apple",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Apple tree"
+      },
+      {
+        "name": "Apricot",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Apricot tree"
+      },
+      {
+        "name": "Orange",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Orange tree"
+      },
+      {
+        "name": "Peach",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Peach tree"
+      },
+      {
+        "name": "Pomegranate",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Pomegranate tree"
+      },
+      {
+        "name": "Cherry",
+        "quantity": 1,
+        "seasons": [
+          "spring"
+        ],
+        "source": "Cherry tree"
+      }
+    ]
+  },
+  {
+    "id": "river-fish",
+    "room": "Fish Tank",
+    "name": "River Fish",
+    "reward": "30 Deluxe Bait",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Sunfish",
+        "quantity": 1,
+        "seasons": [
+          "spring",
+          "summer"
+        ],
+        "source": "Rivers, sunny, 6am-7pm"
+      },
+      {
+        "name": "Catfish",
+        "quantity": 1,
+        "seasons": [
+          "spring",
+          "fall"
+        ],
+        "source": "Rivers, rainy"
+      },
+      {
+        "name": "Shad",
+        "quantity": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "fall"
+        ],
+        "source": "Rivers, rainy, 9am-2am"
+      },
+      {
+        "name": "Tiger Trout",
+        "quantity": 1,
+        "seasons": [
+          "fall",
+          "winter"
+        ],
+        "source": "Rivers, 6am-7pm"
+      }
+    ]
+  },
+  {
+    "id": "lake-fish",
+    "room": "Fish Tank",
+    "name": "Lake Fish",
+    "reward": "Dressed Spinner",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Largemouth Bass",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mountain Lake, 6am-7pm"
+      },
+      {
+        "name": "Carp",
+        "quantity": 1,
+        "seasons": [
+          "spring",
+          "summer",
+          "fall"
+        ],
+        "source": "Mountain Lake"
+      },
+      {
+        "name": "Bullhead",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mountain Lake"
+      },
+      {
+        "name": "Sturgeon",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "winter"
+        ],
+        "source": "Mountain Lake, 6am-7pm"
+      }
+    ]
+  },
+  {
+    "id": "ocean-fish",
+    "room": "Fish Tank",
+    "name": "Ocean Fish",
+    "reward": "5 Warp Totem: Beach",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Sardine",
+        "quantity": 1,
+        "seasons": [
+          "spring",
+          "fall",
+          "winter"
+        ],
+        "source": "Ocean, 6am-7pm"
+      },
+      {
+        "name": "Tuna",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "winter"
+        ],
+        "source": "Ocean, 6am-7pm"
+      },
+      {
+        "name": "Red Snapper",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Ocean, rainy, 6am-7pm"
+      },
+      {
+        "name": "Tilapia",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Ocean, 6am-2pm"
+      }
+    ]
+  },
+  {
+    "id": "night-fishing",
+    "room": "Fish Tank",
+    "name": "Night Fishing",
+    "reward": "Glow Ring",
+    "slotsRequired": 3,
+    "items": [
+      {
+        "name": "Walleye",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Rivers and lakes, rainy, 12pm-2am"
+      },
+      {
+        "name": "Bream",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Rivers, 6pm-2am"
+      },
+      {
+        "name": "Eel",
+        "quantity": 1,
+        "seasons": [
+          "spring",
+          "fall"
+        ],
+        "source": "Ocean, rainy, 4pm-2am"
+      }
+    ]
+  },
+  {
+    "id": "crab-pot",
+    "room": "Fish Tank",
+    "name": "Crab Pot",
+    "reward": "3 Crab Pot",
+    "slotsRequired": 5,
+    "items": [
+      {
+        "name": "Lobster",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      },
+      {
+        "name": "Crayfish",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Freshwater crab pot"
+      },
+      {
+        "name": "Crab",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      },
+      {
+        "name": "Cockle",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      },
+      {
+        "name": "Mussel",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      },
+      {
+        "name": "Shrimp",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      },
+      {
+        "name": "Snail",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Freshwater crab pot"
+      },
+      {
+        "name": "Periwinkle",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Freshwater crab pot"
+      },
+      {
+        "name": "Oyster",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      },
+      {
+        "name": "Clam",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Ocean crab pot"
+      }
+    ]
+  },
+  {
+    "id": "specialty-fish",
+    "room": "Fish Tank",
+    "name": "Specialty Fish",
+    "reward": "5 Dish O' The Sea",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Pufferfish",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Ocean, sunny, 12pm-4pm"
+      },
+      {
+        "name": "Ghostfish",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines floors 20 and 60"
+      },
+      {
+        "name": "Sandfish",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Calico Desert, 6am-8pm"
+      },
+      {
+        "name": "Woodskip",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Secret Woods or Forest Farm"
+      }
+    ]
+  },
+  {
+    "id": "blacksmiths",
+    "room": "Boiler Room",
+    "name": "Blacksmith's",
+    "reward": "Furnace",
+    "slotsRequired": 3,
+    "items": [
+      {
+        "name": "Copper Bar",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Smelt in a Furnace"
+      },
+      {
+        "name": "Iron Bar",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Smelt in a Furnace"
+      },
+      {
+        "name": "Gold Bar",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Smelt in a Furnace"
+      }
+    ]
+  },
+  {
+    "id": "geologists",
+    "room": "Boiler Room",
+    "name": "Geologist's",
+    "reward": "5 Omni Geode",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Quartz",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines, floors 1-39"
+      },
+      {
+        "name": "Earth Crystal",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines, floors 1-39"
+      },
+      {
+        "name": "Frozen Tear",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines, floors 40-79"
+      },
+      {
+        "name": "Fire Quartz",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines, floors 80+"
+      }
+    ]
+  },
+  {
+    "id": "adventurers",
+    "room": "Boiler Room",
+    "name": "Adventurer's",
+    "reward": "Small Magnet Ring",
+    "slotsRequired": 2,
+    "items": [
+      {
+        "name": "Slime",
+        "quantity": 99,
+        "seasons": "any",
+        "source": "Defeat slimes"
+      },
+      {
+        "name": "Bat Wing",
+        "quantity": 10,
+        "seasons": "any",
+        "source": "Defeat bats"
+      },
+      {
+        "name": "Solar Essence",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Defeat Ghosts and Serpents"
+      },
+      {
+        "name": "Void Essence",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Defeat Shadow monsters"
+      }
+    ]
+  },
+  {
+    "id": "chefs",
+    "room": "Bulletin Board",
+    "name": "Chef's",
+    "reward": "3 Pink Cake",
+    "slotsRequired": 6,
+    "items": [
+      {
+        "name": "Maple Syrup",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Tapper on a maple tree"
+      },
+      {
+        "name": "Fiddlehead Fern",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Forage in the Secret Woods in summer"
+      },
+      {
+        "name": "Truffle",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Pigs"
+      },
+      {
+        "name": "Poppy",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Poppy Seeds"
+      },
+      {
+        "name": "Maki Roll",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Cook it"
+      },
+      {
+        "name": "Fried Egg",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Cook it"
+      }
+    ]
+  },
+  {
+    "id": "dye",
+    "room": "Bulletin Board",
+    "name": "Dye",
+    "reward": "Seed Maker",
+    "slotsRequired": 6,
+    "items": [
+      {
+        "name": "Red Mushroom",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Secret Woods or The Mines"
+      },
+      {
+        "name": "Sea Urchin",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Beach forage"
+      },
+      {
+        "name": "Sunflower",
+        "quantity": 1,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Grow from Sunflower Seeds"
+      },
+      {
+        "name": "Duck Feather",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Duck"
+      },
+      {
+        "name": "Aquamarine",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "The Mines"
+      },
+      {
+        "name": "Red Cabbage",
+        "quantity": 1,
+        "seasons": [
+          "summer"
+        ],
+        "source": "Grow from Red Cabbage Seeds"
+      }
+    ]
+  },
+  {
+    "id": "field-research",
+    "room": "Bulletin Board",
+    "name": "Field Research",
+    "reward": "Recycling Machine",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Purple Mushroom",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "The Mines"
+      },
+      {
+        "name": "Nautilus Shell",
+        "quantity": 1,
+        "seasons": [
+          "winter"
+        ],
+        "source": "Beach forage in winter"
+      },
+      {
+        "name": "Chub",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines or rivers"
+      },
+      {
+        "name": "Frozen Geode",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mines, floors 40-79"
+      }
+    ]
+  },
+  {
+    "id": "fodder",
+    "room": "Bulletin Board",
+    "name": "Fodder",
+    "reward": "Heater",
+    "slotsRequired": 3,
+    "items": [
+      {
+        "name": "Wheat",
+        "quantity": 10,
+        "seasons": [
+          "summer",
+          "fall"
+        ],
+        "source": "Grow from Wheat Seeds"
+      },
+      {
+        "name": "Hay",
+        "quantity": 10,
+        "seasons": "any",
+        "source": "Cut grass with a scythe"
+      },
+      {
+        "name": "Apple",
+        "quantity": 3,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Apple tree"
+      }
+    ]
+  },
+  {
+    "id": "enchanters",
+    "room": "Bulletin Board",
+    "name": "Enchanter's",
+    "reward": "5 Gold Bar",
+    "slotsRequired": 4,
+    "items": [
+      {
+        "name": "Oak Resin",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Tapper on an oak tree"
+      },
+      {
+        "name": "Wine",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Keg"
+      },
+      {
+        "name": "Rabbit's Foot",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Rabbit"
+      },
+      {
+        "name": "Pomegranate",
+        "quantity": 1,
+        "seasons": [
+          "fall"
+        ],
+        "source": "Pomegranate tree"
+      }
+    ]
+  },
+  {
+    "id": "vault-2500",
+    "room": "Vault",
+    "name": "2,500g",
+    "reward": "2,500g",
+    "slotsRequired": 1,
+    "items": [
+      {
+        "name": "2,500g",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Gold from farming and selling"
+      }
+    ]
+  },
+  {
+    "id": "vault-5000",
+    "room": "Vault",
+    "name": "5,000g",
+    "reward": "5,000g",
+    "slotsRequired": 1,
+    "items": [
+      {
+        "name": "5,000g",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Gold from farming and selling"
+      }
+    ]
+  },
+  {
+    "id": "vault-10000",
+    "room": "Vault",
+    "name": "10,000g",
+    "reward": "10,000g",
+    "slotsRequired": 1,
+    "items": [
+      {
+        "name": "10,000g",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Gold from farming and selling"
+      }
+    ]
+  },
+  {
+    "id": "vault-25000",
+    "room": "Vault",
+    "name": "25,000g",
+    "reward": "25,000g",
+    "slotsRequired": 1,
+    "items": [
+      {
+        "name": "25,000g",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Gold from farming and selling"
+      }
+    ]
+  },
+  {
+    "id": "missing-bundle",
+    "room": "Abandoned JojaMart",
+    "name": "The Missing Bundle",
+    "reward": "Movie Theater",
+    "slotsRequired": 5,
+    "items": [
+      {
+        "name": "Wine (silver quality or better)",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Keg"
+      },
+      {
+        "name": "Dinosaur Mayonnaise",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Mayonnaise Machine with a Dinosaur Egg"
+      },
+      {
+        "name": "Prismatic Shard",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Rare drop"
+      },
+      {
+        "name": "Ancient Fruit (gold quality)",
+        "quantity": 5,
+        "seasons": "any",
+        "source": "Grow from Ancient Seeds"
+      },
+      {
+        "name": "Void Salmon (gold quality or better)",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Witch's Swamp"
+      },
+      {
+        "name": "Caviar",
+        "quantity": 1,
+        "seasons": "any",
+        "source": "Preserves Jar with Sturgeon Roe"
+      }
+    ]
+  }
+]
