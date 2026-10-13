@@ -1,4 +1,12 @@
 /* Field Notes: dark green header, gold accent, white cards on pale sage. */
+@font-face {
+  font-family: 'Fisherman';
+  src: url('./assets/fonts/Fisherman-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --page: #eef1e6;
   --header: #1f3b2d;
@@ -12,7 +20,7 @@
   --tag: #e6ecd9;
   --tag-ink: #2d5240;
   --rain: #3a6f95;
-  --font-display: 'Pixelify Sans', ui-monospace, monospace;
+  --font-display: 'Fisherman', Georgia, serif;
   --font-body: 'Nunito Sans', system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
