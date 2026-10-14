@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .superpowers/
 scripts/.cache/
+
+# Unpacked game files (StardewXnbHack output) - copyrighted, never commit
+Content (unpacked)/
+content (unpacked)/
