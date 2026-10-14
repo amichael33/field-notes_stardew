@@ -19,11 +19,11 @@ describe('baseName', () => {
 
 describe('matchItems', () => {
   it('matches by Name', () => {
-    const r = matchItems(['Leek'], { 20: obj('Leek', '[LocalizedText Strings\Objects:Leek_Name]', 5) }, {})
+    const r = matchItems(['Leek'], { 20: obj('Leek', '[LocalizedText Strings\\Objects:Leek_Name]', 5) }, {})
     expect(r.matched.Leek).toEqual({ id: '20', texture: null, spriteIndex: 5 })
   })
   it('matches by localised DisplayName', () => {
-    const objects = { 7: obj('Odd_Internal', '[LocalizedText Strings\Objects:Odd_Name]', 9) }
+    const objects = { 7: obj('Odd_Internal', '[LocalizedText Strings\\Objects:Odd_Name]', 9) }
     const r = matchItems(['Pretty Thing'], objects, { Odd_Name: 'Pretty Thing' })
     expect(r.matched['Pretty Thing'].id).toBe('7')
     expect(r.unmatched).toEqual([])

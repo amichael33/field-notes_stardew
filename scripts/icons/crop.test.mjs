@@ -1,7 +1,18 @@
 // @vitest-environment node
 import { describe, it, expect } from 'vitest'
 import { PNG } from 'pngjs'
-import { spriteOrigin, cropSprite } from './crop.mjs'
+import { spriteOrigin, cropSprite, sheetFor } from './crop.mjs'
+
+describe('sheetFor', () => {
+  it('uses the 24-column springobjects sheet when Texture is null', () => {
+    expect(sheetFor(null)).toEqual({ key: 'main', columns: 24 })
+  })
+  it('uses the 8-column Objects_2 sheet for a real backslash Texture (Jelly, index 130 -> x 32, y 256)', () => {
+    const sheet = sheetFor('TileSheets\\Objects_2')
+    expect(sheet).toEqual({ key: 'objects2', columns: 8 })
+    expect(spriteOrigin(130, sheet.columns)).toEqual({ x: 32, y: 256 })
+  })
+})
 
 describe('spriteOrigin', () => {
   it('maps index 25 on a 24-column sheet to x 16, y 16', () => {

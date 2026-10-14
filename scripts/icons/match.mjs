@@ -17,7 +17,7 @@ export function baseName(name) {
 
 /** @param {GameObject} o @param {Record<string, string>} strings */
 function localisedName(o, strings) {
-  const m = /^\[LocalizedText Strings\Objects:([^\]]+)\]$/.exec(o.DisplayName ?? '')
+  const m = /^\[LocalizedText Strings\\Objects:([^\]]+)\]$/.exec(o.DisplayName ?? '')
   return m ? strings[m[1]] : undefined
 }
 
