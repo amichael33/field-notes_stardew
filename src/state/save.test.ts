@@ -55,3 +55,27 @@ describe('save', () => {
     }
   })
 })
+
+describe('save clock', () => {
+  const clock = { season: 'fall', day: 12, minutes: 600, weather: 'rain', status: 'paused' } as const
+
+  it('defaultSave has a null clock', () => {
+    expect(defaultSave().clock).toBeNull()
+  })
+
+  it('round trips a valid clock', () => {
+    const r = parseSave(serializeSave({ ...defaultSave(), clock: { ...clock } }))
+    expect(r.ok && r.data.clock).toEqual(clock)
+  })
+
+  it('a v1 save with no clock key parses to null', () => {
+    const { clock: _c, ...rest } = defaultSave()
+    const r = parseSave(JSON.stringify(rest))
+    expect(r.ok && r.data.clock).toBeNull()
+  })
+
+  it('rejects an invalid clock', () => {
+    const r = parseSave(JSON.stringify({ ...defaultSave(), clock: { ...clock, day: 40 } }))
+    expect(r).toEqual({ ok: false, error: 'The save clock is invalid.' })
+  })
+})

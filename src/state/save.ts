@@ -1,4 +1,5 @@
-import type { SaveData } from '../data/types'
+import type { Clock, SaveData } from '../data/types'
+import { isClock } from './clock'
 
 type ParseResult = { ok: true; data: SaveData } | { ok: false; error: string }
 
@@ -54,6 +55,11 @@ export function parseSave(json: string): ParseResult {
     return { ok: false, error: 'The save checklist is invalid.' }
   }
   if (typeof raw.notes !== 'string') return { ok: false, error: 'The save notes are invalid.' }
+  let clock: Clock | null = null
+  if (raw.clock !== undefined && raw.clock !== null) {
+    if (!isClock(raw.clock)) return { ok: false, error: 'The save clock is invalid.' }
+    clock = { ...raw.clock }
+  }
   return {
     ok: true,
     data: {
@@ -61,7 +67,7 @@ export function parseSave(json: string): ParseResult {
       profile: { route: profile.route, farmType: profile.farmType },
       checked: [...raw.checked],
       notes: raw.notes,
-      clock: null,
+      clock,
     },
   }
 }

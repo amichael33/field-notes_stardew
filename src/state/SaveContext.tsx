@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import type { Route, SaveData } from '../data/types'
+import type { Clock, Route, SaveData } from '../data/types'
+import { restoreClock } from './clock'
 import { defaultSave, parseSave, serializeSave, toggleChecked } from './save'
 
 const STORAGE_KEY = 'field-notes-save'
@@ -9,6 +10,7 @@ interface SaveApi {
   setRoute: (r: Route) => void
   toggle: (id: string) => void
   setNotes: (text: string) => void
+  updateClock: (fn: (c: Clock | null) => Clock | null) => void
   importSave: (json: string) => { ok: true } | { ok: false; error: string }
   exportSave: () => string
   saveError: boolean
@@ -21,7 +23,7 @@ function load(): SaveData {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw === null) return defaultSave()
     const parsed = parseSave(raw)
-    return parsed.ok ? parsed.data : defaultSave()
+    return parsed.ok ? { ...parsed.data, clock: restoreClock(parsed.data.clock) } : defaultSave()
   } catch {
     return defaultSave()
   }
@@ -65,18 +67,22 @@ export function SaveProvider({ children }: { children: ReactNode }) {
     dirty.current = true
     setSave((s) => ({ ...s, notes }))
   }, [])
+  const updateClock = useCallback((fn: (c: Clock | null) => Clock | null) => {
+    dirty.current = true
+    setSave((s) => ({ ...s, clock: fn(s.clock) }))
+  }, [])
   const importSave = useCallback((json: string) => {
     const parsed = parseSave(json)
     if (!parsed.ok) return { ok: false as const, error: parsed.error }
     dirty.current = true
-    setSave(parsed.data)
+    setSave({ ...parsed.data, clock: restoreClock(parsed.data.clock) })
     return { ok: true as const }
   }, [])
   const exportSave = useCallback(() => serializeSave(save), [save])
 
   return (
     <SaveContext.Provider
-      value={{ save, setRoute, toggle, setNotes, importSave, exportSave, saveError }}
+      value={{ save, setRoute, toggle, setNotes, updateClock, importSave, exportSave, saveError }}
     >
       {children}
     </SaveContext.Provider>

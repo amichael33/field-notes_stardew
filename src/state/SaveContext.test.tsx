@@ -121,6 +121,43 @@ describe('SaveProvider', () => {
     expect(result.current.save).toEqual(incoming)
   })
 
+  describe('clock', () => {
+    const run = { season: 'spring', day: 3, minutes: 700, weather: 'sunny', status: 'running' } as const
+
+    it('loads a running clock as paused', () => {
+      localStorage.setItem(KEY, serializeSave({ ...defaultSave(), clock: { ...run } }))
+      const { result } = renderHook(() => useSave(), { wrapper })
+      expect(result.current.save.clock).toEqual({ ...run, status: 'paused' })
+    })
+
+    it('updateClock writes to localStorage', () => {
+      const { result } = renderHook(() => useSave(), { wrapper })
+      act(() => result.current.updateClock(() => ({ ...run })))
+      expect(JSON.parse(localStorage.getItem(KEY)!).clock).toEqual(run)
+    })
+
+    it('importSave stores a running clock as paused', () => {
+      const { result } = renderHook(() => useSave(), { wrapper })
+      act(() => {
+        result.current.importSave(serializeSave({ ...defaultSave(), clock: { ...run } }))
+      })
+      expect(result.current.save.clock).toEqual({ ...run, status: 'paused' })
+    })
+
+    it('importSave rejects a malformed clock and leaves save unchanged', () => {
+      const { result } = renderHook(() => useSave(), { wrapper })
+      const before = result.current.save
+      let res: ReturnType<typeof result.current.importSave> | undefined
+      act(() => {
+        res = result.current.importSave(
+          JSON.stringify({ ...defaultSave(), clock: { ...run, day: 99 } }),
+        )
+      })
+      expect(res?.ok).toBe(false)
+      expect(result.current.save).toBe(before)
+    })
+  })
+
   it('useSave throws outside the provider', () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
     function Probe() {

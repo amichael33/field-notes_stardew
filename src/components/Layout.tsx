@@ -1,6 +1,7 @@
 import { useRef, useState, type ChangeEvent } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { useSave } from '../state/SaveContext'
+import ClockRunner from '../state/ClockRunner'
 import SeasonFilter from './SeasonFilter'
 import RouteToggle from './RouteToggle'
 
@@ -56,6 +57,7 @@ export default function Layout() {
 
   return (
     <div className="app">
+      <ClockRunner />
       <header className="site-header">
         <div className="header-inner">
           <div className="site-title">Field Notes</div>
