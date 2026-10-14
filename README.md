@@ -9,8 +9,8 @@ This is an early version. It has the opening route with a checklist, bundles wit
 ## Features (current)
 
 - **Today**: the opening route as a checklist (Willy's pole, the rainy-day fishing plan, early money goals) with progress shown in a banner and ribbon, plus the Queen of Sauce recipes in air order. A "Where is everyone" card appears only when there is something to show.
-- **Game clock**: press Start day in the Today banner to run a manual in-game clock (10 game minutes per 7 real seconds). Pause, nudge by 10 minutes, set the date and time, and switch between Sunny and Rain. After a day ends, Start day moves to the next date. The last day is saved and carried by Export / Import; a reload restores a running clock as paused.
-- **Where is everyone (live)**: with the clock running, the card shows where each villager or shop owner named in your unchecked steps is right now and where they go next, for example "Pierre's General Store since 9:00 AM". Rain schedules are used when it rains, and villagers whose rainy routine can vary say so. Without a clock it prompts you to press Start day.
+- **Game clock**: press Start day in the Today banner to run a manual in-game clock (10 game minutes per 7 real seconds). Pause, nudge by 10 minutes, set the date and time, and switch between Sunny and Rain. Next day (while the day is running or paused, for going to bed early) and Start day (after the day ends at 2:00 AM) move to the next date at 6:00 AM. If the site is open in two tabs, only the tab where you last changed the clock advances it. The last day is saved and carried by Export / Import; a reload restores a running clock as paused.
+- **Where is everyone (live)**: with the clock running, the card shows where each villager or shop owner named in your unchecked steps is right now and where they go next, for example "Pierre's General Store since 7:00 AM" (Pierre on Spring 1). Rain schedules are used when it rains, and villagers whose rainy routine can vary say so. Without a clock it prompts you to press Start day.
 - **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
 - **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
@@ -33,7 +33,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 
 ## Your data
 
-Everything you save (checklist progress, obtained items, notes, route choice) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
+Everything you save (checklist progress, obtained items, notes, route choice, and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
 
 ## Run it locally
 
@@ -66,7 +66,7 @@ Only the opening-route steps are still hand-written in `src/data/path-steps.json
 Known limits of the data today:
 - Gift lists keep the wiki's wording, e.g. "All Universal Loves (except ...)".
 - Recipes are the 32 from The Queen of Sauce (both years) with the other places each can be bought; recipes learned from villagers or other sources are not included yet.
-- Schedules cover normal days only (weather, date, weekday and season rules, at 0 hearts). Marriage, festival and heart-level schedules are skipped, and Krobus, the Wizard, the Dwarf and Leo have no schedule file.
+- Schedules cover normal days only (weather, date, weekday and season rules, at 0 hearts). Marriage, festival and heart-level schedules are skipped, and mail-gated rules use the not-yet-received branch (for example, before the beach bridge or the bus is fixed). Krobus, the Wizard and the Dwarf have no schedule file, and Leo's file is skipped on purpose because it is his Ginger Island schedule.
 
 ## Game art and icons
 
