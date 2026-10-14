@@ -11,7 +11,6 @@ export default function NotesView() {
       <textarea
         id="notes-page-input"
         className="notes-input notes-page-input"
-        rows={16}
         value={save.notes}
         onChange={(e) => setNotes(e.target.value)}
       />

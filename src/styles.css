@@ -104,15 +104,6 @@ select {
 .note { background: var(--tag); color: var(--tag-ink); border-radius: 8px; padding: 10px 14px; font-size: 14px; }
 .site-footer { max-width: 1120px; width: 100%; margin: 0 auto; padding: 16px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 
-@media print {
-  .site-header, .controls, .site-footer { display: none; }
-  body, .banner { background: #fff; color: #000; }
-  .card { border: 0; padding: 0; }
-  .today-grid { grid-template-columns: 1fr; }
-  .ribbon-chips { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .notes-input { border-color: #999; }
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -203,10 +194,6 @@ select {
   .ribbon-chips { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .today-grid { grid-template-columns: 1fr; }
 }
-@media print {
-  .banner-controls, .weather-toggle { display: none; }
-}
-
 /* Today aside cards */
 .today-aside { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 .aside-card { background: #fff; border: 1px solid #d3d9c6; border-radius: 10px; padding: 20px; min-width: 0; }
@@ -228,3 +215,14 @@ select {
 .progress-fill { height: 100%; background: #3c7a4f; }
 .needed-label { margin: 4px 0 0; }
 .aside-card li { overflow-wrap: anywhere; }
+
+/* Print: last, so it overrides the base rules above */
+@media print {
+  .site-header, .controls, .site-footer, .banner-controls, .weather-toggle { display: none; }
+  body, .banner { background: #fff; color: #000; }
+  .banner h1, .banner-note { color: #000; }
+  .card, .aside-card { border: 0; padding: 0; }
+  .today-grid { grid-template-columns: 1fr; }
+  .ribbon-chips { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .notes-input { border-color: #999; }
+}
