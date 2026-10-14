@@ -32,10 +32,11 @@ describe('PathView', () => {
 })
 
 describe('PathView heading', () => {
-  it('is titled Today and shows the banner copy', () => {
+  it('is titled Today and offers Start day', () => {
     renderWithState(<PathView />)
     expect(screen.getByRole('heading', { name: 'Today' })).toBeInTheDocument()
-    expect(screen.getByText(/Live day tracking is coming with the clock/)).toBeInTheDocument()
+    expect(screen.queryByText(/Live day tracking is coming with the clock/)).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Start day' })).toBeInTheDocument()
   })
 })
 
@@ -102,12 +103,11 @@ describe('PathView tracking', () => {
     }
   })
 
-  it('clock and weather controls are disabled', () => {
+  it('clock controls only appear once the day is started', async () => {
     renderWithState(<PathView />)
-    for (const name of ['Pause', '-10', '+10', 'Resync', 'Sunny', 'Rain']) {
-      expect(screen.getByRole('button', { name })).toBeDisabled()
-    }
-    expect(screen.getAllByText('coming with the clock').length).toBeGreaterThan(0)
+    expect(screen.queryByRole('button', { name: 'Pause' })).not.toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Start day' }))
+    expect(screen.getByRole('button', { name: 'Pause' })).toBeEnabled()
   })
 })
 

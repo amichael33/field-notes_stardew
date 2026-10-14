@@ -149,6 +149,12 @@ select {
   font-weight: 600;
 }
 .banner-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.banner-btn[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #1f3b2d; }
+.clock-editor { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 12px; flex-basis: 100%; }
+.clock-editor label { display: flex; flex-direction: column; font-size: 12px; gap: 2px; }
+.clock-editor select, .clock-editor input { min-height: 44px; border-radius: 8px; border: 1px solid #2d5240; padding: 0 8px; font: inherit; }
+.clock-editor input { width: 5rem; }
+.clock-editor-error { font-size: 12px; color: #ffd9d0; align-self: center; }
 .ribbon { background: #fff; border: 1px solid #d3d9c6; border-radius: 10px; padding: 20px; }
 .ribbon-head { font-size: 1.2rem; }
 .ribbon-chips { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
@@ -228,7 +234,7 @@ select {
 
 /* Print: last, so it overrides the base rules above */
 @media print {
-  .site-header, .controls, .site-footer, .banner-controls, .weather-toggle { display: none; }
+  .site-header, .controls, .site-footer, .banner-controls, .weather-toggle, .clock-editor { display: none; }
   body, .banner { background: #fff; color: #000; }
   .banner h1, .banner-note { color: #000; }
   .card, .aside-card { border: 0; padding: 0; }
