@@ -8,6 +8,7 @@ export function defaultSave(): SaveData {
     profile: { route: 'community-center', farmType: 'standard' },
     checked: [],
     notes: '',
+    clock: null,
   }
 }
 
@@ -60,6 +61,7 @@ export function parseSave(json: string): ParseResult {
       profile: { route: profile.route, farmType: profile.farmType },
       checked: [...raw.checked],
       notes: raw.notes,
+      clock: null,
     },
   }
 }

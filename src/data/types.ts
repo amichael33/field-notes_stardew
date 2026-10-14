@@ -52,4 +52,16 @@ export interface SaveData {
   profile: { route: Route; farmType: string }
   checked: string[]
   notes: string
+  clock: Clock | null
+}
+
+export type Weather = 'sunny' | 'rain'
+export type ClockStatus = 'idle' | 'running' | 'paused' | 'ended'
+
+export interface Clock {
+  season: Season
+  day: number
+  minutes: number
+  weather: Weather
+  status: ClockStatus
 }
