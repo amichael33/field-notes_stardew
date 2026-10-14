@@ -46,3 +46,10 @@ export interface Recipe {
   day?: number
   source: string
 }
+
+export interface SaveData {
+  version: 1
+  profile: { route: Route; farmType: string }
+  checked: string[]
+  notes: string
+}
