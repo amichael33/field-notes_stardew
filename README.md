@@ -9,6 +9,8 @@ This is an early version. It has the opening route with a checklist, bundles wit
 ## Features (current)
 
 - **Today**: the opening route as a checklist (Willy's pole, the rainy-day fishing plan, early money goals) with progress shown in a banner and ribbon, plus the Queen of Sauce recipes in air order. A "Where is everyone" card appears only when there is something to show.
+- **Game clock**: press Start day in the Today banner to run a manual in-game clock (10 game minutes per 7 real seconds). Pause, nudge by 10 minutes, set the date and time, and switch between Sunny and Rain. After a day ends, Start day moves to the next date. The last day is saved and carried by Export / Import; a reload restores a running clock as paused.
+- **Where is everyone (live)**: with the clock running, the card shows where each villager or shop owner named in your unchecked steps is right now and where they go next, for example "Pierre's General Store since 9:00 AM". Rain schedules are used when it rains, and villagers whose rainy routine can vary say so. Without a clock it prompts you to press Start day.
 - **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
 - **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
@@ -24,9 +26,10 @@ This is an early version. It has the opening route with a checklist, bundles wit
 
 1. Core site and static reference data (done)
 2. Saving: notes, checklist progress, route choice, and JSON export/import, all in your browser with no accounts (done)
-3. Next: game-clock sync with villager locations and schedules, and a structured day-by-day year 1 plan
-4. Farm layout and avatar photo uploads
-5. Later: layout optimizer and save-file import
+3. Game clock and villager schedules (done)
+4. Next: a structured day-by-day year 1 plan
+5. Farm layout and avatar photo uploads
+6. Later: layout optimizer and save-file import
 
 ## Your data
 
@@ -41,6 +44,8 @@ npm install
 npm run dev      # start the dev server
 npm test         # run the tests
 npm run lint     # lint
+npm run icons    # regenerate item icons (needs the unpacked game, see below)
+npm run schedules # regenerate villager schedules (needs the unpacked game, see below)
 npm run build    # production build into dist/
 ```
 
@@ -61,7 +66,7 @@ Only the opening-route steps are still hand-written in `src/data/path-steps.json
 Known limits of the data today:
 - Gift lists keep the wiki's wording, e.g. "All Universal Loves (except ...)".
 - Recipes are the 32 from The Queen of Sauce (both years) with the other places each can be bought; recipes learned from villagers or other sources are not included yet.
-- The path has no villager schedule times yet.
+- Schedules cover normal days only (weather, date, weekday and season rules, at 0 hearts). Marriage, festival and heart-level schedules are skipped, and Krobus, the Wizard, the Dwarf and Leo have no schedule file.
 
 ## Game art and icons
 
@@ -74,6 +79,14 @@ npm run icons
 ```
 
 This writes `public/items/` and `src/data/item-icons.json`. The `Content (unpacked)/` folder is git-ignored and never published.
+
+Villager schedule data comes from the same place: the player's own unpacked game files (`Content (unpacked)/Characters/schedules/`), not the wiki. It is ConcernedApe's data, trimmed by a script. To regenerate it, with the game unpacked as above, run:
+
+```bash
+npm run schedules
+```
+
+This writes `src/data/schedules.json`.
 
 ## License
 
