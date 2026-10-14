@@ -66,3 +66,16 @@ export function peopleToVisit(
   }
   return result
 }
+
+export function bundleItemId(bundle: Bundle, item: BundleItem): string {
+  return `bundle:${bundle.id}:${item.name}`
+}
+
+export function bundleProgress(
+  bundle: Bundle,
+  checked: string[],
+): { obtained: number; required: number; complete: boolean } {
+  const obtained = bundle.items.filter((item) => checked.includes(bundleItemId(bundle, item))).length
+  const required = bundle.slotsRequired
+  return { obtained, required, complete: obtained >= required }
+}

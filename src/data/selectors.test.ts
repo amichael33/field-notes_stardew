@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId, peopleToVisit } from './selectors'
+import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId, peopleToVisit, bundleItemId, bundleProgress } from './selectors'
 import type { Bundle, Villager, PathStep } from './types'
 
 const bundles: Bundle[] = [
@@ -111,5 +111,29 @@ describe('peopleToVisit', () => {
   it('is empty when no step mentions anyone', () => {
     const plain: PathStep[] = [{ order: 1, title: 'Plant', detail: 'Water the crops.' }]
     expect(peopleToVisit(plain, [], villagers)).toEqual([])
+  })
+})
+
+describe('bundleItemId', () => {
+  it('joins bundle id and item name', () => {
+    expect(bundleItemId(bundles[0], bundles[0].items[1])).toBe('bundle:b1:Coal')
+  })
+})
+
+describe('bundleProgress', () => {
+  const b = bundles[0]
+  it('counts obtained items across all items', () => {
+    const p = bundleProgress(b, ['bundle:b1:Coal', 'bundle:b1:Winter Root'])
+    expect(p).toEqual({ obtained: 2, required: 3, complete: false })
+  })
+  it('is complete once obtained reaches slotsRequired even with items left', () => {
+    const two = { ...b, slotsRequired: 2 }
+    expect(bundleProgress(two, b.items.map((i) => bundleItemId(b, i))).complete).toBe(true)
+  })
+  it('is not complete below slotsRequired', () => {
+    expect(bundleProgress(b, ['bundle:b1:Coal']).complete).toBe(false)
+  })
+  it('ignores checked ids for unknown items', () => {
+    expect(bundleProgress(b, ['bundle:b1:Nope', 'bundle:other:Coal']).obtained).toBe(0)
   })
 })
