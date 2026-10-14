@@ -11,11 +11,11 @@ describe('scheduleFor', () => {
   it('uses the season rule on a plain day and the weekday rule on a Friday', () => {
     expect(scheduleFor('Pierre', 'spring', 1, false)).toEqual(data.Pierre.spring)
     expect(scheduleFor('Pierre', 'spring', 5, false)).toEqual(data.Pierre.Fri)
-    expect(scheduleFor('Pierre', 'spring', 5, false)![2].place).toBe('The Stardrop Saloon')
+    expect(scheduleFor('Pierre', 'spring', 5, false)![1].place).toBe('The Stardrop Saloon')
   })
   it('uses the rain rule when raining', () => {
-    expect(scheduleFor('Pierre', 'spring', 5, true)).toEqual(data.Pierre.spring)
-    expect(scheduleFor('Pierre', 'spring', 5, true)![2].place).toBe("Pierre's General Store")
+    expect(scheduleFor('Pierre', 'spring', 5, true)).toEqual(data.Pierre.rain)
+    expect(scheduleFor('Pierre', 'spring', 5, true)!.map((s) => s.place)).toEqual(["Pierre's General Store"])
   })
   it('prefers season_day, then rain for Abigail', () => {
     expect(scheduleFor('Abigail', 'spring', 4, false)).toEqual(data.Abigail.spring_4)

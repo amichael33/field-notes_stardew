@@ -34,9 +34,10 @@ describe('WhereCard', () => {
   })
 
   it('shows where Pierre is at 9:00 AM and what comes next', () => {
-    seed(base)
+    // Spring 5 is a Friday: Pierre goes to the Saloon in the evening.
+    seed({ ...base, day: 5 })
     renderWithState(<WhereCard steps={steps} />)
-    const stops = scheduleFor('Pierre', 'spring', 1, false)!
+    const stops = scheduleFor('Pierre', 'spring', 5, false)!
     const loc = locationAt(stops, 540)
     const text = rowOf('Pierre').textContent!
     expect(text).toContain("Pierre's General Store since " + formatTime(loc.since!))
