@@ -5,14 +5,14 @@ const SEASON_ORDER: Season[] = ['spring', 'summer', 'fall', 'winter']
 export function bundleItemsBySeason(
   bundles: Bundle[],
   season: Season | 'all',
-): { bundle: Bundle; item: BundleItem }[] {
+): { bundle: Bundle; item: BundleItem; index: number }[] {
   return bundles.flatMap((bundle) =>
     bundle.items
+      .map((item, index) => ({ bundle, item, index }))
       .filter(
-        (item) =>
+        ({ item }) =>
           season === 'all' || item.seasons === 'any' || item.seasons.includes(season),
-      )
-      .map((item) => ({ bundle, item })),
+      ),
   )
 }
 
@@ -67,15 +67,24 @@ export function peopleToVisit(
   return result
 }
 
-export function bundleItemId(bundle: Bundle, item: BundleItem): string {
-  return `bundle:${bundle.id}:${item.name}`
+/**
+ * Id of an item within its bundle. The first item of a given name keeps
+ * `bundle:<id>:<name>`; a later same-name item gets `#2`, `#3`, ... by position.
+ * Pass `index` (position in bundle.items) when known; otherwise it is looked up by reference.
+ */
+export function bundleItemId(bundle: Bundle, item: BundleItem, index?: number): string {
+  const at = index ?? bundle.items.indexOf(item)
+  const base = `bundle:${bundle.id}:${item.name}`
+  if (at < 0) return base
+  const occurrence = bundle.items.slice(0, at).filter((i) => i.name === item.name).length + 1
+  return occurrence === 1 ? base : `${base}#${occurrence}`
 }
 
 export function bundleProgress(
   bundle: Bundle,
   checked: string[],
 ): { obtained: number; required: number; complete: boolean } {
-  const obtained = bundle.items.filter((item) => checked.includes(bundleItemId(bundle, item))).length
+  const obtained = bundle.items.filter((item, i) => checked.includes(bundleItemId(bundle, item, i))).length
   const required = bundle.slotsRequired
   return { obtained, required, complete: obtained >= required }
 }

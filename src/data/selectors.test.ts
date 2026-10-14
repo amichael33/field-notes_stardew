@@ -114,6 +114,28 @@ describe('peopleToVisit', () => {
   })
 })
 
+describe('bundleItemId duplicates', () => {
+  const dup: Bundle = {
+    id: 'd',
+    room: 'R',
+    name: 'Dup',
+    reward: 'X',
+    slotsRequired: 2,
+    items: [
+      { name: 'Wood', quantity: 99, seasons: 'any', source: 's' },
+      { name: 'Wood', quantity: 99, seasons: 'any', source: 's' },
+    ],
+  }
+  it('bundleItemId gives the second item with the same name a #2 suffix', () => {
+    expect(bundleItemId(dup, dup.items[0])).toBe('bundle:d:Wood')
+    expect(bundleItemId(dup, dup.items[1])).toBe('bundle:d:Wood#2')
+  })
+  it('bundleProgress counts two same-name items separately', () => {
+    expect(bundleProgress(dup, ['bundle:d:Wood']).obtained).toBe(1)
+    expect(bundleProgress(dup, ['bundle:d:Wood', 'bundle:d:Wood#2'])).toMatchObject({ obtained: 2, complete: true })
+  })
+})
+
 describe('bundleItemId', () => {
   it('joins bundle id and item name', () => {
     expect(bundleItemId(bundles[0], bundles[0].items[1])).toBe('bundle:b1:Coal')

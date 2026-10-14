@@ -83,6 +83,18 @@ describe('BundlesView obtained items', () => {
     expect(within(cards[1]).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'false')
   })
 
+  it('ticking the first of two identical items leaves the second unticked', async () => {
+    const item = { name: 'Wood', quantity: 1, seasons: 'any' as const, source: 'Here' }
+    const dup: Bundle[] = [
+      { id: 'd', room: 'R', name: 'Dup', reward: 'X', slotsRequired: 2, items: [{ ...item }, { ...item }] },
+    ]
+    renderWithState(<BundlesView bundles={dup} />)
+    const [first, second] = screen.getAllByRole('button', { name: /^Wood/ })
+    await userEvent.click(first)
+    expect(first).toHaveAttribute('aria-pressed', 'true')
+    expect(second).toHaveAttribute('aria-pressed', 'false')
+  })
+
   it('an unknown bundle id in the saved checked list causes no crash and no extra row', async () => {
     const stored = {
       version: 1,

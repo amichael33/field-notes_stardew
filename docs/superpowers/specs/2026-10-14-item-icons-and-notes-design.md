@@ -7,7 +7,7 @@ Make the bundle checklist visual and playable: every needed item shows its in-ga
 - Icons come from the author's own copy of the game, unpacked with [StardewXnbHack](https://github.com/Pathoschild/StardewXnbHack) into `Content (unpacked)/` at the repo root. That folder is git-ignored (done in commit `b35aae1`) and is never committed or deployed.
 - A script crops the ~125 icons the site needs into `public/items/` and writes a name-to-file map. Those small PNGs and the map are committed, so the deployed site does not need the game files. The icons are ConcernedApe's artwork; the README credits that, credits StardewXnbHack for how they were unpacked, and keeps the non-affiliation notice.
 - The wiki is not used for images: it now blocks automated clients behind a bot check, and the project does not work around that.
-- Obtained flags reuse the existing saved `checked: string[]` list with ids `bundle:<bundle id>:<item name>`. No save-format change and no version bump; Export/Import carry them automatically.
+- Obtained flags reuse the existing saved `checked: string[]` list with ids `bundle:<bundle id>:<item name>`. A later item with the same name in the same bundle gets a `#2`, `#3`, ... suffix (e.g. `bundle:construction:Wood#2`) so duplicates are tracked separately. No save-format change and no version bump; Export/Import carry them automatically.
 - Markdown is rendered with `react-markdown` and no raw HTML. It is the only new runtime dependency. `pngjs` is a dev-only dependency for the icon script.
 - Items with no icon file (the four gold amounts) show an inline SVG gold coin, which is our own drawing, not game art. Any other item missing a file shows a text tile.
 

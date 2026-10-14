@@ -9,14 +9,15 @@ interface Props {
   bundle: Bundle
   item: BundleItem
   showSource?: boolean
+  index?: number
 }
 
-export default function ItemRow({ bundle, item, showSource }: Props) {
+export default function ItemRow({ bundle, item, showSource, index }: Props) {
   const { save, toggle } = useSave()
   const [open, setOpen] = useState(false)
   const iconButton = useRef<HTMLButtonElement>(null)
   const wasOpen = useRef(false)
-  const id = bundleItemId(bundle, item)
+  const id = bundleItemId(bundle, item, index)
   const obtained = save.checked.includes(id)
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../test-utils'
@@ -174,6 +174,19 @@ describe('PathView aside cards', () => {
   })
 
   describe('obtained items', () => {
+    it('ticking one Wood in Construction counts exactly one with no duplicate-key warning', async () => {
+      const err = vi.spyOn(console, 'error').mockImplementation(() => {})
+      renderWithState(<PathView />)
+      const section = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
+      const head = () => within(section()).getByText('Construction').closest('.needed-head')!
+      expect(head()).toHaveTextContent('0 of 4')
+      const list = within(section()).getByRole('list', { name: 'Still needed for Construction' })
+      await userEvent.click(within(list).getAllByRole('button', { name: /^Wood/ })[0])
+      expect(head()).toHaveTextContent('1 of 4')
+      expect(err.mock.calls.filter((c) => String(c[0]).includes('same key'))).toHaveLength(0)
+      err.mockRestore()
+    })
+
     const card = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
     const stillNeeded = () => within(card()).queryByRole('list', { name: 'Still needed for Spring Foraging' })
 

@@ -53,8 +53,10 @@ describe('ItemRow', () => {
   })
 
   it('clicking the icon opens the detail dialog with name, quantity, source, seasons and bundle', () => {
+    const showModal = vi.spyOn(HTMLDialogElement.prototype, 'showModal')
     renderWithState(<ItemRow bundle={bundle} item={apple} showSource />)
     fireEvent.click(screen.getByRole('button', { name: 'Details for Apple' }))
+    expect(showModal).toHaveBeenCalled()
     const dialog = screen.getByRole('dialog')
     expect(dialog).toHaveTextContent('Apple')
     expect(dialog).toHaveTextContent('2')

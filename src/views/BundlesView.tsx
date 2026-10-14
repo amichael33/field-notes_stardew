@@ -1,4 +1,4 @@
-import { bundleItemsBySeason } from '../data/selectors'
+import { bundleItemId, bundleItemsBySeason } from '../data/selectors'
 import { useAppState } from '../state/AppState'
 import { useSave } from '../state/SaveContext'
 import ItemRow from '../components/ItemRow'
@@ -19,9 +19,9 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
   }
 
   const rows = bundleItemsBySeason(bundles, season)
-  const grouped = new Map<Bundle, BundleItem[]>()
-  for (const { bundle, item } of rows) {
-    grouped.set(bundle, [...(grouped.get(bundle) ?? []), item])
+  const grouped = new Map<Bundle, { item: BundleItem; index: number }[]>()
+  for (const { bundle, item, index } of rows) {
+    grouped.set(bundle, [...(grouped.get(bundle) ?? []), { item, index }])
   }
 
   return (
@@ -40,9 +40,9 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
               Fill {bundle.slotsRequired} of {bundle.items.length} slots
             </p>
             <ul className="item-list">
-              {items.map((item) => (
-                <li key={item.name}>
-                  <ItemRow bundle={bundle} item={item} showSource />
+              {items.map(({ item, index }) => (
+                <li key={bundleItemId(bundle, item, index)}>
+                  <ItemRow bundle={bundle} item={item} index={index} showSource />
                 </li>
               ))}
             </ul>
