@@ -1,6 +1,10 @@
 import '@testing-library/jest-dom/vitest'
 import { afterEach } from 'vitest'
-import { cleanup } from '@testing-library/react'
+import { cleanup, configure } from '@testing-library/react'
+
+// findBy*/waitFor default to 1s, which is flaky under the full parallel run
+// (it gates deploys via npm test). Raise the timeout; assertions are unchanged.
+configure({ asyncUtilTimeout: 5000 })
 
 afterEach(() => {
   cleanup()

@@ -66,10 +66,13 @@ describe('WhereCard', () => {
   })
 
   it('an ended clock shows end-of-day places with no then', () => {
+    // Pierre's Spring 1 rule (schedules.json "spring") is a single stop:
+    // the store from 7:00 AM, so that is where the day ends.
+    expect(scheduleFor('Pierre', 'spring', 1, false)).toEqual([{ time: 420, place: "Pierre's General Store" }])
     seed({ ...base, minutes: 1560, status: 'ended' })
     renderWithState(<WhereCard steps={steps} />)
     const text = rowOf('Pierre').textContent!
-    expect(text).toMatch(/since/)
+    expect(text).toContain("Pierre: Pierre's General Store since 7:00 AM")
     expect(text).not.toContain('then')
   })
 

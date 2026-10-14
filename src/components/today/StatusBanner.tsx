@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { PathStep } from '../../data/types'
 import { stepWhen } from '../../data/when'
 import { useSave } from '../../state/SaveContext'
@@ -23,6 +23,20 @@ export default function StatusBanner({ nextStep }: { nextStep?: PathStep }) {
   // An import or another tab can clear the clock; do not leave the editor
   // armed to reappear when a clock comes back.
   if (!clock && editing) setEditing(false)
+
+  // Return focus to the opener when the editor closes by Apply or Cancel.
+  const openerRef = useRef<HTMLButtonElement>(null)
+  const refocus = useRef(false)
+  const closeEditor = () => {
+    refocus.current = true
+    setEditing(false)
+  }
+  useEffect(() => {
+    if (!editing && refocus.current) {
+      refocus.current = false
+      openerRef.current?.focus()
+    }
+  }, [editing])
 
   const label = clock
     ? `${cap(clock.season)} ${clock.day} · ${WEEKDAYS[weekdayOf(clock.day)]}`
@@ -59,13 +73,23 @@ export default function StatusBanner({ nextStep }: { nextStep?: PathStep }) {
           )}
           {clock && (
             <>
-              <button type="button" className="banner-btn" onClick={() => updateClock((c) => (c ? nudge(c, -10) : c))}>
+              <button
+                type="button"
+                className="banner-btn"
+                aria-label="Back 10 minutes"
+                onClick={() => updateClock((c) => (c ? nudge(c, -10) : c))}
+              >
                 -10
               </button>
-              <button type="button" className="banner-btn" onClick={() => updateClock((c) => (c ? nudge(c, 10) : c))}>
+              <button
+                type="button"
+                className="banner-btn"
+                aria-label="Forward 10 minutes"
+                onClick={() => updateClock((c) => (c ? nudge(c, 10) : c))}
+              >
                 +10
               </button>
-              <button type="button" className="banner-btn" onClick={() => setEditing(true)}>
+              <button ref={openerRef} type="button" className="banner-btn" onClick={() => setEditing(true)}>
                 Set time and date
               </button>
             </>
@@ -89,10 +113,10 @@ export default function StatusBanner({ nextStep }: { nextStep?: PathStep }) {
         {clock && editing && (
           <ClockEditor
             clock={clock}
-            onCancel={() => setEditing(false)}
+            onCancel={closeEditor}
             onApply={(p) => {
               updateClock((c) => (c ? setDateTime(c, p) : c))
-              setEditing(false)
+              closeEditor()
             }}
           />
         )}

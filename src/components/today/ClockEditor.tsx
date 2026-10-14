@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import type { Clock, Season } from '../../data/types'
 import { MORNING, NIGHT, formatTime } from '../../state/clock'
 
@@ -23,6 +23,13 @@ export default function ClockEditor({
 
   const day = Number(dayText)
   const valid = dayText.trim() !== '' && Number.isInteger(day) && day >= 1 && day <= 28
+  const errorId = useId()
+  const first = useRef<HTMLSelectElement>(null)
+
+  // Move focus into the editor when it opens.
+  useEffect(() => {
+    first.current?.focus()
+  }, [])
 
   return (
     <form
@@ -35,7 +42,7 @@ export default function ClockEditor({
     >
       <label>
         Season
-        <select value={season} onChange={(e) => setSeason(e.target.value as Season)}>
+        <select ref={first} value={season} onChange={(e) => setSeason(e.target.value as Season)}>
           {SEASONS.map((s) => (
             <option key={s} value={s}>
               {cap(s)}
@@ -52,6 +59,7 @@ export default function ClockEditor({
           step={1}
           value={dayText}
           aria-invalid={!valid}
+          aria-describedby={valid ? undefined : errorId}
           onChange={(e) => setDayText(e.target.value)}
         />
       </label>
@@ -71,7 +79,11 @@ export default function ClockEditor({
       <button type="button" className="banner-btn" onClick={onCancel}>
         Cancel
       </button>
-      {!valid && <span className="clock-editor-error">Day must be 1 to 28.</span>}
+      {!valid && (
+        <span id={errorId} role="alert" className="clock-editor-error">
+          Day must be 1 to 28.
+        </span>
+      )}
     </form>
   )
 }
