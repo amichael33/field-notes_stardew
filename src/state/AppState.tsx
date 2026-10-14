@@ -1,9 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from 'react'
-import type { Route, Season } from '../data/types'
+import type { Season } from '../data/types'
 
 interface AppState {
-  route: Route
-  setRoute: (r: Route) => void
   season: Season | 'all'
   setSeason: (s: Season | 'all') => void
 }
@@ -11,12 +9,9 @@ interface AppState {
 const AppStateContext = createContext<AppState | null>(null)
 
 export function AppStateProvider({ children }: { children: ReactNode }) {
-  const [route, setRoute] = useState<Route>('community-center')
   const [season, setSeason] = useState<Season | 'all'>('all')
   return (
-    <AppStateContext.Provider value={{ route, setRoute, season, setSeason }}>
-      {children}
-    </AppStateContext.Provider>
+    <AppStateContext.Provider value={{ season, setSeason }}>{children}</AppStateContext.Provider>
   )
 }
 
