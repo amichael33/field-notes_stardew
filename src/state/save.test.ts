@@ -69,7 +69,8 @@ describe('save clock', () => {
   })
 
   it('a v1 save with no clock key parses to null', () => {
-    const { clock: _c, ...rest } = defaultSave()
+    const rest: Record<string, unknown> = { ...defaultSave() }
+    delete rest.clock
     const r = parseSave(JSON.stringify(rest))
     expect(r.ok && r.data.clock).toBeNull()
   })
