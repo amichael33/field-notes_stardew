@@ -26,9 +26,9 @@ async function main() {
   let ruleCount = 0
   for (const file of files) {
     const villager = path.basename(file, '.json')
-    const { rules, errors: errs } = resolveRules(await readJson(path.join(dir, file)), placeName)
-    for (const e of errs) {
-      if (isKeptKey(e.split(':')[0])) errors.push(`${villager} ${e}`)
+    const { rules, failed } = resolveRules(await readJson(path.join(dir, file)), placeName)
+    for (const f of failed) {
+      if (isKeptKey(f.key)) errors.push(`${villager} ${f.key}: ${f.message}`)
     }
     const kept = Object.fromEntries(
       Object.entries(rules)

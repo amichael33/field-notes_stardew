@@ -236,6 +236,26 @@
   "Alex": {
     "Sun": [
       {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 660,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 900,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      },
+      {
         "time": 1320,
         "place": "Alex's house"
       }
@@ -1242,6 +1262,42 @@
     ],
     "fall_15": [
       {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "The Oasis"
+      },
+      {
+        "time": 780,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 900,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1020,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1080,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1140,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1200,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1410,
+        "place": "The Calico Desert"
+      },
+      {
         "time": 1440,
         "place": "Haley and Emily's house"
       }
@@ -1548,6 +1604,18 @@
   "George": {
     "Sun": [
       {
+        "time": 390,
+        "place": "Alex's house"
+      },
+      {
+        "time": 660,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 900,
+        "place": "Alex's house"
+      },
+      {
         "time": 1200,
         "place": "Alex's house"
       }
@@ -1665,6 +1733,38 @@
       }
     ],
     "Sun": [
+      {
+        "time": 480,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 700,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 900,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1130,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1230,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1240,
+        "place": "The Stardrop Saloon"
+      },
       {
         "time": 1440,
         "place": "The Stardrop Saloon"
@@ -3058,6 +3158,30 @@
     ],
     "Sun": [
       {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 510,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 670,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 900,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Pelican Town"
+      },
+      {
         "time": 1380,
         "place": "Jodi's house"
       }
@@ -3283,6 +3407,22 @@
       }
     ],
     "summer": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "The Beach"
+      },
+      {
+        "time": 1140,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1320,
+        "place": "Leah's cottage"
+      },
       {
         "time": 1440,
         "place": "Leah's cottage"
@@ -5056,6 +5196,46 @@
   "Sandy": {
     "fall_15": [
       {
+        "time": 390,
+        "place": "The Oasis"
+      },
+      {
+        "time": 720,
+        "place": "The Oasis"
+      },
+      {
+        "time": 780,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 900,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1020,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1080,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1140,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1200,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1410,
+        "place": "The Calico Desert"
+      },
+      {
+        "time": 1440,
+        "place": "The Calico Desert"
+      },
+      {
         "time": 1450,
         "place": "The Oasis"
       }
@@ -5285,6 +5465,18 @@
       }
     ],
     "Sun": [
+      {
+        "time": 420,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 600,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 900,
+        "place": "The Stardrop Saloon"
+      },
       {
         "time": 1440,
         "place": "Marnie's Ranch"

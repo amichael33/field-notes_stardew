@@ -1,6 +1,7 @@
 import { placeName as defaultPlaceName } from './places.mjs'
 
 export function parseTime(token) {
+  if (!/^a?[0-9]+$/.test(token ?? '')) throw new Error(`bad time token "${token}"`)
   const n = parseInt(token.replace(/^a/, ''), 10)
   return Math.floor(n / 100) * 60 + (n % 100)
 }
@@ -10,7 +11,7 @@ export function parseRule(rule, placeName = defaultPlaceName) {
   let segs = rule.split('/')
   for (;;) {
     if (/^NOT friendship /.test(segs[0])) segs = segs.slice(1)
-    else if (/^MAIL /.test(segs[0])) segs = [segs[segs.length - 1]]
+    else if (/^MAIL /.test(segs[0])) segs = segs.slice(2) // drop the flag and the received branch
     else break
     if (segs.length === 0) return null
   }
@@ -18,15 +19,25 @@ export function parseRule(rule, placeName = defaultPlaceName) {
     const target = segs[0].slice(5).trim()
     return target === 'NO_SCHEDULE' ? null : { goto: target }
   }
-  return segs.map((seg) => {
-    const [time, place] = seg.replace(/"[^"]*"/g, '').trim().split(/\s+/)
-    return { time: parseTime(time), place: placeName(place) }
-  })
+  const stops = []
+  for (const seg of segs) {
+    const [time, place] = seg.replace(/"[^"]*"/g, '').trim().split(/[ 	]+/)
+    if (!place) throw new Error(`stop "${seg}" has no place`)
+    // A numeric second token means "same map as the previous stop" (e.g. 1900 35 25 0).
+    if (/^[0-9]+$/.test(place)) {
+      if (stops.length === 0) throw new Error(`stop "${seg}" has no map and no previous stop`)
+      stops.push({ time: parseTime(time), place: stops[stops.length - 1].place })
+    } else {
+      stops.push({ time: parseTime(time), place: placeName(place) })
+    }
+  }
+  return stops
 }
 
 export function resolveRules(raw, placeName = defaultPlaceName) {
   const rules = {}
   const errors = []
+  const failed = []
   for (const key of Object.keys(raw)) {
     const seen = new Set()
     let cur = key
@@ -45,9 +56,10 @@ export function resolveRules(raw, placeName = defaultPlaceName) {
       }
     } catch (e) {
       errors.push(`${key}: ${e.message}`)
+      failed.push({ key, message: e.message })
     }
   }
-  return { rules, errors }
+  return { rules, errors, failed }
 }
 
 const SEASON = '(?:spring|summer|fall|winter)'

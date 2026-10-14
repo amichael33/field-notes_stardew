@@ -30,10 +30,28 @@ describe('parseRule', () => {
       { time: 600, place: "Sebastian's room" },
     ])
   })
-  it('takes the last branch for MAIL conditions', () => {
-    expect(parseRule('MAIL ccVault/GOTO spring/900 HaleyHouse 16 5 2', name)).toEqual([
+  it('drops the MAIL flag and received branch, keeping the whole tail', () => {
+    expect(parseRule('MAIL ccVault/GOTO spring/900 HaleyHouse 16 5 2/1000 Beach 1 1 0/2400 bed', name)).toEqual([
       { time: 540, place: "Haley and Emily's house" },
+      { time: 600, place: 'The Beach' },
+      { time: 1440, place: 'At home' },
     ])
+    expect(parseRule('MAIL x/800 Beach 1 1 0/900 SeedShop 1 1 0/1000 bed/1100 Beach 1 1 0', name)).toEqual([
+      { time: 540, place: "Pierre's General Store" },
+      { time: 600, place: 'At home' },
+      { time: 660, place: 'The Beach' },
+    ])
+  })
+  it('reuses the previous map when a stop has no map id', () => {
+    expect(parseRule('900 Beach 1 1 0/1000 35 25 0', name)).toEqual([
+      { time: 540, place: 'The Beach' },
+      { time: 600, place: 'The Beach' },
+    ])
+  })
+  it('throws on a bad or missing time token', () => {
+    expect(() => parseTime('abc')).toThrow(/bad time/)
+    expect(() => parseRule(' Beach 1 1 0', name)).toThrow()
+    expect(() => parseRule('900', name)).toThrow(/no place/)
   })
   it('returns null for NO_SCHEDULE and a goto for GOTO', () => {
     expect(parseRule('GOTO NO_SCHEDULE', name)).toBeNull()
