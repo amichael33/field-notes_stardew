@@ -38,11 +38,11 @@ export default function ItemRow({ bundle, item, showSource }: Props) {
       <button type="button" className="item-name-btn" aria-pressed={obtained} onClick={() => toggle(id)}>
         <span className="item-name">
           {item.name}
-          {item.quantity > 1 ? ` x${item.quantity}` : ''}
+          {item.quantity > 1 && <span className="item-qty"> x{item.quantity}</span>}
         </span>
         {showSource && <span className="item-source">{item.source}</span>}
       </button>
-      <ItemDetail bundle={bundle} item={item} open={open} onClose={() => setOpen(false)} />
+      {open && <ItemDetail bundle={bundle} item={item} open onClose={() => setOpen(false)} />}
     </div>
   )
 }

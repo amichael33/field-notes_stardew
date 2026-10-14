@@ -172,4 +172,35 @@ describe('PathView aside cards', () => {
     await userEvent.selectOptions(screen.getByLabelText(/Season/), 'winter')
     expect(within(card()).queryByText(/Wild Horseradish/)).not.toBeInTheDocument()
   })
+
+  describe('obtained items', () => {
+    const card = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
+    const stillNeeded = () => within(card()).queryByRole('list', { name: 'Still needed for Spring Foraging' })
+
+    it('clicking an item name removes it from Still needed and updates the count', async () => {
+      renderWithState(<PathView />)
+      expect(within(card()).getAllByText('0 of 4').length).toBeGreaterThan(0)
+      await userEvent.click(within(stillNeeded()!).getByRole('button', { name: /^Wild Horseradish/ }))
+      expect(within(stillNeeded()!).queryByText('Wild Horseradish')).not.toBeInTheDocument()
+      expect(within(card()).getByText('1 of 4')).toBeInTheDocument()
+    })
+
+    it('a bundle shows Complete once its required slots are obtained', async () => {
+      renderWithState(<PathView />)
+      for (const name of ['Wild Horseradish', 'Daffodil', 'Leek', 'Dandelion']) {
+        await userEvent.click(within(stillNeeded()!).getByRole('button', { name: new RegExp('^' + name) }))
+      }
+      expect(stillNeeded()).not.toBeInTheDocument()
+      expect(within(card()).getByText('4 of 4')).toBeInTheDocument()
+      expect(within(card()).getByText('Complete')).toBeInTheDocument()
+    })
+
+    it('the progress bar width follows the obtained count', async () => {
+      renderWithState(<PathView />)
+      const fill = () => card().querySelector('.progress-fill') as HTMLElement
+      expect(fill().style.width).toBe('0%')
+      await userEvent.click(within(stillNeeded()!).getByRole('button', { name: /^Wild Horseradish/ }))
+      expect(fill().style.width).toBe('25%')
+    })
+  })
 })

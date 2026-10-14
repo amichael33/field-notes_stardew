@@ -1,6 +1,7 @@
 import { bundleItemsBySeason } from '../data/selectors'
 import { useAppState } from '../state/AppState'
 import { useSave } from '../state/SaveContext'
+import ItemRow from '../components/ItemRow'
 import type { Bundle, BundleItem } from '../data/types'
 import bundlesJson from '../data/bundles.json'
 
@@ -38,12 +39,10 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
             <p className="when">
               Fill {bundle.slotsRequired} of {bundle.items.length} slots
             </p>
-            <ul>
-              {items.map((item, i) => (
-                <li key={`${item.name}-${i}`}>
-                  <span>{item.name}</span>
-                  {item.quantity > 1 && <span> ×{item.quantity}</span>}
-                  <span className="when"> {item.source}</span>
+            <ul className="item-list">
+              {items.map((item) => (
+                <li key={item.name}>
+                  <ItemRow bundle={bundle} item={item} showSource />
                 </li>
               ))}
             </ul>
