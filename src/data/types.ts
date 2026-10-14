@@ -65,3 +65,14 @@ export interface Clock {
   weather: Weather
   status: ClockStatus
 }
+
+export interface Stop {
+  time: number
+  place: string
+}
+
+export interface Location {
+  place: string
+  since: number | null
+  next?: Stop
+}
