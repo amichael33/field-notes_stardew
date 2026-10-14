@@ -17,9 +17,36 @@ describe('scheduleFor', () => {
     expect(scheduleFor('Pierre', 'spring', 5, true)).toEqual(data.Pierre.rain)
     expect(scheduleFor('Pierre', 'spring', 5, true)!.map((s) => s.place)).toEqual(["Pierre's General Store"])
   })
-  it('prefers season_day, then rain for Abigail', () => {
+  it('prefers season_day over rain for Abigail', () => {
     expect(scheduleFor('Abigail', 'spring', 4, false)).toEqual(data.Abigail.spring_4)
-    expect(scheduleFor('Abigail', 'spring', 4, true)).toEqual(data.Abigail.rain)
+    expect(scheduleFor('Abigail', 'spring', 4, true)).toEqual(data.Abigail.spring_4)
+    expect(scheduleFor('Abigail', 'spring', 3, true)).toEqual(data.Abigail.rain)
+  })
+  it('falls back to spring rules in other seasons (Pierre on Summer 1)', () => {
+    expect(data.Pierre.summer).toBeUndefined()
+    const stops = scheduleFor('Pierre', 'summer', 1, false)
+    expect(stops).toEqual(data.Pierre.spring)
+    expect(stops!.length).toBeGreaterThan(0)
+  })
+  it('keeps Alex out of the Saloon sports room on a fall Sunday', () => {
+    expect(data.Alex.Sun).toBeUndefined() // GOTO season is left to the runtime
+    const stops = scheduleFor('Alex', 'fall', 7, false)!
+    expect(stops).toEqual(data.Alex.spring)
+    expect(locationAt(stops, 660).place).not.toBe('The Stardrop Saloon')
+  })
+  it('uses bare day-of-month rules', () => {
+    expect(scheduleFor('Abigail', 'spring', 11, false)).toEqual(data.Abigail['11'])
+    expect(scheduleFor('Lewis', 'summer', 3, false)).toEqual(data.Lewis['3'])
+    expect(scheduleFor('Lewis', 'summer', 3, false)![1].place).toBe("Marnie's Ranch")
+  })
+  it('does not send Emily to the Desert on Fall 15 before the bus is fixed', () => {
+    const stops = scheduleFor('Emily', 'fall', 15, false)!
+    expect(stops).toEqual(data.Emily.fall_15)
+    expect(stops.map((s) => s.place)).not.toContain('The Calico Desert')
+  })
+  it('prefers season_weekday over weekday (Abigail on Fall 1, a Monday)', () => {
+    expect(data.Abigail.fall_Mon).toBeDefined()
+    expect(scheduleFor('Abigail', 'fall', 1, false)).toEqual(data.Abigail.fall_Mon)
   })
   it('falls through to normal rules with no rain rule', () => {
     const name = Object.keys(data).find((k) => !data[k].rain)!
@@ -30,14 +57,27 @@ describe('scheduleFor', () => {
     expect(scheduleFor('Wizard', 'spring', 1, false)).toBeNull()
   })
   it('orders rule keys', () => {
-    expect(ruleKeys('fall', 8, true)).toEqual(['rain', 'fall_8', 'fall_Mon', 'Mon', 'fall', 'default'])
-    expect(ruleKeys('fall', 8, false)[0]).toBe('fall_8')
+    expect(ruleKeys('fall', 8, true)).toEqual([
+      'fall_8',
+      '8',
+      'rain',
+      'fall_Mon',
+      'Mon',
+      'fall',
+      'spring_Mon',
+      'spring',
+      'default',
+    ])
+    expect(ruleKeys('fall', 8, false)).not.toContain('rain')
   })
-  it('resolves every villager for every date and weather', () => {
+  it('resolves every villager for every date and weather, non-null when they have data', () => {
     for (const v of villagers as { name: string }[])
       for (const s of SEASONS)
         for (let d = 1; d <= 28; d++)
-          for (const r of [false, true]) expect(() => scheduleFor(v.name, s, d, r)).not.toThrow()
+          for (const r of [false, true]) {
+            const stops = scheduleFor(v.name, s, d, r)
+            if (v.name in data) expect(stops, `${v.name} ${s} ${d} rain=${r}`).not.toBeNull()
+          }
   })
 })
 
