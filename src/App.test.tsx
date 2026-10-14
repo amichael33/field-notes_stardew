@@ -26,14 +26,18 @@ describe('App routing', () => {
     expect(screen.getByText('Field Notes')).toBeInTheDocument()
   })
 
-  it.each([
-    ['Farm', '#/farm'],
-    ['Notes', '#/notes'],
-  ])('%s tab says it is coming soon', (name, hash) => {
-    window.location.hash = hash
+  it('Farm tab says it is coming soon', () => {
+    window.location.hash = '#/farm'
     render(<App />)
-    expect(screen.getByRole('heading', { name })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Farm' })).toBeInTheDocument()
     expect(screen.getByText(/Coming soon/)).toBeInTheDocument()
+  })
+
+  it('Notes tab shows the notes editor', () => {
+    window.location.hash = '#/notes'
+    render(<App />)
+    expect(screen.getByRole('heading', { name: 'Notes' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Notes')).toBeInTheDocument()
   })
 
   it('Print button opens the print dialog', async () => {

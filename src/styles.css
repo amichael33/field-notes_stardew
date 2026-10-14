@@ -106,8 +106,11 @@ select {
 
 @media print {
   .site-header, .controls, .site-footer { display: none; }
-  body { background: #fff; }
+  body, .banner { background: #fff; color: #000; }
   .card { border: 0; padding: 0; }
+  .today-grid { grid-template-columns: 1fr; }
+  .ribbon-chips { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .notes-input { border-color: #999; }
 }
 
 .visually-hidden {
@@ -218,6 +221,7 @@ select {
   overflow-wrap: anywhere;
   resize: vertical;
 }
+.notes-page-input { min-height: 320px; }
 .needed-bundle { margin-top: 12px; }
 .needed-head { display: flex; justify-content: space-between; gap: 12px; }
 .progress { height: 8px; background: var(--tag); border-radius: 4px; overflow: hidden; margin: 6px 0; }
