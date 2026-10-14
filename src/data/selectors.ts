@@ -29,3 +29,11 @@ export function birthdaysBySeason(villagers: Villager[], season: Season | 'all')
 export function sortedPathSteps(steps: PathStep[]): PathStep[] {
   return [...steps].sort((a, b) => a.order - b.order)
 }
+
+export function pathId(step: PathStep): string {
+  return `path:${step.order}`
+}
+
+export function firstUnchecked(steps: PathStep[], checked: string[]): PathStep | undefined {
+  return sortedPathSteps(steps).find((step) => !checked.includes(pathId(step)))
+}

@@ -1,50 +1,46 @@
-import { sortedPathSteps } from '../data/selectors'
+import { firstUnchecked, sortedPathSteps } from '../data/selectors'
 import { useAppState } from '../state/AppState'
+import { useSave } from '../state/SaveContext'
+import StatusBanner from '../components/today/StatusBanner'
+import PathRibbon from '../components/today/PathRibbon'
+import PathCard from '../components/today/PathCard'
 import type { PathStep, Recipe } from '../data/types'
 import stepsJson from '../data/path-steps.json'
 import recipesJson from '../data/recipes.json'
 
-const steps = stepsJson as PathStep[]
+const steps = sortedPathSteps(stepsJson as PathStep[])
+const ribbonSteps = steps.filter((s) => s.order >= 1 && s.order <= 7)
 const recipes = recipesJson as Recipe[]
-
-function when(step: PathStep): string {
-  if (!step.season) return ''
-  const season = step.season[0].toUpperCase() + step.season.slice(1)
-  return step.day ? `${season} ${step.day}` : season
-}
 
 export default function PathView() {
   const { season } = useAppState()
+  const { save } = useSave()
   const visibleRecipes = recipes
     .filter((r) => season === 'all' || r.season === 'any' || r.season === season)
     .sort((a, b) => a.order - b.order)
 
   return (
-    <section className="card">
-      <h1>Today</h1>
-      <p className="when">Opening route for Spring, Year 1. Live day tracking comes later.</p>
-      <ol aria-label="Path steps">
-        {sortedPathSteps(steps).map((step) => (
-          <li key={step.order}>
-            <strong>{step.title}</strong>
-            {when(step) && <span className="when"> ({when(step)})</span>}
-            {step.rainy && <span className="badge">Rainy day</span>}
-            <p>{step.detail}</p>
-          </li>
-        ))}
-      </ol>
-      <h2>Recipes</h2>
-      {visibleRecipes.length === 0 ? (
-        <p>No recipes this season.</p>
-      ) : (
-        <ul aria-label="Recipes">
-          {visibleRecipes.map((r) => (
-            <li key={r.order}>
-              <strong>{r.name}</strong> <span className="when">{r.source}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
+    <div className="today">
+      <StatusBanner nextStep={firstUnchecked(steps, save.checked)} />
+      <PathRibbon steps={ribbonSteps} />
+      <div className="today-grid">
+        <PathCard steps={steps} />
+        <aside className="today-aside" />
+      </div>
+      <section className="card">
+        <h2>Recipes</h2>
+        {visibleRecipes.length === 0 ? (
+          <p>No recipes this season.</p>
+        ) : (
+          <ul aria-label="Recipes">
+            {visibleRecipes.map((r) => (
+              <li key={r.order}>
+                <strong>{r.name}</strong> <span className="when">{r.source}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </div>
   )
 }

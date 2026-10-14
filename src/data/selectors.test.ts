@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps } from './selectors'
+import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId } from './selectors'
 import type { Bundle, Villager, PathStep } from './types'
 
 const bundles: Bundle[] = [
@@ -59,5 +59,23 @@ describe('sortedPathSteps', () => {
       { order: 1, title: 'a', detail: '' },
     ]
     expect(sortedPathSteps(steps).map((s) => s.title)).toEqual(['a', 'b'])
+  })
+})
+
+describe('firstUnchecked', () => {
+  const steps: PathStep[] = [
+    { order: 2, title: 'b', detail: '' },
+    { order: 1, title: 'a', detail: '' },
+    { order: 3, title: 'c', detail: '' },
+  ]
+
+  it('returns the lowest order step not checked', () => {
+    expect(pathId(steps[1])).toBe('path:1')
+    expect(firstUnchecked(steps, ['path:1'])?.title).toBe('b')
+    expect(firstUnchecked(steps, [])?.title).toBe('a')
+  })
+
+  it('returns undefined when all are checked', () => {
+    expect(firstUnchecked(steps, ['path:1', 'path:2', 'path:3'])).toBeUndefined()
   })
 })
