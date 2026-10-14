@@ -2,16 +2,20 @@
 
 A todo list and planner for Stardew Valley. The goal is an optimized, day-by-day plan for the most efficient first year, with the reference data you need beside it, in a site you can use (or print) while you play.
 
-This is an early version. It has the opening route with a checklist, bundles, villager gifts and birthdays, and achievements, and it now saves your progress in your browser.
+Live site: https://amichael33.github.io/field-notes_stardew/
+
+This is an early version. It has the opening route with a checklist, bundles with item icons and obtained tracking, villager gifts and birthdays, achievements, and Markdown notes, and it saves your progress in your browser.
 
 ## Features (current)
 
 - **Today**: the opening route as a checklist (Willy's pole, the rainy-day fishing plan, early money goals) with progress shown in a banner and ribbon, plus the Queen of Sauce recipes in air order. A "Where is everyone" card appears only when there is something to show.
+- **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
+- **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
 - **People**: a birthday calendar and every villager's loved and liked gifts.
 - **Goals**: what each achievement requires.
-- **Notes**: a notes box on Today and a full Notes tab, both editing the same saved note.
-- **Saved in your browser**: checklist progress, notes and your Community Center / Joja route choice are kept between visits.
+- **Notes**: Markdown notes (bullets and nested sub-bullets) with an Edit / Preview toggle, on both the Today card and the Notes tab, which edit the same saved note.
+- **Saved in your browser**: checklist progress, obtained items, notes and your Community Center / Joja route choice are kept between visits.
 - **Export / import**: download your saved progress as a JSON file and load it back later or on another device.
 - **Farm** tab is a placeholder for now (see the roadmap).
 - **Print-friendly**: the header, controls and footer are hidden when you print, and a Print page button is in the header.
@@ -26,7 +30,7 @@ This is an early version. It has the opening route with a checklist, bundles, vi
 
 ## Your data
 
-Everything you save (checklist progress, notes, route choice) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
+Everything you save (checklist progress, obtained items, notes, route choice) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
 
 ## Run it locally
 
@@ -36,6 +40,7 @@ Requires Node.js 18 or newer.
 npm install
 npm run dev      # start the dev server
 npm test         # run the tests
+npm run lint     # lint
 npm run build    # production build into dist/
 ```
 
@@ -58,6 +63,18 @@ Known limits of the data today:
 - Recipes are the 32 from The Queen of Sauce (both years) with the other places each can be bought; recipes learned from villagers or other sources are not included yet.
 - The path has no villager schedule times yet.
 
+## Game art and icons
+
+The item icons are artwork from Stardew Valley and belong to ConcernedApe. They were unpacked from the author's own copy of the game using [StardewXnbHack](https://github.com/Pathoschild/StardewXnbHack) by Pathoschild. The wiki is not used for images. The gold amounts use a drawn gold-coin tile instead of game art.
+
+To regenerate them, unpack the game into a `Content (unpacked)/` folder at the repo root with StardewXnbHack, then run:
+
+```bash
+npm run icons
+```
+
+This writes `public/items/` and `src/data/item-icons.json`. The `Content (unpacked)/` folder is git-ignored and never published.
+
 ## License
 
 The wiki's text is available under [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). The data files and fixtures derived from it, and this site, are therefore non-commercial and should be shared under the same license, with credit to the Stardew Valley Wiki and its editors.
@@ -69,6 +86,10 @@ Pushes to `main` build and deploy to GitHub Pages through `.github/workflows/dep
 ## Credits
 
 Game data comes from the [Stardew Valley Wiki](https://stardewvalleywiki.com), which is community-written (see License above). Thank you to its editors.
+
+Item icons are ConcernedApe's artwork, unpacked with [StardewXnbHack](https://github.com/Pathoschild/StardewXnbHack) by Pathoschild (see Game art and icons above).
+
+Headings use the Fisherman font by Nurrehmet Studio. The author's contact and licence note are in `Readme.txt`.
 
 ## Disclaimer
 

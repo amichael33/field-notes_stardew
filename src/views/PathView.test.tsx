@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../test-utils'
@@ -147,6 +147,8 @@ describe('PathView aside cards', () => {
     unmount()
     renderWithState(<PathView />)
     expect(screen.getByLabelText('Notes for tomorrow')).toHaveValue('buy seeds')
+    await userEvent.click(screen.getByRole('button', { name: 'Preview' }))
+    expect(screen.getByLabelText('Notes for tomorrow preview')).toHaveTextContent('buy seeds')
   })
 
   it('a very long unbroken note stays in the textarea', async () => {
@@ -171,5 +173,49 @@ describe('PathView aside cards', () => {
     expect(within(card()).getAllByText(/0 of \d+/).length).toBeGreaterThan(0)
     await userEvent.selectOptions(screen.getByLabelText(/Season/), 'winter')
     expect(within(card()).queryByText(/Wild Horseradish/)).not.toBeInTheDocument()
+  })
+
+  describe('obtained items', () => {
+    it('ticking one Wood in Construction counts exactly one with no duplicate-key warning', async () => {
+      const err = vi.spyOn(console, 'error').mockImplementation(() => {})
+      renderWithState(<PathView />)
+      const section = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
+      const head = () => within(section()).getByText('Construction').closest('.needed-head')!
+      expect(head()).toHaveTextContent('0 of 4')
+      const list = within(section()).getByRole('list', { name: 'Still needed for Construction' })
+      await userEvent.click(within(list).getAllByRole('button', { name: /^Wood/ })[0])
+      expect(head()).toHaveTextContent('1 of 4')
+      expect(err.mock.calls.filter((c) => String(c[0]).includes('same key'))).toHaveLength(0)
+      err.mockRestore()
+    })
+
+    const card = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
+    const stillNeeded = () => within(card()).queryByRole('list', { name: 'Still needed for Spring Foraging' })
+
+    it('clicking an item name removes it from Still needed and updates the count', async () => {
+      renderWithState(<PathView />)
+      expect(within(card()).getAllByText('0 of 4').length).toBeGreaterThan(0)
+      await userEvent.click(within(stillNeeded()!).getByRole('button', { name: /^Wild Horseradish/ }))
+      expect(within(stillNeeded()!).queryByText('Wild Horseradish')).not.toBeInTheDocument()
+      expect(within(card()).getByText('1 of 4')).toBeInTheDocument()
+    })
+
+    it('a bundle shows Complete once its required slots are obtained', async () => {
+      renderWithState(<PathView />)
+      for (const name of ['Wild Horseradish', 'Daffodil', 'Leek', 'Dandelion']) {
+        await userEvent.click(within(stillNeeded()!).getByRole('button', { name: new RegExp('^' + name) }))
+      }
+      expect(stillNeeded()).not.toBeInTheDocument()
+      expect(within(card()).getByText('4 of 4')).toBeInTheDocument()
+      expect(within(card()).getByText('Complete')).toBeInTheDocument()
+    })
+
+    it('the progress bar width follows the obtained count', async () => {
+      renderWithState(<PathView />)
+      const fill = () => card().querySelector('.progress-fill') as HTMLElement
+      expect(fill().style.width).toBe('0%')
+      await userEvent.click(within(stillNeeded()!).getByRole('button', { name: /^Wild Horseradish/ }))
+      expect(fill().style.width).toBe('25%')
+    })
   })
 })
