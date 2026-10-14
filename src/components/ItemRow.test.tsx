@@ -1,7 +1,10 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { screen, fireEvent } from '@testing-library/react'
 import { renderWithState } from '../test-utils'
 import ItemRow from './ItemRow'
+import ItemDetail from './ItemDetail'
+import ItemIcon from './ItemIcon'
+import { render } from '@testing-library/react'
 import type { Bundle, BundleItem } from '../data/types'
 
 const bundle: Bundle = {
@@ -80,5 +83,39 @@ describe('ItemRow', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Details for Apple' }))
     fireEvent.click(screen.getByRole('button', { name: 'Close' }))
     expect(screen.queryByRole('dialog')).toBeNull()
+  })
+
+  it('gives the dialog an accessible name for a multi-word item', () => {
+    const winter: BundleItem = { name: 'Winter Root', quantity: 1, seasons: ['winter'], source: 'Forage' }
+    renderWithState(<ItemRow bundle={bundle} item={winter} />)
+    fireEvent.click(screen.getByRole('button', { name: 'Details for Winter Root' }))
+    expect(screen.getByRole('dialog', { name: 'Winter Root' })).toBeInTheDocument()
+  })
+
+  it('the cancel event closes the dialog and focus returns to the icon button', () => {
+    renderWithState(<ItemRow bundle={bundle} item={apple} />)
+    const trigger = screen.getByRole('button', { name: 'Details for Apple' })
+    fireEvent.click(trigger)
+    fireEvent(screen.getByRole('dialog'), new Event('cancel', { cancelable: true }))
+    expect(screen.queryByRole('dialog')).toBeNull()
+    expect(trigger).toHaveFocus()
+  })
+
+  it('calls onClose once per close even when Escape also triggers cancel and close', () => {
+    const onClose = vi.fn()
+    const { rerender } = render(<ItemDetail bundle={bundle} item={apple} open onClose={onClose} />)
+    const dialog = screen.getByRole('dialog')
+    fireEvent.keyDown(dialog, { key: 'Escape' })
+    fireEvent(dialog, new Event('cancel', { cancelable: true }))
+    rerender(<ItemDetail bundle={bundle} item={apple} open={false} onClose={onClose} />)
+    expect(onClose).toHaveBeenCalledTimes(1)
+  })
+
+  it('resets the image fallback when the name changes', () => {
+    const { container, rerender } = render(<ItemIcon name="Apple" />)
+    fireEvent.error(container.querySelector('img')!)
+    expect(container.querySelector('img')).toBeNull()
+    rerender(<ItemIcon name="Apricot" />)
+    expect(container.querySelector('img')).toHaveAttribute('src', 'items/apricot.png')
   })
 })

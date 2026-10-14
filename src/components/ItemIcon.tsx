@@ -13,7 +13,8 @@ function initials(name: string): string {
 }
 
 export default function ItemIcon({ name }: { name: string }) {
-  const [failed, setFailed] = useState(false)
+  const [failedName, setFailedName] = useState<string | null>(null)
+  const failed = failedName === name
   const known = Object.prototype.hasOwnProperty.call(icons, name)
   const src = known ? icons[name] : undefined
 
@@ -33,7 +34,7 @@ export default function ItemIcon({ name }: { name: string }) {
         alt=""
         width={48}
         height={48}
-        onError={() => setFailed(true)}
+        onError={() => setFailedName(name)}
       />
     )
   }

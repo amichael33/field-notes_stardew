@@ -128,7 +128,8 @@ describe('bundleProgress', () => {
   })
   it('is complete once obtained reaches slotsRequired even with items left', () => {
     const two = { ...b, slotsRequired: 2 }
-    expect(bundleProgress(two, b.items.map((i) => bundleItemId(b, i))).complete).toBe(true)
+    const ticked = b.items.slice(0, 2).map((i) => bundleItemId(b, i))
+    expect(bundleProgress(two, ticked)).toEqual({ obtained: 2, required: 2, complete: true })
   })
   it('is not complete below slotsRequired', () => {
     expect(bundleProgress(b, ['bundle:b1:Coal']).complete).toBe(false)

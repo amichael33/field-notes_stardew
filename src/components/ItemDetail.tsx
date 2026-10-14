@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef } from 'react'
 import type { Bundle, BundleItem } from '../data/types'
 
 interface Props {
@@ -10,8 +10,18 @@ interface Props {
 
 export default function ItemDetail({ bundle, item, open, onClose }: Props) {
   const ref = useRef<HTMLDialogElement>(null)
+  const titleId = useId()
+  const live = useRef(open)
+
+  // Escape can fire keydown, cancel and close; report the close only once.
+  const handleClose = () => {
+    if (!live.current) return
+    live.current = false
+    onClose()
+  }
 
   useEffect(() => {
+    live.current = open
     const dialog = ref.current
     if (!dialog) return
     if (open && !dialog.open) dialog.showModal()
@@ -24,20 +34,20 @@ export default function ItemDetail({ bundle, item, open, onClose }: Props) {
     <dialog
       ref={ref}
       className="item-detail"
-      aria-labelledby={`item-detail-${bundle.id}-${item.name}`}
-      onClose={onClose}
+      aria-labelledby={titleId}
+      onClose={handleClose}
       onCancel={(e) => {
         e.preventDefault()
-        onClose()
+        handleClose()
       }}
       onKeyDown={(e) => {
         if (e.key === 'Escape') {
           e.preventDefault()
-          onClose()
+          handleClose()
         }
       }}
     >
-      <h3 id={`item-detail-${bundle.id}-${item.name}`}>{item.name}</h3>
+      <h3 id={titleId}>{item.name}</h3>
       <dl>
         <dt>Quantity</dt>
         <dd>{item.quantity}</dd>
@@ -48,7 +58,7 @@ export default function ItemDetail({ bundle, item, open, onClose }: Props) {
         <dt>Bundle</dt>
         <dd>{bundle.name}</dd>
       </dl>
-      <button type="button" className="item-detail-close" onClick={onClose}>
+      <button type="button" className="item-detail-close" onClick={handleClose}>
         Close
       </button>
     </dialog>
