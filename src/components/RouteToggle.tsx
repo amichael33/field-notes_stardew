@@ -1,8 +1,9 @@
-import { useAppState } from '../state/AppState'
+import { useSave } from '../state/SaveContext'
 import type { Route } from '../data/types'
 
 export default function RouteToggle() {
-  const { route, setRoute } = useAppState()
+  const { save, setRoute } = useSave()
+  const route = save.profile.route
   return (
     <label>
       Route{' '}

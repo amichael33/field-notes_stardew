@@ -2,24 +2,31 @@
 
 A todo list and planner for Stardew Valley. The goal is an optimized, day-by-day plan for the most efficient first year, with the reference data you need beside it, in a site you can use (or print) while you play.
 
-This is an early version. Right now it is a **read-only reference** with the opening route, bundles, villager gifts and birthdays, and achievements.
+This is an early version. It has the opening route with a checklist, bundles, villager gifts and birthdays, and achievements, and it now saves your progress in your browser.
 
 ## Features (current)
 
-- **Today**: the opening route as plain-text steps (Willy's pole, the rainy-day fishing plan, early money goals) plus the Queen of Sauce recipes in air order.
+- **Today**: the opening route as a checklist (Willy's pole, the rainy-day fishing plan, early money goals) with progress shown in a banner and ribbon, plus the Queen of Sauce recipes in air order. A "Where is everyone" card appears only when there is something to show.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. A Community Center / Joja toggle hides the bundles on the Joja route.
 - **People**: a birthday calendar and every villager's loved and liked gifts.
 - **Goals**: what each achievement requires.
-- **Farm and Notes** tabs are placeholders for now (see the roadmap).
+- **Notes**: a notes box on Today and a full Notes tab, both editing the same saved note.
+- **Saved in your browser**: checklist progress, notes and your Community Center / Joja route choice are kept between visits.
+- **Export / import**: download your saved progress as a JSON file and load it back later or on another device.
+- **Farm** tab is a placeholder for now (see the roadmap).
 - **Print-friendly**: the header, controls and footer are hidden when you print, and a Print page button is in the header.
 
 ## Roadmap
 
-1. Core site and static reference data (this release)
-2. Saving: notes, checklist progress, a new-save profile (Joja or Community Center route, farm type), and JSON export/import. Everything stays in your browser, with no accounts.
-3. Game-clock sync with villager locations and a structured day-by-day year 1 plan
+1. Core site and static reference data (done)
+2. Saving: notes, checklist progress, route choice, and JSON export/import, all in your browser with no accounts (done)
+3. Next: game-clock sync with villager locations and schedules, and a structured day-by-day year 1 plan
 4. Farm layout and avatar photo uploads
 5. Later: layout optimizer and save-file import
+
+## Your data
+
+Everything you save (checklist progress, notes, route choice) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
 
 ## Run it locally
 

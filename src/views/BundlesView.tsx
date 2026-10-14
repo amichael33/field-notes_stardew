@@ -1,10 +1,12 @@
 import { bundleItemsBySeason } from '../data/selectors'
 import { useAppState } from '../state/AppState'
+import { useSave } from '../state/SaveContext'
 import type { Bundle, BundleItem } from '../data/types'
 import bundlesJson from '../data/bundles.json'
 
 export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bundles?: Bundle[] }) {
-  const { route, season } = useAppState()
+  const { season } = useAppState()
+  const route = useSave().save.profile.route
 
   if (route === 'joja') {
     return (
