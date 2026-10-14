@@ -147,6 +147,8 @@ describe('PathView aside cards', () => {
     unmount()
     renderWithState(<PathView />)
     expect(screen.getByLabelText('Notes for tomorrow')).toHaveValue('buy seeds')
+    await userEvent.click(screen.getByRole('button', { name: 'Preview' }))
+    expect(screen.getByLabelText('Notes for tomorrow preview')).toHaveTextContent('buy seeds')
   })
 
   it('a very long unbroken note stays in the textarea', async () => {

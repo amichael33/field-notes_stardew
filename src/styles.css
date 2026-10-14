@@ -209,6 +209,16 @@ select {
   resize: vertical;
 }
 .notes-page-input { min-height: 320px; }
+.notes-toggle { display: flex; gap: 6px; margin-bottom: 8px; }
+.notes-toggle button { min-height: 44px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 8px; background: #fff; font: inherit; color: inherit; cursor: pointer; }
+.notes-toggle button[aria-pressed='true'] { background: var(--tag); font-weight: 600; }
+.notes-preview { min-height: 100px; padding: 8px; border: 1px solid var(--line-strong); border-radius: 8px; overflow-wrap: anywhere; }
+.notes-preview > :first-child { margin-top: 0; }
+.notes-preview > :last-child { margin-bottom: 0; }
+.notes-preview ul, .notes-preview ol { margin: 4px 0; padding-left: 22px; }
+.notes-preview ul ul, .notes-preview ol ol, .notes-preview ul ol, .notes-preview ol ul { margin: 2px 0; }
+.notes-preview ul { list-style: disc; }
+.notes-preview ul ul { list-style: circle; }
 .needed-bundle { margin-top: 12px; }
 .needed-head { display: flex; justify-content: space-between; gap: 12px; }
 .progress { height: 8px; background: var(--tag); border-radius: 4px; overflow: hidden; margin: 6px 0; }
