@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Route, SaveData } from '../data/types'
 import { defaultSave, parseSave, serializeSave, toggleChecked } from './save'
 
@@ -31,7 +31,20 @@ export function SaveProvider({ children }: { children: ReactNode }) {
   const [save, setSave] = useState<SaveData>(load)
   const [saveError, setSaveError] = useState(false)
 
+  const dirty = useRef(false)
+
   useEffect(() => {
+    function onStorage(e: StorageEvent) {
+      if (e.key !== STORAGE_KEY || e.newValue === null) return
+      const parsed = parseSave(e.newValue)
+      if (parsed.ok) setSave(parsed.data)
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
+  }, [])
+
+  useEffect(() => {
+    if (!dirty.current) return
     try {
       localStorage.setItem(STORAGE_KEY, serializeSave(save))
       setSaveError(false)
@@ -41,13 +54,21 @@ export function SaveProvider({ children }: { children: ReactNode }) {
   }, [save])
 
   const setRoute = useCallback((route: Route) => {
+    dirty.current = true
     setSave((s) => ({ ...s, profile: { ...s.profile, route } }))
   }, [])
-  const toggle = useCallback((id: string) => setSave((s) => toggleChecked(s, id)), [])
-  const setNotes = useCallback((notes: string) => setSave((s) => ({ ...s, notes })), [])
+  const toggle = useCallback((id: string) => {
+    dirty.current = true
+    setSave((s) => toggleChecked(s, id))
+  }, [])
+  const setNotes = useCallback((notes: string) => {
+    dirty.current = true
+    setSave((s) => ({ ...s, notes }))
+  }, [])
   const importSave = useCallback((json: string) => {
     const parsed = parseSave(json)
     if (!parsed.ok) return { ok: false as const, error: parsed.error }
+    dirty.current = true
     setSave(parsed.data)
     return { ok: true as const }
   }, [])

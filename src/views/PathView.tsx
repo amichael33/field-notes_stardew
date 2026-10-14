@@ -23,9 +23,14 @@ export default function PathView() {
     .filter((r) => season === 'all' || r.season === 'any' || r.season === season)
     .sort((a, b) => a.order - b.order)
 
+  const nextDated = firstUnchecked(
+    steps.filter((s) => s.day),
+    save.checked,
+  )
+
   return (
     <div className="today">
-      <StatusBanner nextStep={firstUnchecked(steps, save.checked)} />
+      <StatusBanner nextStep={nextDated} />
       <PathRibbon steps={ribbonSteps} />
       <div className="today-grid">
         <PathCard steps={steps} />

@@ -37,7 +37,7 @@ export default function Layout() {
     document.body.appendChild(a)
     a.click()
     a.remove()
-    URL.revokeObjectURL(url)
+    setTimeout(() => URL.revokeObjectURL(url), 0)
     setMessage('Exported field-notes-save.json')
   }
 
@@ -88,7 +88,7 @@ export default function Layout() {
           </div>
         </div>
         <div className="header-status">
-          {saveError && <span>Couldn't save. Your progress may be lost when you close this tab.</span>}
+          {saveError && <span role="alert">Couldn't save. Your progress may be lost when you close this tab.</span>}
           <span role="status">{message}</span>
         </div>
       </header>

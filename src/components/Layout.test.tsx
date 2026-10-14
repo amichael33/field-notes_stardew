@@ -88,8 +88,11 @@ describe('Layout export and import', () => {
 
   it('Import rejects a newer version file', async () => {
     renderLayout()
+    await userEvent.click(screen.getByRole('button', { name: 'tick zero' }))
     await upload(JSON.stringify({ version: 2 }))
     expect(await screen.findByRole('status')).toHaveTextContent(/newer/)
+    expect(screen.getByTestId('checked')).toHaveTextContent('path:0')
+    expect(JSON.parse(localStorage.getItem('field-notes-save')!).checked).toEqual(['path:0'])
   })
 
   it("shows Couldn't save when storage writes fail", async () => {
@@ -97,6 +100,7 @@ describe('Layout export and import', () => {
       throw new Error('quota')
     })
     renderLayout()
-    await waitFor(() => expect(screen.getByText(/Couldn't save/)).toBeInTheDocument())
+    await userEvent.click(screen.getByRole('button', { name: 'tick zero' }))
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent(/Couldn't save/))
   })
 })

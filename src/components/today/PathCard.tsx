@@ -11,7 +11,7 @@ export default function PathCard({ steps }: { steps: PathStep[] }) {
   return (
     <section className="card path-card">
       <div className="path-title">
-        <h2>Opening path</h2>
+        <h2>Today's path</h2>
         <span className="tag">
           {done}/{ordered.length}
         </span>

@@ -80,6 +80,28 @@ describe('PathView tracking', () => {
     rows().forEach((row) => expect(row).not.toHaveClass('next'))
   })
 
+  it('banner shows the next unchecked dated step, skipping undated ones', async () => {
+    renderWithState(<PathView />)
+    const banner = () => within(screen.getByRole('region', { name: 'Today status' }))
+    const expected = [
+      'Spring 1',
+      'Spring 1',
+      'Spring 2',
+      'Spring 7',
+      'Spring 7',
+      'Spring 13',
+      'Spring 13',
+      'Spring 24',
+      'Opening route',
+    ]
+    for (let i = 0; i < expected.length; i++) {
+      expect(banner().getByText(expected[i], { selector: '.banner-when' })).toBeInTheDocument()
+      if (i < sorted.length) {
+        await userEvent.click(screen.getByRole('checkbox', { name: sorted[i].title }))
+      }
+    }
+  })
+
   it('clock and weather controls are disabled', () => {
     renderWithState(<PathView />)
     for (const name of ['Pause', '-10', '+10', 'Resync', 'Sunny', 'Rain']) {

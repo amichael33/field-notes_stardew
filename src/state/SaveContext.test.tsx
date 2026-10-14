@@ -46,13 +46,51 @@ describe('SaveProvider', () => {
     expect(result.current.save).toEqual(defaultSave())
   })
 
-  it('sets saveError when localStorage.setItem throws', () => {
+  it('sets saveError when localStorage.setItem throws after a change', () => {
+    const { result } = renderHook(() => useSave(), { wrapper })
+    expect(result.current.saveError).toBe(false)
     vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
       throw new Error('full')
     })
-    const { result } = renderHook(() => useSave(), { wrapper })
     act(() => result.current.toggle('x'))
     expect(result.current.saveError).toBe(true)
+  })
+
+  it('does not overwrite an unparseable stored value on load', () => {
+    const original = JSON.stringify({ version: 2, future: true })
+    localStorage.setItem(KEY, original)
+    const { result } = renderHook(() => useSave(), { wrapper })
+    expect(result.current.save).toEqual(defaultSave())
+    expect(localStorage.getItem(KEY)).toBe(original)
+    act(() => result.current.toggle('x'))
+    expect(localStorage.getItem(KEY)).not.toBe(original)
+  })
+
+  it('adopts a valid save written by another tab', () => {
+    const { result } = renderHook(() => useSave(), { wrapper })
+    const other = { ...defaultSave(), notes: 'from other tab' }
+    act(() => {
+      window.dispatchEvent(
+        new StorageEvent('storage', { key: KEY, newValue: serializeSave(other) }),
+      )
+    })
+    expect(result.current.save.notes).toBe('from other tab')
+  })
+
+  it('ignores invalid, null or unrelated storage events', () => {
+    const { result } = renderHook(() => useSave(), { wrapper })
+    act(() => result.current.setNotes('mine'))
+    act(() => {
+      window.dispatchEvent(new StorageEvent('storage', { key: KEY, newValue: '{nope' }))
+      window.dispatchEvent(new StorageEvent('storage', { key: KEY, newValue: null }))
+      window.dispatchEvent(
+        new StorageEvent('storage', {
+          key: 'other',
+          newValue: serializeSave({ ...defaultSave(), notes: 'x' }),
+        }),
+      )
+    })
+    expect(result.current.save.notes).toBe('mine')
   })
 
   it('importSave rejects bad data and leaves the save unchanged', () => {
