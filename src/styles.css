@@ -203,3 +203,24 @@ select {
 @media print {
   .banner-controls, .weather-toggle { display: none; }
 }
+
+/* Today aside cards */
+.today-aside { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.aside-card { background: #fff; border: 1px solid #d3d9c6; border-radius: 10px; padding: 20px; min-width: 0; }
+.notes-input {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  resize: vertical;
+}
+.needed-bundle { margin-top: 12px; }
+.needed-head { display: flex; justify-content: space-between; gap: 12px; }
+.progress { height: 8px; background: var(--tag); border-radius: 4px; overflow: hidden; margin: 6px 0; }
+.progress-fill { height: 100%; background: #3c7a4f; }
+.needed-label { margin: 4px 0 0; }
+.aside-card li { overflow-wrap: anywhere; }

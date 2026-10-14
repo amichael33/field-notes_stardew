@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId } from './selectors'
+import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId, peopleToVisit } from './selectors'
 import type { Bundle, Villager, PathStep } from './types'
 
 const bundles: Bundle[] = [
@@ -77,5 +77,39 @@ describe('firstUnchecked', () => {
 
   it('returns undefined when all are checked', () => {
     expect(firstUnchecked(steps, ['path:1', 'path:2', 'path:3'])).toBeUndefined()
+  })
+})
+
+describe('peopleToVisit', () => {
+  const villagers = [v('Willy', 'summer', 24), v('Pierre', 'spring', 26), v('Sam', 'summer', 17)]
+  const steps: PathStep[] = [
+    { order: 2, title: 'Meet the town', detail: 'Say hello.' },
+    { order: 3, title: 'Get your fishing pole from Willy', detail: 'Go to the beach.' },
+    { order: 9, title: 'Save', detail: "Upgrade at Pierre's General Store." },
+  ]
+
+  it('finds a villager named in an unchecked step', () => {
+    const result = peopleToVisit(steps, [], villagers)
+    expect(result.map((r) => r.who)).toContain('Willy')
+  })
+
+  it('attributes a shop phrase to its owner', () => {
+    const result = peopleToVisit(steps, [], [])
+    expect(result).toEqual([{ who: 'Pierre', step: steps[2] }])
+  })
+
+  it('is empty once step 2 is checked', () => {
+    expect(peopleToVisit(steps, ['path:2'], villagers)).toEqual([])
+  })
+
+  it('ignores checked steps', () => {
+    const result = peopleToVisit(steps, ['path:3'], villagers)
+    expect(result.map((r) => r.who)).not.toContain('Willy')
+    expect(result.map((r) => r.who)).toContain('Pierre')
+  })
+
+  it('is empty when no step mentions anyone', () => {
+    const plain: PathStep[] = [{ order: 1, title: 'Plant', detail: 'Water the crops.' }]
+    expect(peopleToVisit(plain, [], villagers)).toEqual([])
   })
 })

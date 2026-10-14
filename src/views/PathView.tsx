@@ -4,6 +4,10 @@ import { useSave } from '../state/SaveContext'
 import StatusBanner from '../components/today/StatusBanner'
 import PathRibbon from '../components/today/PathRibbon'
 import PathCard from '../components/today/PathCard'
+import NotesCard from '../components/today/NotesCard'
+import NextGoalCard from '../components/today/NextGoalCard'
+import NeededCard from '../components/today/NeededCard'
+import WhereCard from '../components/today/WhereCard'
 import type { PathStep, Recipe } from '../data/types'
 import stepsJson from '../data/path-steps.json'
 import recipesJson from '../data/recipes.json'
@@ -25,7 +29,12 @@ export default function PathView() {
       <PathRibbon steps={ribbonSteps} />
       <div className="today-grid">
         <PathCard steps={steps} />
-        <aside className="today-aside" />
+        <aside className="today-aside">
+          <NotesCard />
+          <NextGoalCard steps={steps} />
+          <NeededCard />
+          <WhereCard steps={steps} />
+        </aside>
       </div>
       <section className="card">
         <h2>Recipes</h2>

@@ -88,3 +88,66 @@ describe('PathView tracking', () => {
     expect(screen.getAllByText('coming with the clock').length).toBeGreaterThan(0)
   })
 })
+
+describe('PathView aside cards', () => {
+  const sorted = [...steps].sort((a, b) => a.order - b.order)
+  const meet = sorted.find((s) => s.order === 2)!
+
+  it('aside cards appear in order: Notes for tomorrow, Next goal, Needed this season, Where is everyone', () => {
+    renderWithState(<PathView />)
+    const names = screen.getAllByRole('heading').map((h) => h.textContent)
+    const idx = ['Notes for tomorrow', 'Next goal', 'Needed this season', 'Where is everyone'].map(
+      (n) => names.indexOf(n),
+    )
+    idx.forEach((i) => expect(i).toBeGreaterThanOrEqual(0))
+    expect([...idx].sort((a, b) => a - b)).toEqual(idx)
+  })
+
+  it('Where is everyone hides after Meet the town is ticked', async () => {
+    renderWithState(<PathView />)
+    expect(screen.getByRole('heading', { name: 'Where is everyone' })).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('checkbox', { name: meet.title }))
+    expect(screen.queryByRole('heading', { name: 'Where is everyone' })).not.toBeInTheDocument()
+  })
+
+  it('Next goal shows All goals done when steps 9 and 10 are ticked', async () => {
+    renderWithState(<PathView />)
+    for (const o of [9, 10]) {
+      const step = sorted.find((s) => s.order === o)!
+      await userEvent.click(screen.getByRole('checkbox', { name: step.title }))
+    }
+    expect(screen.getByText('All goals done')).toBeInTheDocument()
+  })
+
+  it('notes persist across a remount', async () => {
+    const { unmount } = renderWithState(<PathView />)
+    await userEvent.type(screen.getByLabelText('Notes for tomorrow'), 'buy seeds')
+    unmount()
+    renderWithState(<PathView />)
+    expect(screen.getByLabelText('Notes for tomorrow')).toHaveValue('buy seeds')
+  })
+
+  it('a very long unbroken note stays in the textarea', async () => {
+    renderWithState(<PathView />)
+    const long = 'x'.repeat(300)
+    const box = screen.getByLabelText('Notes for tomorrow')
+    await userEvent.click(box)
+    await userEvent.paste(long)
+    expect(box).toHaveValue(long)
+  })
+
+  it('Needed this season shows the Joja message on the Joja route', async () => {
+    renderWithState(<PathView />)
+    await userEvent.selectOptions(screen.getByLabelText('Route'), 'joja')
+    expect(screen.getByText('Bundles are not used on the Joja route.')).toBeInTheDocument()
+  })
+
+  it('Needed this season respects the season filter', async () => {
+    renderWithState(<PathView />)
+    const card = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
+    expect(within(card()).getByText(/Wild Horseradish/)).toBeInTheDocument()
+    expect(within(card()).getAllByText(/0 of \d+/).length).toBeGreaterThan(0)
+    await userEvent.selectOptions(screen.getByLabelText(/Season/), 'winter')
+    expect(within(card()).queryByText(/Wild Horseradish/)).not.toBeInTheDocument()
+  })
+})
