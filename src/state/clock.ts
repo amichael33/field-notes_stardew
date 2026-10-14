@@ -11,6 +11,8 @@ const STATUSES: ClockStatus[] = ['idle', 'running', 'paused', 'ended']
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
 
+// Null starts Spring 1. Any other clock (running, paused or ended: players
+// often sleep before 2:00 AM) moves to the next date at 6:00 AM, sunny, running.
 export function startDay(clock: Clock | null): Clock {
   if (!clock) return { season: 'spring', day: 1, minutes: MORNING, weather: 'sunny', status: 'running' }
   let { season, day } = clock
@@ -54,7 +56,8 @@ export function setDateTime(
 ): Clock {
   const day = clamp(Math.round(p.day), 1, 28)
   const minutes = clamp(Math.round(p.minutes / 10) * 10, MORNING, NIGHT)
-  const status = clock.status === 'running' ? 'running' : 'paused'
+  // 2:00 AM is the end of the day, so a paused clock set there offers Start day.
+  const status = minutes >= NIGHT ? 'ended' : clock.status === 'running' ? 'running' : 'paused'
   return { ...clock, season: p.season, day, minutes, status }
 }
 

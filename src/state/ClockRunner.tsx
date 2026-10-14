@@ -3,8 +3,9 @@ import { useSave } from './SaveContext'
 import { STEP_MS, tick } from './clock'
 
 export default function ClockRunner() {
-  const { save, updateClock } = useSave()
-  const running = save.clock?.status === 'running'
+  const { save, updateClock, isClockOwner } = useSave()
+  // Only the tab that owns the clock ticks; others just show the synced value.
+  const running = save.clock?.status === 'running' && isClockOwner
   const rem = useRef(0)
 
   useEffect(() => {

@@ -78,4 +78,45 @@ describe('ClockRunner', () => {
     advance(2000)
     expect(api.save.clock?.minutes).toBe(380)
   })
+  describe('two tabs', () => {
+    const fromOtherTab = (clock: Clock) =>
+      act(() => {
+        window.dispatchEvent(
+          new StorageEvent('storage', { key: KEY, newValue: serializeSave({ ...defaultSave(), clock }) }),
+        )
+      })
+
+    it('does not tick a running clock synced from another tab', () => {
+      setup(paused)
+      expect(api.isClockOwner).toBe(false)
+      fromOtherTab({ ...paused, status: 'running' })
+      expect(api.save.clock?.status).toBe('running')
+      expect(api.isClockOwner).toBe(false)
+      advance(21000)
+      expect(api.save.clock?.minutes).toBe(360)
+    })
+
+    it('the owner keeps ticking, and loses ownership to a clock changed elsewhere', () => {
+      setup(paused)
+      start()
+      expect(api.isClockOwner).toBe(true)
+      advance(7000)
+      expect(api.save.clock?.minutes).toBe(370)
+      // Another tab writes the same clock back (e.g. it ticked a checkbox): still the owner.
+      fromOtherTab(api.save.clock!)
+      expect(api.isClockOwner).toBe(true)
+      advance(7000)
+      expect(api.save.clock?.minutes).toBe(380)
+      // Another tab changes the clock: it becomes the owner and this tab stops ticking.
+      fromOtherTab({ ...api.save.clock!, minutes: 600 })
+      expect(api.isClockOwner).toBe(false)
+      advance(21000)
+      expect(api.save.clock?.minutes).toBe(600)
+      // Resuming control here (any local clock change) makes this tab the owner again.
+      act(() => api.updateClock((c) => (c ? nudge(c, 10) : c)))
+      expect(api.isClockOwner).toBe(true)
+      advance(7000)
+      expect(api.save.clock?.minutes).toBe(620)
+    })
+  })
 })

@@ -130,6 +130,28 @@ describe('SaveProvider', () => {
       expect(result.current.save.clock).toEqual({ ...run, status: 'paused' })
     })
 
+    it('applies a clock from another tab as is, without restoreClock', () => {
+      // Intentional: the storage handler does NOT call restoreClock. A running
+      // clock from another tab stays running here, so both tabs show the same
+      // time; only the owning tab (the one that last changed the clock) ticks.
+      const { result } = renderHook(() => useSave(), { wrapper })
+      act(() => {
+        window.dispatchEvent(
+          new StorageEvent('storage', { key: KEY, newValue: serializeSave({ ...defaultSave(), clock: { ...run } }) }),
+        )
+      })
+      expect(result.current.save.clock).toEqual(run)
+      expect(result.current.isClockOwner).toBe(false)
+    })
+
+    it('a tab is not the clock owner on load and becomes it on a local clock change', () => {
+      localStorage.setItem(KEY, serializeSave({ ...defaultSave(), clock: { ...run } }))
+      const { result } = renderHook(() => useSave(), { wrapper })
+      expect(result.current.isClockOwner).toBe(false)
+      act(() => result.current.updateClock((c) => c))
+      expect(result.current.isClockOwner).toBe(true)
+    })
+
     it('updateClock writes to localStorage', () => {
       const { result } = renderHook(() => useSave(), { wrapper })
       act(() => result.current.updateClock(() => ({ ...run })))

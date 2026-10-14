@@ -58,7 +58,9 @@ export function parseSave(json: string): ParseResult {
   let clock: Clock | null = null
   if (raw.clock !== undefined && raw.clock !== null) {
     if (!isClock(raw.clock)) return { ok: false, error: 'The save clock is invalid.' }
-    clock = { ...raw.clock }
+    // Copy only the validated fields so unknown keys in a file never enter the save.
+    const { season, day, minutes, weather, status } = raw.clock
+    clock = { season, day, minutes, weather, status }
   }
   return {
     ok: true,

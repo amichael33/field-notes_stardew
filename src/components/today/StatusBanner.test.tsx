@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { screen, within } from '@testing-library/react'
+import { act, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../../test-utils'
 import StatusBanner from './StatusBanner'
@@ -16,6 +16,12 @@ const start = () => userEvent.click(screen.getByRole('button', { name: 'Start da
 function seed(clock: Clock) {
   localStorage.setItem('field-notes-save', serializeSave({ ...defaultSave(), clock }))
 }
+const fromOtherTab = (clock: Clock | null) =>
+  act(() => {
+    window.dispatchEvent(
+      new StorageEvent('storage', { key: 'field-notes-save', newValue: serializeSave({ ...defaultSave(), clock }) }),
+    )
+  })
 
 describe('StatusBanner', () => {
   it('with no clock shows Start day and the stand-in label only', () => {
@@ -26,6 +32,7 @@ describe('StatusBanner', () => {
     expect(screen.queryByRole('button', { name: 'Pause' })).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: '+10' })).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: '-10' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Next day' })).not.toBeInTheDocument()
   })
 
   it('Start day shows the date, time and Pause', async () => {
@@ -53,6 +60,17 @@ describe('StatusBanner', () => {
     expect(banner().getByText('6:10 AM')).toBeInTheDocument()
   })
 
+  it.each(['running', 'paused'] as const)('a %s clock offers Next day, which starts the next morning', async (status) => {
+    seed({ season: 'spring', day: 28, minutes: 1320, weather: 'rain', status })
+    renderWithState(<StatusBanner nextStep={nextStep} />)
+    expect(screen.queryByRole('button', { name: 'Start day' })).not.toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Next day' }))
+    expect(banner().getByText('Summer 1 · Mon')).toBeInTheDocument()
+    expect(banner().getByText('6:00 AM')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Pause' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Sunny' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
   it('weather buttons use aria-pressed', async () => {
     renderWithState(<StatusBanner nextStep={nextStep} />)
     await start()
@@ -73,6 +91,7 @@ describe('StatusBanner', () => {
     renderWithState(<StatusBanner nextStep={nextStep} />)
     expect(banner().getByText('Day over')).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Pause' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Next day' })).not.toBeInTheDocument()
     await start()
     expect(banner().getByText('Spring 2 · Tue')).toBeInTheDocument()
     expect(banner().getByText('6:00 AM')).toBeInTheDocument()
@@ -111,5 +130,24 @@ describe('StatusBanner', () => {
     if (bad) await userEvent.type(day, bad)
     expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled()
     expect(banner().getByText('Spring 1 · Mon')).toBeInTheDocument()
+  })
+
+  it('setting the time to 2:00 AM ends the day and shows Start day, not Resume', async () => {
+    await openEditor()
+    await userEvent.click(screen.getByRole('button', { name: 'Pause' }))
+    await userEvent.selectOptions(editor().getByLabelText('Time'), '2:00 AM')
+    await userEvent.click(screen.getByRole('button', { name: 'Apply' }))
+    expect(banner().getByText('Day over')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Start day' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Resume' })).not.toBeInTheDocument()
+  })
+
+  it('closes the editor when the clock goes away, and it stays closed when a clock returns', async () => {
+    await openEditor()
+    fromOtherTab(null)
+    expect(screen.queryByRole('form', { name: 'Clock editor' })).not.toBeInTheDocument()
+    fromOtherTab({ season: 'spring', day: 3, minutes: 600, weather: 'sunny', status: 'paused' })
+    expect(banner().getByText('Spring 3 · Wed')).toBeInTheDocument()
+    expect(screen.queryByRole('form', { name: 'Clock editor' })).not.toBeInTheDocument()
   })
 })

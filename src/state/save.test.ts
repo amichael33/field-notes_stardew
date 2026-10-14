@@ -75,6 +75,12 @@ describe('save clock', () => {
     expect(r.ok && r.data.clock).toBeNull()
   })
 
+  it('keeps only the five clock fields from an imported file', () => {
+    const r = parseSave(JSON.stringify({ ...defaultSave(), clock: { ...clock, extra: 'x', more: { a: 1 } } }))
+    expect(r.ok && r.data.clock).toEqual(clock)
+    expect(r.ok && Object.keys(r.data.clock!).sort()).toEqual(['day', 'minutes', 'season', 'status', 'weather'])
+  })
+
   it('rejects an invalid clock', () => {
     const r = parseSave(JSON.stringify({ ...defaultSave(), clock: { ...clock, day: 40 } }))
     expect(r).toEqual({ ok: false, error: 'The save clock is invalid.' })

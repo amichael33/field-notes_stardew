@@ -20,6 +20,9 @@ export default function StatusBanner({ nextStep }: { nextStep?: PathStep }) {
   const { save, updateClock } = useSave()
   const clock = save.clock
   const [editing, setEditing] = useState(false)
+  // An import or another tab can clear the clock; do not leave the editor
+  // armed to reappear when a clock comes back.
+  if (!clock && editing) setEditing(false)
 
   const label = clock
     ? `${cap(clock.season)} ${clock.day} · ${WEEKDAYS[weekdayOf(clock.day)]}`
@@ -47,6 +50,11 @@ export default function StatusBanner({ nextStep }: { nextStep?: PathStep }) {
           ) : (
             <button type="button" className="banner-btn" onClick={() => updateClock((c) => startDay(c))}>
               Start day
+            </button>
+          )}
+          {canPause && (
+            <button type="button" className="banner-btn" onClick={() => updateClock((c) => startDay(c))}>
+              Next day
             </button>
           )}
           {clock && (

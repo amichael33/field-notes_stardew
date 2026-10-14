@@ -11,6 +11,9 @@ interface SaveApi {
   toggle: (id: string) => void
   setNotes: (text: string) => void
   updateClock: (fn: (c: Clock | null) => Clock | null) => void
+  // True when this tab last changed the clock. Only the owner's ClockRunner
+  // ticks, so two open tabs do not advance a running clock at double speed.
+  isClockOwner: boolean
   importSave: (json: string) => { ok: true } | { ok: false; error: string }
   exportSave: () => string
   saveError: boolean
@@ -33,13 +36,27 @@ export function SaveProvider({ children }: { children: ReactNode }) {
   const [save, setSave] = useState<SaveData>(load)
   const [saveError, setSaveError] = useState(false)
 
+  // A tab restoring a saved clock on load is not the owner (it is paused anyway).
+  const [isClockOwner, setClockOwner] = useState(false)
+
   const dirty = useRef(false)
+  const clockRef = useRef(save.clock)
+  useEffect(() => {
+    clockRef.current = save.clock
+  }, [save.clock])
 
   useEffect(() => {
+    // The other tab's save is applied as is: restoreClock is intentionally NOT
+    // called here, so a clock running in another tab shows as running in this
+    // one. This tab gives up clock ownership when the incoming clock differs
+    // from its own (another tab changed it); an identical clock written back by
+    // a tab that only changed something else keeps the owner ticking.
     function onStorage(e: StorageEvent) {
       if (e.key !== STORAGE_KEY || e.newValue === null) return
       const parsed = parseSave(e.newValue)
-      if (parsed.ok) setSave(parsed.data)
+      if (!parsed.ok) return
+      if (JSON.stringify(parsed.data.clock) !== JSON.stringify(clockRef.current)) setClockOwner(false)
+      setSave(parsed.data)
     }
     window.addEventListener('storage', onStorage)
     return () => window.removeEventListener('storage', onStorage)
@@ -69,12 +86,14 @@ export function SaveProvider({ children }: { children: ReactNode }) {
   }, [])
   const updateClock = useCallback((fn: (c: Clock | null) => Clock | null) => {
     dirty.current = true
+    setClockOwner(true)
     setSave((s) => ({ ...s, clock: fn(s.clock) }))
   }, [])
   const importSave = useCallback((json: string) => {
     const parsed = parseSave(json)
     if (!parsed.ok) return { ok: false as const, error: parsed.error }
     dirty.current = true
+    setClockOwner(true)
     setSave({ ...parsed.data, clock: restoreClock(parsed.data.clock) })
     return { ok: true as const }
   }, [])
@@ -82,7 +101,17 @@ export function SaveProvider({ children }: { children: ReactNode }) {
 
   return (
     <SaveContext.Provider
-      value={{ save, setRoute, toggle, setNotes, updateClock, importSave, exportSave, saveError }}
+      value={{
+        save,
+        setRoute,
+        toggle,
+        setNotes,
+        updateClock,
+        isClockOwner,
+        importSave,
+        exportSave,
+        saveError,
+      }}
     >
       {children}
     </SaveContext.Provider>

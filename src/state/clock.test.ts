@@ -31,6 +31,11 @@ describe('startDay', () => {
     expect(startDay(c({ status: 'ended', season: 'winter', day: 28 }))).toEqual(c({ season: 'spring', day: 1 }))
     expect(startDay(c({ status: 'ended', minutes: 1560, weather: 'rain' }))).toEqual(c({ day: 6 }))
   })
+  it('advances to the next day from a running or paused clock too (sleeping early)', () => {
+    expect(startDay(c({ minutes: 1320, weather: 'rain' }))).toEqual(c({ day: 6 }))
+    expect(startDay(c({ status: 'paused', minutes: 900, day: 28 }))).toEqual(c({ season: 'summer', day: 1 }))
+    expect(startDay(c({ status: 'idle' }))).toEqual(c({ day: 6 }))
+  })
 })
 
 describe('tick', () => {
@@ -97,6 +102,13 @@ describe('setDateTime', () => {
     expect(setDateTime(c({ status: 'running' }), p).status).toBe('running')
     expect(setDateTime(c({ status: 'paused' }), p).status).toBe('paused')
     expect(setDateTime(c({ status: 'ended' }), p).status).toBe('paused')
+  })
+  it('ends the day when set to 2:00 AM', () => {
+    const p = { season: 'spring' as const, day: 1, minutes: 1560 }
+    expect(setDateTime(c({ status: 'paused' }), p).status).toBe('ended')
+    expect(setDateTime(c({ status: 'running' }), p).status).toBe('ended')
+    expect(setDateTime(c({ status: 'ended' }), p).status).toBe('ended')
+    expect(setDateTime(c({ status: 'paused' }), { ...p, minutes: 9999 })).toMatchObject({ minutes: 1560, status: 'ended' })
   })
 })
 
