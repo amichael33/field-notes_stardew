@@ -1,0 +1,40 @@
+export const PLACES = {
+  SeedShop: "Pierre's General Store",
+  Mountain: 'The Mountain',
+  SebastianRoom: "Sebastian's room",
+  Saloon: 'The Stardrop Saloon',
+  Desert: 'The Calico Desert',
+  bed: 'At home',
+  ScienceHouse: "Robin's house",
+  Beach: 'The Beach',
+  Town: 'Pelican Town',
+  Hospital: "Harvey's Clinic",
+  Forest: 'Cindersap Forest',
+  ArchaeologyHouse: 'The Museum',
+  BusStop: 'The bus stop',
+  Railroad: 'The Railroad',
+  JoshHouse: "Alex's house",
+  BathHouse_MensLocker: 'The Bathhouse',
+  BathHouse_Entry: 'The Bathhouse',
+  HaleyHouse: "Haley and Emily's house",
+  Sunroom: "Haley and Emily's sunroom",
+  CommunityCenter: 'The Community Center',
+  Blacksmith: "Clint's Blacksmith",
+  JojaMart: 'JojaMart',
+  ElliottHouse: "Elliott's cabin",
+  SandyHouse: 'The Oasis',
+  HarveyRoom: "Harvey's apartment",
+  AnimalShop: "Marnie's Ranch",
+  SamHouse: "Jodi's house",
+  LeahHouse: "Leah's cottage",
+  LeoTreeHouse: "Leo's tree house",
+  Tent: "Linus's tent",
+  ManorHouse: "The Mayor's manor",
+  FishShop: "Willy's Fish Shop",
+  Trailer: "Penny and Pam's trailer",
+}
+
+export function placeName(mapId) {
+  if (!Object.hasOwn(PLACES, mapId)) throw new Error(`Unmapped map id: ${mapId}`)
+  return PLACES[mapId]
+}

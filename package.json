@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "data:wiki": "node scripts/wiki/build-data.mjs",
-    "icons": "node scripts/icons/build-icons.mjs"
+    "icons": "node scripts/icons/build-icons.mjs",
+    "schedules": "node scripts/schedules/build-schedules.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -1,0 +1,5792 @@
+{
+  "Abigail": {
+    "Fri": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 660,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 900,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1200,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 600,
+        "place": "The Museum"
+      },
+      {
+        "time": 1080,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1320,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "fall": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "The bus stop"
+      },
+      {
+        "time": 1020,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1170,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "fall_Mon": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 660,
+        "place": "The Beach"
+      },
+      {
+        "time": 1080,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "rain": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 660,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 900,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1140,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1320,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "rain2": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 660,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 840,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1200,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "spring": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 990,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1170,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "spring_4": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 750,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1200,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "summer": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "The Railroad"
+      },
+      {
+        "time": 840,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1060,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1170,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "winter": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "Robin's house"
+      },
+      {
+        "time": 870,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1170,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "Robin's house"
+      },
+      {
+        "time": 870,
+        "place": "The Beach"
+      },
+      {
+        "time": 1440,
+        "place": "Pierre's General Store"
+      }
+    ]
+  },
+  "Alex": {
+    "Sun": [
+      {
+        "time": 1320,
+        "place": "Alex's house"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 990,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1120,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1320,
+        "place": "Alex's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 780,
+        "place": "Alex's house"
+      },
+      {
+        "time": 960,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1320,
+        "place": "Alex's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 780,
+        "place": "Alex's house"
+      },
+      {
+        "time": 960,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1320,
+        "place": "Alex's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 450,
+        "place": "The Beach"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1320,
+        "place": "Alex's house"
+      }
+    ],
+    "summer_16": [
+      {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1440,
+        "place": "Alex's house"
+      }
+    ],
+    "winter": [
+      {
+        "time": 540,
+        "place": "The Bathhouse"
+      },
+      {
+        "time": 900,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1080,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1170,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1260,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1360,
+        "place": "Alex's house"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 540,
+        "place": "The Bathhouse"
+      },
+      {
+        "time": 900,
+        "place": "The Beach"
+      },
+      {
+        "time": 1440,
+        "place": "Alex's house"
+      }
+    ]
+  },
+  "Caroline": {
+    "Fri": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 600,
+        "place": "Haley and Emily's sunroom"
+      },
+      {
+        "time": 720,
+        "place": "The Museum"
+      },
+      {
+        "time": 1020,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 660,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1020,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 540,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 640,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 810,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 880,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 630,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1090,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 600,
+        "place": "Haley and Emily's sunroom"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "fall_25": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 600,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 720,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 720,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 810,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 600,
+        "place": "Haley and Emily's sunroom"
+      },
+      {
+        "time": 720,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 720,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 960,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Pierre's General Store"
+      }
+    ]
+  },
+  "Clint": {
+    "Fri": [
+      {
+        "time": 530,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Clint's Blacksmith"
+      }
+    ],
+    "rain": [
+      {
+        "time": 530,
+        "place": "Clint's Blacksmith"
+      },
+      {
+        "time": 1020,
+        "place": "Clint's Blacksmith"
+      },
+      {
+        "time": 1140,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Clint's Blacksmith"
+      }
+    ],
+    "spring": [
+      {
+        "time": 530,
+        "place": "Clint's Blacksmith"
+      },
+      {
+        "time": 1020,
+        "place": "Clint's Blacksmith"
+      },
+      {
+        "time": 1140,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Clint's Blacksmith"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 530,
+        "place": "Clint's Blacksmith"
+      },
+      {
+        "time": 1020,
+        "place": "The Beach"
+      },
+      {
+        "time": 1440,
+        "place": "Clint's Blacksmith"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 540,
+        "place": "Clint's Blacksmith"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Clint's Blacksmith"
+      }
+    ]
+  },
+  "Demetrius": {
+    "Fri": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1160,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      }
+    ],
+    "fall": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1140,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1240,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1350,
+        "place": "Robin's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "Robin's house"
+      },
+      {
+        "time": 900,
+        "place": "Robin's house"
+      },
+      {
+        "time": 940,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1080,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1160,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1200,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "Robin's house"
+      },
+      {
+        "time": 870,
+        "place": "The Mountain"
+      },
+      {
+        "time": 930,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1140,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1240,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1350,
+        "place": "Robin's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1140,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1240,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1350,
+        "place": "Robin's house"
+      }
+    ],
+    "summer_25": [
+      {
+        "time": 500,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      }
+    ],
+    "winter": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "Robin's house"
+      },
+      {
+        "time": 900,
+        "place": "Robin's house"
+      },
+      {
+        "time": 940,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1080,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1160,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1200,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 470,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "Robin's house"
+      },
+      {
+        "time": 900,
+        "place": "Robin's house"
+      },
+      {
+        "time": 940,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Robin's house"
+      }
+    ]
+  },
+  "Elliott": {
+    "Fri": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "The Beach"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "The Beach"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "Thu": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 690,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1050,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1260,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "fall": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 690,
+        "place": "The Museum"
+      },
+      {
+        "time": 1050,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1260,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 810,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1080,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1200,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 720,
+        "place": "The Beach"
+      },
+      {
+        "time": 810,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 900,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1080,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1200,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "summer": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 690,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1080,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1320,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "summer_9": [
+      {
+        "time": 540,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1260,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "winter": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 690,
+        "place": "The Museum"
+      },
+      {
+        "time": 1050,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1260,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 1440,
+        "place": "Elliott's cabin"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 480,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 600,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 660,
+        "place": "Elliott's cabin"
+      },
+      {
+        "time": 690,
+        "place": "The Museum"
+      },
+      {
+        "time": 1010,
+        "place": "The Beach"
+      },
+      {
+        "time": 1500,
+        "place": "Elliott's cabin"
+      }
+    ]
+  },
+  "Emily": {
+    "Fri": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 600,
+        "place": "The Community Center"
+      },
+      {
+        "time": 930,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1470,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 600,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1470,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "fall_15": [
+      {
+        "time": 1440,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 930,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1470,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 930,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1470,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "winter_11": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1470,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 870,
+        "place": "The Beach"
+      },
+      {
+        "time": 1470,
+        "place": "Haley and Emily's house"
+      }
+    ]
+  },
+  "Evelyn": {
+    "Mon": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "The Community Center"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "The Community Center"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "Thu": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "The Community Center"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "Alex's house"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "Alex's house"
+      },
+      {
+        "time": 780,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "Alex's house"
+      },
+      {
+        "time": 780,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "winter": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "Alex's house"
+      },
+      {
+        "time": 780,
+        "place": "Alex's house"
+      },
+      {
+        "time": 990,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1140,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1290,
+        "place": "Alex's house"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 480,
+        "place": "Alex's house"
+      },
+      {
+        "time": 640,
+        "place": "Alex's house"
+      },
+      {
+        "time": 730,
+        "place": "Alex's house"
+      },
+      {
+        "time": 780,
+        "place": "Alex's house"
+      },
+      {
+        "time": 990,
+        "place": "The Beach"
+      },
+      {
+        "time": 1420,
+        "place": "Alex's house"
+      }
+    ]
+  },
+  "George": {
+    "Sun": [
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 390,
+        "place": "Alex's house"
+      },
+      {
+        "time": 720,
+        "place": "Alex's house"
+      },
+      {
+        "time": 900,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 390,
+        "place": "Alex's house"
+      },
+      {
+        "time": 720,
+        "place": "Alex's house"
+      },
+      {
+        "time": 900,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      }
+    ],
+    "summer_Fri": [
+      {
+        "time": 390,
+        "place": "Alex's house"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 900,
+        "place": "Alex's house"
+      },
+      {
+        "time": 1200,
+        "place": "Alex's house"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 390,
+        "place": "Alex's house"
+      },
+      {
+        "time": 720,
+        "place": "Alex's house"
+      },
+      {
+        "time": 980,
+        "place": "The Beach"
+      },
+      {
+        "time": 1420,
+        "place": "Alex's house"
+      }
+    ]
+  },
+  "Gus": {
+    "Mon": [
+      {
+        "time": 480,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 660,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1110,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1130,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1230,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1240,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "The Stardrop Saloon"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 1440,
+        "place": "The Stardrop Saloon"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 480,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 510,
+        "place": "The Community Center"
+      },
+      {
+        "time": 750,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1110,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1130,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1230,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1240,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "The Stardrop Saloon"
+      }
+    ],
+    "fall_4": [
+      {
+        "time": 480,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1230,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1240,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "The Stardrop Saloon"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 720,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1110,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1130,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1230,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1240,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "The Stardrop Saloon"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 720,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1110,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1130,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1230,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1240,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "The Stardrop Saloon"
+      }
+    ]
+  },
+  "Haley": {
+    "Wed": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 590,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 990,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1200,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1350,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "fall_Mon": [
+      {
+        "time": 480,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 510,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 600,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 660,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 990,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1200,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1380,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 510,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 630,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 690,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 960,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1140,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1320,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 590,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 660,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 990,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1200,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1350,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "spring_Mon": [
+      {
+        "time": 480,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 510,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 600,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 660,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 990,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1200,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1380,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 520,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 570,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 630,
+        "place": "The Beach"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1200,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1380,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "winter": [
+      {
+        "time": 510,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 630,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 690,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 960,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1140,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1320,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 510,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 630,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 690,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 720,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 990,
+        "place": "The Beach"
+      },
+      {
+        "time": 1440,
+        "place": "Haley and Emily's house"
+      }
+    ],
+    "winter_9": [
+      {
+        "time": 540,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 590,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1200,
+        "place": "Haley and Emily's house"
+      },
+      {
+        "time": 1350,
+        "place": "Haley and Emily's house"
+      }
+    ]
+  },
+  "Harvey": {
+    "Fri": [
+      {
+        "time": 420,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 510,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 900,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 990,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1140,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1260,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 420,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 510,
+        "place": "The Museum"
+      },
+      {
+        "time": 900,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 990,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1140,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1260,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "Thu": [
+      {
+        "time": 450,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 770,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 850,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 950,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 970,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 990,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1080,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1380,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 450,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 770,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 850,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 950,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 970,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 990,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1080,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1380,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "fall": [
+      {
+        "time": 420,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 510,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 520,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 960,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1050,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "spring": [
+      {
+        "time": 420,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 510,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1050,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1120,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "summer": [
+      {
+        "time": 420,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 510,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1050,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1120,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "winter": [
+      {
+        "time": 480,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 520,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 960,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1050,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1320,
+        "place": "Harvey's apartment"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 480,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 520,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 720,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 960,
+        "place": "Harvey's apartment"
+      },
+      {
+        "time": 1020,
+        "place": "The Beach"
+      },
+      {
+        "time": 1440,
+        "place": "Harvey's apartment"
+      }
+    ]
+  },
+  "Jas": {
+    "Fri": [
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1070,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1200,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1070,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1070,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "rain": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 900,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1140,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "spring": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 900,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1140,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "summer": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 800,
+        "place": "The Beach"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1140,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 890,
+        "place": "The Beach"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "winter_18": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1200,
+        "place": "Marnie's Ranch"
+      }
+    ]
+  },
+  "Jodi": {
+    "Fri": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "JojaMart"
+      },
+      {
+        "time": 810,
+        "place": "JojaMart"
+      },
+      {
+        "time": 840,
+        "place": "JojaMart"
+      },
+      {
+        "time": 880,
+        "place": "JojaMart"
+      },
+      {
+        "time": 930,
+        "place": "JojaMart"
+      },
+      {
+        "time": 960,
+        "place": "JojaMart"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1170,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 840,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1080,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "JojaMart"
+      },
+      {
+        "time": 810,
+        "place": "JojaMart"
+      },
+      {
+        "time": 840,
+        "place": "JojaMart"
+      },
+      {
+        "time": 880,
+        "place": "JojaMart"
+      },
+      {
+        "time": 930,
+        "place": "JojaMart"
+      },
+      {
+        "time": 960,
+        "place": "JojaMart"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1170,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1170,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1170,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring_11": [
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring_18": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1170,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1320,
+        "place": "Jodi's house"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 480,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 580,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 620,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 990,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Jodi's house"
+      }
+    ]
+  },
+  "Kent": {
+    "Fri": [
+      {
+        "time": 420,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 630,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1430,
+        "place": "Jodi's house"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 420,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 630,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1430,
+        "place": "Jodi's house"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 1380,
+        "place": "Jodi's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 510,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1380,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 420,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 630,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1380,
+        "place": "Jodi's house"
+      }
+    ]
+  },
+  "Leah": {
+    "Fri": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 840,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Leah's cottage"
+      }
+    ],
+    "Mon": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 660,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1020,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1320,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1440,
+        "place": "Leah's cottage"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 840,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Leah's cottage"
+      }
+    ],
+    "fall": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1140,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1320,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1440,
+        "place": "Leah's cottage"
+      }
+    ],
+    "rain": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 840,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Leah's cottage"
+      }
+    ],
+    "spring": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 900,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1110,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1170,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1320,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 1440,
+        "place": "Leah's cottage"
+      }
+    ],
+    "spring_16": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Leah's cottage"
+      }
+    ],
+    "summer": [
+      {
+        "time": 1440,
+        "place": "Leah's cottage"
+      }
+    ],
+    "winter": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 840,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1420,
+        "place": "Leah's cottage"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 540,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 720,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 840,
+        "place": "Leah's cottage"
+      },
+      {
+        "time": 960,
+        "place": "The Beach"
+      },
+      {
+        "time": 1420,
+        "place": "Leah's cottage"
+      }
+    ]
+  },
+  "Lewis": {
+    "Fri": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 640,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 700,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 640,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 700,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1260,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1320,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "default": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 640,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 700,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 960,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1200,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1320,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "fall_9": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "fall_Sun": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 570,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 620,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 670,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 960,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1200,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1320,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 600,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 840,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1190,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1320,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 540,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 580,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 640,
+        "place": "The Community Center"
+      },
+      {
+        "time": 840,
+        "place": "The Community Center"
+      },
+      {
+        "time": 880,
+        "place": "The Community Center"
+      },
+      {
+        "time": 960,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1020,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1110,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1380,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "summer_Sun": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 640,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 700,
+        "place": "The Beach"
+      },
+      {
+        "time": 960,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1200,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1320,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 640,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 700,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "The Beach"
+      },
+      {
+        "time": 1380,
+        "place": "The Mayor's manor"
+      }
+    ],
+    "winter_Sun": [
+      {
+        "time": 480,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 540,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 660,
+        "place": "The Museum"
+      },
+      {
+        "time": 960,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1200,
+        "place": "The Mayor's manor"
+      },
+      {
+        "time": 1320,
+        "place": "The Mayor's manor"
+      }
+    ]
+  },
+  "Linus": {
+    "fall": [
+      {
+        "time": 420,
+        "place": "The Mountain"
+      },
+      {
+        "time": 460,
+        "place": "The Mountain"
+      },
+      {
+        "time": 540,
+        "place": "The Railroad"
+      },
+      {
+        "time": 840,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1080,
+        "place": "Linus's tent"
+      }
+    ],
+    "rain": [
+      {
+        "time": 420,
+        "place": "Linus's tent"
+      },
+      {
+        "time": 570,
+        "place": "The Mountain"
+      },
+      {
+        "time": 610,
+        "place": "Linus's tent"
+      },
+      {
+        "time": 900,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1140,
+        "place": "Linus's tent"
+      }
+    ],
+    "spring": [
+      {
+        "time": 390,
+        "place": "The Mountain"
+      },
+      {
+        "time": 420,
+        "place": "The Mountain"
+      },
+      {
+        "time": 570,
+        "place": "The Mountain"
+      },
+      {
+        "time": 840,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1140,
+        "place": "Linus's tent"
+      },
+      {
+        "time": 1260,
+        "place": "Linus's tent"
+      },
+      {
+        "time": 1380,
+        "place": "Linus's tent"
+      }
+    ],
+    "summer": [
+      {
+        "time": 390,
+        "place": "The Mountain"
+      },
+      {
+        "time": 580,
+        "place": "The Mountain"
+      },
+      {
+        "time": 780,
+        "place": "The Mountain"
+      },
+      {
+        "time": 960,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1200,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1220,
+        "place": "Linus's tent"
+      }
+    ],
+    "winter": [
+      {
+        "time": 660,
+        "place": "The Mountain"
+      },
+      {
+        "time": 840,
+        "place": "The Bathhouse"
+      },
+      {
+        "time": 1080,
+        "place": "Linus's tent"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 660,
+        "place": "The Mountain"
+      },
+      {
+        "time": 960,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Linus's tent"
+      }
+    ]
+  },
+  "Marnie": {
+    "Fri": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Mon": [
+      {
+        "time": 490,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 720,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 600,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1090,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "fall_18": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 630,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "rain": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1080,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "spring": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1080,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 510,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 530,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 960,
+        "place": "The Beach"
+      },
+      {
+        "time": 1420,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "winter_18": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 640,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 970,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1260,
+        "place": "Marnie's Ranch"
+      }
+    ]
+  },
+  "Maru": {
+    "Mon": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1380,
+        "place": "Robin's house"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 810,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1380,
+        "place": "Robin's house"
+      }
+    ],
+    "Thu": [
+      {
+        "time": 450,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 840,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1000,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1440,
+        "place": "Robin's house"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 450,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 840,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 1000,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1440,
+        "place": "Robin's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 750,
+        "place": "Robin's house"
+      },
+      {
+        "time": 870,
+        "place": "Robin's house"
+      },
+      {
+        "time": 990,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1080,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1200,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1380,
+        "place": "Robin's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1080,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 840,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1140,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1440,
+        "place": "Robin's house"
+      }
+    ],
+    "summer_Mon": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 790,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1380,
+        "place": "Robin's house"
+      }
+    ],
+    "summer_Sun": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 600,
+        "place": "Robin's house"
+      },
+      {
+        "time": 750,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1090,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1380,
+        "place": "Robin's house"
+      }
+    ],
+    "winter": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 540,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "The Community Center"
+      },
+      {
+        "time": 960,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 540,
+        "place": "Robin's house"
+      },
+      {
+        "time": 660,
+        "place": "Robin's house"
+      },
+      {
+        "time": 940,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Robin's house"
+      }
+    ]
+  },
+  "Pam": {
+    "rain": [
+      {
+        "time": 480,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 720,
+        "place": "JojaMart"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 720,
+        "place": "JojaMart"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "spring_25": [
+      {
+        "time": 480,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 690,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Penny and Pam's trailer"
+      }
+    ]
+  },
+  "Penny": {
+    "Fri": [
+      {
+        "time": 510,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1070,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1110,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 600,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1200,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 510,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1070,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1110,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 510,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1070,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1110,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "rain": [
+      {
+        "time": 540,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 660,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 780,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 900,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1080,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1260,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "rain2": [
+      {
+        "time": 490,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 720,
+        "place": "The Museum"
+      },
+      {
+        "time": 960,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1140,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1260,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 750,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 960,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1120,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "summer": [
+      {
+        "time": 490,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 780,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1080,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1260,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "summer_Sun": [
+      {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 720,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1080,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1260,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "winter": [
+      {
+        "time": 540,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 630,
+        "place": "The Community Center"
+      },
+      {
+        "time": 900,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1080,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1260,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 540,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 660,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 780,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 900,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 960,
+        "place": "The Beach"
+      },
+      {
+        "time": 1430,
+        "place": "Penny and Pam's trailer"
+      }
+    ],
+    "winter_4": [
+      {
+        "time": 540,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 690,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1140,
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "time": 1260,
+        "place": "Penny and Pam's trailer"
+      }
+    ]
+  },
+  "Pierre": {
+    "Fri": [
+      {
+        "time": 420,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 510,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1370,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "rain": [
+      {
+        "time": 420,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 510,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1020,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1140,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1380,
+        "place": "Pierre's General Store"
+      }
+    ],
+    "spring": [
+      {
+        "time": 420,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 510,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1020,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1140,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1260,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1380,
+        "place": "Pierre's General Store"
+      }
+    ]
+  },
+  "Robin": {
+    "Fri": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1160,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      }
+    ],
+    "Mon": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1020,
+        "place": "The Community Center"
+      },
+      {
+        "time": 1180,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1320,
+        "place": "Robin's house"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 570,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 780,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 960,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1080,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1020,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1170,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1020,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1170,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      }
+    ],
+    "summer_18": [
+      {
+        "time": 420,
+        "place": "Robin's house"
+      },
+      {
+        "time": 480,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1260,
+        "place": "Robin's house"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 480,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1020,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Robin's house"
+      }
+    ]
+  },
+  "Sam": {
+    "Fri": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 900,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1280,
+        "place": "Jodi's house"
+      }
+    ],
+    "Mon": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "JojaMart"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1290,
+        "place": "Jodi's house"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 480,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 660,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 750,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 900,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1080,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1180,
+        "place": "Jodi's house"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "JojaMart"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1290,
+        "place": "Jodi's house"
+      }
+    ],
+    "fall": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 800,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      }
+    ],
+    "fall_11": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 900,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1110,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "rain2": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1180,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 820,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1110,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 820,
+        "place": "The Beach"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      }
+    ],
+    "winter": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 800,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 600,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 640,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1020,
+        "place": "The Beach"
+      },
+      {
+        "time": 1440,
+        "place": "Jodi's house"
+      }
+    ]
+  },
+  "Sandy": {
+    "fall_15": [
+      {
+        "time": 1450,
+        "place": "The Oasis"
+      }
+    ],
+    "spring": [
+      {
+        "time": 390,
+        "place": "The Oasis"
+      }
+    ]
+  },
+  "Sebastian": {
+    "Fri": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 900,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1270,
+        "place": "Sebastian's room"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 540,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 750,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 900,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1080,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1170,
+        "place": "Sebastian's room"
+      }
+    ],
+    "Thu": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 840,
+        "place": "The Railroad"
+      },
+      {
+        "time": 1080,
+        "place": "The Railroad"
+      },
+      {
+        "time": 1170,
+        "place": "The Railroad"
+      },
+      {
+        "time": 1290,
+        "place": "Sebastian's room"
+      }
+    ],
+    "default": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 900,
+        "place": "Robin's house"
+      },
+      {
+        "time": 930,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 1110,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1290,
+        "place": "Sebastian's room"
+      }
+    ],
+    "fall": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 720,
+        "place": "The Mountain"
+      },
+      {
+        "time": 840,
+        "place": "The Mountain"
+      },
+      {
+        "time": 900,
+        "place": "The Mountain"
+      },
+      {
+        "time": 960,
+        "place": "Robin's house"
+      },
+      {
+        "time": 1050,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 1290,
+        "place": "Sebastian's room"
+      }
+    ],
+    "rain": [
+      {
+        "time": 630,
+        "place": "The Beach"
+      },
+      {
+        "time": 1020,
+        "place": "Sebastian's room"
+      }
+    ],
+    "rain2": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 900,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1270,
+        "place": "Sebastian's room"
+      }
+    ],
+    "spring": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 900,
+        "place": "Robin's house"
+      },
+      {
+        "time": 930,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 1110,
+        "place": "The Mountain"
+      },
+      {
+        "time": 1290,
+        "place": "Sebastian's room"
+      }
+    ],
+    "summer_4": [
+      {
+        "time": 540,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 600,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Sebastian's room"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 630,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 900,
+        "place": "Robin's house"
+      },
+      {
+        "time": 930,
+        "place": "Sebastian's room"
+      },
+      {
+        "time": 1010,
+        "place": "The Beach"
+      },
+      {
+        "time": 1420,
+        "place": "Sebastian's room"
+      }
+    ]
+  },
+  "Shane": {
+    "Sat": [
+      {
+        "time": 420,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 720,
+        "place": "Pierre's General Store"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "Sun": [
+      {
+        "time": 1440,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "default": [
+      {
+        "time": 540,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 600,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 720,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 840,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 990,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1140,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1260,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "rain": [
+      {
+        "time": 420,
+        "place": "JojaMart"
+      },
+      {
+        "time": 750,
+        "place": "JojaMart"
+      },
+      {
+        "time": 810,
+        "place": "JojaMart"
+      },
+      {
+        "time": 870,
+        "place": "JojaMart"
+      },
+      {
+        "time": 930,
+        "place": "JojaMart"
+      },
+      {
+        "time": 990,
+        "place": "JojaMart"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "spring": [
+      {
+        "time": 420,
+        "place": "JojaMart"
+      },
+      {
+        "time": 750,
+        "place": "JojaMart"
+      },
+      {
+        "time": 810,
+        "place": "JojaMart"
+      },
+      {
+        "time": 870,
+        "place": "JojaMart"
+      },
+      {
+        "time": 930,
+        "place": "JojaMart"
+      },
+      {
+        "time": 990,
+        "place": "JojaMart"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "summer_Sun": [
+      {
+        "time": 420,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 890,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 1080,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1440,
+        "place": "Marnie's Ranch"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 420,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 660,
+        "place": "Marnie's Ranch"
+      },
+      {
+        "time": 900,
+        "place": "The Beach"
+      },
+      {
+        "time": 1380,
+        "place": "Marnie's Ranch"
+      }
+    ]
+  },
+  "Vincent": {
+    "Fri": [
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1060,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 610,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 720,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "Tue": [
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1060,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "Wed": [
+      {
+        "time": 540,
+        "place": "The Museum"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 980,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1060,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "rain": [
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring": [
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1020,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "spring_11": [
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 690,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1200,
+        "place": "Jodi's house"
+      }
+    ],
+    "summer": [
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 820,
+        "place": "The Beach"
+      },
+      {
+        "time": 1140,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 1260,
+        "place": "Jodi's house"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 540,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 660,
+        "place": "Jodi's house"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 990,
+        "place": "The Beach"
+      },
+      {
+        "time": 1410,
+        "place": "Jodi's house"
+      }
+    ]
+  },
+  "Willy": {
+    "Fri": [
+      {
+        "time": 370,
+        "place": "The Beach"
+      },
+      {
+        "time": 530,
+        "place": "Willy's Fish Shop"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1400,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "Sat": [
+      {
+        "time": 370,
+        "place": "Cindersap Forest"
+      },
+      {
+        "time": 840,
+        "place": "Pelican Town"
+      },
+      {
+        "time": 1140,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1380,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "rain": [
+      {
+        "time": 370,
+        "place": "The Beach"
+      },
+      {
+        "time": 530,
+        "place": "Willy's Fish Shop"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1400,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "spring": [
+      {
+        "time": 370,
+        "place": "The Beach"
+      },
+      {
+        "time": 530,
+        "place": "Willy's Fish Shop"
+      },
+      {
+        "time": 1020,
+        "place": "The Beach"
+      },
+      {
+        "time": 1320,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "spring_9": [
+      {
+        "time": 370,
+        "place": "The Beach"
+      },
+      {
+        "time": 530,
+        "place": "Willy's Fish Shop"
+      },
+      {
+        "time": 610,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 810,
+        "place": "Harvey's Clinic"
+      },
+      {
+        "time": 960,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1400,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "winter": [
+      {
+        "time": 370,
+        "place": "The Beach"
+      },
+      {
+        "time": 530,
+        "place": "Willy's Fish Shop"
+      },
+      {
+        "time": 1020,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1400,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "winter_15": [
+      {
+        "time": 990,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1460,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "winter_16": [
+      {
+        "time": 990,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1460,
+        "place": "Willy's Fish Shop"
+      }
+    ],
+    "winter_17": [
+      {
+        "time": 990,
+        "place": "The Stardrop Saloon"
+      },
+      {
+        "time": 1460,
+        "place": "Willy's Fish Shop"
+      }
+    ]
+  }
+}
