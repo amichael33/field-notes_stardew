@@ -1,4 +1,5 @@
 import type { Clock, SaveData } from '../data/types'
+import { DEFAULT_PLAN_GOAL, isPlanGoal } from '../data/plans'
 import { isClock } from './clock'
 
 type ParseResult = { ok: true; data: SaveData } | { ok: false; error: string }
@@ -51,6 +52,8 @@ export function parseSave(json: string): ParseResult {
   if (typeof profile.farmType !== 'string') {
     return { ok: false, error: 'The save farm type is invalid.' }
   }
+  const planGoal = profile.planGoal === undefined ? DEFAULT_PLAN_GOAL : profile.planGoal
+  if (!isPlanGoal(planGoal)) return { ok: false, error: 'The save plan goal is invalid.' }
   if (!Array.isArray(raw.checked) || !raw.checked.every((c) => typeof c === 'string')) {
     return { ok: false, error: 'The save checklist is invalid.' }
   }
@@ -66,7 +69,7 @@ export function parseSave(json: string): ParseResult {
     ok: true,
     data: {
       version: 1,
-      profile: { route: profile.route, farmType: profile.farmType, planGoal: 'community-center' },
+      profile: { route: profile.route, farmType: profile.farmType, planGoal },
       checked: [...raw.checked],
       notes: raw.notes,
       clock,

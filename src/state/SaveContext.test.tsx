@@ -121,6 +121,30 @@ describe('SaveProvider', () => {
     expect(result.current.save).toEqual(incoming)
   })
 
+  describe('plan goal', () => {
+    it('setPlanGoal updates the profile, persists, and keeps checked', () => {
+      const { result } = renderHook(() => useSave(), { wrapper })
+      act(() => result.current.toggle('plan:community-center:t1'))
+      act(() => result.current.setPlanGoal('money'))
+      expect(result.current.save.profile.planGoal).toBe('money')
+      expect(result.current.save.checked).toContain('plan:community-center:t1')
+      expect(JSON.parse(localStorage.getItem(KEY)!).profile.planGoal).toBe('money')
+    })
+
+    it('importSave rejects a bad goal and leaves the save unchanged', () => {
+      const { result } = renderHook(() => useSave(), { wrapper })
+      act(() => result.current.toggle('x'))
+      const before = result.current.save
+      const bad = { ...defaultSave(), profile: { ...defaultSave().profile, planGoal: 'bogus' } }
+      let res: ReturnType<typeof result.current.importSave> | undefined
+      act(() => {
+        res = result.current.importSave(JSON.stringify(bad))
+      })
+      expect(res?.ok).toBe(false)
+      expect(result.current.save).toEqual(before)
+    })
+  })
+
   describe('clock', () => {
     const run = { season: 'spring', day: 3, minutes: 700, weather: 'sunny', status: 'running' } as const
 

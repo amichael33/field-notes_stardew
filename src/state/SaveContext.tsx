@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import type { Clock, Route, SaveData } from '../data/types'
+import type { Clock, PlanGoal, Route, SaveData } from '../data/types'
 import { restoreClock } from './clock'
 import { defaultSave, parseSave, serializeSave, toggleChecked } from './save'
 
@@ -8,6 +8,7 @@ const STORAGE_KEY = 'field-notes-save'
 interface SaveApi {
   save: SaveData
   setRoute: (r: Route) => void
+  setPlanGoal: (goal: PlanGoal) => void
   toggle: (id: string) => void
   setNotes: (text: string) => void
   updateClock: (fn: (c: Clock | null) => Clock | null) => void
@@ -76,6 +77,10 @@ export function SaveProvider({ children }: { children: ReactNode }) {
     dirty.current = true
     setSave((s) => ({ ...s, profile: { ...s.profile, route } }))
   }, [])
+  const setPlanGoal = useCallback((planGoal: PlanGoal) => {
+    dirty.current = true
+    setSave((s) => ({ ...s, profile: { ...s.profile, planGoal } }))
+  }, [])
   const toggle = useCallback((id: string) => {
     dirty.current = true
     setSave((s) => toggleChecked(s, id))
@@ -104,6 +109,7 @@ export function SaveProvider({ children }: { children: ReactNode }) {
       value={{
         save,
         setRoute,
+        setPlanGoal,
         toggle,
         setNotes,
         updateClock,

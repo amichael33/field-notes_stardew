@@ -60,6 +60,36 @@ describe('save', () => {
   })
 })
 
+describe('save plan goal', () => {
+  it('defaults a missing planGoal to community-center', () => {
+    const base = defaultSave()
+    const profile: Record<string, unknown> = { ...base.profile }
+    delete profile.planGoal
+    const r = parseSave(JSON.stringify({ ...base, profile }))
+    expect(r.ok && r.data.profile.planGoal).toBe('community-center')
+  })
+
+  it('keeps a valid planGoal', () => {
+    const base = defaultSave()
+    const r = parseSave(JSON.stringify({ ...base, profile: { ...base.profile, planGoal: 'money' } }))
+    expect(r.ok && r.data.profile.planGoal).toBe('money')
+  })
+
+  it('rejects an invalid planGoal', () => {
+    const base = defaultSave()
+    const r = parseSave(JSON.stringify({ ...base, profile: { ...base.profile, planGoal: 'bogus' } }))
+    expect(r).toEqual({ ok: false, error: 'The save plan goal is invalid.' })
+  })
+
+  it('round trips planGoal and drops unknown profile keys', () => {
+    const base = defaultSave()
+    const s = { ...base, profile: { ...base.profile, planGoal: 'money' as const } }
+    expect(parseSave(serializeSave(s))).toEqual({ ok: true, data: s })
+    const r = parseSave(JSON.stringify({ ...s, profile: { ...s.profile, extra: 1 } }))
+    expect(r.ok && Object.keys(r.data.profile).sort()).toEqual(['farmType', 'planGoal', 'route'])
+  })
+})
+
 describe('save clock', () => {
   const clock = { season: 'fall', day: 12, minutes: 600, weather: 'rain', status: 'paused' } as const
 
