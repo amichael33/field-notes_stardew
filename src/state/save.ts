@@ -6,7 +6,7 @@ type ParseResult = { ok: true; data: SaveData } | { ok: false; error: string }
 export function defaultSave(): SaveData {
   return {
     version: 1,
-    profile: { route: 'community-center', farmType: 'standard' },
+    profile: { route: 'community-center', farmType: 'standard', planGoal: 'community-center' },
     checked: [],
     notes: '',
     clock: null,
@@ -66,7 +66,7 @@ export function parseSave(json: string): ParseResult {
     ok: true,
     data: {
       version: 1,
-      profile: { route: profile.route, farmType: profile.farmType },
+      profile: { route: profile.route, farmType: profile.farmType, planGoal: 'community-center' },
       checked: [...raw.checked],
       notes: raw.notes,
       clock,

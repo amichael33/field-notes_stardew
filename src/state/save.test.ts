@@ -5,7 +5,11 @@ describe('save', () => {
   it('defaultSave has the community-center route and no progress', () => {
     const s = defaultSave()
     expect(s.version).toBe(1)
-    expect(s.profile).toEqual({ route: 'community-center', farmType: 'standard' })
+    expect(s.profile).toEqual({
+      route: 'community-center',
+      farmType: 'standard',
+      planGoal: 'community-center',
+    })
     expect(s.checked).toEqual([])
     expect(s.notes).toBe('')
   })

@@ -49,11 +49,33 @@ export interface Recipe {
 
 export interface SaveData {
   version: 1
-  profile: { route: Route; farmType: string }
+  profile: { route: Route; farmType: string; planGoal: PlanGoal }
   checked: string[]
   notes: string
   clock: Clock | null
 }
+
+export type PlanGoal = 'community-center' | 'money'
+
+export interface PlanTask {
+  id: string
+  text: string
+  item?: string
+  place?: string
+  /** Minutes since midnight, as in Stop.time. */
+  time?: number
+  route?: Route
+}
+
+export interface PlanDay {
+  season: Season
+  day: number
+  why: string
+  tasks: PlanTask[]
+  rainTasks?: PlanTask[]
+}
+
+export type Plan = PlanDay[]
 
 export type Weather = 'sunny' | 'rain'
 export type ClockStatus = 'idle' | 'running' | 'paused' | 'ended'
