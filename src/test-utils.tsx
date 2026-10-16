@@ -4,6 +4,7 @@ import { AppStateProvider } from './state/AppState'
 import { SaveProvider } from './state/SaveContext'
 import SeasonFilter from './components/SeasonFilter'
 import RouteToggle from './components/RouteToggle'
+import PlanGoalPicker from './components/PlanGoalPicker'
 
 /** Renders a view inside the providers with the season filter and route toggle alongside. */
 export function renderWithState(ui: ReactElement) {
@@ -12,6 +13,7 @@ export function renderWithState(ui: ReactElement) {
       <AppStateProvider>
         <SeasonFilter />
         <RouteToggle />
+        <PlanGoalPicker />
         {ui}
       </AppStateProvider>
     </SaveProvider>,

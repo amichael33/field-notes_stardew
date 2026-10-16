@@ -4,6 +4,7 @@ import { useSave } from '../state/SaveContext'
 import ClockRunner from '../state/ClockRunner'
 import SeasonFilter from './SeasonFilter'
 import RouteToggle from './RouteToggle'
+import PlanGoalPicker from './PlanGoalPicker'
 
 const TABS = [
   { to: '/today', label: 'Today' },
@@ -98,6 +99,7 @@ export default function Layout() {
         <div className="controls">
           <SeasonFilter />
           <RouteToggle />
+          <PlanGoalPicker />
         </div>
         <Outlet />
       </main>
