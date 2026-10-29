@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import type { Clock, PlanGoal, Route, SaveData } from '../data/types'
+import type { Clock, CustomTask, PlanGoal, Route, SaveData } from '../data/types'
 import { restoreClock } from './clock'
 import { defaultSave, parseSave, serializeSave, toggleChecked } from './save'
 
@@ -11,6 +11,8 @@ interface SaveApi {
   setPlanGoal: (goal: PlanGoal) => void
   toggle: (id: string) => void
   setNotes: (text: string) => void
+  addCustomTask: (task: Omit<CustomTask, 'id'>) => void
+  removeCustomTask: (id: string) => void
   updateClock: (fn: (c: Clock | null) => Clock | null) => void
   // True when this tab last changed the clock. Only the owner's ClockRunner
   // ticks, so two open tabs do not advance a running clock at double speed.
@@ -89,6 +91,19 @@ export function SaveProvider({ children }: { children: ReactNode }) {
     dirty.current = true
     setSave((s) => ({ ...s, notes }))
   }, [])
+  const addCustomTask = useCallback((task: Omit<CustomTask, 'id'>) => {
+    dirty.current = true
+    const id = `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`
+    setSave((s) => ({ ...s, customTasks: [...s.customTasks, { ...task, id }] }))
+  }, [])
+  const removeCustomTask = useCallback((id: string) => {
+    dirty.current = true
+    setSave((s) => ({
+      ...s,
+      customTasks: s.customTasks.filter((t) => t.id !== id),
+      checked: s.checked.filter((c) => c !== `custom:${id}`),
+    }))
+  }, [])
   const updateClock = useCallback((fn: (c: Clock | null) => Clock | null) => {
     dirty.current = true
     setClockOwner(true)
@@ -112,6 +127,8 @@ export function SaveProvider({ children }: { children: ReactNode }) {
         setPlanGoal,
         toggle,
         setNotes,
+        addCustomTask,
+        removeCustomTask,
         updateClock,
         isClockOwner,
         importSave,

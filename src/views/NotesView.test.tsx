@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { screen, within } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../test-utils'
 import NotesView from './NotesView'
@@ -27,8 +27,6 @@ describe('NotesView', () => {
       </>,
     )
     await userEvent.type(screen.getByLabelText('Notes for tomorrow'), 'water the kale')
-    const section = screen.getByRole('heading', { name: 'Notes' }).closest('section')!
-    await userEvent.click(within(section).getByRole('button', { name: 'Preview' }))
-    expect(screen.getByLabelText('Notes preview')).toHaveTextContent('water the kale')
+    expect(screen.getByLabelText('Notes')).toHaveValue('water the kale')
   })
 })

@@ -90,6 +90,13 @@ select {
 .card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
 .cols { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; align-items: start; }
 .cols .card { padding: 16px; }
+.cols.masonry { display: block; columns: 260px; column-gap: 16px; }
+.cols.masonry .card { break-inside: avoid; margin-bottom: 16px; display: inline-block; width: 100%; }
+.bundle-card.locked { background: #f1f1ec; border-style: dashed; }
+.bundle-card.locked .item-list { opacity: 0.6; }
+.room-status { margin: 0 0 6px; font-weight: 800; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.room-status.open { color: #3c7a4f; }
+.room-status .when { text-transform: none; letter-spacing: 0; font-weight: 600; }
 .card ul, .card ol { margin: 8px 0 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 8px; }
 .when { color: var(--muted); font-size: 14px; }
 .badge {
@@ -135,7 +142,17 @@ select {
 .banner-note { margin: 4px 0 0; color: #dde6d5; font-size: 14px; }
 .banner-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
 .banner-clock { display: flex; flex-direction: column; }
-.clock-face { font-family: var(--font-display); font-size: 1.6rem; }
+.clock-face {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  -webkit-text-stroke: 1px var(--gold);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+  font-variant-numeric: tabular-nums;
+}
 .banner-soon { font-size: 12px; color: #dde6d5; }
 .banner-buttons, .weather-toggle { display: flex; gap: 6px; }
 .banner-btn {
@@ -260,3 +277,21 @@ select {
 .item-detail-close { min-height: 44px; padding: 0 16px; }
 .item-list { list-style: none; margin: 0; padding: 0; }
 .item-name-btn { min-width: 0; overflow-wrap: anywhere; }
+
+/* Day plan rows and your own tasks */
+.today-main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.path-row.plan-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 10px; }
+.plan-row .row-body { flex: 1; min-width: 0; }
+.plan-row .row-check { align-items: center; flex: 1; min-width: 0; }
+.plan-row .row-check strong { font-weight: 700; line-height: 1.35; overflow-wrap: anywhere; }
+.plan-row .item-icon, .plan-row .item-coin, .plan-row .item-tile { width: 32px; height: 32px; flex: none; }
+.plan-row .row-detail { padding-left: 74px; }
+.card ul.path-list { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 4px; }
+.plan-icon-spacer { width: 32px; height: 32px; flex: none; }
+.plan-label { display: flex; flex-direction: column; gap: 2px; }
+.cap { text-transform: capitalize; }
+.add-task { display: flex; gap: 8px; margin: 8px 0; }
+.add-task input { flex: 1; min-width: 0; min-height: 44px; border: 1px solid var(--line-strong); border-radius: 8px; padding: 0 12px; font: inherit; }
+.btn-small { min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
+.notes-hint { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 6px; }
+@media print { .add-task, .btn-small { display: none; } }

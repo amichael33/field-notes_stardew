@@ -14,11 +14,11 @@ export function PlanTaskRow({ goal, task }: { goal: PlanGoal; task: PlanTask }) 
     .filter(Boolean)
     .join(' at ')
   return (
-    <li className={checked ? 'path-row done' : 'path-row'}>
+    <li className={checked ? 'path-row plan-row done' : 'path-row plan-row'}>
       <div className="row-body">
         <label className="row-check">
           <input type="checkbox" checked={checked} onChange={() => toggle(id)} />
-          {task.item && <ItemIcon name={task.item} />}
+          {task.item ? <ItemIcon name={task.item} /> : <span className="plan-icon-spacer" aria-hidden="true" />}
           <strong>{task.text}</strong>
         </label>
         {where && <p className="row-detail">{where}</p>}

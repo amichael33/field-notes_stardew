@@ -53,6 +53,15 @@ export interface SaveData {
   checked: string[]
   notes: string
   clock: Clock | null
+  customTasks: CustomTask[]
+}
+
+/** A task the player added to a specific day. Its checkbox id is `custom:<id>`. */
+export interface CustomTask {
+  id: string
+  season: Season
+  day: number
+  text: string
 }
 
 export type PlanGoal = 'community-center' | 'money'

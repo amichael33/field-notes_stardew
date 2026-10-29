@@ -88,3 +88,56 @@ export function bundleProgress(
   const required = bundle.slotsRequired
   return { obtained, required, complete: obtained >= required }
 }
+
+/** Rooms in the order the Community Center opens them up, with how many bundles must be complete first. */
+export const ROOM_ORDER = [
+  'Crafts Room',
+  'Pantry',
+  'Fish Tank',
+  'Boiler Room',
+  'Bulletin Board',
+  'Vault',
+  'Abandoned JojaMart',
+]
+const ROOM_NEEDS: Record<string, number> = {
+  'Crafts Room': 0,
+  Pantry: 1,
+  'Fish Tank': 1,
+  'Boiler Room': 2,
+  'Bulletin Board': 3,
+  Vault: 4,
+}
+
+export function roomRank(room: string): number {
+  const i = ROOM_ORDER.indexOf(room)
+  return i === -1 ? ROOM_ORDER.length : i
+}
+
+/**
+ * A room appears after a number of bundles are complete anywhere in the Community Center (per the wiki);
+ * the Missing Bundle's JojaMart only opens once every other bundle is complete.
+ */
+export function roomStatus(
+  room: string,
+  bundles: Bundle[],
+  checked: string[],
+): { unlocked: boolean; need: number; have: number; hint: string } {
+  const others = bundles.filter((b) => b.room !== 'Abandoned JojaMart')
+  const have = others.filter((b) => bundleProgress(b, checked).complete).length
+  if (room === 'Abandoned JojaMart') {
+    const need = others.length
+    return {
+      unlocked: have >= need,
+      need,
+      have,
+      hint: 'Opens after every other bundle is complete, on the next rainy night.',
+    }
+  }
+  const need = ROOM_NEEDS[room] ?? 0
+  return {
+    unlocked: have >= need,
+    need,
+    have,
+    hint: need === 0 ? 'Open from the start.' : `Appears after ${need} bundle${need === 1 ? '' : 's'} are complete.`,
+  }
+}

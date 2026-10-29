@@ -1,4 +1,4 @@
-import type { Clock, SaveData } from '../data/types'
+import type { Clock, CustomTask, SaveData } from '../data/types'
 import { DEFAULT_PLAN_GOAL, isPlanGoal } from '../data/plans'
 import { isClock } from './clock'
 
@@ -11,6 +11,7 @@ export function defaultSave(): SaveData {
     checked: [],
     notes: '',
     clock: null,
+    customTasks: [],
   }
 }
 
@@ -65,6 +66,25 @@ export function parseSave(json: string): ParseResult {
     const { season, day, minutes, weather, status } = raw.clock
     clock = { season, day, minutes, weather, status }
   }
+  const customTasks: CustomTask[] = []
+  if (raw.customTasks !== undefined) {
+    if (!Array.isArray(raw.customTasks)) return { ok: false, error: 'The save custom tasks are invalid.' }
+    for (const t of raw.customTasks) {
+      if (
+        !isRecord(t) ||
+        typeof t.id !== 'string' ||
+        typeof t.text !== 'string' ||
+        typeof t.day !== 'number' ||
+        !Number.isInteger(t.day) ||
+        t.day < 1 ||
+        t.day > 28 ||
+        !['spring', 'summer', 'fall', 'winter'].includes(t.season as string)
+      ) {
+        return { ok: false, error: 'The save custom tasks are invalid.' }
+      }
+      customTasks.push({ id: t.id, text: t.text, day: t.day, season: t.season as CustomTask['season'] })
+    }
+  }
   return {
     ok: true,
     data: {
@@ -73,6 +93,7 @@ export function parseSave(json: string): ParseResult {
       checked: [...raw.checked],
       notes: raw.notes,
       clock,
+      customTasks,
     },
   }
 }

@@ -8,8 +8,10 @@ import bundlesJson from '../../data/bundles.json'
 const bundles = bundlesJson as Bundle[]
 
 export default function NeededCard() {
-  const { season } = useAppState()
+  const { season: filter } = useAppState()
   const { save } = useSave()
+  // Only what can be done now: the season filter if one is picked, otherwise the clock's season.
+  const season = filter !== 'all' ? filter : (save.clock?.season ?? 'spring')
   const route = save.profile.route
   const grouped = new Map<Bundle, { item: BundleItem; index: number }[]>()
   for (const { bundle, item, index } of bundleItemsBySeason(bundles, season)) {
@@ -18,6 +20,7 @@ export default function NeededCard() {
   return (
     <section className="card aside-card">
       <h2>Needed this season</h2>
+      <p className="when cap">For {season}</p>
       {route === 'joja' ? (
         <p>Bundles are not used on the Joja route.</p>
       ) : grouped.size === 0 ? (

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId, peopleToVisit, bundleItemId, bundleProgress } from './selectors'
+import { bundleItemsBySeason, birthdaysBySeason, sortedPathSteps, firstUnchecked, pathId, peopleToVisit, bundleItemId, bundleProgress, roomStatus } from './selectors'
 import type { Bundle, Villager, PathStep } from './types'
 
 const bundles: Bundle[] = [
@@ -158,5 +158,42 @@ describe('bundleProgress', () => {
   })
   it('ignores checked ids for unknown items', () => {
     expect(bundleProgress(b, ['bundle:b1:Nope', 'bundle:other:Coal']).obtained).toBe(0)
+  })
+})
+
+describe('roomStatus', () => {
+  const mk = (id: string, room: string): Bundle => ({
+    id,
+    room,
+    name: id,
+    reward: '',
+    slotsRequired: 1,
+    items: [{ name: id, quantity: 1, seasons: 'any', source: '' }],
+  })
+  const rooms = [
+    mk('a', 'Crafts Room'),
+    mk('b', 'Pantry'),
+    mk('c', 'Fish Tank'),
+    mk('d', 'Boiler Room'),
+    mk('m', 'Abandoned JojaMart'),
+  ]
+  const done = (...ids: string[]) =>
+    ids.map((id) => {
+      const b = rooms.find((x) => x.id === id)!
+      return bundleItemId(b, b.items[0], 0)
+    })
+
+  it('opens the Crafts Room at once and locks the others', () => {
+    expect(roomStatus('Crafts Room', rooms, []).unlocked).toBe(true)
+    expect(roomStatus('Pantry', rooms, []).unlocked).toBe(false)
+  })
+  it('opens the Pantry after one bundle and the Boiler Room after two', () => {
+    expect(roomStatus('Pantry', rooms, done('a')).unlocked).toBe(true)
+    expect(roomStatus('Boiler Room', rooms, done('a')).unlocked).toBe(false)
+    expect(roomStatus('Boiler Room', rooms, done('a', 'b')).unlocked).toBe(true)
+  })
+  it('keeps the Missing Bundle locked until every other bundle is complete', () => {
+    expect(roomStatus('Abandoned JojaMart', rooms, done('a', 'b', 'c')).unlocked).toBe(false)
+    expect(roomStatus('Abandoned JojaMart', rooms, done('a', 'b', 'c', 'd')).unlocked).toBe(true)
   })
 })
