@@ -1,9 +1,40 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, afterEach } from 'vitest'
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../test-utils'
 import PathView from './PathView'
 import steps from '../data/path-steps.json'
+
+const fixture = vi.hoisted(() => ({
+  'community-center': [] as unknown[],
+  money: [] as unknown[],
+}))
+
+vi.mock('../data/plans', async (orig) => ({
+  ...(await orig<typeof import('../data/plans')>()),
+  PLANS: fixture,
+}))
+
+describe('PathView day plan', () => {
+  afterEach(() => {
+    fixture['community-center'] = []
+  })
+
+  it("shows the Day plan instead of Today's path when the day has an entry", () => {
+    fixture['community-center'] = [
+      { season: 'spring', day: 1, why: 'Start.', tasks: [{ id: 'a', text: 'Plant parsnips' }] },
+    ]
+    renderWithState(<PathView />)
+    expect(screen.getByRole('heading', { name: 'Day plan' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: "Today's path" })).not.toBeInTheDocument()
+  })
+
+  it("shows Today's path when the day has no entry", () => {
+    renderWithState(<PathView />)
+    expect(screen.queryByRole('heading', { name: 'Day plan' })).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: "Today's path" })).toBeInTheDocument()
+  })
+})
 
 describe('PathView', () => {
   it('renders steps in order', () => {

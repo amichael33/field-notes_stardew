@@ -4,6 +4,7 @@ import { useSave } from '../state/SaveContext'
 import StatusBanner from '../components/today/StatusBanner'
 import PathRibbon from '../components/today/PathRibbon'
 import PathCard from '../components/today/PathCard'
+import DayPlanCard from '../components/today/DayPlanCard'
 import NotesCard from '../components/today/NotesCard'
 import NextGoalCard from '../components/today/NextGoalCard'
 import NeededCard from '../components/today/NeededCard'
@@ -33,7 +34,7 @@ export default function PathView() {
       <StatusBanner nextStep={nextDated} />
       <PathRibbon steps={ribbonSteps} />
       <div className="today-grid">
-        <PathCard steps={steps} />
+        <DayPlanCard fallback={<PathCard steps={steps} />} />
         <aside className="today-aside">
           <NotesCard />
           <NextGoalCard steps={steps} />
