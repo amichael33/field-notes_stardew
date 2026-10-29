@@ -56,7 +56,8 @@ function SeasonCalendar({ season, villagers }: { season: Season; villagers: Vill
             <div
               key={v.name}
               className="cal-bday"
-              title={`${v.name}, ${season} ${v.birthday.day}`}
+              data-tip={`${v.name}, ${season} ${v.birthday.day}`}
+              tabIndex={0}
               style={{
                 left: `${((SHEET.x0 + col * SHEET.cell) / SHEET.w) * 100}%`,
                 top: `${((SHEET.y0 + row * SHEET.cell) / SHEET.h) * 100}%`,
@@ -65,7 +66,7 @@ function SeasonCalendar({ season, villagers }: { season: Season; villagers: Vill
               }}
             >
               <Portrait name={v.name} />
-              <span className="cal-name">{v.name}</span>
+              <span className="visually-hidden">{v.name}</span>
             </div>
           )
         })}

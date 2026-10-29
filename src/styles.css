@@ -317,4 +317,20 @@ select {
 .cal { position: relative; width: 100%; aspect-ratio: 302 / 198; background-size: 100% 100%; background-repeat: no-repeat; image-rendering: pixelated; }
 .cal-bday { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
 .cal-bday .avatar { width: 62%; height: auto; aspect-ratio: 1; border: 0; border-radius: 4px; margin-bottom: 8%; }
-.cal-name { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-size: clamp(8px, 1.1vw, 13px); font-weight: 800; line-height: 1; color: #3b2410; white-space: nowrap; }
+.cal-bday { cursor: default; }
+.cal-bday:hover, .cal-bday:focus-visible { z-index: 2; }
+.cal-bday:hover::after, .cal-bday:focus-visible::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--header);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+}

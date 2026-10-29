@@ -22,7 +22,9 @@ async function main() {
   for (const { name } of villagers) {
     const file = path.join(unpacked, `${name}.png`)
     if (!existsSync(file)) {
-      missing.push(name)
+      // A portrait added by hand to public/portraits/ (the game has none for some villagers) is kept.
+      if (existsSync(path.join(outDir, `${name}.png`))) map[name] = `portraits/${name}.png`
+      else missing.push(name)
       continue
     }
     // The first frame of each portrait sheet is the neutral expression.
