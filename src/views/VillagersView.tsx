@@ -2,6 +2,9 @@ import { useRef, useState } from 'react'
 import { birthdaysBySeason } from '../data/selectors'
 import { useSave } from '../state/SaveContext'
 import { resizeImage } from '../state/photo'
+import portraitsJson from '../data/portraits.json'
+
+const portraits = portraitsJson as Record<string, string>
 import { useAppState } from '../state/AppState'
 import type { Villager } from '../data/types'
 import villagersJson from '../data/villagers.json'
@@ -28,6 +31,7 @@ function Avatar({ name }: { name: string }) {
   const input = useRef<HTMLInputElement>(null)
   const [error, setError] = useState('')
   const photo = save.photos[name]
+  const portrait = portraits[name]
   const onFile = async (file: File | undefined) => {
     if (!file) return
     try {
@@ -41,6 +45,8 @@ function Avatar({ name }: { name: string }) {
     <div className="avatar-row">
       {photo ? (
         <img className="avatar" src={photo} alt={`Photo of ${name}`} />
+      ) : portrait ? (
+        <img className="avatar avatar-game" src={portrait} alt={`Portrait of ${name}`} />
       ) : (
         <span className="avatar avatar-empty" aria-hidden="true">
           {name[0]}
@@ -48,7 +54,7 @@ function Avatar({ name }: { name: string }) {
       )}
       <div className="avatar-actions">
         <button type="button" className="btn-small" onClick={() => input.current?.click()}>
-          {photo ? 'Change photo' : 'Upload photo'}
+          {photo ? 'Change photo' : 'Upload your own photo'}
           <span className="visually-hidden"> for {name}</span>
         </button>
         {photo && (

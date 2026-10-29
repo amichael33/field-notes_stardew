@@ -15,7 +15,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. Cards are staggered, and rooms show Locked or Unlocked based on how many bundles you have completed (Pantry and Fish Tank after 1, Boiler Room after 2, Bulletin Board after 3, Vault after 4, and the Missing Bundle after all the rest). A Community Center / Joja toggle hides the bundles on the Joja route.
 - **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
-- **People**: a birthday calendar and every villager's loved and liked gifts.  You can upload a photo for each villager (cropped small and saved in your browser).
+- **People**: a birthday calendar and every villager's loved and liked gifts.  Each villager shows their in-game portrait, and you can upload your own photo to replace it (cropped small and saved in your browser).
 - **Goals**: what each achievement requires.
 - **Notes**: plain-text notes with bullets: type a dash and a space for a bullet, Enter continues it, Tab nests it. On both the Today card and the Notes tab, which edit the same saved note.
 - **Your tasks**: add your own tasks to any day under the Day plan. They are saved, included in Export / Import, and unfinished ones from earlier days stay listed.
@@ -47,6 +47,7 @@ npm run dev      # start the dev server
 npm test         # run the tests
 npm run lint     # lint
 npm run icons    # regenerate item icons (needs the unpacked game, see below)
+npm run portraits # regenerate villager portraits (needs the unpacked game, see below)
 npm run schedules # regenerate villager schedules (needs the unpacked game, see below)
 npm run build    # production build into dist/
 ```
@@ -80,7 +81,7 @@ To regenerate them, unpack the game into a `Content (unpacked)/` folder at the r
 npm run icons
 ```
 
-This writes `public/items/` and `src/data/item-icons.json`. The `Content (unpacked)/` folder is git-ignored and never published.
+This writes `public/items/` and `src/data/item-icons.json`. `npm run portraits` likewise crops each villager's neutral portrait from `Content (unpacked)/Portraits/` into `public/portraits/`. The `Content (unpacked)/` folder is git-ignored and never published.
 
 Villager schedule data comes from the same place: the player's own unpacked game files (`Content (unpacked)/Characters/schedules/`), not the wiki. It is ConcernedApe's data, trimmed by a script. To regenerate it, with the game unpacked as above, run:
 
