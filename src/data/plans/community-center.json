@@ -1,1 +1,447 @@
-[]
+[
+  {
+    "season": "spring",
+    "day": 1,
+    "why": "Parsnips planted today are ready on Spring 5, so plant before anything else.",
+    "tasks": [
+      {
+        "id": "s1-plant",
+        "text": "Plant and water the 15 Parsnip Seeds",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s1-wood",
+        "text": "Chop trees and clear weeds with the energy you have left",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "s1-town",
+        "text": "Walk into Pelican Town and introduce yourself to everyone",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "s1-pierre",
+        "text": "Look at Pierre's seeds; he is open 9am to 5pm",
+        "place": "Pierre's General Store",
+        "time": 540
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 2,
+    "why": "Willy's letter arrives today, and he gives you a Bamboo Pole.",
+    "tasks": [
+      {
+        "id": "s2-water",
+        "text": "Water the parsnips",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s2-willy",
+        "text": "Meet Willy on the beach for the Bamboo Pole",
+        "place": "The Beach"
+      },
+      {
+        "id": "s2-daffodil",
+        "text": "Forage Daffodil in Pelican Town for the Spring Foraging bundle",
+        "item": "Daffodil",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "s2-sardine",
+        "text": "Fish the ocean for a Sardine (6am to 7pm), an Ocean Fish bundle item",
+        "item": "Sardine",
+        "place": "The Beach",
+        "route": "community-center"
+      },
+      {
+        "id": "s2-seeds",
+        "text": "Check seed prices at Pierre before the Wednesday closure",
+        "place": "Pierre's General Store",
+        "time": 540
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs2-willy",
+        "text": "Meet Willy on the beach for the Bamboo Pole",
+        "place": "The Beach"
+      },
+      {
+        "id": "rs2-daffodil",
+        "text": "Forage Daffodil in Pelican Town for the Spring Foraging bundle",
+        "item": "Daffodil",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "rs2-sardine",
+        "text": "Fish the ocean for a Sardine (6am to 7pm), an Ocean Fish bundle item",
+        "item": "Sardine",
+        "place": "The Beach",
+        "route": "community-center"
+      },
+      {
+        "id": "rs2-seeds",
+        "text": "Check seed prices at Pierre before the Wednesday closure",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "r2-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r2-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 3,
+    "why": "Wednesday: Pierre's is closed all day until the Community Center is restored.",
+    "tasks": [
+      {
+        "id": "s3-water",
+        "text": "Water the parsnips",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s3-leek",
+        "text": "Forage Leek on The Mountain for the Spring Foraging bundle",
+        "item": "Leek",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "s3-horseradish",
+        "text": "Forage Wild Horseradish in Cindersap Forest",
+        "item": "Wild Horseradish",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "s3-sunfish",
+        "text": "Fish the Town River for a Sunfish (needs sun, 6am to 7pm)",
+        "item": "Sunfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "s3-stone",
+        "text": "Break rocks on the farm for Stone",
+        "item": "Stone",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs3-leek",
+        "text": "Forage Leek on The Mountain for the Spring Foraging bundle",
+        "item": "Leek",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "rs3-horseradish",
+        "text": "Forage Wild Horseradish in Cindersap Forest",
+        "item": "Wild Horseradish",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "rs3-stone",
+        "text": "Break rocks on the farm for Stone",
+        "item": "Stone",
+        "place": "Farm"
+      },
+      {
+        "id": "r3-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r3-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 4,
+    "why": "Get ready for tomorrow: parsnips are harvested on Spring 5 and you need cash for seeds.",
+    "tasks": [
+      {
+        "id": "s4-water",
+        "text": "Water the parsnips",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s4-wood",
+        "text": "Chop Wood; the Construction bundle needs 99 Wood twice",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "s4-dandelion",
+        "text": "Forage Dandelion in Cindersap Forest",
+        "item": "Dandelion",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "s4-fish",
+        "text": "Practice fishing with the Bamboo Pole at the river",
+        "place": "Pelican Town"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs4-wood",
+        "text": "Chop Wood; the Construction bundle needs 99 Wood twice",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "rs4-dandelion",
+        "text": "Forage Dandelion in Cindersap Forest",
+        "item": "Dandelion",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "rs4-fish",
+        "text": "Practice fishing with the Bamboo Pole at the river",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "r4-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r4-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 5,
+    "why": "Parsnips are ready, and the Mines and the Community Center open today.",
+    "tasks": [
+      {
+        "id": "s5-harvest",
+        "text": "Harvest the parsnips; keep 1 for the Spring Crops bundle and ship or sell the rest",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s5-seeds",
+        "text": "Buy Potato Seeds, Green Bean seeds, Cauliflower Seeds and more Parsnip Seeds, then plant them",
+        "item": "Cauliflower",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "s5-cc",
+        "text": "Enter Pelican Town from the bus stop between 8am and 1pm on a sunny day to see Lewis open the Community Center",
+        "place": "The bus stop",
+        "time": 480,
+        "route": "community-center"
+      },
+      {
+        "id": "s5-joja",
+        "text": "A JojaMart membership costs 5,000g; plan your cash around it instead of bundles",
+        "place": "JojaMart",
+        "route": "joja"
+      },
+      {
+        "id": "s5-mines",
+        "text": "The Mines are open from today; visit floor 1 to break rocks for Stone",
+        "item": "Stone",
+        "place": "The Mountain"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "r5-harvest",
+        "text": "Harvest the parsnips; keep 1 for the Spring Crops bundle",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "r5-seeds",
+        "text": "Buy Potato Seeds, Green Bean seeds, Cauliflower Seeds and more Parsnip Seeds, then plant them",
+        "item": "Cauliflower",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "r5-joja",
+        "text": "A JojaMart membership costs 5,000g; plan your cash around it instead of bundles",
+        "place": "JojaMart",
+        "route": "joja"
+      },
+      {
+        "id": "r5-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r5-note",
+        "text": "The Community Center scene needs a sunny day, so it waits for the next one",
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 6,
+    "why": "Saturday: Willy is out fishing if the weather is nice, so the shop may be closed.",
+    "tasks": [
+      {
+        "id": "s6-water",
+        "text": "Water the parsnips and the newly planted seeds",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s6-stone",
+        "text": "Mine floors 1 to 5 for Stone, and eat or sleep before you run out of energy",
+        "item": "Stone",
+        "place": "The Mountain"
+      },
+      {
+        "id": "s6-forage",
+        "text": "Forage any Spring Foraging items you are still missing",
+        "item": "Leek",
+        "place": "The Mountain",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs6-stone",
+        "text": "Mine floors 1 to 5 for Stone, and eat or sleep before you run out of energy",
+        "item": "Stone",
+        "place": "The Mountain"
+      },
+      {
+        "id": "rs6-forage",
+        "text": "Forage any Spring Foraging items you are still missing",
+        "item": "Leek",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "r6-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r6-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 7,
+    "why": "Sunday: The Queen of Sauce airs Stir Fry at 6am, and it is Lewis's birthday.",
+    "tasks": [
+      {
+        "id": "s7-tv",
+        "text": "Watch The Queen of Sauce for the Stir Fry recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "s7-water",
+        "text": "Water the crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s7-lewis",
+        "text": "It is Lewis's birthday; give him a gift if you have one he likes",
+        "place": "The Mayor's manor"
+      },
+      {
+        "id": "s7-wood",
+        "text": "Chop Wood for the Construction bundle",
+        "item": "Wood",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs7-tv",
+        "text": "Watch The Queen of Sauce for the Stir Fry recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "rs7-lewis",
+        "text": "It is Lewis's birthday; give him a gift if you have one he likes",
+        "place": "The Mayor's manor"
+      },
+      {
+        "id": "rs7-wood",
+        "text": "Chop Wood for the Construction bundle",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "r7-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r7-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  }
+]

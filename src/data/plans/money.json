@@ -1,1 +1,330 @@
-[]
+[
+  {
+    "season": "spring",
+    "day": 1,
+    "why": "Plant the free parsnips, then buy more seeds with your starting gold.",
+    "tasks": [
+      {
+        "id": "m1-plant",
+        "text": "Plant and water the 15 Parsnip Seeds",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "m1-buy",
+        "text": "Buy more Parsnip Seeds at Pierre (20g each) and plant as many as you can water",
+        "item": "Parsnip",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "m1-town",
+        "text": "Walk through Pelican Town to meet people",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 2,
+    "why": "Fish for starter income and keep crops watered.",
+    "tasks": [
+      {
+        "id": "m2-water",
+        "text": "Water the crops",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "m2-willy",
+        "text": "Meet Willy on the beach for the Bamboo Pole (letter arrives today)",
+        "place": "The Beach"
+      },
+      {
+        "id": "m2-fish",
+        "text": "Fish the ocean for Sardine and sell it in the shipping bin",
+        "item": "Sardine",
+        "place": "The Beach"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rm2-willy",
+        "text": "Meet Willy on the beach for the Bamboo Pole (letter arrives today)",
+        "place": "The Beach"
+      },
+      {
+        "id": "rm2-fish",
+        "text": "Fish the ocean for Sardine and sell it in the shipping bin",
+        "item": "Sardine",
+        "place": "The Beach"
+      },
+      {
+        "id": "r2-catfish",
+        "text": "Fish the Town River for Catfish (rain only); it sells for about 200g",
+        "item": "Catfish",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "r2-shad",
+        "text": "Fish the Town River for Shad (rain only), about 60g each",
+        "item": "Shad",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 3,
+    "why": "Wednesday: Pierre closes, so fish and forage to sell.",
+    "tasks": [
+      {
+        "id": "m3-water",
+        "text": "Water the crops",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "m3-forage",
+        "text": "Forage Leek and Wild Horseradish to sell (60g and 50g)",
+        "item": "Leek",
+        "place": "The Mountain"
+      },
+      {
+        "id": "m3-fish",
+        "text": "Fish the Town River for Sunfish (needs sun)",
+        "item": "Sunfish",
+        "place": "Pelican Town"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rm3-forage",
+        "text": "Forage Leek and Wild Horseradish to sell (60g and 50g)",
+        "item": "Leek",
+        "place": "The Mountain"
+      },
+      {
+        "id": "r3-catfish",
+        "text": "Fish the Town River for Catfish (rain only); it sells for about 200g",
+        "item": "Catfish",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "r3-shad",
+        "text": "Fish the Town River for Shad (rain only), about 60g each",
+        "item": "Shad",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 4,
+    "why": "Save up so you can buy a big round of seeds tomorrow.",
+    "tasks": [
+      {
+        "id": "m4-water",
+        "text": "Water the crops",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "m4-forage",
+        "text": "Forage Dandelion in the forest to sell",
+        "item": "Dandelion",
+        "place": "Cindersap Forest"
+      },
+      {
+        "id": "m4-wood",
+        "text": "Chop Wood for fences and tool upgrades",
+        "item": "Wood",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rm4-forage",
+        "text": "Forage Dandelion in the forest to sell",
+        "item": "Dandelion",
+        "place": "Cindersap Forest"
+      },
+      {
+        "id": "rm4-wood",
+        "text": "Chop Wood for fences and tool upgrades",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "r4-catfish",
+        "text": "Fish the Town River for Catfish (rain only); it sells for about 200g",
+        "item": "Catfish",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "r4-shad",
+        "text": "Fish the Town River for Shad (rain only), about 60g each",
+        "item": "Shad",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 5,
+    "why": "Parsnips are ready; reinvest all of it into seeds today.",
+    "tasks": [
+      {
+        "id": "m5-harvest",
+        "text": "Harvest and ship the parsnips",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "m5-seeds",
+        "text": "Buy Cauliflower Seeds (80g, 175g each when grown) and Potato Seeds, and plant them",
+        "item": "Cauliflower",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "m5-parsnips",
+        "text": "Replant parsnips in whatever space is left",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "m5-joja",
+        "text": "The JojaMart membership costs 5,000g; decide if you want it",
+        "place": "JojaMart",
+        "route": "joja"
+      },
+      {
+        "id": "m5-cc",
+        "text": "Enter Pelican Town from the bus stop 8am to 1pm on a sunny day for the Community Center scene",
+        "place": "The bus stop",
+        "time": 480,
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "r5-harvest",
+        "text": "Harvest and ship the parsnips",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "r5-seeds",
+        "text": "Buy Cauliflower Seeds (80g) and Potato Seeds, and plant them",
+        "item": "Cauliflower",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "r5-catfish",
+        "text": "Fish the Town River for Catfish (rain only); it sells for about 200g",
+        "item": "Catfish",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 6,
+    "why": "Keep every crop watered and make a little extra money on the side.",
+    "tasks": [
+      {
+        "id": "m6-water",
+        "text": "Water all crops",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "m6-stone",
+        "text": "Mine a few floors for Stone to craft with",
+        "item": "Stone",
+        "place": "The Mountain"
+      },
+      {
+        "id": "m6-fish",
+        "text": "Fish for whatever bites and sell it",
+        "place": "The Beach"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rm6-stone",
+        "text": "Mine a few floors for Stone to craft with",
+        "item": "Stone",
+        "place": "The Mountain"
+      },
+      {
+        "id": "rm6-fish",
+        "text": "Fish for whatever bites and sell it",
+        "place": "The Beach"
+      },
+      {
+        "id": "r6-catfish",
+        "text": "Fish the Town River for Catfish (rain only); it sells for about 200g",
+        "item": "Catfish",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "r6-shad",
+        "text": "Fish the Town River for Shad (rain only), about 60g each",
+        "item": "Shad",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 7,
+    "why": "The Queen of Sauce airs Stir Fry; keep reinvesting your income.",
+    "tasks": [
+      {
+        "id": "m7-tv",
+        "text": "Watch The Queen of Sauce for Stir Fry",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "m7-water",
+        "text": "Water all crops",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "m7-ship",
+        "text": "Ship forage and fish gathered this week",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rm7-tv",
+        "text": "Watch The Queen of Sauce for Stir Fry",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "rm7-ship",
+        "text": "Ship forage and fish gathered this week",
+        "place": "Farm"
+      },
+      {
+        "id": "r7-catfish",
+        "text": "Fish the Town River for Catfish (rain only); it sells for about 200g",
+        "item": "Catfish",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "r7-shad",
+        "text": "Fish the Town River for Shad (rain only), about 60g each",
+        "item": "Shad",
+        "place": "Pelican Town"
+      }
+    ]
+  }
+]
