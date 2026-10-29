@@ -54,8 +54,6 @@ export interface SaveData {
   notes: string
   clock: Clock | null
   customTasks: CustomTask[]
-  /** Villager name to a small photo as a data URL. */
-  photos: Record<string, string>
 }
 
 /** A task the player added to a specific day. Its checkbox id is `custom:<id>`. */

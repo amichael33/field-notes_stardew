@@ -13,7 +13,6 @@ interface SaveApi {
   setNotes: (text: string) => void
   addCustomTask: (task: Omit<CustomTask, 'id'>) => void
   removeCustomTask: (id: string) => void
-  setPhoto: (name: string, dataUrl: string | null) => void
   updateClock: (fn: (c: Clock | null) => Clock | null) => void
   // True when this tab last changed the clock. Only the owner's ClockRunner
   // ticks, so two open tabs do not advance a running clock at double speed.
@@ -105,15 +104,6 @@ export function SaveProvider({ children }: { children: ReactNode }) {
       checked: s.checked.filter((c) => c !== `custom:${id}`),
     }))
   }, [])
-  const setPhoto = useCallback((name: string, dataUrl: string | null) => {
-    dirty.current = true
-    setSave((s) => {
-      const photos = { ...s.photos }
-      if (dataUrl === null) delete photos[name]
-      else photos[name] = dataUrl
-      return { ...s, photos }
-    })
-  }, [])
   const updateClock = useCallback((fn: (c: Clock | null) => Clock | null) => {
     dirty.current = true
     setClockOwner(true)
@@ -139,7 +129,6 @@ export function SaveProvider({ children }: { children: ReactNode }) {
         setNotes,
         addCustomTask,
         removeCustomTask,
-        setPhoto,
         updateClock,
         isClockOwner,
         importSave,

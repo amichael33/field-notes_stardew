@@ -1,13 +1,10 @@
-import { useRef, useState } from 'react'
 import { birthdaysBySeason } from '../data/selectors'
-import { useSave } from '../state/SaveContext'
-import { resizeImage } from '../state/photo'
+import { useAppState } from '../state/AppState'
+import type { Season, Villager } from '../data/types'
+import villagersJson from '../data/villagers.json'
 import portraitsJson from '../data/portraits.json'
 
 const portraits = portraitsJson as Record<string, string>
-import { useAppState } from '../state/AppState'
-import type { Villager } from '../data/types'
-import villagersJson from '../data/villagers.json'
 
 function TasteList({ title, items }: { title: string; items: string[] }) {
   return (
@@ -26,57 +23,54 @@ function TasteList({ title, items }: { title: string; items: string[] }) {
   )
 }
 
-function Avatar({ name }: { name: string }) {
-  const { save, setPhoto } = useSave()
-  const input = useRef<HTMLInputElement>(null)
-  const [error, setError] = useState('')
-  const photo = save.photos[name]
-  const portrait = portraits[name]
-  const onFile = async (file: File | undefined) => {
-    if (!file) return
-    try {
-      setPhoto(name, await resizeImage(file))
-      setError('')
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not use that photo.')
-    }
-  }
+function Portrait({ name }: { name: string }) {
+  const src = portraits[name]
+  return src ? (
+    <img className="avatar avatar-game" src={src} alt="" width={64} height={64} />
+  ) : (
+    <span className="avatar avatar-empty" aria-hidden="true">
+      {name[0]}
+    </span>
+  )
+}
+
+// The game's calendar sheet (cropped by `npm run portraits`): a 7 by 4 grid of 32px cells.
+const SHEET = { w: 302, h: 198, x0: 37, y0: 47, cell: 32 }
+const SEASONS: Season[] = ['spring', 'summer', 'fall', 'winter']
+
+function SeasonCalendar({ season, villagers }: { season: Season; villagers: Villager[] }) {
   return (
-    <div className="avatar-row">
-      {photo ? (
-        <img className="avatar" src={photo} alt={`Photo of ${name}`} />
-      ) : portrait ? (
-        <img className="avatar avatar-game" src={portrait} alt={`Portrait of ${name}`} />
-      ) : (
-        <span className="avatar avatar-empty" aria-hidden="true">
-          {name[0]}
-        </span>
-      )}
-      <div className="avatar-actions">
-        <button type="button" className="btn-small" onClick={() => input.current?.click()}>
-          {photo ? 'Change photo' : 'Upload your own photo'}
-          <span className="visually-hidden"> for {name}</span>
-        </button>
-        {photo && (
-          <button type="button" className="btn-small" onClick={() => setPhoto(name, null)}>
-            Remove photo<span className="visually-hidden"> for {name}</span>
-          </button>
-        )}
-        <input
-          ref={input}
-          type="file"
-          accept="image/*"
-          className="visually-hidden"
-          aria-label={`Photo file for ${name}`}
-          tabIndex={-1}
-          onChange={(e) => {
-            void onFile(e.target.files?.[0])
-            e.target.value = ''
-          }}
-        />
-        {error && <span className="when" role="alert">{error}</span>}
+    <figure className="cal-season">
+      <figcaption>{season}</figcaption>
+      <div
+        className="cal"
+        role="group"
+        aria-label={`${season} birthdays`}
+        style={{ backgroundImage: 'url(calendar/billboard.png)' }}
+      >
+        {villagers.map((v) => {
+          const i = v.birthday.day - 1
+          const col = i % 7
+          const row = Math.floor(i / 7)
+          return (
+            <div
+              key={v.name}
+              className="cal-bday"
+              title={`${v.name}, ${season} ${v.birthday.day}`}
+              style={{
+                left: `${((SHEET.x0 + col * SHEET.cell) / SHEET.w) * 100}%`,
+                top: `${((SHEET.y0 + row * SHEET.cell) / SHEET.h) * 100}%`,
+                width: `${(SHEET.cell / SHEET.w) * 100}%`,
+                height: `${(SHEET.cell / SHEET.h) * 100}%`,
+              }}
+            >
+              <Portrait name={v.name} />
+              <span className="cal-name">{v.name}</span>
+            </div>
+          )
+        })}
       </div>
-    </div>
+    </figure>
   )
 }
 
@@ -93,7 +87,14 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
       {birthdays.length === 0 ? (
         <p>No birthdays this season.</p>
       ) : (
-        <ul aria-label="Birthday calendar">
+        <div className="cal-grid">
+          {SEASONS.filter((s) => birthdays.some((v) => v.birthday.season === s)).map((s) => (
+            <SeasonCalendar key={s} season={s} villagers={birthdays.filter((v) => v.birthday.season === s)} />
+          ))}
+        </div>
+      )}
+      {birthdays.length > 0 && (
+        <ul aria-label="Birthday calendar" className="visually-hidden">
           {birthdays.map((v) => (
             <li key={v.name}>
               {cap(v.birthday.season)} {v.birthday.day}: {v.name}
@@ -109,8 +110,10 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
       <div className="cols">
       {villagers.map((v) => (
         <article key={v.name} aria-label={v.name} className="card">
-          <h3>{v.name}</h3>
-          <Avatar name={v.name} />
+          <div className="villager-head">
+            <Portrait name={v.name} />
+            <h3>{v.name}</h3>
+          </div>
           <TasteList title="Loves" items={v.loves} />
           <TasteList title="Likes" items={v.likes} />
         </article>

@@ -15,7 +15,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. Cards are staggered, and rooms show Locked or Unlocked based on how many bundles you have completed (Pantry and Fish Tank after 1, Boiler Room after 2, Bulletin Board after 3, Vault after 4, and the Missing Bundle after all the rest). A Community Center / Joja toggle hides the bundles on the Joja route.
 - **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
-- **People**: a birthday calendar and every villager's loved and liked gifts.  Each villager shows their in-game portrait, and you can upload your own photo to replace it (cropped small and saved in your browser).
+- **People**: a birthday calendar and every villager's loved and liked gifts.  Each villager shows their in-game portrait (cropped small and saved in your browser).
 - **Goals**: what each achievement requires.
 - **Notes**: plain-text notes with bullets: type a dash and a space for a bullet, Enter continues it, Tab nests it. On both the Today card and the Notes tab, which edit the same saved note.
 - **Your tasks**: add your own tasks to any day under the Day plan. They are saved, included in Export / Import, and unfinished ones from earlier days stay listed.
@@ -30,7 +30,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 2. Saving: notes, checklist progress, route choice, and JSON export/import, all in your browser with no accounts (done)
 3. Game clock and villager schedules (done)
 4. In progress: a day-by-day year 1 plan. The engine is done and Spring 1 to 28 is covered for both goals (Summer, Fall and Winter come next). Days with no entry show the opening route.
-5. Farm layout and avatar photo uploads
+5. Farm layout uploads
 6. Later: layout optimizer and save-file import
 
 ## Your data

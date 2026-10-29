@@ -33,6 +33,15 @@ async function main() {
     map[name] = `portraits/${name}.png`
   }
   await writeFile(mapFile, JSON.stringify(map, null, 2) + '\n')
+  // The calendar board from the game's Billboard sheet, used behind the birthday calendar.
+  const billboard = path.join(root, 'Content (unpacked)', 'LooseSprites', 'Billboard.png')
+  if (existsSync(billboard)) {
+    const sheet = PNG.sync.read(await readFile(billboard))
+    const board = new PNG({ width: 302, height: 198 })
+    PNG.bitblt(sheet, board, 0, 200, 302, 198, 0, 0)
+    await mkdir(path.join(root, 'public', 'calendar'), { recursive: true })
+    await writeFile(path.join(root, 'public', 'calendar', 'billboard.png'), PNG.sync.write(board))
+  }
   console.log(`Wrote ${Object.keys(map).length} portraits.${missing.length ? ` No portrait for: ${missing.join(', ')}.` : ''}`)
 }
 

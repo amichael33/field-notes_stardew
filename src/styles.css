@@ -305,10 +305,16 @@ select {
 .item-stack { position: absolute; right: 2px; bottom: 2px; padding: 0 5px; border-radius: 6px; background: var(--header); color: #fff; font-size: 12px; font-weight: 800; line-height: 1.4; }
 .item-icon-only.obtained::after { content: '¹3'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #1f3b2d; line-height: 1; }
 
-/* Villager photos */
-.avatar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--line-strong); }
+/* Villager portraits and the birthday calendar */
+.villager-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.villager-head h3 { margin: 0; }
+.avatar { width: 64px; height: 64px; border-radius: 8px; object-fit: cover; flex: none; border: 2px solid var(--line-strong); }
 .avatar-game { image-rendering: pixelated; background: var(--tag); }
 .avatar-empty { display: flex; align-items: center; justify-content: center; background: var(--tag); color: var(--tag-ink); font-family: var(--font-display); font-size: 1.8rem; }
-.avatar-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-@media print { .avatar-actions { display: none; } }
+.cal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px; margin: 8px 0 16px; }
+.cal-season { margin: 0; max-width: 604px; }
+.cal-season figcaption { font-family: var(--font-display); font-size: 1.4rem; text-transform: capitalize; margin-bottom: 4px; }
+.cal { position: relative; width: 100%; aspect-ratio: 302 / 198; background-size: 100% 100%; background-repeat: no-repeat; image-rendering: pixelated; }
+.cal-bday { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.cal-bday .avatar { width: 62%; height: auto; aspect-ratio: 1; border: 0; border-radius: 4px; margin-bottom: 8%; }
+.cal-name { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-size: clamp(8px, 1.1vw, 13px); font-weight: 800; line-height: 1; color: #3b2410; white-space: nowrap; }

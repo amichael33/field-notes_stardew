@@ -2,8 +2,6 @@ import type { Clock, CustomTask, SaveData } from '../data/types'
 import { DEFAULT_PLAN_GOAL, isPlanGoal } from '../data/plans'
 import { isClock } from './clock'
 
-export const MAX_PHOTO_CHARS = 400_000
-
 type ParseResult = { ok: true; data: SaveData } | { ok: false; error: string }
 
 export function defaultSave(): SaveData {
@@ -14,7 +12,6 @@ export function defaultSave(): SaveData {
     notes: '',
     clock: null,
     customTasks: [],
-    photos: {},
   }
 }
 
@@ -88,16 +85,6 @@ export function parseSave(json: string): ParseResult {
       customTasks.push({ id: t.id, text: t.text, day: t.day, season: t.season as CustomTask['season'] })
     }
   }
-  const photos: Record<string, string> = {}
-  if (raw.photos !== undefined) {
-    if (!isRecord(raw.photos)) return { ok: false, error: 'The save photos are invalid.' }
-    for (const [name, url] of Object.entries(raw.photos)) {
-      if (typeof url !== 'string' || !url.startsWith('data:image/') || url.length > MAX_PHOTO_CHARS) {
-        return { ok: false, error: 'The save photos are invalid.' }
-      }
-      photos[name] = url
-    }
-  }
   return {
     ok: true,
     data: {
@@ -107,7 +94,6 @@ export function parseSave(json: string): ParseResult {
       notes: raw.notes,
       clock,
       customTasks,
-      photos,
     },
   }
 }
