@@ -9,6 +9,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 ## Features (current)
 
 - **Today**: the opening route as a checklist (Willy's pole, the rainy-day fishing plan, early money goals) with progress shown in a banner and ribbon, plus the Queen of Sauce recipes in air order. A "Where is everyone" card appears only when there is something to show.
+- **Year 1 day plan**: pick a plan goal in the header (Community Center in year 1, or Max money and farm growth). The Today tab then shows a Day plan for the clock's current day, with a one-line reason and a checklist, a rainy-day variant when the weather is Rain, and a collapsed Catch-up list of unchecked tasks from earlier days. Tasks tagged for the Community Center or Joja route only show on that route. Next goal shows your next unchecked plan task. Days with no plan entry fall back to the opening route checklist.
 - **Game clock**: press Start day in the Today banner to run a manual in-game clock (10 game minutes per 7 real seconds). Pause, nudge by 10 minutes, set the date and time, and switch between Sunny and Rain. Next day (while the day is running or paused, for going to bed early) and Start day (after the day ends at 2:00 AM) move to the next date at 6:00 AM. If the site is open in two tabs, only the tab where you last changed the clock advances it. The last day is saved and carried by Export / Import; a reload restores a running clock as paused.
 - **Where is everyone (live)**: with the clock running, the card shows where each villager or shop owner named in your unchecked steps is right now and where they go next, for example "Pierre's General Store since 7:00 AM" (Pierre on Spring 1). Rain schedules are used when it rains, and villagers whose rainy routine can vary say so. Without a clock it prompts you to press Start day.
 - **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
@@ -17,7 +18,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **People**: a birthday calendar and every villager's loved and liked gifts.
 - **Goals**: what each achievement requires.
 - **Notes**: Markdown notes (bullets and nested sub-bullets) with an Edit / Preview toggle, on both the Today card and the Notes tab, which edit the same saved note.
-- **Saved in your browser**: checklist progress, obtained items, notes and your Community Center / Joja route choice are kept between visits.
+- **Saved in your browser**: checklist progress, plan task checkboxes, obtained items, notes, your plan goal and your Community Center / Joja route choice are kept between visits.
 - **Export / import**: download your saved progress as a JSON file and load it back later or on another device.
 - **Farm** tab is a placeholder for now (see the roadmap).
 - **Print-friendly**: the header, controls and footer are hidden when you print, and a Print page button is in the header.
@@ -27,13 +28,13 @@ This is an early version. It has the opening route with a checklist, bundles wit
 1. Core site and static reference data (done)
 2. Saving: notes, checklist progress, route choice, and JSON export/import, all in your browser with no accounts (done)
 3. Game clock and villager schedules (done)
-4. Next: a structured day-by-day year 1 plan
+4. In progress: a day-by-day year 1 plan. The engine is done and Spring 1 to 28 is covered for both goals (Summer, Fall and Winter come next). Days with no entry show the opening route.
 5. Farm layout and avatar photo uploads
 6. Later: layout optimizer and save-file import
 
 ## Your data
 
-Everything you save (checklist progress, obtained items, notes, route choice, and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
+Everything you save (checklist progress, obtained items, notes, route choice, plan goal, plan task checkboxes, and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
 
 ## Run it locally
 
