@@ -443,5 +443,1085 @@
         "route": "community-center"
       }
     ]
+  },
+  {
+    "season": "spring",
+    "day": 8,
+    "why": "A quiet day to keep the farm watered and gather what the bundles need.",
+    "tasks": [
+      {
+        "id": "s8-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s8-forage",
+        "text": "Check Cindersap Forest for any Spring Foraging items you still need",
+        "item": "Dandelion",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "s8-fish",
+        "text": "Fish the Mountain Lake; Carp and Largemouth Bass are Lake Fish bundle items",
+        "item": "Carp",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "s8-stone",
+        "text": "Gather Stone and Wood",
+        "item": "Stone",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs8-forage",
+        "text": "Check Cindersap Forest for any Spring Foraging items you still need",
+        "item": "Dandelion",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "rs8-fish",
+        "text": "Fish the Mountain Lake; Carp and Largemouth Bass are Lake Fish bundle items",
+        "item": "Carp",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "rs8-stone",
+        "text": "Gather Stone and Wood",
+        "item": "Stone",
+        "place": "Farm"
+      },
+      {
+        "id": "r8-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r8-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 9,
+    "why": "The second batch of parsnips is ready.",
+    "tasks": [
+      {
+        "id": "s9-harvest",
+        "text": "Harvest the parsnips and replant Parsnip Seeds",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s9-water",
+        "text": "Water the rest of the crops",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "s9-sell",
+        "text": "Ship the extra parsnips and keep seed money for cauliflower",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs9-harvest",
+        "text": "Harvest the parsnips and replant Parsnip Seeds",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "rs9-sell",
+        "text": "Ship the extra parsnips and keep seed money for cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "r9-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r9-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 10,
+    "why": "Wednesday: Pierre's is closed. Use the day to forage and fish.",
+    "tasks": [
+      {
+        "id": "s10-water",
+        "text": "Water all crops",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "s10-vincent",
+        "text": "It is Vincent's birthday; say hello in Pelican Town",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "s10-forage",
+        "text": "Forage Leek and Wild Horseradish if you do not have them yet",
+        "item": "Leek",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "s10-bream",
+        "text": "Fish the river after 6pm for a Bream, a Night Fishing bundle item",
+        "item": "Bream",
+        "place": "Pelican Town",
+        "time": 1080,
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs10-vincent",
+        "text": "It is Vincent's birthday; say hello in Pelican Town",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "rs10-forage",
+        "text": "Forage Leek and Wild Horseradish if you do not have them yet",
+        "item": "Leek",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "rs10-bream",
+        "text": "Fish the river after 6pm for a Bream, a Night Fishing bundle item",
+        "item": "Bream",
+        "place": "Pelican Town",
+        "time": 1080,
+        "route": "community-center"
+      },
+      {
+        "id": "r10-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r10-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 11,
+    "why": "Potatoes planted on Spring 5 are ready today.",
+    "tasks": [
+      {
+        "id": "s11-harvest",
+        "text": "Harvest the potatoes; keep 1 for the Spring Crops bundle",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s11-water",
+        "text": "Water the remaining crops",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "s11-stone",
+        "text": "Keep gathering Stone and Wood for the Construction bundle",
+        "item": "Wood",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs11-harvest",
+        "text": "Harvest the potatoes; keep 1 for the Spring Crops bundle",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "rs11-stone",
+        "text": "Keep gathering Stone and Wood for the Construction bundle",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "r11-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r11-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 12,
+    "why": "Replant what you harvested and prepare for the Egg Festival tomorrow.",
+    "tasks": [
+      {
+        "id": "s12-plant",
+        "text": "Replant empty tiles with Potato Seeds or Parsnip Seeds",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s12-water",
+        "text": "Water all crops",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "s12-cash",
+        "text": "Keep 100g free for Strawberry Seeds at the Egg Festival",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs12-plant",
+        "text": "Replant empty tiles with Potato Seeds or Parsnip Seeds",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "rs12-cash",
+        "text": "Keep 100g free for Strawberry Seeds at the Egg Festival",
+        "place": "Farm"
+      },
+      {
+        "id": "r12-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r12-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 13,
+    "why": "Egg Festival: water in the morning, then be in town between 9am and 2pm.",
+    "tasks": [
+      {
+        "id": "s13-harvest",
+        "text": "Harvest and replant the parsnips first",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s13-festival",
+        "text": "Attend the Egg Festival and win the egg hunt for a Straw Hat",
+        "place": "Pelican Town",
+        "time": 540
+      },
+      {
+        "id": "s13-strawberry",
+        "text": "Buy Strawberry Seeds (100g) at the festival if you can afford a few",
+        "place": "Pelican Town"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 14,
+    "why": "Haley's birthday; the Spring Crops bundle takes shape.",
+    "tasks": [
+      {
+        "id": "s14-water",
+        "text": "Water all crops",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "s14-haley",
+        "text": "It is Haley's birthday; give her a gift if you have one she likes",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "s14-tv",
+        "text": "Watch The Queen of Sauce for the Coleslaw recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "s14-forage",
+        "text": "Forage for any Spring Foraging items still missing",
+        "item": "Daffodil",
+        "place": "Pelican Town",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs14-haley",
+        "text": "It is Haley's birthday; give her a gift if you have one she likes",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "rs14-tv",
+        "text": "Watch The Queen of Sauce for the Coleslaw recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "rs14-forage",
+        "text": "Forage for any Spring Foraging items still missing",
+        "item": "Daffodil",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r14-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r14-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 15,
+    "why": "Green Beans are ready today; salmonberries ripen on bushes from today to Spring 18.",
+    "tasks": [
+      {
+        "id": "s15-harvest",
+        "text": "Harvest the Green Beans; keep 1 for the Spring Crops bundle",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "s15-water",
+        "text": "Water the rest of the crops",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "s15-berries",
+        "text": "Pick salmonberries from bushes; they are only here until Spring 18",
+        "place": "Cindersap Forest"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs15-harvest",
+        "text": "Harvest the Green Beans; keep 1 for the Spring Crops bundle",
+        "item": "Green Bean",
+        "place": "Farm"
+      },
+      {
+        "id": "rs15-berries",
+        "text": "Pick salmonberries from bushes; they are only here until Spring 18",
+        "place": "Cindersap Forest"
+      },
+      {
+        "id": "r15-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r15-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 16,
+    "why": "Last day to plant Cauliflower so it finishes by Spring 28.",
+    "tasks": [
+      {
+        "id": "s16-water",
+        "text": "Water all crops",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "s16-plant",
+        "text": "Plant any cauliflower you still plan to grow; it takes 12 days",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "s16-fish",
+        "text": "Fish the Town River for Sunfish on a sunny day",
+        "item": "Sunfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs16-plant",
+        "text": "Plant any cauliflower you still plan to grow; it takes 12 days",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "r16-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r16-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 17,
+    "why": "Cauliflower planted on Spring 5 is ready; the Spring Crops bundle is complete.",
+    "tasks": [
+      {
+        "id": "s17-harvest",
+        "text": "Harvest the Cauliflower and parsnips",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "s17-bundle",
+        "text": "Put 1 Parsnip, Green Bean, Cauliflower and Potato into the Spring Crops bundle",
+        "place": "The Community Center",
+        "route": "community-center"
+      },
+      {
+        "id": "s17-water",
+        "text": "Water the remaining crops",
+        "item": "Potato",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs17-harvest",
+        "text": "Harvest the Cauliflower and parsnips",
+        "item": "Cauliflower",
+        "place": "Farm"
+      },
+      {
+        "id": "rs17-bundle",
+        "text": "Put 1 Parsnip, Green Bean, Cauliflower and Potato into the Spring Crops bundle",
+        "place": "The Community Center",
+        "route": "community-center"
+      },
+      {
+        "id": "r17-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r17-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 18,
+    "why": "Pam's birthday: she loves Parsnips.",
+    "tasks": [
+      {
+        "id": "s18-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s18-pam",
+        "text": "Give Pam a Parsnip for her birthday",
+        "item": "Parsnip",
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "id": "s18-bundle",
+        "text": "Check the Bulletin Board for bundles you can finish soon",
+        "place": "The Community Center",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs18-pam",
+        "text": "Give Pam a Parsnip for her birthday",
+        "item": "Parsnip",
+        "place": "Penny and Pam's trailer"
+      },
+      {
+        "id": "rs18-bundle",
+        "text": "Check the Bulletin Board for bundles you can finish soon",
+        "place": "The Community Center",
+        "route": "community-center"
+      },
+      {
+        "id": "r18-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r18-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 19,
+    "why": "Keep the farm running and fill the fish and foraging bundles.",
+    "tasks": [
+      {
+        "id": "s19-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s19-lake",
+        "text": "Fish the Mountain Lake for Carp and Largemouth Bass",
+        "item": "Largemouth Bass",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "s19-forage",
+        "text": "Hand in any foraging items you hold to the Spring Foraging bundle",
+        "place": "The Community Center",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs19-lake",
+        "text": "Fish the Mountain Lake for Carp and Largemouth Bass",
+        "item": "Largemouth Bass",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "rs19-forage",
+        "text": "Hand in any foraging items you hold to the Spring Foraging bundle",
+        "place": "The Community Center",
+        "route": "community-center"
+      },
+      {
+        "id": "r19-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r19-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 20,
+    "why": "Shane's birthday; use the day to catch up on bundles.",
+    "tasks": [
+      {
+        "id": "s20-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s20-shane",
+        "text": "It is Shane's birthday; give him a gift if you have one he likes",
+        "place": "Marnie's Ranch"
+      },
+      {
+        "id": "s20-fish",
+        "text": "Fish for Ocean Fish bundle items, such as Sardine",
+        "item": "Sardine",
+        "place": "The Beach",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs20-shane",
+        "text": "It is Shane's birthday; give him a gift if you have one he likes",
+        "place": "Marnie's Ranch"
+      },
+      {
+        "id": "rs20-fish",
+        "text": "Fish for Ocean Fish bundle items, such as Sardine",
+        "item": "Sardine",
+        "place": "The Beach",
+        "route": "community-center"
+      },
+      {
+        "id": "r20-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r20-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 21,
+    "why": "The Queen of Sauce airs Radish Salad, and the fastest parsnip batch finishes.",
+    "tasks": [
+      {
+        "id": "s21-tv",
+        "text": "Watch The Queen of Sauce for the Radish Salad recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "s21-harvest",
+        "text": "Harvest the parsnips and do a last replant of Parsnip Seeds",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s21-water",
+        "text": "Water the rest of the crops",
+        "item": "Potato",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs21-tv",
+        "text": "Watch The Queen of Sauce for the Radish Salad recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "rs21-harvest",
+        "text": "Harvest the parsnips and do a last replant of Parsnip Seeds",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "r21-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r21-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 22,
+    "why": "Fill the Fish Tank and Construction bundles as time allows.",
+    "tasks": [
+      {
+        "id": "s22-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s22-fish",
+        "text": "Fish the river and lake for any bundle fish you are missing",
+        "item": "Carp",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "s22-wood",
+        "text": "Chop Wood for the Construction bundle",
+        "item": "Wood",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs22-fish",
+        "text": "Fish the river and lake for any bundle fish you are missing",
+        "item": "Carp",
+        "place": "The Mountain",
+        "route": "community-center"
+      },
+      {
+        "id": "rs22-wood",
+        "text": "Chop Wood for the Construction bundle",
+        "item": "Wood",
+        "place": "Farm"
+      },
+      {
+        "id": "r22-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r22-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 23,
+    "why": "Gather Daffodil and Dandelion today or buy them at the Flower Dance tomorrow.",
+    "tasks": [
+      {
+        "id": "s23-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s23-forage",
+        "text": "Forage Daffodil and Dandelion if the Spring Foraging bundle is still missing them",
+        "item": "Dandelion",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "s23-stone",
+        "text": "Gather Stone for the Construction bundle",
+        "item": "Stone",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs23-forage",
+        "text": "Forage Daffodil and Dandelion if the Spring Foraging bundle is still missing them",
+        "item": "Dandelion",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      },
+      {
+        "id": "rs23-stone",
+        "text": "Gather Stone for the Construction bundle",
+        "item": "Stone",
+        "place": "Farm"
+      },
+      {
+        "id": "r23-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r23-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 24,
+    "why": "Flower Dance: be in Cindersap Forest between 9am and 2pm.",
+    "tasks": [
+      {
+        "id": "s24-farm",
+        "text": "Water and harvest crops before 9am",
+        "place": "Farm"
+      },
+      {
+        "id": "s24-dance",
+        "text": "Attend the Flower Dance in Cindersap Forest",
+        "place": "Cindersap Forest",
+        "time": 540
+      },
+      {
+        "id": "s24-booth",
+        "text": "Buy Daffodil or Dandelion at Pierre's booth if the Spring Foraging bundle needs them",
+        "item": "Daffodil",
+        "place": "Cindersap Forest",
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 25,
+    "why": "Last parsnip harvest of the season.",
+    "tasks": [
+      {
+        "id": "s25-harvest",
+        "text": "Harvest the last parsnips; do not replant",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "s25-water",
+        "text": "Water the rest of the crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s25-bundle",
+        "text": "Deliver any finished bundle items to the Community Center",
+        "place": "The Community Center",
+        "route": "community-center"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs25-harvest",
+        "text": "Harvest the last parsnips; do not replant",
+        "item": "Parsnip",
+        "place": "Farm"
+      },
+      {
+        "id": "rs25-bundle",
+        "text": "Deliver any finished bundle items to the Community Center",
+        "place": "The Community Center",
+        "route": "community-center"
+      },
+      {
+        "id": "r25-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r25-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 26,
+    "why": "Pierre's birthday; sell what you can before summer.",
+    "tasks": [
+      {
+        "id": "s26-pierre",
+        "text": "It is Pierre's birthday; say hello at his shop",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "s26-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s26-sell",
+        "text": "Ship spare crops and forage; spring crops die when summer starts",
+        "place": "Farm"
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs26-pierre",
+        "text": "It is Pierre's birthday; say hello at his shop",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "rs26-sell",
+        "text": "Ship spare crops and forage; spring crops die when summer starts",
+        "place": "Farm"
+      },
+      {
+        "id": "r26-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r26-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 27,
+    "why": "Emily's birthday; prepare for summer.",
+    "tasks": [
+      {
+        "id": "s27-water",
+        "text": "Water all crops",
+        "item": "Potato",
+        "place": "Farm"
+      },
+      {
+        "id": "s27-emily",
+        "text": "It is Emily's birthday; give her a gift if you have one she likes",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "s27-prep",
+        "text": "Plan which Summer crops to buy tomorrow",
+        "place": "Pierre's General Store",
+        "time": 540
+      }
+    ],
+    "rainTasks": [
+      {
+        "id": "rs27-emily",
+        "text": "It is Emily's birthday; give her a gift if you have one she likes",
+        "place": "Pelican Town"
+      },
+      {
+        "id": "rs27-prep",
+        "text": "Plan which Summer crops to buy tomorrow",
+        "place": "Pierre's General Store",
+        "time": 540
+      },
+      {
+        "id": "r27-catfish",
+        "text": "Fish the Town River for Catfish and Shad (rain only), both River Fish bundle items",
+        "item": "Catfish",
+        "place": "Pelican Town",
+        "route": "community-center"
+      },
+      {
+        "id": "r27-eel",
+        "text": "Fish the ocean from 4pm for an Eel (rain only), a Night Fishing bundle item",
+        "item": "Eel",
+        "place": "The Beach",
+        "time": 960,
+        "route": "community-center"
+      }
+    ]
+  },
+  {
+    "season": "spring",
+    "day": 28,
+    "why": "Last day of Spring: harvest everything before the season ends.",
+    "tasks": [
+      {
+        "id": "s28-tv",
+        "text": "Watch The Queen of Sauce for the Omelet recipe",
+        "place": "Farm",
+        "time": 360
+      },
+      {
+        "id": "s28-harvest",
+        "text": "Harvest every crop; spring plants die at midnight",
+        "place": "Farm"
+      },
+      {
+        "id": "s28-seeds",
+        "text": "Buy Summer Seeds at Pierre for tomorrow",
+        "place": "Pierre's General Store",
+        "time": 540
+      }
+    ]
   }
 ]
