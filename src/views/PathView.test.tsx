@@ -198,10 +198,10 @@ describe('PathView aside cards', () => {
   it('Needed this season respects the season filter', async () => {
     renderWithState(<PathView />)
     const card = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
-    expect(within(card()).getByText(/Wild Horseradish/)).toBeInTheDocument()
+    expect(within(card()).getByRole('button', { name: /Wild Horseradish/ })).toBeInTheDocument()
     expect(within(card()).getAllByText(/0 of \d+/).length).toBeGreaterThan(0)
     await userEvent.selectOptions(screen.getByLabelText(/Season/), 'winter')
-    expect(within(card()).queryByText(/Wild Horseradish/)).not.toBeInTheDocument()
+    expect(within(card()).queryByRole('button', { name: /Wild Horseradish/ })).not.toBeInTheDocument()
   })
 
   describe('obtained items', () => {
@@ -225,7 +225,7 @@ describe('PathView aside cards', () => {
       renderWithState(<PathView />)
       expect(within(card()).getAllByText('0 of 4').length).toBeGreaterThan(0)
       await userEvent.click(within(stillNeeded()!).getByRole('button', { name: /^Wild Horseradish/ }))
-      expect(within(stillNeeded()!).queryByText('Wild Horseradish')).not.toBeInTheDocument()
+      expect(within(stillNeeded()!).queryByRole('button', { name: /^Wild Horseradish/ })).not.toBeInTheDocument()
       expect(within(card()).getByText('1 of 4')).toBeInTheDocument()
     })
 

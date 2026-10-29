@@ -74,12 +74,12 @@ describe('NeededCard season', () => {
 
   it('shows only spring items in spring and summer items in summer', () => {
     const { unmount } = renderWithState(<NeededCard />)
-    expect(screen.getByText('Wild Horseradish')).toBeInTheDocument()
-    expect(screen.queryByText('Grape')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Wild Horseradish' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Grape' })).not.toBeInTheDocument()
     unmount()
     localStorage.setItem('field-notes-save', serializeSave({ ...defaultSave(), clock: clock('summer', 3) }))
     renderWithState(<NeededCard />)
-    expect(screen.getByText('Grape')).toBeInTheDocument()
-    expect(screen.queryByText('Wild Horseradish')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Grape' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Wild Horseradish' })).not.toBeInTheDocument()
   })
 })

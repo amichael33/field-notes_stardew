@@ -120,3 +120,16 @@ describe('save clock', () => {
     expect(r).toEqual({ ok: false, error: 'The save clock is invalid.' })
   })
 })
+
+describe('photos in the save', () => {
+  it('defaults to none, round-trips, and rejects non-image values', () => {
+    const d = defaultSave()
+    const old = JSON.parse(JSON.stringify(d))
+    delete old.photos
+    const parsed = parseSave(JSON.stringify(old))
+    expect(parsed.ok && parsed.data.photos).toEqual({})
+    const withPhoto = parseSave(serializeSave({ ...d, photos: { Abigail: 'data:image/jpeg;base64,AAAA' } }))
+    expect(withPhoto.ok && withPhoto.data.photos).toEqual({ Abigail: 'data:image/jpeg;base64,AAAA' })
+    expect(parseSave(JSON.stringify({ ...old, photos: { Abigail: 'http://evil/x.png' } })).ok).toBe(false)
+  })
+})

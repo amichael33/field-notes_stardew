@@ -6,7 +6,7 @@ const SEASONS: Season[] = ['spring', 'summer', 'fall', 'winter']
 const LABEL: Record<Season, string> = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter: 'Winter' }
 const index = (t: { season: Season; day: number }) => SEASONS.indexOf(t.season) * 28 + t.day
 
-function Row({ task }: { task: CustomTask }) {
+function Row({ task, from }: { task: CustomTask; from?: string }) {
   const { save, toggle, removeCustomTask } = useSave()
   const id = `custom:${task.id}`
   const checked = save.checked.includes(id)
@@ -15,6 +15,7 @@ function Row({ task }: { task: CustomTask }) {
       <label className="row-check">
         <input type="checkbox" checked={checked} onChange={() => toggle(id)} />
         <strong>{task.text}</strong>
+        {from && <span className="when">from {from}</span>}
       </label>
       <button type="button" className="btn-small" aria-label={`Remove ${task.text}`} onClick={() => removeCustomTask(task.id)}>
         Remove
@@ -61,29 +62,15 @@ export default function MyTasksCard() {
           Add
         </button>
       </form>
-      {today.length > 0 && (
+      {today.length + earlier.length > 0 && (
         <ul aria-label="Your tasks today" className="path-list">
+          {earlier.map((t) => (
+            <Row key={t.id} task={t} from={`${LABEL[t.season]} ${t.day}`} />
+          ))}
           {today.map((t) => (
             <Row key={t.id} task={t} />
           ))}
         </ul>
-      )}
-      {earlier.length > 0 && (
-        <>
-          <h3>Unfinished from earlier</h3>
-          <ul aria-label="Your unfinished tasks" className="path-list">
-            {earlier.map((t) => (
-              <li key={t.id} className="plan-label">
-                <span className="when">
-                  {LABEL[t.season]} {t.day}
-                </span>
-                <ul className="path-list">
-                  <Row task={t} />
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </>
       )}
     </section>
   )

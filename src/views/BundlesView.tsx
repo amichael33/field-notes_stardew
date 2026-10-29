@@ -42,7 +42,11 @@ export default function BundlesView({
       ) : (
         <div className="cols masonry">
           {[...grouped.entries()]
-            .sort(([a], [b]) => roomRank(a.room) - roomRank(b.room))
+            .sort(([a], [b]) => {
+              const ua = roomStatus(a.room, bundles, save.checked).unlocked ? 0 : 1
+              const ub = roomStatus(b.room, bundles, save.checked).unlocked ? 0 : 1
+              return ua - ub || roomRank(a.room) - roomRank(b.room)
+            })
             .map(([bundle, items]) => {
               const status = roomStatus(bundle.room, bundles, save.checked);
               return (

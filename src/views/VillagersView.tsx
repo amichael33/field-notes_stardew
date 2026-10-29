@@ -1,4 +1,7 @@
+import { useRef, useState } from 'react'
 import { birthdaysBySeason } from '../data/selectors'
+import { useSave } from '../state/SaveContext'
+import { resizeImage } from '../state/photo'
 import { useAppState } from '../state/AppState'
 import type { Villager } from '../data/types'
 import villagersJson from '../data/villagers.json'
@@ -16,6 +19,57 @@ function TasteList({ title, items }: { title: string; items: string[] }) {
           ))}
         </ul>
       )}
+    </div>
+  )
+}
+
+function Avatar({ name }: { name: string }) {
+  const { save, setPhoto } = useSave()
+  const input = useRef<HTMLInputElement>(null)
+  const [error, setError] = useState('')
+  const photo = save.photos[name]
+  const onFile = async (file: File | undefined) => {
+    if (!file) return
+    try {
+      setPhoto(name, await resizeImage(file))
+      setError('')
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not use that photo.')
+    }
+  }
+  return (
+    <div className="avatar-row">
+      {photo ? (
+        <img className="avatar" src={photo} alt={`Photo of ${name}`} />
+      ) : (
+        <span className="avatar avatar-empty" aria-hidden="true">
+          {name[0]}
+        </span>
+      )}
+      <div className="avatar-actions">
+        <button type="button" className="btn-small" onClick={() => input.current?.click()}>
+          {photo ? 'Change photo' : 'Upload photo'}
+          <span className="visually-hidden"> for {name}</span>
+        </button>
+        {photo && (
+          <button type="button" className="btn-small" onClick={() => setPhoto(name, null)}>
+            Remove photo<span className="visually-hidden"> for {name}</span>
+          </button>
+        )}
+        <input
+          ref={input}
+          type="file"
+          accept="image/*"
+          className="visually-hidden"
+          aria-label={`Photo file for ${name}`}
+          tabIndex={-1}
+          onChange={(e) => {
+            void onFile(e.target.files?.[0])
+            e.target.value = ''
+          }}
+        />
+        {error && <span className="when" role="alert">{error}</span>}
+      </div>
     </div>
   )
 }
@@ -50,6 +104,7 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
       {villagers.map((v) => (
         <article key={v.name} aria-label={v.name} className="card">
           <h3>{v.name}</h3>
+          <Avatar name={v.name} />
           <TasteList title="Loves" items={v.loves} />
           <TasteList title="Likes" items={v.likes} />
         </article>

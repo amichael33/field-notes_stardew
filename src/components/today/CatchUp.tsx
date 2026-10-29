@@ -19,8 +19,8 @@ export default function CatchUp({
   const goal = save.profile.planGoal
   const count = groups.reduce((n, g) => n + g.tasks.length, 0)
   return (
-    <details className="catch-up">
-      <summary>Catch-up ({count})</summary>
+    <details className="catch-up" open>
+      <summary>Carried over from earlier days ({count})</summary>
       {groups.map((g) => (
         <div key={`${g.season}-${g.day}`}>
           <h3>

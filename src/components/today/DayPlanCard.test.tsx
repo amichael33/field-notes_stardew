@@ -115,22 +115,22 @@ describe('DayPlanCard', () => {
     expect(screen.queryByText('No plan today.')).not.toBeInTheDocument()
   })
 
-  it('offers a collapsed catch-up of missed tasks that shrinks as they are checked', async () => {
+  it('carries missed tasks over, open, of missed tasks that shrinks as they are checked', async () => {
     seed({ ...base, day: 2 })
     renderCard()
-    const summary = screen.getByText('Catch-up (2)')
+    const summary = screen.getByText('Carried over from earlier days (2)')
     const details = summary.closest('details')!
-    expect(details).not.toHaveAttribute('open')
+    expect(details).toHaveAttribute('open')
     expect(within(details).getByRole('heading', { name: 'Spring 1' })).toBeInTheDocument()
     await userEvent.click(within(details).getByLabelText('Meet Lewis', { exact: false }))
-    expect(screen.getByText('Catch-up (1)')).toBeInTheDocument()
+    expect(screen.getByText('Carried over from earlier days (1)')).toBeInTheDocument()
     expect(saved().checked).toContain('plan:community-center:s1-lewis')
   })
 
   it('shows no catch-up on the first day', () => {
     seed(base)
     renderCard()
-    expect(screen.queryByText(/Catch-up/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Carried over/)).not.toBeInTheDocument()
   })
 
   it('keeps community-center ids when switching to the money goal', async () => {

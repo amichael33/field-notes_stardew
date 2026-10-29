@@ -10,9 +10,11 @@ interface Props {
   item: BundleItem
   showSource?: boolean
   index?: number
+  /** Show only the picture: a tap marks the item obtained. */
+  iconOnly?: boolean
 }
 
-export default function ItemRow({ bundle, item, showSource, index }: Props) {
+export default function ItemRow({ bundle, item, showSource, index, iconOnly }: Props) {
   const { save, toggle } = useSave()
   const [open, setOpen] = useState(false)
   const iconButton = useRef<HTMLButtonElement>(null)
@@ -24,6 +26,22 @@ export default function ItemRow({ bundle, item, showSource, index }: Props) {
     if (wasOpen.current && !open) iconButton.current?.focus()
     wasOpen.current = open
   }, [open])
+
+  if (iconOnly) {
+    return (
+      <button
+        type="button"
+        className={obtained ? 'item-icon-only obtained' : 'item-icon-only'}
+        aria-label={`${item.name}${item.quantity > 1 ? ` x${item.quantity}` : ''}`}
+        aria-pressed={obtained}
+        title={item.name}
+        onClick={() => toggle(id)}
+      >
+        <ItemIcon name={item.name} />
+        {item.quantity > 1 && <span className="item-stack">{item.quantity}</span>}
+      </button>
+    )
+  }
 
   return (
     <div className={obtained ? 'item-row obtained' : 'item-row'}>

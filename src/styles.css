@@ -140,11 +140,13 @@ select {
 .banner h1 { color: var(--gold); }
 .banner-when { font-family: var(--font-display); font-size: 1.4rem; margin: 0; }
 .banner-note { margin: 4px 0 0; color: #dde6d5; font-size: 14px; }
-.banner-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.banner-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+@media (min-width: 1000px) { .banner-controls { flex-wrap: nowrap; } .banner-controls .clock-editor { flex-wrap: wrap; } }
 .banner-clock { display: flex; flex-direction: column; }
 .clock-face {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 9vw, 4.5rem);
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  white-space: nowrap;
   font-weight: 900;
   line-height: 1;
   letter-spacing: 0.02em;
@@ -295,3 +297,17 @@ select {
 .btn-small { min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
 .notes-hint { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 6px; }
 @media print { .add-task, .btn-small { display: none; } }
+
+/* Image-only items (Needed this season) */
+.icon-grid { display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 6px !important; margin-top: 6px !important; }
+.item-icon-only { position: relative; min-width: 56px; min-height: 56px; padding: 4px; border: 1px solid var(--line); border-radius: 8px; background: var(--tag); cursor: pointer; line-height: 0; }
+.item-icon-only[aria-pressed='true'] { opacity: 0.35; }
+.item-stack { position: absolute; right: 2px; bottom: 2px; padding: 0 5px; border-radius: 6px; background: var(--header); color: #fff; font-size: 12px; font-weight: 800; line-height: 1.4; }
+.item-icon-only.obtained::after { content: '¹3'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #1f3b2d; line-height: 1; }
+
+/* Villager photos */
+.avatar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--line-strong); }
+.avatar-empty { display: flex; align-items: center; justify-content: center; background: var(--tag); color: var(--tag-ink); font-family: var(--font-display); font-size: 1.8rem; }
+.avatar-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+@media print { .avatar-actions { display: none; } }

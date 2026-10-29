@@ -48,10 +48,10 @@ export default function NeededCard() {
               ) : (
                 <>
                   <p className="when needed-label">Still needed</p>
-                  <ul className="item-list" aria-label={`Still needed for ${bundle.name}`}>
+                  <ul className="item-list icon-grid" aria-label={`Still needed for ${bundle.name}`}>
                     {remaining.map(({ item, index }) => (
                       <li key={bundleItemId(bundle, item, index)}>
-                        <ItemRow bundle={bundle} item={item} index={index} />
+                        <ItemRow bundle={bundle} item={item} index={index} iconOnly />
                       </li>
                     ))}
                   </ul>
