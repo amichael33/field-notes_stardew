@@ -73,7 +73,8 @@ export function animalFrom(type, raw) {
   return {
     type,
     house: raw.House,
-    price: raw.PurchasePrice > 0 ? raw.PurchasePrice : null,
+    // The game file stores half the price Marnie's shop charges.
+    price: raw.PurchasePrice > 0 ? raw.PurchasePrice * 2 : null,
     daysToMature: raw.DaysToMature,
   }
 }

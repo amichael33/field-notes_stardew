@@ -43,7 +43,8 @@ async function main() {
     .sort((a, b) => byKey(a.id, b.id))
 
   const animals = Object.entries(animalsRaw)
-    .filter(([, raw]) => raw.House === 'Coop' || raw.House === 'Barn')
+    // Dinosaur lives in a Coop but is not an animal the player can raise.
+    .filter(([type, raw]) => type !== 'Dinosaur' && (raw.House === 'Coop' || raw.House === 'Barn'))
     .map(([type, raw]) => animalFrom(type, raw))
     .sort((a, b) => byKey(a.type, b.type))
 

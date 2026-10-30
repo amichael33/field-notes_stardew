@@ -56,6 +56,16 @@ describe('farm buildings', () => {
 })
 
 describe('farm animals', () => {
+  it('every animal matures in at least a day', () => {
+    for (const a of farmAnimals) expect(a.daysToMature, a.type).toBeGreaterThanOrEqual(1)
+  })
+
+  it('uses shop prices', () => {
+    const price = (t: string) => farmAnimals.find((a) => a.type === t)?.price
+    expect(price('White Chicken')).toBe(800)
+    expect(price('White Cow')).toBe(1500)
+  })
+
   it('has unique types', () => {
     expect(unique(farmAnimals.map((a) => a.type))).toBe(true)
   })

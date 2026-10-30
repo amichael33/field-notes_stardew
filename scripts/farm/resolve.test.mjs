@@ -102,7 +102,7 @@ describe('animalFrom', () => {
     })
   })
 
-  it('keeps a sold price', () => {
-    expect(animalFrom('Cow', { House: 'Barn', PurchasePrice: 1500, DaysToMature: 5 }).price).toBe(1500)
+  it('doubles the game file price to the shop price', () => {
+    expect(animalFrom('Cow', { House: 'Barn', PurchasePrice: 750, DaysToMature: 5 }).price).toBe(1500)
   })
 })
