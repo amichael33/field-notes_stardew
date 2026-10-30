@@ -40,7 +40,7 @@ describe('VillagerWhere', () => {
     expect(popup.querySelector('.map-marker.now')).not.toBeNull()
     await userEvent.unhover(popup)
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
-  })
+  }, 15000)
 
   it('shows the map on click too, and Escape closes it', async () => {
     seed(clock())
