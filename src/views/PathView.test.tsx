@@ -205,17 +205,14 @@ describe('PathView aside cards', () => {
   })
 
   describe('obtained items', () => {
-    it('ticking one Wood in Construction counts exactly one with no duplicate-key warning', async () => {
-      const err = vi.spyOn(console, 'error').mockImplementation(() => {})
+    it('leaves out bundles that only need year-round items', () => {
       renderWithState(<PathView />)
-      const section = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
-      const head = () => within(section()).getByText('Construction').closest('.needed-head')!
-      expect(head()).toHaveTextContent('0 of 4')
-      const list = within(section()).getByRole('list', { name: 'Still needed for Construction' })
-      await userEvent.click(within(list).getAllByRole('button', { name: /^Wood/ })[0])
-      expect(head()).toHaveTextContent('1 of 4')
-      expect(err.mock.calls.filter((c) => String(c[0]).includes('same key'))).toHaveLength(0)
-      err.mockRestore()
+      const section = screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!
+      for (const name of ['Construction', "Blacksmith's", "Geologist's", "Adventurer's"]) {
+        expect(within(section).queryByText(name)).not.toBeInTheDocument()
+      }
+      expect(within(section).queryByRole('button', { name: /^2,500g/ })).not.toBeInTheDocument()
+      expect(within(section).getByText('Spring Foraging')).toBeInTheDocument()
     })
 
     const card = () => screen.getByRole('heading', { name: 'Needed this season' }).closest('section')!

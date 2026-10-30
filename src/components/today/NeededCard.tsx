@@ -14,7 +14,9 @@ export default function NeededCard() {
   const season = filter !== 'all' ? filter : (save.clock?.season ?? 'spring')
   const route = save.profile.route
   const grouped = new Map<Bundle, { item: BundleItem; index: number }[]>()
+  // Only season-specific items: year-round ones (bars, minerals, gold) can be done any time.
   for (const { bundle, item, index } of bundleItemsBySeason(bundles, season)) {
+    if (item.seasons === 'any') continue
     grouped.set(bundle, [...(grouped.get(bundle) ?? []), { item, index }])
   }
   return (
