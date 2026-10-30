@@ -21,8 +21,8 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **Your tasks**: add your own tasks to any day under the Day plan. They are saved, included in Export / Import, and unfinished ones from earlier days stay listed.
 - **Saved in your browser**: checklist progress, plan task checkboxes, obtained items, notes, your plan goal and your Community Center / Joja route choice are kept between visits.
 - **Export / import**: download your saved progress as a JSON file and load it back later or on another device.
-- **Farm** tab is a placeholder for now (see the roadmap).
-- **Print-friendly**: the header, controls and footer are hidden when you print, and a Print page button is in the header.
+- **Farm**: four cards. **Buildings** shows each building chain (Coop, Barn, Shed and their upgrades), simple buildings and house upgrades. **Animals** adds animals to your buildings and warns when a building is over capacity. **Crops** tracks what is in the ground, with harvest dates, regrowing crops, and a warning for crops that will not finish this season. **Progress** holds tool levels, skill levels, current gold and a Saving for goal. The Today tab also has a Ready to harvest card. Everything is saved in your browser and included in Export / Import.
+- **Print-friendly**: printing from the browser uses the print-friendly styles, which hide the header, controls and footer.
 
 ## Roadmap
 
@@ -30,12 +30,12 @@ This is an early version. It has the opening route with a checklist, bundles wit
 2. Saving: notes, checklist progress, route choice, and JSON export/import, all in your browser with no accounts (done)
 3. Game clock and villager schedules (done)
 4. In progress: a day-by-day year 1 plan. The engine is done and Spring 1 to 28 is covered for both goals (Summer, Fall and Winter come next). Days with no entry show the opening route.
-5. Farm layout uploads
+5. Farm tracker (done); farm layout uploads later
 6. Later: layout optimizer and save-file import
 
 ## Your data
 
-Everything you save (checklist progress, obtained items, notes, route choice, plan goal, plan task checkboxes, and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
+Everything you save (checklist progress, obtained items, notes, route choice, plan goal, plan task checkboxes, the farm section (buildings, animals, crops, tool and skill levels, gold and saving goal), and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
 
 ## Run it locally
 
@@ -49,6 +49,7 @@ npm run lint     # lint
 npm run icons    # regenerate item icons (needs the unpacked game, see below)
 npm run portraits # regenerate villager portraits (needs the unpacked game, see below)
 npm run schedules # regenerate villager schedules (needs the unpacked game, see below)
+npm run farm     # regenerate farm data (needs the unpacked game, see below)
 npm run build    # production build into dist/
 ```
 
@@ -91,6 +92,8 @@ npm run schedules
 ```
 
 This writes `src/data/schedules.json`.
+
+Farm data is read the same way. `npm run farm` reads the buildings, animals, crops and objects tables from `Content (unpacked)/Data/` and writes `src/data/farm-buildings.json`, `src/data/farm-animals.json` and `src/data/farm-crops.json`. The tool, house and backpack costs are a small hand-written table (`src/data/farm-upgrades.json`), checked against the [Stardew Valley Wiki](https://stardewvalleywiki.com).
 
 ## License
 

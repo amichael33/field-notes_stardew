@@ -73,3 +73,10 @@ Farm map or layout drawing, farm screenshot upload, reading a game save file, fe
 - **Game data shapes change between versions.** The script fails loudly when an expected field is missing, and the generated JSON is committed so the site never depends on the unpacked game at runtime.
 - **Hand-written upgrade table drift.** Kept small and covered by the wiki spot check.
 - **Crops are entered by hand.** The tracker does not read the game, so it only knows what the player records; the card says so.
+
+## Plan adjustments
+
+- **Data icon test.** The data icon test covers building materials only. Ten late-game materials (Iridium Bar, Seaweed, Green Algae, Dragon Tooth, Banana, Starfruit, Fiber, Clay, Refined Quartz, Coral) use the initials tile instead of game art.
+- **Crop last harvest.** Crop entries have an optional `lastHarvest` for regrowing crops.
+- **Animal prices.** Animal prices are the shop price, the game file's PurchasePrice x 2, matching the wiki. The Dinosaur is excluded.
+- **Saving for list.** The Saving for list offers every building, not only the next level.
