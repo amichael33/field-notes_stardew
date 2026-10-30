@@ -31,14 +31,23 @@ describe('VillagerWhere', () => {
     expect(screen.getByRole('button', { name: /Pierre location: Pierre's General Store since/ })).toBeInTheDocument()
   })
 
-  it('opens the map with the season picture and markers, and closes it', async () => {
+  it('shows the map on hover and removes it when the pointer leaves the map', async () => {
     seed(clock({ season: 'summer', day: 3, minutes: 600 }))
     renderWithState(<VillagerWhere name="Pierre" />)
+    await userEvent.hover(screen.getByRole('button', { name: /Pierre location/ }))
+    const popup = screen.getByRole('dialog', { name: 'Where Pierre is' })
+    expect(popup.querySelector('img')).toHaveAttribute('src', 'map/summer.png')
+    expect(popup.querySelector('.map-marker.now')).not.toBeNull()
+    await userEvent.unhover(popup)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('shows the map on click too, and Escape closes it', async () => {
+    seed(clock())
+    renderWithState(<VillagerWhere name="Pierre" />)
     await userEvent.click(screen.getByRole('button', { name: /Pierre location/ }))
-    const dialog = screen.getByRole('dialog', { name: 'Where Pierre is' })
-    expect(dialog.querySelector('img')).toHaveAttribute('src', 'map/summer.png')
-    expect(dialog.querySelector('.map-marker.now')).not.toBeNull()
-    await userEvent.click(screen.getByRole('button', { name: 'Close' }))
+    expect(screen.getByRole('dialog', { name: 'Where Pierre is' })).toBeInTheDocument()
+    await userEvent.keyboard('{Escape}')
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 
