@@ -122,7 +122,8 @@ describe('save clock', () => {
   })
 
   it('defaults the farm when absent and rejects an invalid one', () => {
-    const { farm: _farm, ...old } = defaultSave()
+    const old: Partial<ReturnType<typeof defaultSave>> = defaultSave()
+    delete old.farm
     const r = parseSave(JSON.stringify(old))
     expect(r.ok && r.data.farm).toEqual(defaultFarm())
     const bad = parseSave(JSON.stringify({ ...old, farm: { ...defaultFarm(), gold: -1 } }))
