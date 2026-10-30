@@ -1,6 +1,7 @@
 import type { Clock, CustomTask, SaveData } from '../data/types'
 import { DEFAULT_PLAN_GOAL, isPlanGoal } from '../data/plans'
 import { isClock } from './clock'
+import { defaultFarm, parseFarm } from './farm-save'
 
 type ParseResult = { ok: true; data: SaveData } | { ok: false; error: string }
 
@@ -12,6 +13,7 @@ export function defaultSave(): SaveData {
     notes: '',
     clock: null,
     customTasks: [],
+    farm: defaultFarm(),
   }
 }
 
@@ -85,6 +87,12 @@ export function parseSave(json: string): ParseResult {
       customTasks.push({ id: t.id, text: t.text, day: t.day, season: t.season as CustomTask['season'] })
     }
   }
+  let farm = defaultFarm()
+  if (raw.farm !== undefined) {
+    const parsedFarm = parseFarm(raw.farm)
+    if (!parsedFarm) return { ok: false, error: 'The save farm is invalid.' }
+    farm = parsedFarm
+  }
   return {
     ok: true,
     data: {
@@ -94,6 +102,7 @@ export function parseSave(json: string): ParseResult {
       notes: raw.notes,
       clock,
       customTasks,
+      farm,
     },
   }
 }

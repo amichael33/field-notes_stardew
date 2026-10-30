@@ -212,4 +212,13 @@ describe('SaveProvider', () => {
     }
     expect(() => render(<Probe />)).toThrow()
   })
+
+  it('updateFarm saves to localStorage and survives a remount', () => {
+    const first = renderHook(() => useSave(), { wrapper })
+    act(() => first.result.current.updateFarm((f) => ({ ...f, gold: 250, buildings: { Coop: 2 } })))
+    expect(JSON.parse(localStorage.getItem(KEY)!).farm.gold).toBe(250)
+    first.unmount()
+    const second = renderHook(() => useSave(), { wrapper })
+    expect(second.result.current.save.farm).toMatchObject({ gold: 250, buildings: { Coop: 2 } })
+  })
 })

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import type { Clock, CustomTask, PlanGoal, Route, SaveData } from '../data/types'
+import type { Clock, CustomTask, FarmData, PlanGoal, Route, SaveData } from '../data/types'
 import { restoreClock } from './clock'
 import { defaultSave, parseSave, serializeSave, toggleChecked } from './save'
 
@@ -14,6 +14,7 @@ interface SaveApi {
   addCustomTask: (task: Omit<CustomTask, 'id'>) => void
   removeCustomTask: (id: string) => void
   updateClock: (fn: (c: Clock | null) => Clock | null) => void
+  updateFarm: (fn: (f: FarmData) => FarmData) => void
   // True when this tab last changed the clock. Only the owner's ClockRunner
   // ticks, so two open tabs do not advance a running clock at double speed.
   isClockOwner: boolean
@@ -109,6 +110,10 @@ export function SaveProvider({ children }: { children: ReactNode }) {
     setClockOwner(true)
     setSave((s) => ({ ...s, clock: fn(s.clock) }))
   }, [])
+  const updateFarm = useCallback((fn: (f: FarmData) => FarmData) => {
+    dirty.current = true
+    setSave((s) => ({ ...s, farm: fn(s.farm) }))
+  }, [])
   const importSave = useCallback((json: string) => {
     const parsed = parseSave(json)
     if (!parsed.ok) return { ok: false as const, error: parsed.error }
@@ -130,6 +135,7 @@ export function SaveProvider({ children }: { children: ReactNode }) {
         addCustomTask,
         removeCustomTask,
         updateClock,
+        updateFarm,
         isClockOwner,
         importSave,
         exportSave,

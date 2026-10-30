@@ -54,6 +54,7 @@ export interface SaveData {
   notes: string
   clock: Clock | null
   customTasks: CustomTask[]
+  farm: FarmData
 }
 
 /** A task the player added to a specific day. Its checkbox id is `custom:<id>`. */
@@ -146,4 +147,32 @@ export interface FarmUpgrade {
   label: string
   cost: number
   materials: FarmMaterial[]
+}
+
+export interface PlantedCrop {
+  id: string
+  /** A `FarmCrop.id`. */
+  crop: string
+  count: number
+  season: Season
+  day: number
+  lastHarvest?: { season: Season; day: number }
+}
+
+export interface FarmAnimal {
+  id: string
+  type: string
+  name: string
+  home: 'Coop' | 'Barn'
+}
+
+/** Chains (Coop, Barn, Shed) store a level 0 to 3 under the root id; other buildings store a count. */
+export interface FarmData {
+  buildings: Record<string, number>
+  animals: FarmAnimal[]
+  crops: PlantedCrop[]
+  tools: Record<string, number>
+  skills: Record<string, number>
+  gold: number
+  saving: string | null
 }

@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { defaultFarm } from './farm-save'
 import { defaultSave, parseSave, serializeSave, toggleChecked } from './save'
 
 describe('save', () => {
@@ -118,5 +119,19 @@ describe('save clock', () => {
   it('rejects an invalid clock', () => {
     const r = parseSave(JSON.stringify({ ...defaultSave(), clock: { ...clock, day: 40 } }))
     expect(r).toEqual({ ok: false, error: 'The save clock is invalid.' })
+  })
+
+  it('defaults the farm when absent and rejects an invalid one', () => {
+    const { farm: _farm, ...old } = defaultSave()
+    const r = parseSave(JSON.stringify(old))
+    expect(r.ok && r.data.farm).toEqual(defaultFarm())
+    const bad = parseSave(JSON.stringify({ ...old, farm: { ...defaultFarm(), gold: -1 } }))
+    expect(bad).toEqual({ ok: false, error: 'The save farm is invalid.' })
+  })
+
+  it('serializeSave includes the farm', () => {
+    const s = { ...defaultSave(), farm: { ...defaultFarm(), gold: 12 } }
+    expect(JSON.parse(serializeSave(s)).farm.gold).toBe(12)
+    expect(parseSave(serializeSave(s))).toEqual({ ok: true, data: s })
   })
 })
