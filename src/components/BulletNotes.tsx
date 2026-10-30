@@ -34,16 +34,6 @@ export default function BulletNotes({ id, label, className }: Props) {
     }
   }
 
-  const addBullet = () => {
-    const box = ref.current
-    const value = save.notes
-    const pos = box ? box.selectionStart : value.length
-    const lineStart = value.lastIndexOf('\n', pos - 1) + 1
-    const text = pos > lineStart ? '\n• ' : '• '
-    apply({ value: value.slice(0, pos) + text + value.slice(pos), cursor: pos + text.length })
-    box?.focus()
-  }
-
   return (
     <div className="bullet-notes">
       <label className="visually-hidden" htmlFor={id}>
@@ -62,9 +52,6 @@ export default function BulletNotes({ id, label, className }: Props) {
         }}
       />
       <div className="notes-hint">
-        <button type="button" className="btn-small" onClick={addBullet}>
-          Add bullet
-        </button>
         <span className="when">Type a dash and a space for a bullet. Enter continues it, Tab nests it.</span>
       </div>
     </div>

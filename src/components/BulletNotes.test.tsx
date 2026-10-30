@@ -52,11 +52,9 @@ describe('BulletNotes', () => {
     expect(box.value).toBe('• one\n  ◦ two')
   })
 
-  it('Add bullet starts a bullet', async () => {
-    const box = setup()
-    await userEvent.click(screen.getByRole('button', { name: 'Add bullet' }))
-    await userEvent.type(box, 'hello')
-    expect(box.value).toBe('• hello')
+  it('has no Add bullet button', () => {
+    setup()
+    expect(screen.queryByRole('button', { name: 'Add bullet' })).not.toBeInTheDocument()
   })
 
   it('saves the note', async () => {
