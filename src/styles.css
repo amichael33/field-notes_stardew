@@ -90,8 +90,9 @@ select {
 .card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
 .cols { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; align-items: start; }
 .cols .card { padding: 16px; }
-.cols.masonry { display: block; columns: 260px; column-gap: 16px; }
-.cols.masonry .card { break-inside: avoid; margin-bottom: 16px; display: inline-block; width: 100%; }
+.cols.masonry { display: flex; align-items: flex-start; gap: 16px; }
+.masonry-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.bundle-card.done { opacity: 0.7; border-color: #3c7a4f; }
 .bundle-card.locked { background: #f1f1ec; border-style: dashed; }
 .bundle-card.locked .item-list { opacity: 0.6; }
 .room-status { margin: 0 0 6px; font-weight: 800; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
@@ -334,3 +335,19 @@ select {
   white-space: nowrap;
   pointer-events: none;
 }
+
+/* Villager location and map */
+.where-btn { display: flex; flex-direction: column; gap: 2px; width: 100%; margin: 0 0 10px; padding: 8px 10px; text-align: left; font: inherit; font-size: 14px; color: var(--ink); background: var(--tag); border: 1px solid var(--line-strong); border-radius: 8px; cursor: pointer; }
+.where-btn:hover { border-color: var(--header-soft); }
+.where-none { margin: 0 0 8px; }
+.map-dialog { background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 16px; width: min(94vw, 880px); max-width: none; }
+.map-dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+.map-frame { position: relative; width: 100%; line-height: 0; }
+.map-img { width: 100%; height: auto; image-rendering: pixelated; border-radius: 6px; }
+.map-marker { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #1f3b2d; }
+.map-marker.now { background: #e0452f; animation: map-pulse 1.4s ease-out infinite; z-index: 2; }
+.map-marker.next { background: var(--gold); }
+.map-marker-label { position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); padding: 2px 6px; border-radius: 6px; background: var(--header); color: #fff; font-size: 12px; font-weight: 800; line-height: 1.2; white-space: nowrap; }
+.map-legend { list-style: none; margin: 12px 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+@keyframes map-pulse { 0% { box-shadow: 0 0 0 2px #1f3b2d, 0 0 0 0 rgba(224, 69, 47, 0.7); } 100% { box-shadow: 0 0 0 2px #1f3b2d, 0 0 0 16px rgba(224, 69, 47, 0); } }
+@media (prefers-reduced-motion: reduce) { .map-marker.now { animation: none; } }

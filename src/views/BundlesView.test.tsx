@@ -79,8 +79,10 @@ describe('BundlesView obtained items', () => {
     renderWithState(<BundlesView bundles={two} />)
     const cards = screen.getAllByRole('article')
     await userEvent.click(within(cards[0]).getByRole('button', { name: /^Shared Thing/ }))
-    expect(within(cards[0]).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(within(cards[1]).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'false')
+    // The finished bundle moves to the bottom, so find each card by its heading.
+    const card = (name: string) => screen.getByRole('heading', { name: new RegExp(name) }).closest('article')!
+    expect(within(card('Bundle a')).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(within(card('Bundle b')).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'false')
   })
 
   it('ticking the first of two identical items leaves the second unticked', async () => {
@@ -108,5 +110,26 @@ describe('BundlesView obtained items', () => {
     expect(screen.queryByText(/Ghost/)).not.toBeInTheDocument()
     await userEvent.click(nameBtn('Spring Thing'))
     expect(JSON.parse(localStorage.getItem('field-notes-save')!).checked).toContain('bundle:nope:Ghost')
+  })
+})
+
+describe('BundlesView order', () => {
+  beforeEach(() => localStorage.clear())
+  const mk = (id: string, room: string): Bundle => ({
+    id,
+    room,
+    name: 'Bundle ' + id,
+    reward: 'X',
+    slotsRequired: 1,
+    items: [{ name: 'Thing ' + id, quantity: 1, seasons: 'any', source: 'Here' }],
+  })
+  const names = () => screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent?.split(' ').slice(0, 2).join(' '))
+
+  it('puts unlocked bundles first, locked next, and a finished bundle last', async () => {
+    renderWithState(<BundlesView bundles={[mk('a', 'Crafts Room'), mk('b', 'Vault'), mk('c', 'Crafts Room')]} />)
+    expect(names()).toEqual(['Bundle a', 'Bundle c', 'Bundle b'])
+    await userEvent.click(screen.getByRole('button', { name: /^Thing a/ }))
+    // a is finished (moves last); that also unlocks nothing new for the Vault (needs 4)
+    expect(names()).toEqual(['Bundle c', 'Bundle b', 'Bundle a'])
   })
 })

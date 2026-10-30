@@ -1,5 +1,7 @@
 import { birthdaysBySeason } from '../data/selectors'
 import { useAppState } from '../state/AppState'
+import { useSave } from '../state/SaveContext'
+import VillagerWhere from '../components/VillagerWhere'
 import type { Season, Villager } from '../data/types'
 import villagersJson from '../data/villagers.json'
 import portraitsJson from '../data/portraits.json'
@@ -80,6 +82,7 @@ const cap = (s: string) => s[0].toUpperCase() + s.slice(1)
 export default function VillagersView({ villagers = villagersJson as Villager[] }: { villagers?: Villager[] }) {
   const { season } = useAppState()
   const birthdays = birthdaysBySeason(villagers, season)
+  const hasClock = useSave().save.clock !== null
 
   return (
     <section>
@@ -104,6 +107,9 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
         </ul>
       )}
       <h2>Gift tastes</h2>
+      {!hasClock && (
+        <p className="when">Press Start day on the Today tab to see where each villager is and where they go next.</p>
+      )}
       <p className="when">
         Universal Loves and Likes apply to most villagers even when they are not listed below; lists show
         villager-specific items and the wiki's exceptions.
@@ -115,6 +121,7 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
             <Portrait name={v.name} />
             <h3>{v.name}</h3>
           </div>
+          <VillagerWhere name={v.name} />
           <TasteList title="Loves" items={v.loves} />
           <TasteList title="Likes" items={v.likes} />
         </article>

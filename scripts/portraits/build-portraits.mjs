@@ -44,6 +44,21 @@ async function main() {
     await mkdir(path.join(root, 'public', 'calendar'), { recursive: true })
     await writeFile(path.join(root, 'public', 'calendar', 'billboard.png'), PNG.sync.write(board))
   }
+  // The valley map for each season (the top 300 x 180 of each map sheet), for marking villager locations.
+  await mkdir(path.join(root, 'public', 'map'), { recursive: true })
+  for (const [season, file] of [
+    ['spring', 'map.png'],
+    ['summer', 'map_summer.png'],
+    ['fall', 'map_fall.png'],
+    ['winter', 'map_winter.png'],
+  ]) {
+    const src = path.join(root, 'Content (unpacked)', 'LooseSprites', file)
+    if (!existsSync(src)) continue
+    const sheet = PNG.sync.read(await readFile(src))
+    const out = new PNG({ width: 300, height: 180 })
+    PNG.bitblt(sheet, out, 0, 0, 300, 180, 0, 0)
+    await writeFile(path.join(root, 'public', 'map', `${season}.png`), PNG.sync.write(out))
+  }
   console.log(`Wrote ${Object.keys(map).length} portraits.${missing.length ? ` No portrait for: ${missing.join(', ')}.` : ''}`)
 }
 

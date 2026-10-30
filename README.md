@@ -15,7 +15,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **Item icons**: the Needed-this-season card on Today and the Community Center tab show each item's icon. Gold amounts show a drawn gold-coin tile.
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. Cards are staggered, and rooms show Locked or Unlocked based on how many bundles you have completed (Pantry and Fish Tank after 1, Boiler Room after 2, Bulletin Board after 3, Vault after 4, and the Missing Bundle after all the rest). A Community Center / Joja toggle hides the bundles on the Joja route.
 - **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
-- **People**: a birthday calendar and every villager's loved and liked gifts.  Each villager shows their in-game portrait (cropped small and saved in your browser).
+- **People**: the game's own birthday calendar with each villager's portrait, and every villager's loved and liked gifts. With the clock running, each card says where that villager is now and where they go next; click it to see the spot marked on the game's map for the current season.
 - **Goals**: what each achievement requires.
 - **Notes**: plain-text notes with bullets: type a dash and a space for a bullet, Enter continues it, Tab nests it. On both the Today card and the Notes tab, which edit the same saved note.
 - **Your tasks**: add your own tasks to any day under the Day plan. They are saved, included in Export / Import, and unfinished ones from earlier days stay listed.
@@ -67,6 +67,7 @@ Only the opening-route steps are still hand-written in `src/data/path-steps.json
 `npm test` runs the parser tests (against saved wiki pages in `scripts/wiki/fixtures/`) and the data-integrity tests.
 
 Known limits of the data today:
+
 - Gift lists keep the wiki's wording, e.g. "All Universal Loves (except ...)".
 - Recipes are the 32 from The Queen of Sauce (both years) with the other places each can be bought; recipes learned from villagers or other sources are not included yet.
 - Schedules cover normal days only (weather, date, weekday and season rules, at 0 hearts). Marriage, festival and heart-level schedules are skipped, and mail-gated rules use the not-yet-received branch (for example, before the beach bridge or the bus is fixed). Krobus, the Wizard and the Dwarf have no schedule file, and Leo's file is skipped on purpose because it is his Ginger Island schedule.
