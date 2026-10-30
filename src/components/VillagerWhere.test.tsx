@@ -61,6 +61,14 @@ describe('VillagerWhere', () => {
     expect(popup.querySelector('line')).not.toBeNull()
   }, 15000)
 
+  it('marks their home as the current spot when they have not left yet', async () => {
+    seed(clock({ season: 'spring', day: 5, minutes: 360 }))
+    renderWithState(<VillagerWhere name="Abigail" />)
+    await userEvent.hover(screen.getByRole('button', { name: /Abigail location: At home/ }))
+    const popup = screen.getByRole('dialog', { name: 'Where Abigail is' })
+    expect(popup.querySelector('[data-marker="now"]')).not.toBeNull()
+  }, 15000)
+
   it('says there is no schedule data for villagers without one', () => {
     seed(clock())
     renderWithState(<VillagerWhere name="Nobody" />)

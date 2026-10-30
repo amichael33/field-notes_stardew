@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { MAP_SIZE, PLACE_POSITIONS } from './map-places'
+import { MAP_SIZE, PLACE_POSITIONS, VILLAGER_HOMES } from './map-places'
 import schedules from './schedules.json'
 
 describe('map places', () => {
@@ -23,6 +23,13 @@ describe('map places', () => {
       expect(x).toBeLessThanOrEqual(MAP_SIZE.w)
       expect(y).toBeGreaterThanOrEqual(0)
       expect(y).toBeLessThanOrEqual(MAP_SIZE.h)
+    }
+  })
+
+  it('gives every villager with a schedule a home on the map', () => {
+    for (const name of Object.keys(schedules)) {
+      expect(VILLAGER_HOMES, name).toHaveProperty([name])
+      expect(PLACE_POSITIONS, name).toHaveProperty([VILLAGER_HOMES[name]])
     }
   })
 })
