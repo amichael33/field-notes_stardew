@@ -1,23 +1,22 @@
-import { useState } from "react";
-import type { CustomTask, Season } from "../../data/types";
-import { useSave } from "../../state/SaveContext";
+import { useState } from 'react'
+import type { CustomTask, Season } from '../../data/types'
+import { useSave } from '../../state/SaveContext'
 
-const SEASONS: Season[] = ["spring", "summer", "fall", "winter"];
+const SEASONS: Season[] = ['spring', 'summer', 'fall', 'winter']
 const LABEL: Record<Season, string> = {
-  spring: "Spring",
-  summer: "Summer",
-  fall: "Fall",
-  winter: "Winter",
-};
-const index = (t: { season: Season; day: number }) =>
-  SEASONS.indexOf(t.season) * 28 + t.day;
+  spring: 'Spring',
+  summer: 'Summer',
+  fall: 'Fall',
+  winter: 'Winter',
+}
+const index = (t: { season: Season; day: number }) => SEASONS.indexOf(t.season) * 28 + t.day
 
 function Row({ task, from }: { task: CustomTask; from?: string }) {
-  const { save, toggle, removeCustomTask } = useSave();
-  const id = `custom:${task.id}`;
-  const checked = save.checked.includes(id);
+  const { save, toggle, removeCustomTask } = useSave()
+  const id = `custom:${task.id}`
+  const checked = save.checked.includes(id)
   return (
-    <li className={checked ? "path-row plan-row done" : "path-row plan-row"}>
+    <li className={checked ? 'path-row plan-row done' : 'path-row plan-row'}>
       <label className="row-check">
         <input type="checkbox" checked={checked} onChange={() => toggle(id)} />
         <strong>{task.text}</strong>
@@ -32,25 +31,23 @@ function Row({ task, from }: { task: CustomTask; from?: string }) {
         Remove
       </button>
     </li>
-  );
+  )
 }
 
 export default function MyTasksCard() {
-  const { save, addCustomTask } = useSave();
-  const [text, setText] = useState("");
-  const season = save.clock?.season ?? "spring";
-  const day = save.clock?.day ?? 1;
-  const now = index({ season, day });
-  const today = save.customTasks.filter(
-    (t) => t.season === season && t.day === day,
-  );
+  const { save, addCustomTask } = useSave()
+  const [text, setText] = useState('')
+  const season = save.clock?.season ?? 'spring'
+  const day = save.clock?.day ?? 1
+  const now = index({ season, day })
+  const today = save.customTasks.filter((t) => t.season === season && t.day === day)
   const earlier = save.customTasks
     .filter((t) => index(t) < now && !save.checked.includes(`custom:${t.id}`))
-    .sort((a, b) => index(a) - index(b));
+    .sort((a, b) => index(a) - index(b))
   return (
     <section className="card" aria-label="Your tasks">
       <h2>
-        Your tasks{" "}
+        Your tasks{' '}
         <span className="when">
           {LABEL[season]} {day}
         </span>
@@ -58,11 +55,11 @@ export default function MyTasksCard() {
       <form
         className="add-task"
         onSubmit={(e) => {
-          e.preventDefault();
-          const t = text.trim();
-          if (!t) return;
-          addCustomTask({ season, day, text: t });
-          setText("");
+          e.preventDefault()
+          const t = text.trim()
+          if (!t) return
+          addCustomTask({ season, day, text: t })
+          setText('')
         }}
       >
         <label className="visually-hidden" htmlFor="add-task-input">
@@ -95,5 +92,5 @@ export default function MyTasksCard() {
         </ul>
       )}
     </section>
-  );
+  )
 }
