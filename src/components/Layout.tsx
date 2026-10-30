@@ -102,6 +102,11 @@ export default function Layout() {
       </main>
       <footer className="site-footer">
         Unofficial fan project. Not affiliated with ConcernedApe. Game data from the community wiki.
+        <br />
+        Created by{' '}
+        <a href="https://github.com/amichael33" target="_blank" rel="noopener noreferrer">
+          Aliki Michael
+        </a>
       </footer>
     </div>
   )

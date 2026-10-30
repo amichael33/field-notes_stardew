@@ -103,4 +103,11 @@ describe('Layout export and import', () => {
     await userEvent.click(screen.getByRole('button', { name: 'tick zero' }))
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent(/Couldn't save/))
   })
+
+  it('credits the author in the footer with a link to GitHub', () => {
+    renderLayout()
+    const link = screen.getByRole('link', { name: 'Aliki Michael' })
+    expect(link).toHaveAttribute('href', 'https://github.com/amichael33')
+    expect(link.closest('footer')).toHaveTextContent('Created by Aliki Michael')
+  })
 })
