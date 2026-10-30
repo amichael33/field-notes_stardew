@@ -2,6 +2,7 @@ import { birthdaysBySeason } from '../data/selectors'
 import { useAppState } from '../state/AppState'
 import { useSave } from '../state/SaveContext'
 import VillagerWhere from '../components/VillagerWhere'
+import Masonry from '../components/Masonry'
 import type { Season, Villager } from '../data/types'
 import villagersJson from '../data/villagers.json'
 import portraitsJson from '../data/portraits.json'
@@ -114,8 +115,8 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
         Universal Loves and Likes apply to most villagers even when they are not listed below; lists show
         villager-specific items and the wiki's exceptions.
       </p>
-      <div className="cols">
-      {villagers.map((v) => (
+      <Masonry>
+        {villagers.map((v) => (
         <article key={v.name} aria-label={v.name} className="card">
           <div className="villager-head">
             <Portrait name={v.name} />
@@ -126,7 +127,7 @@ export default function VillagersView({ villagers = villagersJson as Villager[] 
           <TasteList title="Likes" items={v.likes} />
         </article>
       ))}
-      </div>
+      </Masonry>
     </section>
   )
 }

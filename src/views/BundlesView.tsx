@@ -1,4 +1,3 @@
-import { useEffect, useState, type ReactNode } from 'react'
 import {
   bundleItemId,
   bundleItemsBySeason,
@@ -9,27 +8,14 @@ import {
 import { useAppState } from '../state/AppState'
 import { useSave } from '../state/SaveContext'
 import ItemRow from '../components/ItemRow'
+import Masonry from '../components/Masonry'
 import type { Bundle, BundleItem } from '../data/types'
 import bundlesJson from '../data/bundles.json'
-
-const columnsFor = (w: number) => (w < 560 ? 1 : w < 860 ? 2 : w < 1120 ? 3 : 4)
-
-/** Columns that fit the window, so cards can be dealt out left to right and still stagger. */
-function useColumnCount(): number {
-  const [n, setN] = useState(() => columnsFor(typeof window === 'undefined' ? 1200 : window.innerWidth))
-  useEffect(() => {
-    const onResize = () => setN(columnsFor(window.innerWidth))
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [])
-  return n
-}
 
 export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bundles?: Bundle[] }) {
   const { season } = useAppState()
   const { save } = useSave()
   const route = save.profile.route
-  const columnCount = useColumnCount()
 
   if (route === 'joja') {
     return (
@@ -91,23 +77,13 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
     )
   })
 
-  // Deal the cards out row by row so the first row holds the first cards.
-  const columns: ReactNode[][] = Array.from({ length: Math.min(columnCount, Math.max(1, cards.length)) }, () => [])
-  cards.forEach((card, i) => columns[i % columns.length].push(card))
-
   return (
     <section>
       <h1>Community Center</h1>
       {grouped.size === 0 ? (
         <p>No bundle items available this season.</p>
       ) : (
-        <div className="cols masonry">
-          {columns.map((col, i) => (
-            <div key={i} className="masonry-col">
-              {col}
-            </div>
-          ))}
-        </div>
+        <Masonry>{cards}</Masonry>
       )}
     </section>
   )

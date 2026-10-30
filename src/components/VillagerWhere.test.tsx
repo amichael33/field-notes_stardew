@@ -37,7 +37,7 @@ describe('VillagerWhere', () => {
     await userEvent.hover(screen.getByRole('button', { name: /Pierre location/ }))
     const popup = screen.getByRole('dialog', { name: 'Where Pierre is' })
     expect(popup.querySelector('img')).toHaveAttribute('src', 'map/summer.png')
-    expect(popup.querySelector('.map-marker.now')).not.toBeNull()
+    expect(popup.querySelector('[data-marker="now"]')).not.toBeNull()
     await userEvent.unhover(popup)
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   }, 15000)
@@ -50,6 +50,16 @@ describe('VillagerWhere', () => {
     await userEvent.keyboard('{Escape}')
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
+
+  it('marks both where they are and where they go next', async () => {
+    seed(clock({ season: 'spring', day: 5, minutes: 600 }))
+    renderWithState(<VillagerWhere name="Abigail" />)
+    await userEvent.hover(screen.getByRole('button', { name: /Abigail location/ }))
+    const popup = screen.getByRole('dialog', { name: 'Where Abigail is' })
+    expect(popup.querySelector('[data-marker="now"]')).not.toBeNull()
+    expect(popup.querySelector('[data-marker="next"]')).not.toBeNull()
+    expect(popup.querySelector('line')).not.toBeNull()
+  }, 15000)
 
   it('says there is no schedule data for villagers without one', () => {
     seed(clock())
