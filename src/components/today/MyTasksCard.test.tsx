@@ -5,7 +5,7 @@ import { renderWithState } from '../../test-utils'
 import MyTasksCard from './MyTasksCard'
 import NeededCard from './NeededCard'
 import { defaultSave, serializeSave, parseSave } from '../../state/save'
-import type { Clock } from '../../data/types'
+import type { Bundle, Clock } from '../../data/types'
 
 const saved = () => JSON.parse(localStorage.getItem('field-notes-save')!)
 const clock = (season: Clock['season'], day: number): Clock => ({
@@ -81,5 +81,23 @@ describe('NeededCard season', () => {
     renderWithState(<NeededCard />)
     expect(screen.getByRole('button', { name: 'Grape' })).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Wild Horseradish' })).not.toBeInTheDocument()
+  })
+})
+
+describe('NeededCard with only year-round items left', () => {
+  beforeEach(() => localStorage.clear())
+
+  it('leaves out a bundle whose seasonal items are all obtained', async () => {
+    const { default: bundles } = await import('../../data/bundles.json')
+    const { bundleItemId } = await import('../../data/selectors')
+    const lake = (bundles as Bundle[]).find((b) => b.id === 'lake-fish')!
+    const carp = lake.items.findIndex((i) => i.name === 'Carp')
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({ ...defaultSave(), checked: [bundleItemId(lake, lake.items[carp], carp)] }),
+    )
+    renderWithState(<NeededCard />)
+    expect(screen.queryByText('Lake Fish')).not.toBeInTheDocument()
+    expect(screen.getByText('Spring Foraging')).toBeInTheDocument()
   })
 })

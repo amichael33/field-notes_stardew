@@ -31,6 +31,8 @@ export default function NeededCard() {
         [...grouped.entries()].map(([bundle, items]) => {
           const { obtained, required, complete } = bundleProgress(bundle, save.checked)
           const remaining = items.filter(({ item, index }) => !save.checked.includes(bundleItemId(bundle, item, index)))
+          // Nothing seasonal left to get now (the rest is year-round): leave the bundle out.
+          if (!complete && remaining.length === 0) return null
           return (
             <div key={bundle.id} className="needed-bundle">
               <div className="needed-head">
