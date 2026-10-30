@@ -8,6 +8,7 @@ import DayPlanCard from '../components/today/DayPlanCard'
 import MyTasksCard from '../components/today/MyTasksCard'
 import NotesCard from '../components/today/NotesCard'
 import NextGoalCard from '../components/today/NextGoalCard'
+import ReadyCard from '../components/today/ReadyCard'
 import NeededCard from '../components/today/NeededCard'
 import WhereCard from '../components/today/WhereCard'
 import type { PathStep, Recipe } from '../data/types'
@@ -42,6 +43,7 @@ export default function PathView() {
         <aside className="today-aside">
           <NotesCard />
           <NextGoalCard steps={steps} />
+          <ReadyCard />
           <NeededCard />
           <WhereCard steps={steps} />
         </aside>

@@ -25,11 +25,12 @@ describe('App routing', () => {
     expect(screen.getByText('Field Notes')).toBeInTheDocument()
   })
 
-  it('Farm tab says it is coming soon', () => {
+  it('Farm tab shows the farm tracker', () => {
     window.location.hash = '#/farm'
     render(<App />)
     expect(screen.getByRole('heading', { name: 'Farm' })).toBeInTheDocument()
-    expect(screen.getByText(/Coming soon/)).toBeInTheDocument()
+    expect(screen.queryByText(/Coming soon/)).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Crops in the ground' })).toBeInTheDocument()
   })
 
   it('Notes tab shows the notes editor', () => {

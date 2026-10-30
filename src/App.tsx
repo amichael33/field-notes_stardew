@@ -7,7 +7,7 @@ import BundlesView from './views/BundlesView'
 import VillagersView from './views/VillagersView'
 import AchievementsView from './views/AchievementsView'
 import NotesView from './views/NotesView'
-import ComingSoonView from './views/ComingSoonView'
+import FarmView from './views/FarmView'
 
 export default function App() {
   return (
@@ -20,10 +20,7 @@ export default function App() {
               <Route path="/community-center" element={<BundlesView />} />
               <Route path="/goals" element={<AchievementsView />} />
               <Route path="/people" element={<VillagersView />} />
-              <Route
-                path="/farm"
-                element={<ComingSoonView title="Farm" note="Upload your planned farm layout here." />}
-              />
+              <Route path="/farm" element={<FarmView />} />
               <Route path="/notes" element={<NotesView />} />
               <Route path="*" element={<Navigate to="/today" replace />} />
             </Route>

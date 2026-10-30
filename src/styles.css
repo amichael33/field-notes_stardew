@@ -298,6 +298,10 @@ select {
 .btn-small { min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
 .notes-hint { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 6px; }
 @media print { .add-task, .btn-small { display: none; } }
+.farm-form { flex-wrap: wrap; align-items: center; }
+.farm-form select, .farm-form input[type='number'] { min-height: 44px; border: 1px solid var(--line-strong); border-radius: 8px; padding: 0 8px; font: inherit; }
+.farm-form input[type='number'] { flex: none; width: 80px; }
+@media print { .no-print { display: none; } }
 
 /* Image-only items (Needed this season) */
 .icon-grid { display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 6px !important; margin-top: 6px !important; }
