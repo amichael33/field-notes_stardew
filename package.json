@@ -12,7 +12,8 @@
     "data:wiki": "node scripts/wiki/build-data.mjs",
     "icons": "node scripts/icons/build-icons.mjs",
     "portraits": "node scripts/portraits/build-portraits.mjs",
-    "schedules": "node scripts/schedules/build-schedules.mjs"
+    "schedules": "node scripts/schedules/build-schedules.mjs",
+    "farm": "node scripts/farm/build-farm-data.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

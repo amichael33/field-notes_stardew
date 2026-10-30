@@ -107,3 +107,43 @@ export interface Location {
   since: number | null
   next?: Stop
 }
+
+export interface FarmMaterial {
+  item: string
+  amount: number
+}
+
+export interface FarmBuilding {
+  id: string
+  name: string
+  builder: string
+  cost: number
+  materials: FarmMaterial[]
+  buildDays: number
+  capacity: number | null
+  upgradesFrom: string | null
+}
+
+export interface FarmAnimalType {
+  type: string
+  house: 'Coop' | 'Barn'
+  price: number | null
+  daysToMature: number
+}
+
+export interface FarmCrop {
+  id: string
+  name: string
+  seeds: string
+  seasons: Season[]
+  daysToGrow: number
+  regrowDays: number | null
+}
+
+export interface FarmUpgrade {
+  id: string
+  group: 'tool' | 'house' | 'backpack'
+  label: string
+  cost: number
+  materials: FarmMaterial[]
+}

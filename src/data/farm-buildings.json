@@ -1,0 +1,422 @@
+[
+  {
+    "id": "Barn",
+    "name": "Barn",
+    "builder": "Robin",
+    "cost": 6000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 350
+      },
+      {
+        "item": "Stone",
+        "amount": 150
+      }
+    ],
+    "buildDays": 3,
+    "capacity": 4,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Big Barn",
+    "name": "Big Barn",
+    "builder": "Robin",
+    "cost": 12000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 450
+      },
+      {
+        "item": "Stone",
+        "amount": 200
+      }
+    ],
+    "buildDays": 2,
+    "capacity": 8,
+    "upgradesFrom": "Barn"
+  },
+  {
+    "id": "Big Coop",
+    "name": "Big Coop",
+    "builder": "Robin",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 400
+      },
+      {
+        "item": "Stone",
+        "amount": 150
+      }
+    ],
+    "buildDays": 2,
+    "capacity": 8,
+    "upgradesFrom": "Coop"
+  },
+  {
+    "id": "Big Shed",
+    "name": "Big Shed",
+    "builder": "Robin",
+    "cost": 20000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 550
+      },
+      {
+        "item": "Stone",
+        "amount": 300
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": "Shed"
+  },
+  {
+    "id": "Cabin",
+    "name": "Cabin",
+    "builder": "Robin",
+    "cost": 100,
+    "materials": [],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Coop",
+    "name": "Coop",
+    "builder": "Robin",
+    "cost": 4000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 300
+      },
+      {
+        "item": "Stone",
+        "amount": 100
+      }
+    ],
+    "buildDays": 3,
+    "capacity": 4,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Deluxe Barn",
+    "name": "Deluxe Barn",
+    "builder": "Robin",
+    "cost": 25000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 550
+      },
+      {
+        "item": "Stone",
+        "amount": 300
+      }
+    ],
+    "buildDays": 2,
+    "capacity": 12,
+    "upgradesFrom": "Big Barn"
+  },
+  {
+    "id": "Deluxe Coop",
+    "name": "Deluxe Coop",
+    "builder": "Robin",
+    "cost": 20000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 500
+      },
+      {
+        "item": "Stone",
+        "amount": 200
+      }
+    ],
+    "buildDays": 2,
+    "capacity": 12,
+    "upgradesFrom": "Big Coop"
+  },
+  {
+    "id": "Desert Obelisk",
+    "name": "Desert Obelisk",
+    "builder": "Wizard",
+    "cost": 1000000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 20
+      },
+      {
+        "item": "Coconut",
+        "amount": 10
+      },
+      {
+        "item": "Cactus Fruit",
+        "amount": 10
+      }
+    ],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Earth Obelisk",
+    "name": "Earth Obelisk",
+    "builder": "Wizard",
+    "cost": 500000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 10
+      },
+      {
+        "item": "Earth Crystal",
+        "amount": 10
+      }
+    ],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Fish Pond",
+    "name": "Fish Pond",
+    "builder": "Robin",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Stone",
+        "amount": 200
+      },
+      {
+        "item": "Seaweed",
+        "amount": 5
+      },
+      {
+        "item": "Green Algae",
+        "amount": 5
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Gold Clock",
+    "name": "Gold Clock",
+    "builder": "Wizard",
+    "cost": 10000000,
+    "materials": [],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Island Obelisk",
+    "name": "Island Obelisk",
+    "builder": "Wizard",
+    "cost": 1000000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 10
+      },
+      {
+        "item": "Dragon Tooth",
+        "amount": 10
+      },
+      {
+        "item": "Banana",
+        "amount": 10
+      }
+    ],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Junimo Hut",
+    "name": "Junimo Hut",
+    "builder": "Wizard",
+    "cost": 20000,
+    "materials": [
+      {
+        "item": "Stone",
+        "amount": 200
+      },
+      {
+        "item": "Starfruit",
+        "amount": 9
+      },
+      {
+        "item": "Fiber",
+        "amount": 100
+      }
+    ],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Mill",
+    "name": "Mill",
+    "builder": "Robin",
+    "cost": 2500,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 150
+      },
+      {
+        "item": "Stone",
+        "amount": 50
+      },
+      {
+        "item": "Cloth",
+        "amount": 4
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Pet Bowl",
+    "name": "Pet Bowl",
+    "builder": "Robin",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Hardwood",
+        "amount": 25
+      }
+    ],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Shed",
+    "name": "Shed",
+    "builder": "Robin",
+    "cost": 15000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 300
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Silo",
+    "name": "Silo",
+    "builder": "Robin",
+    "cost": 100,
+    "materials": [
+      {
+        "item": "Stone",
+        "amount": 100
+      },
+      {
+        "item": "Clay",
+        "amount": 10
+      },
+      {
+        "item": "Copper Bar",
+        "amount": 5
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Slime Hutch",
+    "name": "Slime Hutch",
+    "builder": "Robin",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Stone",
+        "amount": 500
+      },
+      {
+        "item": "Refined Quartz",
+        "amount": 10
+      },
+      {
+        "item": "Iridium Bar",
+        "amount": 1
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Stable",
+    "name": "Stable",
+    "builder": "Robin",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Hardwood",
+        "amount": 100
+      },
+      {
+        "item": "Iron Bar",
+        "amount": 5
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Water Obelisk",
+    "name": "Water Obelisk",
+    "builder": "Wizard",
+    "cost": 500000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 5
+      },
+      {
+        "item": "Clam",
+        "amount": 10
+      },
+      {
+        "item": "Coral",
+        "amount": 10
+      }
+    ],
+    "buildDays": 0,
+    "capacity": null,
+    "upgradesFrom": null
+  },
+  {
+    "id": "Well",
+    "name": "Well",
+    "builder": "Robin",
+    "cost": 1000,
+    "materials": [
+      {
+        "item": "Stone",
+        "amount": 75
+      }
+    ],
+    "buildDays": 2,
+    "capacity": null,
+    "upgradesFrom": null
+  }
+]

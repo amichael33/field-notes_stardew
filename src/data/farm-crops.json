@@ -1,0 +1,517 @@
+[
+  {
+    "id": "273",
+    "name": "Unmilled Rice",
+    "seeds": "Rice Shoot",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 8,
+    "regrowDays": null
+  },
+  {
+    "id": "299",
+    "name": "Amaranth",
+    "seeds": "Amaranth Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "301",
+    "name": "Grape",
+    "seeds": "Grape Starter",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 10,
+    "regrowDays": 3
+  },
+  {
+    "id": "302",
+    "name": "Hops",
+    "seeds": "Hops Starter",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 11,
+    "regrowDays": 1
+  },
+  {
+    "id": "347",
+    "name": "Sweet Gem Berry",
+    "seeds": "Rare Seed",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 24,
+    "regrowDays": null
+  },
+  {
+    "id": "425",
+    "name": "Fairy Rose",
+    "seeds": "Fairy Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 12,
+    "regrowDays": null
+  },
+  {
+    "id": "427",
+    "name": "Tulip",
+    "seeds": "Tulip Bulb",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 6,
+    "regrowDays": null
+  },
+  {
+    "id": "429",
+    "name": "Blue Jazz",
+    "seeds": "Jazz Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "431",
+    "name": "Sunflower",
+    "seeds": "Sunflower Seeds",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "daysToGrow": 8,
+    "regrowDays": null
+  },
+  {
+    "id": "433",
+    "name": "Coffee Bean",
+    "seeds": "Coffee Bean",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "daysToGrow": 10,
+    "regrowDays": 2
+  },
+  {
+    "id": "453",
+    "name": "Poppy",
+    "seeds": "Poppy Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "455",
+    "name": "Summer Spangle",
+    "seeds": "Spangle Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 8,
+    "regrowDays": null
+  },
+  {
+    "id": "472",
+    "name": "Parsnip",
+    "seeds": "Parsnip Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 4,
+    "regrowDays": null
+  },
+  {
+    "id": "473",
+    "name": "Green Bean",
+    "seeds": "Bean Starter",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 10,
+    "regrowDays": 3
+  },
+  {
+    "id": "474",
+    "name": "Cauliflower",
+    "seeds": "Cauliflower Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 12,
+    "regrowDays": null
+  },
+  {
+    "id": "475",
+    "name": "Potato",
+    "seeds": "Potato Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 6,
+    "regrowDays": null
+  },
+  {
+    "id": "476",
+    "name": "Garlic",
+    "seeds": "Garlic Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 4,
+    "regrowDays": null
+  },
+  {
+    "id": "477",
+    "name": "Kale",
+    "seeds": "Kale Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 6,
+    "regrowDays": null
+  },
+  {
+    "id": "478",
+    "name": "Rhubarb",
+    "seeds": "Rhubarb Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 13,
+    "regrowDays": null
+  },
+  {
+    "id": "479",
+    "name": "Melon",
+    "seeds": "Melon Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 12,
+    "regrowDays": null
+  },
+  {
+    "id": "480",
+    "name": "Tomato",
+    "seeds": "Tomato Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 11,
+    "regrowDays": 4
+  },
+  {
+    "id": "481",
+    "name": "Blueberry",
+    "seeds": "Blueberry Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 13,
+    "regrowDays": 4
+  },
+  {
+    "id": "482",
+    "name": "Hot Pepper",
+    "seeds": "Pepper Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 5,
+    "regrowDays": 3
+  },
+  {
+    "id": "483",
+    "name": "Wheat",
+    "seeds": "Wheat Seeds",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "daysToGrow": 4,
+    "regrowDays": null
+  },
+  {
+    "id": "484",
+    "name": "Radish",
+    "seeds": "Radish Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 6,
+    "regrowDays": null
+  },
+  {
+    "id": "485",
+    "name": "Red Cabbage",
+    "seeds": "Red Cabbage Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 9,
+    "regrowDays": null
+  },
+  {
+    "id": "486",
+    "name": "Starfruit",
+    "seeds": "Starfruit Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 13,
+    "regrowDays": null
+  },
+  {
+    "id": "487",
+    "name": "Corn",
+    "seeds": "Corn Seeds",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "daysToGrow": 14,
+    "regrowDays": 4
+  },
+  {
+    "id": "488",
+    "name": "Eggplant",
+    "seeds": "Eggplant Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 5,
+    "regrowDays": 5
+  },
+  {
+    "id": "489",
+    "name": "Artichoke",
+    "seeds": "Artichoke Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 8,
+    "regrowDays": null
+  },
+  {
+    "id": "490",
+    "name": "Pumpkin",
+    "seeds": "Pumpkin Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 13,
+    "regrowDays": null
+  },
+  {
+    "id": "491",
+    "name": "Bok Choy",
+    "seeds": "Bok Choy Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 4,
+    "regrowDays": null
+  },
+  {
+    "id": "492",
+    "name": "Yam",
+    "seeds": "Yam Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 10,
+    "regrowDays": null
+  },
+  {
+    "id": "493",
+    "name": "Cranberries",
+    "seeds": "Cranberry Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": 5
+  },
+  {
+    "id": "494",
+    "name": "Beet",
+    "seeds": "Beet Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 6,
+    "regrowDays": null
+  },
+  {
+    "id": "495",
+    "name": "Wild Horseradish",
+    "seeds": "Spring Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "496",
+    "name": "Spice Berry",
+    "seeds": "Summer Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "497",
+    "name": "Common Mushroom",
+    "seeds": "Fall Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "498",
+    "name": "Winter Root",
+    "seeds": "Winter Seeds",
+    "seasons": [
+      "winter"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "499",
+    "name": "Ancient Fruit",
+    "seeds": "Ancient Seeds",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "daysToGrow": 28,
+    "regrowDays": 7
+  },
+  {
+    "id": "745",
+    "name": "Strawberry",
+    "seeds": "Strawberry Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 8,
+    "regrowDays": 4
+  },
+  {
+    "id": "802",
+    "name": "Cactus Fruit",
+    "seeds": "Cactus Seeds",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "daysToGrow": 12,
+    "regrowDays": 3
+  },
+  {
+    "id": "831",
+    "name": "Taro Root",
+    "seeds": "Taro Tuber",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 10,
+    "regrowDays": null
+  },
+  {
+    "id": "833",
+    "name": "Pineapple",
+    "seeds": "Pineapple Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 14,
+    "regrowDays": 7
+  },
+  {
+    "id": "885",
+    "name": "Fiber",
+    "seeds": "Fiber Seeds",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "890",
+    "name": "Qi Fruit",
+    "seeds": "Qi Bean",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "daysToGrow": 4,
+    "regrowDays": null
+  },
+  {
+    "id": "BroccoliSeeds",
+    "name": "Broccoli",
+    "seeds": "Broccoli Seeds",
+    "seasons": [
+      "fall"
+    ],
+    "daysToGrow": 8,
+    "regrowDays": 4
+  },
+  {
+    "id": "CarrotSeeds",
+    "name": "Carrot",
+    "seeds": "Carrot Seeds",
+    "seasons": [
+      "spring"
+    ],
+    "daysToGrow": 3,
+    "regrowDays": null
+  },
+  {
+    "id": "PowdermelonSeeds",
+    "name": "Powdermelon",
+    "seeds": "Powdermelon Seeds",
+    "seasons": [
+      "winter"
+    ],
+    "daysToGrow": 7,
+    "regrowDays": null
+  },
+  {
+    "id": "SummerSquashSeeds",
+    "name": "Summer Squash",
+    "seeds": "Summer Squash Seeds",
+    "seasons": [
+      "summer"
+    ],
+    "daysToGrow": 6,
+    "regrowDays": 3
+  }
+]

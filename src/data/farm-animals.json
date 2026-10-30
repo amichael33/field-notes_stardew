@@ -1,0 +1,86 @@
+[
+  {
+    "type": "Blue Chicken",
+    "house": "Coop",
+    "price": null,
+    "daysToMature": 3
+  },
+  {
+    "type": "Brown Chicken",
+    "house": "Coop",
+    "price": null,
+    "daysToMature": 3
+  },
+  {
+    "type": "Brown Cow",
+    "house": "Barn",
+    "price": null,
+    "daysToMature": 5
+  },
+  {
+    "type": "Dinosaur",
+    "house": "Coop",
+    "price": null,
+    "daysToMature": 0
+  },
+  {
+    "type": "Duck",
+    "house": "Coop",
+    "price": 600,
+    "daysToMature": 5
+  },
+  {
+    "type": "Goat",
+    "house": "Barn",
+    "price": 2000,
+    "daysToMature": 5
+  },
+  {
+    "type": "Golden Chicken",
+    "house": "Coop",
+    "price": null,
+    "daysToMature": 3
+  },
+  {
+    "type": "Ostrich",
+    "house": "Barn",
+    "price": null,
+    "daysToMature": 7
+  },
+  {
+    "type": "Pig",
+    "house": "Barn",
+    "price": 8000,
+    "daysToMature": 10
+  },
+  {
+    "type": "Rabbit",
+    "house": "Coop",
+    "price": 4000,
+    "daysToMature": 6
+  },
+  {
+    "type": "Sheep",
+    "house": "Barn",
+    "price": 4000,
+    "daysToMature": 4
+  },
+  {
+    "type": "Void Chicken",
+    "house": "Coop",
+    "price": null,
+    "daysToMature": 3
+  },
+  {
+    "type": "White Chicken",
+    "house": "Coop",
+    "price": 400,
+    "daysToMature": 3
+  },
+  {
+    "type": "White Cow",
+    "house": "Barn",
+    "price": 750,
+    "daysToMature": 5
+  }
+]

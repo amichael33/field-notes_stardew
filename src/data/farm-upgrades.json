@@ -1,0 +1,287 @@
+[
+  {
+    "id": "tool:Axe:1",
+    "group": "tool",
+    "label": "Copper Axe",
+    "cost": 2000,
+    "materials": [
+      {
+        "item": "Copper Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Axe:2",
+    "group": "tool",
+    "label": "Steel Axe",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Iron Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Axe:3",
+    "group": "tool",
+    "label": "Gold Axe",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Gold Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Axe:4",
+    "group": "tool",
+    "label": "Iridium Axe",
+    "cost": 25000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Pickaxe:1",
+    "group": "tool",
+    "label": "Copper Pickaxe",
+    "cost": 2000,
+    "materials": [
+      {
+        "item": "Copper Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Pickaxe:2",
+    "group": "tool",
+    "label": "Steel Pickaxe",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Iron Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Pickaxe:3",
+    "group": "tool",
+    "label": "Gold Pickaxe",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Gold Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Pickaxe:4",
+    "group": "tool",
+    "label": "Iridium Pickaxe",
+    "cost": 25000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Hoe:1",
+    "group": "tool",
+    "label": "Copper Hoe",
+    "cost": 2000,
+    "materials": [
+      {
+        "item": "Copper Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Hoe:2",
+    "group": "tool",
+    "label": "Steel Hoe",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Iron Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Hoe:3",
+    "group": "tool",
+    "label": "Gold Hoe",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Gold Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Hoe:4",
+    "group": "tool",
+    "label": "Iridium Hoe",
+    "cost": 25000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Watering Can:1",
+    "group": "tool",
+    "label": "Copper Watering Can",
+    "cost": 2000,
+    "materials": [
+      {
+        "item": "Copper Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Watering Can:2",
+    "group": "tool",
+    "label": "Steel Watering Can",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Iron Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Watering Can:3",
+    "group": "tool",
+    "label": "Gold Watering Can",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Gold Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Watering Can:4",
+    "group": "tool",
+    "label": "Iridium Watering Can",
+    "cost": 25000,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Trash Can:1",
+    "group": "tool",
+    "label": "Copper Trash Can",
+    "cost": 1000,
+    "materials": [
+      {
+        "item": "Copper Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Trash Can:2",
+    "group": "tool",
+    "label": "Steel Trash Can",
+    "cost": 2500,
+    "materials": [
+      {
+        "item": "Iron Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Trash Can:3",
+    "group": "tool",
+    "label": "Gold Trash Can",
+    "cost": 5000,
+    "materials": [
+      {
+        "item": "Gold Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "tool:Trash Can:4",
+    "group": "tool",
+    "label": "Iridium Trash Can",
+    "cost": 12500,
+    "materials": [
+      {
+        "item": "Iridium Bar",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "house:1",
+    "group": "house",
+    "label": "Kitchen",
+    "cost": 10000,
+    "materials": [
+      {
+        "item": "Wood",
+        "amount": 450
+      }
+    ]
+  },
+  {
+    "id": "house:2",
+    "group": "house",
+    "label": "Children's room",
+    "cost": 65000,
+    "materials": [
+      {
+        "item": "Hardwood",
+        "amount": 100
+      }
+    ]
+  },
+  {
+    "id": "house:3",
+    "group": "house",
+    "label": "Cellar",
+    "cost": 100000,
+    "materials": []
+  },
+  {
+    "id": "backpack:1",
+    "group": "backpack",
+    "label": "Large Pack",
+    "cost": 2000,
+    "materials": []
+  },
+  {
+    "id": "backpack:2",
+    "group": "backpack",
+    "label": "Deluxe Pack",
+    "cost": 10000,
+    "materials": []
+  }
+]
