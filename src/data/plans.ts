@@ -1,8 +1,7 @@
+import { dayIndex } from './calendar'
 import communityCenterJson from './plans/community-center.json'
 import moneyJson from './plans/money.json'
 import type { Clock, Plan, PlanDay, PlanGoal, PlanTask, Route, Season, Weather } from './types'
-
-const SEASON_ORDER: Season[] = ['spring', 'summer', 'fall', 'winter']
 
 export const PLAN_GOALS: { id: PlanGoal; label: string; description: string }[] = [
   {
@@ -30,10 +29,6 @@ export const PLANS: Record<PlanGoal, Plan> = {
 
 export function planTaskId(goal: PlanGoal, task: PlanTask): string {
   return `plan:${goal}:${task.id}`
-}
-
-function dayIndex(season: Season, day: number): number {
-  return SEASON_ORDER.indexOf(season) * 28 + day
 }
 
 function forRoute(tasks: PlanTask[], route: Route): PlanTask[] {
