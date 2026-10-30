@@ -3,19 +3,39 @@ import type { SeasonDay } from './calendar'
 import type { FarmBuilding, FarmCrop, FarmData, FarmUpgrade, PlantedCrop, Season } from './types'
 
 export type Harvest = { season: Season; day: number; finishes: boolean }
-export type HarvestStatus = 'ready' | 'tomorrow' | 'later' | 'wont-finish'
+
+export type HarvestStatus = 'ready' | 'tomorrow' | 'later' | 'wont-finish' | 'season-over'
+
+const LAST_DAY_OF_YEAR = 112
 
 export function harvestDate(entry: PlantedCrop, crop: FarmCrop): Harvest {
   const regrowing = entry.lastHarvest !== undefined && crop.regrowDays !== null
   const from = regrowing ? entry.lastHarvest! : entry
   const days = regrowing ? crop.regrowDays! : crop.daysToGrow
-  const date = fromIndex(dayIndex(from.season, from.day) + days)
-  return { ...date, finishes: crop.seasons.includes(date.season) }
+  const index = dayIndex(from.season, from.day) + days
+  const date = fromIndex(index)
+  // The tracker covers year one: past Winter 28 the crop is out of reach
+  return { ...date, finishes: index <= LAST_DAY_OF_YEAR && crop.seasons.includes(date.season) }
 }
 
-export function harvestStatus(h: Harvest, now: SeasonDay | null): HarvestStatus {
+/** True when, between the crop's start date and today, the calendar entered a season it cannot grow in. */
+function diedOfSeason(entry: PlantedCrop, crop: FarmCrop, now: SeasonDay): boolean {
+  const regrowing = entry.lastHarvest !== undefined && crop.regrowDays !== null
+  const from = regrowing ? entry.lastHarvest! : entry
+  const end = dayIndex(now.season, now.day)
+  for (let index = dayIndex(from.season, from.day) + 1; index <= end; index++) {
+    const date = fromIndex(index)
+    if (date.day === 1 && !crop.seasons.includes(date.season)) return true
+  }
+  return false
+}
+
+export function harvestStatus(entry: PlantedCrop, crop: FarmCrop, now: SeasonDay | null): HarvestStatus {
+  const today = now ?? { season: 'spring' as const, day: 1 }
+  if (diedOfSeason(entry, crop, today)) return 'season-over'
+  const h = harvestDate(entry, crop)
   if (!h.finishes) return 'wont-finish'
-  const left = daysUntil(h, now ?? { season: 'spring', day: 1 })
+  const left = daysUntil(h, today)
   if (left <= 0) return 'ready'
   return left === 1 ? 'tomorrow' : 'later'
 }

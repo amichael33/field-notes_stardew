@@ -68,21 +68,23 @@ function Row({ entry }: { entry: PlantedCrop }) {
     )
   }
   const date = harvestDate(entry, crop)
-  const status = harvestStatus(date, save.clock)
+  const status = harvestStatus(entry, crop, save.clock)
   const left = daysUntil(date, save.clock ?? SPRING_1)
   const when =
-    status === 'wont-finish'
-      ? 'Will not finish this season'
-      : status === 'ready'
-        ? 'Ready now'
-        : `ready ${SEASON_LABEL[date.season]} ${date.day} (in ${left} ${left === 1 ? 'day' : 'days'})`
+    status === 'season-over'
+      ? 'Died at the season change'
+      : status === 'wont-finish'
+        ? 'Will not finish this season'
+        : status === 'ready'
+          ? 'Ready now'
+          : `ready ${SEASON_LABEL[date.season]} ${date.day} (in ${left} ${left === 1 ? 'day' : 'days'})`
   return (
     <li className="path-row plan-row">
       <span className="row-check">
         <ItemIcon name={crop.name} />
         <strong>{`${entry.count} ${crop.name}, ${when}`}</strong>
       </span>
-      {status !== 'wont-finish' && <HarvestButton entry={entry} />}
+      {status !== 'wont-finish' && status !== 'season-over' && <HarvestButton entry={entry} />}
       {remove(crop.name)}
     </li>
   )

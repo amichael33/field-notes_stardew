@@ -87,6 +87,14 @@ describe('CropsCard', () => {
     expect(saved().farm.crops).toMatchObject([{ id: 'b', lastHarvest: { season: 'spring', day: 11 } }])
   })
 
+  it('says a crop died at the season change, with only Remove', () => {
+    seed(clock('summer', 3), [{ id: 'a', crop: 'parsnip', count: 2, season: 'spring', day: 1 }])
+    renderWithState(<CropsCard />)
+    expect(screen.getByText('2 Parsnip, Died at the season change')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Harvest Parsnip' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Remove Parsnip' })).toBeInTheDocument()
+  })
+
   it('Remove deletes an entry', async () => {
     seed(clock('spring', 1), [{ id: 'a', crop: 'parsnip', count: 1, season: 'spring', day: 1 }])
     renderWithState(<CropsCard />)

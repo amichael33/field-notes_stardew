@@ -68,6 +68,12 @@ describe('ReadyCard', () => {
     expect(screen.queryByRole('heading', { name: 'Ready to harvest' })).not.toBeInTheDocument()
   })
 
+  it('never shows a crop that died at the season change', () => {
+    seed({ ...clock, season: 'summer', day: 3 }, [parsnip('d', 1)])
+    renderWithState(<ReadyCard />)
+    expect(screen.queryByRole('heading', { name: 'Ready to harvest' })).not.toBeInTheDocument()
+  })
+
   it('Harvested updates the saved entry', async () => {
     seed({ ...clock, day: 11 }, [{ id: 'b', crop: 'bean', count: 2, season: 'spring', day: 1 }])
     renderWithState(<ReadyCard />)

@@ -52,6 +52,12 @@ describe('harvestDate', () => {
     expect(harvestDate(again!, bean)).toEqual({ season: 'spring', day: 18, finishes: true })
   })
 
+  it('does not finish past the end of winter in year one', () => {
+    const fiber: FarmCrop = { id: 'fiber', name: 'Fiber', seeds: 'Fiber Seeds', seasons: ['spring', 'summer', 'fall', 'winter'], daysToGrow: 7, regrowDays: null }
+    expect(harvestDate(planted('fiber', 'winter', 25), fiber).finishes).toBe(false)
+    expect(harvestDate(planted('fiber', 'winter', 21), fiber)).toEqual({ season: 'winter', day: 28, finishes: true })
+  })
+
   it('does not finish a regrow that crosses out of season', () => {
     const entry = { ...planted('bean', 'spring', 5), lastHarvest: { season: 'spring' as const, day: 27 } }
     expect(harvestDate(entry, bean)).toEqual({ season: 'summer', day: 2, finishes: false })
@@ -65,21 +71,33 @@ describe('harvest', () => {
 })
 
 describe('harvestStatus', () => {
-  const h = { season: 'spring' as const, day: 10, finishes: true }
+  const at = (season: PlantedCrop['season'], day: number) => ({ season, day })
   it('reports ready, tomorrow and later', () => {
-    expect(harvestStatus(h, { season: 'spring', day: 10 })).toBe('ready')
-    expect(harvestStatus(h, { season: 'spring', day: 12 })).toBe('ready')
-    expect(harvestStatus(h, { season: 'spring', day: 9 })).toBe('tomorrow')
-    expect(harvestStatus(h, { season: 'spring', day: 3 })).toBe('later')
+    const entry = planted('parsnip', 'spring', 6)
+    expect(harvestStatus(entry, parsnip, at('spring', 10))).toBe('ready')
+    expect(harvestStatus(entry, parsnip, at('spring', 12))).toBe('ready')
+    expect(harvestStatus(entry, parsnip, at('spring', 9))).toBe('tomorrow')
+    expect(harvestStatus(entry, parsnip, at('spring', 7))).toBe('later')
   })
 
   it('puts wont-finish first', () => {
-    expect(harvestStatus({ ...h, finishes: false }, { season: 'spring', day: 10 })).toBe('wont-finish')
+    expect(harvestStatus(planted('parsnip', 'spring', 25), parsnip, at('spring', 26))).toBe('wont-finish')
   })
 
   it('treats no clock as Spring 1', () => {
-    expect(harvestStatus({ season: 'spring', day: 2, finishes: true }, null)).toBe('tomorrow')
-    expect(harvestStatus(h, null)).toBe('later')
+    expect(harvestStatus(planted('parsnip', 'spring', 1), parsnip, null)).toBe('later')
+    expect(harvestStatus(planted('parsnip', 'spring', 3), parsnip, null)).toBe('later')
+  })
+
+  it('marks a crop dead once the calendar enters a season it cannot grow in', () => {
+    expect(harvestStatus(planted('parsnip', 'spring', 1), parsnip, at('summer', 3))).toBe('season-over')
+    expect(harvestStatus(planted('parsnip', 'spring', 25), parsnip, at('summer', 3))).toBe('season-over')
+    const regrow = { ...planted('bean', 'spring', 5), lastHarvest: at('spring', 27) }
+    expect(harvestStatus(regrow, bean, at('summer', 2))).toBe('season-over')
+  })
+
+  it('keeps a crop alive across a change into another valid season', () => {
+    expect(harvestStatus(planted('corn', 'summer', 20), corn, at('fall', 6))).toBe('ready')
   })
 })
 

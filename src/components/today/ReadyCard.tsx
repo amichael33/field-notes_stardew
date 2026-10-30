@@ -1,5 +1,5 @@
 import { cropById } from '../../data/farm-lookup'
-import { harvestDate, harvestStatus } from '../../data/farm'
+import { harvestStatus } from '../../data/farm'
 import { useSave } from '../../state/SaveContext'
 import ItemIcon from '../ItemIcon'
 import { HarvestButton } from '../farm/CropsCard'
@@ -10,7 +10,7 @@ export default function ReadyCard() {
   const ready = save.farm.crops.flatMap((entry) => {
     const crop = cropById(entry.crop)
     if (!crop) return []
-    const status = harvestStatus(harvestDate(entry, crop), save.clock)
+    const status = harvestStatus(entry, crop, save.clock)
     return status === 'ready' || status === 'tomorrow' ? [{ entry, crop, status }] : []
   })
   if (ready.length === 0) return null
