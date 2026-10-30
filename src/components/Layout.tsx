@@ -70,9 +70,6 @@ export default function Layout() {
             ))}
           </nav>
           <div className="header-actions">
-            <button type="button" className="btn" onClick={() => window.print()}>
-              Print page
-            </button>
             <button type="button" className="btn" onClick={handleExport}>
               Export
             </button>

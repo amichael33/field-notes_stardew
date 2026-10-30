@@ -141,3 +141,21 @@ describe('DayPlanCard', () => {
     expect(saved().checked).toContain('plan:community-center:s1-lewis')
   })
 })
+
+describe('DayPlanCard order', () => {
+  beforeEach(() => localStorage.clear())
+
+  it('moves a ticked task to the bottom and back when unticked', async () => {
+    seed(base)
+    renderCard()
+    const names = () =>
+      within(screen.getByRole('list', { name: 'Day tasks' }))
+        .getAllByRole('checkbox')
+        .map((c) => c.closest('label')!.querySelector('strong')!.textContent)
+    expect(names()).toEqual(['Plant parsnips', 'Meet Lewis'])
+    await userEvent.click(screen.getByRole('checkbox', { name: /Plant parsnips/ }))
+    expect(names()).toEqual(['Meet Lewis', 'Plant parsnips'])
+    await userEvent.click(screen.getByRole('checkbox', { name: /Plant parsnips/ }))
+    expect(names()).toEqual(['Plant parsnips', 'Meet Lewis'])
+  })
+})

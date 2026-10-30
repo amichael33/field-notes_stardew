@@ -1,6 +1,5 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import App from './App'
 
 describe('App routing', () => {
@@ -40,10 +39,8 @@ describe('App routing', () => {
     expect(screen.getByLabelText('Notes')).toBeInTheDocument()
   })
 
-  it('Print button opens the print dialog', async () => {
-    const print = vi.spyOn(window, 'print').mockImplementation(() => {})
+  it('has no Print page button', () => {
     render(<App />)
-    await userEvent.click(screen.getByRole('button', { name: 'Print page' }))
-    expect(print).toHaveBeenCalledTimes(1)
+    expect(screen.queryByRole('button', { name: 'Print page' })).not.toBeInTheDocument()
   })
 })
