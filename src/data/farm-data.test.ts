@@ -4,6 +4,7 @@ import buildings from './farm-buildings.json'
 import crops from './farm-crops.json'
 import upgrades from './farm-upgrades.json'
 import icons from './item-icons.json'
+import sprites from './farm-sprites.json'
 import type { FarmAnimalType, FarmBuilding, FarmCrop, FarmUpgrade } from './types'
 
 const farmBuildings = buildings as FarmBuilding[]
@@ -95,5 +96,22 @@ describe('farm upgrades', () => {
 
   it('every upgrade costs something', () => {
     for (const u of farmUpgrades) expect(u.cost, u.id).toBeGreaterThan(0)
+  })
+})
+
+// Ids with no sprite (texture missing from the unpacked game). Say why next to each id.
+const UNSPRITED = new Set<string>([])
+
+describe('farm sprites', () => {
+  const spriteMap = sprites as { buildings: Record<string, string>; animals: Record<string, string> }
+
+  it('has a sprite for every building', () => {
+    const missing = farmBuildings.map((b) => b.id).filter((id) => !spriteMap.buildings[id] && !UNSPRITED.has(id))
+    expect(missing).toEqual([])
+  })
+
+  it('has a sprite for every animal type', () => {
+    const missing = farmAnimals.map((a) => a.type).filter((t) => !spriteMap.animals[t] && !UNSPRITED.has(t))
+    expect(missing).toEqual([])
   })
 })

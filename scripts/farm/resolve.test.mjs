@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { animalFrom, buildingFrom, cropFrom, KEEP_BUILDINGS } from './resolve.mjs'
+import { animalFrame, animalFrom, buildingFrom, cropFrom, KEEP_BUILDINGS, spriteRect } from './resolve.mjs'
 
 const objects = {
   388: { Name: 'Wood' },
@@ -104,5 +104,25 @@ describe('animalFrom', () => {
 
   it('doubles the game file price to the shop price', () => {
     expect(animalFrom('Cow', { House: 'Barn', PurchasePrice: 750, DaysToMature: 5 }).price).toBe(1500)
+  })
+})
+
+describe('spriteRect', () => {
+  it('returns the source rectangle of a building', () => {
+    expect(spriteRect({ SourceRect: { X: 0, Y: 0, Width: 96, Height: 112 } })).toEqual({ x: 0, y: 0, w: 96, h: 112 })
+  })
+
+  it('returns null when the width is 0, meaning the whole texture', () => {
+    expect(spriteRect({ SourceRect: { X: 0, Y: 0, Width: 0, Height: 0 } })).toBeNull()
+  })
+})
+
+describe('animalFrame', () => {
+  it('reads the sprite size', () => {
+    expect(animalFrame({ SpriteWidth: 32, SpriteHeight: 32 })).toEqual({ w: 32, h: 32 })
+  })
+
+  it('defaults to 16 by 16', () => {
+    expect(animalFrame({})).toEqual({ w: 16, h: 16 })
   })
 })

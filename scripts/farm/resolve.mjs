@@ -78,3 +78,15 @@ export function animalFrom(type, raw) {
     daysToMature: raw.DaysToMature,
   }
 }
+
+// The part of a building texture that holds the building; null means the whole texture.
+export function spriteRect(raw) {
+  const r = raw.SourceRect
+  if (!r || !r.Width) return null
+  return { x: r.X, y: r.Y, w: r.Width, h: r.Height }
+}
+
+// Size of one animal frame in its texture (the first frame sits at 0,0).
+export function animalFrame(raw) {
+  return { w: raw.SpriteWidth ?? 16, h: raw.SpriteHeight ?? 16 }
+}

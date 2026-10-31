@@ -1,0 +1,41 @@
+{
+  "buildings": {
+    "Barn": "farm/buildings/Barn.png",
+    "Big Barn": "farm/buildings/Big Barn.png",
+    "Big Coop": "farm/buildings/Big Coop.png",
+    "Big Shed": "farm/buildings/Big Shed.png",
+    "Cabin": "farm/buildings/Cabin.png",
+    "Coop": "farm/buildings/Coop.png",
+    "Deluxe Barn": "farm/buildings/Deluxe Barn.png",
+    "Deluxe Coop": "farm/buildings/Deluxe Coop.png",
+    "Desert Obelisk": "farm/buildings/Desert Obelisk.png",
+    "Earth Obelisk": "farm/buildings/Earth Obelisk.png",
+    "Fish Pond": "farm/buildings/Fish Pond.png",
+    "Gold Clock": "farm/buildings/Gold Clock.png",
+    "Island Obelisk": "farm/buildings/Island Obelisk.png",
+    "Junimo Hut": "farm/buildings/Junimo Hut.png",
+    "Mill": "farm/buildings/Mill.png",
+    "Pet Bowl": "farm/buildings/Pet Bowl.png",
+    "Shed": "farm/buildings/Shed.png",
+    "Silo": "farm/buildings/Silo.png",
+    "Slime Hutch": "farm/buildings/Slime Hutch.png",
+    "Stable": "farm/buildings/Stable.png",
+    "Water Obelisk": "farm/buildings/Water Obelisk.png",
+    "Well": "farm/buildings/Well.png"
+  },
+  "animals": {
+    "Blue Chicken": "farm/animals/Blue Chicken.png",
+    "Brown Chicken": "farm/animals/Brown Chicken.png",
+    "Brown Cow": "farm/animals/Brown Cow.png",
+    "Duck": "farm/animals/Duck.png",
+    "Goat": "farm/animals/Goat.png",
+    "Golden Chicken": "farm/animals/Golden Chicken.png",
+    "Ostrich": "farm/animals/Ostrich.png",
+    "Pig": "farm/animals/Pig.png",
+    "Rabbit": "farm/animals/Rabbit.png",
+    "Sheep": "farm/animals/Sheep.png",
+    "Void Chicken": "farm/animals/Void Chicken.png",
+    "White Chicken": "farm/animals/White Chicken.png",
+    "White Cow": "farm/animals/White Cow.png"
+  }
+}
