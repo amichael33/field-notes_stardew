@@ -367,3 +367,12 @@ select {
 .farm-tile { position: relative; min-width: 44px; min-height: 44px; padding: 4px; border: 1px solid var(--line); border-radius: 8px; background: var(--tag); cursor: pointer; line-height: 0; }
 .farm-tile[aria-pressed='true'] { border-color: #3c7a4f; background: #e6f0e0; }
 .farm-tile-count { position: absolute; right: -4px; bottom: -4px; min-width: 18px; padding: 1px 5px; border-radius: 9px; background: #2f6690; color: #fff; font-size: 12px; line-height: 16px; text-align: center; }
+.farm-tiles { display: flex; flex-wrap: wrap; gap: 10px; }
+.farm-tile-plus { font-size: 24px; line-height: 40px; display: inline-block; width: 40px; text-align: center; }
+.farm-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--tag); }
+.farm-actions .btn-small { min-width: 44px; min-height: 44px; }
+.farm-picker { margin-top: 12px; }
+.farm-grid-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+.farm-pick { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; min-height: 44px; padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--tag); font-size: 12px; cursor: pointer; }
+.farm-pick[aria-pressed='true'] { border-color: #3c7a4f; background: #e6f0e0; }
+@media print { .farm-tile-plus { display: none; } }

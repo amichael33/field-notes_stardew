@@ -110,3 +110,24 @@ export function harvestSummary(
   later.sort((a, b) => a.days - b.days)
   return { ready, tomorrow, seasonOver, coming: later.slice(0, 3) }
 }
+
+const FORAGE_MIXES = ['Spring Seeds', 'Summer Seeds', 'Fall Seeds', 'Winter Seeds']
+
+/** The crops that can be planted in a season, as picture buttons labelled with the seed to buy. */
+export function cropOptions(
+  crops: FarmCrop[],
+  season: Season,
+): { id: string; label: string; picture: string }[] {
+  return crops
+    .filter((c) => c.seasons.includes(season))
+    .map((c) => ({
+      id: c.id,
+      label: FORAGE_MIXES.includes(c.seeds)
+        ? c.seeds
+        : c.seeds === `${c.name} Seeds`
+          ? c.name
+          : `${c.name} (${c.seeds})`,
+      picture: c.name,
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label))
+}

@@ -3,6 +3,7 @@ import type { FarmAnimalType, FarmBuilding, FarmCrop, FarmData, PlantedCrop, Sea
 import {
   capacityUsage,
   chainLevels,
+  cropOptions,
   harvest,
   harvestDate,
   harvestStatus,
@@ -167,5 +168,29 @@ describe('harvestSummary', () => {
     const s = harvestSummary([at('d', 'parsnip', 1)], crops, now)
     expect(s.seasonOver.map((e) => e.id)).toEqual(['d'])
     expect(s.ready).toEqual([])
+  })
+})
+
+describe('cropOptions', () => {
+  const rice: FarmCrop = { id: 'rice', name: 'Unmilled Rice', seeds: 'Rice Shoot', seasons: ['spring'], daysToGrow: 8, regrowDays: null }
+  const horseradish: FarmCrop = { id: 'horse', name: 'Wild Horseradish', seeds: 'Spring Seeds', seasons: ['spring'], daysToGrow: 7, regrowDays: null }
+  const all = [parsnip, corn, horseradish, rice, bean]
+
+  it('filters by season and sorts by label', () => {
+    expect(cropOptions(all, 'spring').map((o) => o.label)).toEqual([
+      'Green Bean (Bean Starter)',
+      'Parsnip',
+      'Spring Seeds',
+      'Unmilled Rice (Rice Shoot)',
+    ])
+    expect(cropOptions(all, 'summer').map((o) => o.id)).toEqual(['corn'])
+  })
+
+  it('labels seeds that differ and forage mixes by seed name', () => {
+    const options = cropOptions(all, 'spring')
+    expect(options.find((o) => o.id === 'rice')).toEqual({ id: 'rice', label: 'Unmilled Rice (Rice Shoot)', picture: 'Unmilled Rice' })
+    expect(options.find((o) => o.id === 'horse')).toEqual({ id: 'horse', label: 'Spring Seeds', picture: 'Wild Horseradish' })
+    expect(options.find((o) => o.id === 'bean')!.label).toBe('Green Bean (Bean Starter)')
+    expect(options.find((o) => o.id === 'parsnip')!.label).toBe('Parsnip')
   })
 })
