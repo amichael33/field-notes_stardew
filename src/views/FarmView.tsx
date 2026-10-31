@@ -1,6 +1,7 @@
 import ReadyToday from '../components/farm/ReadyToday'
 import NextGoal from '../components/farm/NextGoal'
 import CropsBox from '../components/farm/CropsBox'
+import BuildingsBox from '../components/farm/BuildingsBox'
 
 export default function FarmView() {
   return (
@@ -13,6 +14,7 @@ export default function FarmView() {
         </div>
         <aside className="farm-side">
           <CropsBox />
+          <BuildingsBox />
         </aside>
       </div>
     </div>

@@ -375,3 +375,5 @@ select {
 .farm-grid-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
 .farm-pick { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; min-height: 44px; padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--tag); font-size: 12px; cursor: pointer; }
 .farm-pick[aria-pressed='true'] { border-color: #3c7a4f; background: #e6f0e0; }
+.farm-goal-star { color: #b8860b; margin-left: 4px; }
+.farm-tile .farm-goal-star { position: absolute; left: -2px; top: -4px; margin: 0; }
