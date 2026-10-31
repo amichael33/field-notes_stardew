@@ -42,6 +42,11 @@ describe('matchItems', () => {
     expect(r.matched['Large Brown Egg'].id).toBe('182')
     expect(r.matched['Large Goat Milk'].id).toBe('438')
   })
+  it('maps Stone to the real stone (390), not the Litter object with the same name', () => {
+    const objects = { 2: obj('Stone', '', 2), 390: obj('Stone', '', 12) }
+    const r = matchItems(['Stone'], objects, {})
+    expect(r.matched.Stone.id).toBe('390')
+  })
   it('picks the lowest id when two objects share a name', () => {
     const objects = { 182: obj('Large Egg', '', 2), 174: obj('Large Egg', '', 1) }
     const r = matchItems(['Large Egg'], objects, {})
