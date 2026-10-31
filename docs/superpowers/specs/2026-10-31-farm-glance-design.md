@@ -79,3 +79,9 @@ Tiles are buttons with accessible names ("Parsnip, 15 planted"); action rows are
 
 ## Out of scope
 Tools, skills, gold, saving goals, named animals, a drawn farm map, fruit trees, greenhouse planting.
+
+## Plan adjustments
+
+- Crop picker labels add the seed name only when it differs from "<crop> Seeds". Forage seed mixes are labelled with the seed name alone.
+- A `.prettierrc.json` (single quotes, no semicolons, print width 110) was added so formatters match the codebase.
+- The **+** tile in Animals is disabled whenever no coop or barn is built.

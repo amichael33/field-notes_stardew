@@ -21,7 +21,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **Your tasks**: add your own tasks to any day under the Day plan. They are saved, included in Export / Import, and unfinished ones from earlier days stay listed.
 - **Saved in your browser**: checklist progress, plan task checkboxes, obtained items, notes, your plan goal and your Community Center / Joja route choice are kept between visits.
 - **Export / import**: download your saved progress as a JSON file and load it back later or on another device.
-- **Farm**: four cards. **Buildings** shows each building chain (Coop, Barn, Shed and their upgrades), simple buildings and house upgrades. **Animals** adds animals to your buildings and warns when a building is over capacity. **Crops** tracks what is in the ground, with harvest dates, regrowing crops, and a warning for crops that will not finish this season. **Progress** holds tool levels, skill levels, current gold and a Saving for goal. The Today tab also has a Ready to harvest card. Everything is saved in your browser and included in Export / Import.
+- **Farm**: one page at a glance. On the left, **Ready today** lists crops that are ready now or tomorrow, with a Harvested button, the crops that died at the season change, and the next three harvests coming up. Under it, **Next goal** shows the building you picked, with its cost and materials. On the right, small **Crops planted**, **Buildings** and **Animals** boxes show picture tiles: tap a tile for its actions, or tap **+** to add. ★ sets a building as the next goal. The goal also shows on Today and clears itself once it is built. Animals are counted per type, with coop and barn capacity shown and a warning when a building is full. The Today tab also has a Ready to harvest card. Everything is saved in your browser and included in Export / Import.
 - **Print-friendly**: printing from the browser uses the print-friendly styles, which hide the header, controls and footer.
 
 ## Roadmap
@@ -93,7 +93,7 @@ npm run schedules
 
 This writes `src/data/schedules.json`.
 
-Farm data is read the same way. `npm run farm` reads the buildings, animals, crops and objects tables from `Content (unpacked)/Data/` and writes `src/data/farm-buildings.json`, `src/data/farm-animals.json` and `src/data/farm-crops.json`. The tool, house and backpack costs are a small hand-written table (`src/data/farm-upgrades.json`), checked against the [Stardew Valley Wiki](https://stardewvalleywiki.com).
+Farm data is read the same way. `npm run farm` reads the buildings, animals, crops and objects tables from `Content (unpacked)/Data/` and writes `src/data/farm-buildings.json`, `src/data/farm-animals.json` and `src/data/farm-crops.json`. It also cuts the building and animal sprites from the same files into `public/farm/` and writes `src/data/farm-sprites.json`. The house upgrade costs are a small hand-written table (`src/data/farm-upgrades.json`), checked against the [Stardew Valley Wiki](https://stardewvalleywiki.com).
 
 ## License
 
