@@ -6,6 +6,7 @@ export default function FarmTile({
   selected = false,
   onClick,
   className,
+  disabled = false,
   children,
 }: {
   label: string
@@ -13,6 +14,7 @@ export default function FarmTile({
   selected?: boolean
   onClick: () => void
   className?: string
+  disabled?: boolean
   children: ReactNode
 }) {
   return (
@@ -22,6 +24,7 @@ export default function FarmTile({
       aria-label={label}
       aria-pressed={selected}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
       {count !== undefined && <span className="farm-tile-count">{count}</span>}
