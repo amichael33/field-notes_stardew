@@ -97,4 +97,17 @@ describe('CropsBox', () => {
     expect(within(grid).getByRole('button', { name: /^Melon/ })).toBeInTheDocument()
     expect(within(grid).queryByRole('button', { name: /^Parsnip/ })).not.toBeInTheDocument()
   })
+
+  it('hides the plus tile, picker and action rows when printing', async () => {
+    seed(clock('spring', 1), [plant('a', 'parsnip', 1)])
+    renderWithState(<CropsBox />)
+    expect(screen.getByRole('button', { name: 'Plant a crop' })).toHaveClass('no-print')
+    await userEvent.click(screen.getByRole('button', { name: 'Parsnip, 3 planted' }))
+    expect(screen.getByRole('region', { name: 'Parsnip actions' })).toHaveClass('no-print')
+    await userEvent.click(screen.getByRole('button', { name: 'Plant a crop' }))
+    const grid = screen.getByRole('list', { name: 'Crops to plant' })
+    expect(grid.parentElement).toHaveClass('no-print')
+    await userEvent.click(within(grid).getByRole('button', { name: /^Parsnip/ }))
+    expect(screen.getByRole('button', { name: 'Plant' }).parentElement?.parentElement).toHaveClass('no-print')
+  })
 })
