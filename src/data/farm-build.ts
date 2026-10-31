@@ -20,7 +20,14 @@ const isHouse = (id: string) => id.startsWith('house:')
 const houseUpgrades = (upgrades: FarmUpgrade[]) => upgrades.filter((u) => isHouse(u.id))
 
 function buildingTarget(b: FarmBuilding): BuildTarget {
-  return { id: b.id, name: b.name, cost: b.cost, materials: b.materials, builder: b.builder, buildDays: b.buildDays }
+  return {
+    id: b.id,
+    name: b.name,
+    cost: b.cost,
+    materials: b.materials,
+    builder: b.builder,
+    buildDays: b.buildDays,
+  }
 }
 
 function upgradeTarget(u: FarmUpgrade): BuildTarget {
@@ -32,18 +39,40 @@ function groups(buildings: FarmBuilding[]) {
   const all = Object.entries(chainLevels(buildings))
   return {
     chains: all.filter(([, levels]) => levels.length > 1),
-    singles: all.filter(([root, levels]) => levels.length === 1 && !COUNTED.includes(root)).map(([, l]) => l[0]),
-    counted: all.filter(([root, levels]) => levels.length === 1 && COUNTED.includes(root)).map(([, l]) => l[0]),
+    singles: all
+      .filter(([root, levels]) => levels.length === 1 && !COUNTED.includes(root))
+      .map(([, l]) => l[0]),
+    counted: all
+      .filter(([root, levels]) => levels.length === 1 && COUNTED.includes(root))
+      .map(([, l]) => l[0]),
   }
 }
 
-export function targetById(id: string, buildings: FarmBuilding[], upgrades: FarmUpgrade[]): BuildTarget | undefined {
+export function targetById(
+  id: string,
+  buildings: FarmBuilding[],
+  upgrades: FarmUpgrade[],
+): BuildTarget | undefined {
   if (isHouse(id)) {
     const u = upgrades.find((x) => x.id === id)
     return u ? upgradeTarget(u) : undefined
   }
   const b = buildings.find((x) => x.id === id)
   return b ? buildingTarget(b) : undefined
+}
+
+/** True when the goal building, chain level, or house upgrade is already built. */
+export function goalReached(
+  farm: FarmData,
+  id: string,
+  buildings: FarmBuilding[],
+  upgrades: FarmUpgrade[],
+): boolean {
+  const owned = farm.buildings
+  if (isHouse(id)) return upgrades.some((u) => u.id === id) && (owned[id] ?? 0) > 0
+  const chain = groups(buildings).chains.find(([, levels]) => levels.some((l) => l.id === id))
+  if (chain) return (owned[chain[0]] ?? 0) >= chain[1].findIndex((l) => l.id === id) + 1
+  return (owned[id] ?? 0) >= 1
 }
 
 export function ownedTiles(
@@ -117,7 +146,12 @@ function setOrDelete(owned: Record<string, number>, key: string, value: number):
   return next
 }
 
-export function build(farm: FarmData, id: string, buildings: FarmBuilding[], upgrades: FarmUpgrade[]): FarmData {
+export function build(
+  farm: FarmData,
+  id: string,
+  buildings: FarmBuilding[],
+  upgrades: FarmUpgrade[],
+): FarmData {
   let owned = farm.buildings
   if (isHouse(id)) {
     if (!upgrades.some((u) => u.id === id)) return farm

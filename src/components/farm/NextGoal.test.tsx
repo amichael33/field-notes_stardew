@@ -24,10 +24,10 @@ vi.mock('../../data/farm-lookup', async (orig) => ({
   UPGRADES: [],
 }))
 
-function seed(goal: string | null) {
+function seed(goal: string | null, buildings: Record<string, number> = {}) {
   localStorage.setItem(
     'field-notes-save',
-    serializeSave({ ...defaultSave(), farm: { ...defaultFarm(), goal } }),
+    serializeSave({ ...defaultSave(), farm: { ...defaultFarm(), goal, buildings } }),
   )
 }
 
@@ -43,6 +43,9 @@ describe('NextGoal', () => {
     expect(screen.getByText('from Robin, 3 days')).toBeInTheDocument()
     expect(screen.getByLabelText('350 Wood')).toHaveTextContent('350')
     expect(screen.getByLabelText('150 Stone')).toHaveTextContent('150')
+    expect(screen.getByLabelText('350 Wood')).toHaveAttribute('title', '350 Wood')
+    expect(screen.getByLabelText('350 Wood')).toHaveClass('item-icon-only')
+    expect(screen.getByLabelText('350 Wood').parentElement).toHaveClass('icon-grid')
   })
 
   it('clears the goal', async () => {
@@ -64,5 +67,18 @@ describe('NextGoal', () => {
     renderWithState(<NextGoal />)
     expect(screen.getByText('Unknown goal')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Clear goal' })).toBeInTheDocument()
+  })
+
+  it('shows the pick hint once the goal is already built', () => {
+    seed('Barn', { Barn: 1 })
+    renderWithState(<NextGoal />)
+    expect(screen.getByText('Pick a goal with ★ in Buildings.')).toBeInTheDocument()
+    expect(screen.queryByText('6,000g')).not.toBeInTheDocument()
+  })
+
+  it('renders the sprite at 96px', () => {
+    seed('Barn')
+    const { container } = renderWithState(<NextGoal />)
+    expect(container.querySelector('.goal-title img')).toHaveAttribute('width', '96')
   })
 })

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { build, buildable, nextUpgrade, ownedTiles, targetById, unbuild } from './farm-build'
+import { build, buildable, goalReached, nextUpgrade, ownedTiles, targetById, unbuild } from './farm-build'
 import type { FarmBuilding, FarmData, FarmUpgrade } from './types'
 
 const b = (id: string, cost: number, upgradesFrom: string | null = null): FarmBuilding => ({
@@ -92,7 +92,24 @@ describe('farm build helpers', () => {
   })
 
   it('describes house upgrades as targets', () => {
-    expect(targetById('house:2', buildings, upgrades)).toMatchObject({ builder: 'Robin', cost: 65000, buildDays: 3 })
+    expect(targetById('house:2', buildings, upgrades)).toMatchObject({
+      builder: 'Robin',
+      cost: 65000,
+      buildDays: 3,
+    })
     expect(targetById('Nope', buildings, upgrades)).toBeUndefined()
+  })
+
+  it('knows when a goal is reached', () => {
+    expect(goalReached(farm(), 'Big Coop', buildings, upgrades)).toBe(false)
+    expect(goalReached(farm({ Coop: 1 }), 'Big Coop', buildings, upgrades)).toBe(false)
+    expect(goalReached(farm({ Coop: 2 }), 'Big Coop', buildings, upgrades)).toBe(true)
+    expect(goalReached(farm({ Coop: 3 }), 'Big Coop', buildings, upgrades)).toBe(true)
+    expect(goalReached(farm({ Cabin: 1 }), 'Cabin', buildings, upgrades)).toBe(true)
+    expect(goalReached(farm(), 'Cabin', buildings, upgrades)).toBe(false)
+    expect(goalReached(farm({ Well: 1 }), 'Well', buildings, upgrades)).toBe(true)
+    expect(goalReached(farm(), 'Well', buildings, upgrades)).toBe(false)
+    expect(goalReached(farm({ 'house:1': 1 }), 'house:1', buildings, upgrades)).toBe(true)
+    expect(goalReached(farm({ 'house:1': 1 }), 'house:2', buildings, upgrades)).toBe(false)
   })
 })

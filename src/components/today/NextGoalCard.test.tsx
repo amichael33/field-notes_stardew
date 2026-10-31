@@ -86,4 +86,13 @@ describe('NextGoalCard', () => {
     expect(screen.getByLabelText('350 Wood')).toBeInTheDocument()
     expect(screen.getByLabelText('150 Stone')).toBeInTheDocument()
   })
+
+  it('hides the building goal once it is built', () => {
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({ ...defaultSave(), farm: { ...defaultFarm(), goal: 'Barn', buildings: { Barn: 1 } } }),
+    )
+    renderWithState(<NextGoalCard steps={steps} />)
+    expect(screen.queryByText(/Building goal/)).not.toBeInTheDocument()
+  })
 })

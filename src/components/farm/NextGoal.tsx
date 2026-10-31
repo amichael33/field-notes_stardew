@@ -1,13 +1,18 @@
 import { useSave } from '../../state/SaveContext'
 import FarmSprite from './FarmSprite'
 import GoalMaterials from './GoalMaterials'
-import { gold, useGoalTarget } from './goal'
+import { gold, useGoalReached, useGoalTarget } from './goal'
 
 export default function NextGoal() {
   const { save, updateFarm } = useSave()
   const target = useGoalTarget()
+  const reached = useGoalReached()
   const clear = (
-    <button type="button" className="btn-small no-print" onClick={() => updateFarm((f) => ({ ...f, goal: null }))}>
+    <button
+      type="button"
+      className="btn-small no-print"
+      onClick={() => updateFarm((f) => ({ ...f, goal: null }))}
+    >
       Clear goal
     </button>
   )
@@ -15,7 +20,7 @@ export default function NextGoal() {
   return (
     <section className="card">
       <h2>Next goal</h2>
-      {save.farm.goal === null ? (
+      {save.farm.goal === null || reached ? (
         <p>Pick a goal with ★ in Buildings.</p>
       ) : !target ? (
         <>
@@ -25,7 +30,7 @@ export default function NextGoal() {
       ) : (
         <>
           <p className="goal-title">
-            <FarmSprite kind="building" id={target.id} />
+            <FarmSprite kind="building" id={target.id} label={target.name} size={96} />
             <strong>{target.name}</strong>
           </p>
           {target.builder && target.buildDays !== null && (

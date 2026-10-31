@@ -15,6 +15,18 @@ describe('FarmSprite', () => {
     expect(container.querySelector('img')?.getAttribute('src')).toBe('farm/animals/White Cow.png')
   })
 
+  it('fills a 48px square by default', () => {
+    const { container } = render(<FarmSprite kind="animal" id="White Chicken" />)
+    const img = container.querySelector('img')
+    expect(img).toHaveAttribute('width', '48')
+    expect(img).toHaveAttribute('height', '48')
+  })
+
+  it('uses the label for the fallback initials', () => {
+    const { container } = render(<FarmSprite kind="building" id="house:2" label="Children's room" />)
+    expect(container.querySelector('.item-tile')?.textContent).toBe('CR')
+  })
+
   it('renders a lettered tile for an unknown id', () => {
     const { container } = render(<FarmSprite kind="building" id="Mystery Hut" />)
     expect(container.querySelector('img')).toBeNull()

@@ -20,7 +20,14 @@ export default function BuildingsBox() {
   const { buildings: owned, goal } = save.farm
   const tiles = ownedTiles(owned, BUILDINGS, UPGRADES)
   const selected = tiles.find((t) => t.key === selectedKey)
-  const next = selected ? nextUpgrade(selected.key, owned, BUILDINGS, UPGRADES) : undefined
+  const houseLevel = (key: string) => (key.startsWith('house:') ? Number(key.slice('house:'.length)) : null)
+  const topHouse = Math.max(0, ...tiles.map((t) => houseLevel(t.key) ?? 0))
+  // Lower house tiles share the one next house upgrade; only the top one offers it.
+  const upgradeFor = (key: string) => {
+    const level = houseLevel(key)
+    return level !== null && level !== topHouse ? undefined : nextUpgrade(key, owned, BUILDINGS, UPGRADES)
+  }
+  const next = selected ? upgradeFor(selected.key) : undefined
   const targets = buildable(owned, BUILDINGS, UPGRADES)
 
   const setGoal = (id: string) => updateFarm((f) => ({ ...f, goal: id }))
@@ -30,7 +37,7 @@ export default function BuildingsBox() {
       <h2>Buildings</h2>
       <div className="farm-tiles">
         {tiles.map((t) => {
-          const upcoming = nextUpgrade(t.key, owned, BUILDINGS, UPGRADES)
+          const upcoming = upgradeFor(t.key)
           return (
             <FarmTile
               key={t.key}
@@ -42,7 +49,7 @@ export default function BuildingsBox() {
                 setPicking(false)
               }}
             >
-              <FarmSprite kind="building" id={t.id} />
+              <FarmSprite kind="building" id={t.id} label={t.name} />
               {goal !== null && upcoming?.id === goal && <GoalStar />}
             </FarmTile>
           )
@@ -94,7 +101,7 @@ export default function BuildingsBox() {
           <ul role="list" aria-label="Buildings to build" className="farm-grid-list">
             {targets.map((t) => (
               <li key={t.id} className="farm-pick">
-                <FarmSprite kind="building" id={t.id} />
+                <FarmSprite kind="building" id={t.id} label={t.name} />
                 <span className="farm-pick-name">
                   {t.name}
                   {t.id === goal && <GoalStar />}

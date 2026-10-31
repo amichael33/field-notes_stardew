@@ -15,11 +15,13 @@ function initials(name: string): string {
 export default function FarmSprite({
   kind,
   id,
-  size = 40,
+  size = 48,
+  label,
 }: {
   kind: 'building' | 'animal'
   id: string
   size?: number
+  label?: string
 }) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null)
   const map = kind === 'building' ? sprites.buildings : sprites.animals
@@ -30,21 +32,16 @@ export default function FarmSprite({
       <img
         src={src}
         alt=""
-        style={{
-          maxWidth: size,
-          maxHeight: size,
-          width: 'auto',
-          height: 'auto',
-          imageRendering: 'pixelated',
-          objectFit: 'contain',
-        }}
+        width={size}
+        height={size}
+        style={{ imageRendering: 'pixelated', objectFit: 'contain' }}
         onError={() => setFailedSrc(src)}
       />
     )
   }
   return (
     <span className="item-tile" aria-hidden="true" style={{ width: size, height: size }}>
-      {initials(id)}
+      {initials(label ?? id)}
     </span>
   )
 }

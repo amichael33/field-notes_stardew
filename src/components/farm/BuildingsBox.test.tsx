@@ -29,6 +29,7 @@ vi.mock('../../data/farm-lookup', async (orig) => {
     UPGRADES: [
       { id: 'house:1', group: 'house', label: 'Kitchen', cost: 10000, materials: [] },
       { id: 'house:2', group: 'house', label: "Children's room", cost: 65000, materials: [] },
+      { id: 'house:3', group: 'house', label: 'Cellar', cost: 100000, materials: [] },
     ],
   }
 })
@@ -117,5 +118,28 @@ describe('BuildingsBox', () => {
     expect(screen.getByRole('region', { name: 'Coop actions' })).toHaveClass('no-print')
     await userEvent.click(screen.getByRole('button', { name: 'Build something' }))
     expect(screen.getByRole('list', { name: 'Buildings to build' }).parentElement).toHaveClass('no-print')
+  })
+
+  it('offers the house upgrade only on the highest built house tile', async () => {
+    seed({ 'house:1': 1, 'house:2': 1 })
+    renderWithState(<BuildingsBox />)
+    await userEvent.click(screen.getByRole('button', { name: 'Kitchen' }))
+    let row = screen.getByRole('region', { name: 'Kitchen actions' })
+    expect(
+      within(row)
+        .getAllByRole('button')
+        .map((b) => b.textContent),
+    ).toEqual(['Remove'])
+    await userEvent.click(screen.getByRole('button', { name: "Children's room" }))
+    row = screen.getByRole('region', { name: "Children's room actions" })
+    expect(within(row).getByRole('button', { name: 'Upgrade to Cellar' })).toBeInTheDocument()
+    expect(within(row).getByRole('button', { name: '★ Set Cellar as goal' })).toBeInTheDocument()
+  })
+
+  it('shows readable initials for house tiles', () => {
+    seed({ 'house:1': 1, 'house:2': 1 })
+    const { container } = renderWithState(<BuildingsBox />)
+    const letters = [...container.querySelectorAll('.farm-tile .item-tile')].map((e) => e.textContent)
+    expect(letters).toEqual(['K', 'CR'])
   })
 })

@@ -4,12 +4,23 @@ import ItemIcon from '../ItemIcon'
 export default function GoalMaterials({ target }: { target: BuildTarget }) {
   if (target.materials.length === 0) return null
   return (
-    <ul className="path-list">
-      {target.materials.map((m) => (
-        <li key={m.item} aria-label={`${m.amount} ${m.item}`}>
-          <ItemIcon name={m.item} /> {m.amount}
-        </li>
-      ))}
+    <ul className="icon-grid" role="list">
+      {target.materials.map((m) => {
+        const label = `${m.amount} ${m.item}`
+        return (
+          <li
+            key={m.item}
+            className="item-icon-only"
+            role="listitem"
+            aria-label={label}
+            title={label}
+            style={{ cursor: 'default' }}
+          >
+            <ItemIcon name={m.item} />
+            <span className="item-stack">{m.amount}</span>
+          </li>
+        )
+      })}
     </ul>
   )
 }
