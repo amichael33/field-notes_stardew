@@ -4,6 +4,7 @@ import { renderWithState } from '../../test-utils'
 import NextGoalCard from './NextGoalCard'
 import { defaultSave, serializeSave } from '../../state/save'
 import type { PathStep } from '../../data/types'
+import { defaultFarm } from '../../state/farm-save'
 import stepsJson from '../../data/path-steps.json'
 
 const fixture = vi.hoisted(() => ({
@@ -14,6 +15,24 @@ const fixture = vi.hoisted(() => ({
 vi.mock('../../data/plans', async (orig) => ({
   ...(await orig<typeof import('../../data/plans')>()),
   PLANS: fixture,
+}))
+
+vi.mock('../../data/farm-lookup', async (orig) => ({
+  ...(await orig<typeof import('../../data/farm-lookup')>()),
+  BUILDINGS: [
+    {
+      id: 'Barn',
+      name: 'Barn',
+      cost: 6000,
+      materials: [
+        { item: 'Wood', amount: 350 },
+        { item: 'Stone', amount: 150 },
+      ],
+      builder: 'Robin',
+      buildDays: 3,
+    },
+  ],
+  UPGRADES: [],
 }))
 
 const steps = stepsJson as PathStep[]
@@ -52,5 +71,19 @@ describe('NextGoalCard', () => {
     renderWithState(<NextGoalCard steps={steps} />)
     const first = steps.filter((s) => s.order === 9 || s.order === 10).sort((a, b) => a.order - b.order)[0]
     expect(screen.getByText(first.title)).toBeInTheDocument()
+  })
+
+  it('adds the building goal line only when a goal is set', () => {
+    const { unmount } = renderWithState(<NextGoalCard steps={steps} />)
+    expect(screen.queryByText(/Building goal/)).not.toBeInTheDocument()
+    unmount()
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({ ...defaultSave(), farm: { ...defaultFarm(), goal: 'Barn' } }),
+    )
+    renderWithState(<NextGoalCard steps={steps} />)
+    expect(screen.getByText('Building goal: Barn, 6,000g')).toBeInTheDocument()
+    expect(screen.getByLabelText('350 Wood')).toBeInTheDocument()
+    expect(screen.getByLabelText('150 Stone')).toBeInTheDocument()
   })
 })

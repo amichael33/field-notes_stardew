@@ -1,6 +1,8 @@
 import type { PathStep } from '../../data/types'
 import { firstUnchecked } from '../../data/selectors'
 import { PLANS, nextPlanTask } from '../../data/plans'
+import GoalMaterials from '../farm/GoalMaterials'
+import { gold, useGoalTarget } from '../farm/goal'
 import { useSave } from '../../state/SaveContext'
 
 export default function NextGoalCard({ steps }: { steps: PathStep[] }) {
@@ -12,6 +14,7 @@ export default function NextGoalCard({ steps }: { steps: PathStep[] }) {
     save.checked,
     PLANS,
   )
+  const building = useGoalTarget()
   const goals = steps.filter((s) => s.order === 9 || s.order === 10)
   const next = firstUnchecked(goals, save.checked)
   return (
@@ -33,6 +36,12 @@ export default function NextGoalCard({ steps }: { steps: PathStep[] }) {
         </>
       ) : (
         <p>All goals done</p>
+      )}
+      {building && (
+        <>
+          <p className="row-detail">{`Building goal: ${building.name}, ${gold(building.cost)}`}</p>
+          <GoalMaterials target={building} />
+        </>
       )}
     </section>
   )

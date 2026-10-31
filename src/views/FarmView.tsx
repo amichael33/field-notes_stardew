@@ -1,4 +1,5 @@
 import ReadyToday from '../components/farm/ReadyToday'
+import NextGoal from '../components/farm/NextGoal'
 
 export default function FarmView() {
   return (
@@ -7,6 +8,7 @@ export default function FarmView() {
       <div className="farm-grid">
         <div className="farm-main">
           <ReadyToday />
+          <NextGoal />
         </div>
         <aside className="farm-side" />
       </div>
