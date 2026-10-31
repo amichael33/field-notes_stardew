@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import type { FarmAnimalType, FarmBuilding, FarmCrop, FarmData, PlantedCrop } from './types'
+import type { FarmAnimalType, FarmBuilding, FarmCrop, FarmData, PlantedCrop, Season } from './types'
 import {
   capacityUsage,
   chainLevels,
@@ -7,6 +7,7 @@ import {
   harvestDate,
   harvestStatus,
   houseCapacity,
+  harvestSummary,
 } from './farm'
 
 const parsnip: FarmCrop = { id: 'parsnip', name: 'Parsnip', seeds: 'Parsnip Seeds', seasons: ['spring'], daysToGrow: 4, regrowDays: null }
@@ -122,5 +123,49 @@ describe('chains and capacity', () => {
       { house: 'Coop', used: 3, max: 4 },
       { house: 'Barn', used: 1, max: 0 },
     ])
+  })
+})
+
+describe('harvestSummary', () => {
+  const crops: FarmCrop[] = [
+    { id: 'parsnip', name: 'Parsnip', seeds: 'Parsnip Seeds', seasons: ['spring'], daysToGrow: 4, regrowDays: null },
+    { id: 'potato', name: 'Potato', seeds: 'Potato Seeds', seasons: ['spring'], daysToGrow: 6, regrowDays: null },
+    { id: 'bean', name: 'Green Bean', seeds: 'Bean Starter', seasons: ['spring'], daysToGrow: 10, regrowDays: 3 },
+    { id: 'cauli', name: 'Cauliflower', seeds: 'Cauliflower Seeds', seasons: ['spring'], daysToGrow: 12, regrowDays: null },
+    { id: 'kale', name: 'Kale', seeds: 'Kale Seeds', seasons: ['spring'], daysToGrow: 6, regrowDays: 3 },
+  ]
+  const at = (id: string, crop: string, day: number, season: Season = 'spring'): PlantedCrop => ({
+    id,
+    crop,
+    count: 10,
+    season,
+    day,
+  })
+  const now = { season: 'summer' as Season, day: 3 }
+
+  it('splits entries by status and caps coming at three, sorted by date', () => {
+    const today = { season: 'spring' as Season, day: 12 }
+    const entries = [
+      at('a', 'parsnip', 8),
+      at('b', 'potato', 7),
+      at('c', 'bean', 5),
+      at('d', 'cauli', 5),
+      at('e', 'kale', 10),
+      at('f', 'kale', 11),
+      at('x', 'nope', 1),
+    ]
+    const s = harvestSummary(entries, crops, today)
+    expect(s.ready.map((e) => e.id)).toEqual(['a'])
+    expect(s.tomorrow.map((e) => e.id)).toEqual(['b'])
+    expect(s.seasonOver).toEqual([])
+    expect(s.coming.map((c) => c.entry.id)).toEqual(['c', 'e', 'd'])
+    expect(s.coming[0]).toEqual({ entry: entries[2], date: { season: 'spring', day: 15 }, days: 3 })
+    expect(s.coming[2].date).toEqual({ season: 'spring', day: 17 })
+  })
+
+  it('reports crops that died at the season change', () => {
+    const s = harvestSummary([at('d', 'parsnip', 1)], crops, now)
+    expect(s.seasonOver.map((e) => e.id)).toEqual(['d'])
+    expect(s.ready).toEqual([])
   })
 })

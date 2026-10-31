@@ -81,3 +81,32 @@ export function capacityUsage(
     max: houseCapacity(buildings, farm.buildings, house),
   }))
 }
+
+export type Coming = { entry: PlantedCrop; date: SeasonDay; days: number }
+
+/** Sorts planted crops into what to act on today and the next three harvests; unknown crops are skipped. */
+export function harvestSummary(
+  entries: PlantedCrop[],
+  crops: FarmCrop[],
+  now: SeasonDay | null,
+): { ready: PlantedCrop[]; tomorrow: PlantedCrop[]; seasonOver: PlantedCrop[]; coming: Coming[] } {
+  const today = now ?? { season: 'spring' as const, day: 1 }
+  const ready: PlantedCrop[] = []
+  const tomorrow: PlantedCrop[] = []
+  const seasonOver: PlantedCrop[] = []
+  const later: Coming[] = []
+  for (const entry of entries) {
+    const crop = crops.find((c) => c.id === entry.crop)
+    if (!crop) continue
+    const status = harvestStatus(entry, crop, now)
+    if (status === 'ready') ready.push(entry)
+    else if (status === 'tomorrow') tomorrow.push(entry)
+    else if (status === 'season-over') seasonOver.push(entry)
+    else if (status === 'later') {
+      const { season, day } = harvestDate(entry, crop)
+      later.push({ entry, date: { season, day }, days: daysUntil({ season, day }, today) })
+    }
+  }
+  later.sort((a, b) => a.days - b.days)
+  return { ready, tomorrow, seasonOver, coming: later.slice(0, 3) }
+}
