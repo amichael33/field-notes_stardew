@@ -126,13 +126,13 @@ describe('save clock', () => {
     delete old.farm
     const r = parseSave(JSON.stringify(old))
     expect(r.ok && r.data.farm).toEqual(defaultFarm())
-    const bad = parseSave(JSON.stringify({ ...old, farm: { ...defaultFarm(), gold: -1 } }))
+    const bad = parseSave(JSON.stringify({ ...old, farm: { ...defaultFarm(), goal: 3 } }))
     expect(bad).toEqual({ ok: false, error: 'The save farm is invalid.' })
   })
 
   it('serializeSave includes the farm', () => {
-    const s = { ...defaultSave(), farm: { ...defaultFarm(), gold: 12 } }
-    expect(JSON.parse(serializeSave(s)).farm.gold).toBe(12)
+    const s = { ...defaultSave(), farm: { ...defaultFarm(), goal: 'house:1' } }
+    expect(JSON.parse(serializeSave(s)).farm.goal).toBe('house:1')
     expect(parseSave(serializeSave(s))).toEqual({ ok: true, data: s })
   })
 })

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import type { FarmBuilding, FarmCrop, FarmData, PlantedCrop } from './types'
+import type { FarmAnimalType, FarmBuilding, FarmCrop, FarmData, PlantedCrop } from './types'
 import {
   capacityUsage,
   chainLevels,
@@ -7,8 +7,6 @@ import {
   harvestDate,
   harvestStatus,
   houseCapacity,
-  savingOptions,
-  savingProgress,
 } from './farm'
 
 const parsnip: FarmCrop = { id: 'parsnip', name: 'Parsnip', seeds: 'Parsnip Seeds', seasons: ['spring'], daysToGrow: 4, regrowDays: null }
@@ -114,35 +112,15 @@ describe('chains and capacity', () => {
     expect(houseCapacity(buildings, {}, 'Barn')).toBe(0)
   })
 
-  it('counts animals by home', () => {
-    const farm = {
-      buildings: { Coop: 2, Barn: 1 },
-      animals: [
-        { id: '1', type: 'Chicken', name: 'a', home: 'Coop' },
-        { id: '2', type: 'Chicken', name: 'b', home: 'Coop' },
-        { id: '3', type: 'Cow', name: 'c', home: 'Barn' },
-      ],
-    } as unknown as FarmData
-    expect(capacityUsage(farm, buildings)).toEqual([
-      { house: 'Coop', used: 2, max: 8 },
-      { house: 'Barn', used: 1, max: 4 },
+  it('counts animals by the house their type lives in', () => {
+    const types: FarmAnimalType[] = [
+      { type: 'White Chicken', house: 'Coop', price: 800, daysToMature: 3 },
+      { type: 'White Cow', house: 'Barn', price: 1500, daysToMature: 5 },
+    ]
+    const farm: FarmData = { buildings: { Coop: 1 }, animals: { 'White Chicken': 3, 'White Cow': 1 }, crops: [], goal: null }
+    expect(capacityUsage(farm, buildings, types)).toEqual([
+      { house: 'Coop', used: 3, max: 4 },
+      { house: 'Barn', used: 1, max: 0 },
     ])
-  })
-})
-
-describe('saving', () => {
-  const options = savingOptions(buildings, [{ id: 'axe-copper', group: 'tool', label: 'Copper Axe', cost: 2000, materials: [] }])
-
-  it('lists buildings and upgrades', () => {
-    expect(options).toContainEqual({ id: 'building:Big Coop', label: 'Big Coop', cost: 1000 })
-    expect(options).toContainEqual({ id: 'axe-copper', label: 'Copper Axe', cost: 2000 })
-  })
-
-  it('computes and clamps progress', () => {
-    const farm = (gold: number, saving: string | null) => ({ gold, saving }) as FarmData
-    expect(savingProgress(farm(1000, 'axe-copper'), options)).toEqual({ label: 'Copper Axe', cost: 2000, fraction: 0.5 })
-    expect(savingProgress(farm(5000, 'axe-copper'), options)?.fraction).toBe(1)
-    expect(savingProgress(farm(5000, null), options)).toBeNull()
-    expect(savingProgress(farm(5000, 'nope'), options)).toBeNull()
   })
 })

@@ -85,6 +85,14 @@ describe('farm crops', () => {
 })
 
 describe('farm upgrades', () => {
+  it('keeps only the three house upgrades', () => {
+    expect(farmUpgrades.map((u) => u.id)).toEqual(['house:1', 'house:2', 'house:3'])
+  })
+
+  it('keeps only the three house upgrades', () => {
+    expect(farmUpgrades.map((u) => u.id)).toEqual(['house:1', 'house:2', 'house:3'])
+  })
+
   it('has unique ids', () => {
     expect(unique(farmUpgrades.map((u) => u.id))).toBe(true)
   })

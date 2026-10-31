@@ -30,7 +30,6 @@ describe('App routing', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: 'Farm' })).toBeInTheDocument()
     expect(screen.queryByText(/Coming soon/)).not.toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Crops in the ground' })).toBeInTheDocument()
   })
 
   it('Notes tab shows the notes editor', () => {

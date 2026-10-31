@@ -4,9 +4,8 @@ import { renderWithState } from '../test-utils'
 import FarmView from './FarmView'
 
 describe('FarmView', () => {
-  it('shows the Farm heading and the crops card', () => {
+  it('shows the Farm heading', () => {
     renderWithState(<FarmView />)
     expect(screen.getByRole('heading', { name: 'Farm' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Crops in the ground' })).toBeInTheDocument()
   })
 })

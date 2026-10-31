@@ -2,7 +2,7 @@ import { cropById } from '../../data/farm-lookup'
 import { harvestStatus } from '../../data/farm'
 import { useSave } from '../../state/SaveContext'
 import ItemIcon from '../ItemIcon'
-import { HarvestButton } from '../farm/CropsCard'
+import HarvestButton from '../farm/HarvestButton'
 
 export default function ReadyCard() {
   const { save } = useSave()

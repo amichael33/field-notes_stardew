@@ -35,7 +35,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 
 ## Your data
 
-Everything you save (checklist progress, obtained items, notes, route choice, plan goal, plan task checkboxes, the farm section (buildings, animals, crops, tool and skill levels, gold and saving goal), and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
+Everything you save (checklist progress, obtained items, notes, route choice, plan goal, plan task checkboxes, the farm section (buildings, animals, crops and the next goal), and the game clock's date, time, weather and status) lives only in your browser's local storage. Nothing is sent anywhere. Clearing site data erases it, so use Export to keep a copy.
 
 ## Run it locally
 

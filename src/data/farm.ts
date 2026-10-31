@@ -1,6 +1,6 @@
 import { dayIndex, daysUntil, fromIndex } from './calendar'
 import type { SeasonDay } from './calendar'
-import type { FarmBuilding, FarmCrop, FarmData, FarmUpgrade, PlantedCrop, Season } from './types'
+import type { FarmAnimalType, FarmBuilding, FarmCrop, FarmData, PlantedCrop, Season } from './types'
 
 export type Harvest = { season: Season; day: number; finishes: boolean }
 
@@ -73,30 +73,11 @@ export function houseCapacity(
 export function capacityUsage(
   farm: FarmData,
   buildings: FarmBuilding[],
+  animalTypes: FarmAnimalType[],
 ): { house: 'Coop' | 'Barn'; used: number; max: number }[] {
   return (['Coop', 'Barn'] as const).map((house) => ({
     house,
-    used: farm.animals.filter((a) => a.home === house).length,
+    used: animalTypes.filter((a) => a.house === house).reduce((sum, a) => sum + (farm.animals[a.type] ?? 0), 0),
     max: houseCapacity(buildings, farm.buildings, house),
   }))
-}
-
-export function savingOptions(
-  buildings: FarmBuilding[],
-  upgrades: FarmUpgrade[],
-): { id: string; label: string; cost: number }[] {
-  return [
-    ...buildings.map((b) => ({ id: `building:${b.id}`, label: b.name, cost: b.cost })),
-    ...upgrades.map((u) => ({ id: u.id, label: u.label, cost: u.cost })),
-  ]
-}
-
-export function savingProgress(
-  farm: FarmData,
-  options: ReturnType<typeof savingOptions>,
-): { label: string; cost: number; fraction: number } | null {
-  const option = options.find((o) => o.id === farm.saving)
-  if (!option) return null
-  const fraction = option.cost > 0 ? Math.min(1, farm.gold / option.cost) : 1
-  return { label: option.label, cost: option.cost, fraction }
 }

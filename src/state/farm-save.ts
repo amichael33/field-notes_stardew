@@ -1,17 +1,13 @@
 import { SEASONS } from '../data/calendar'
-import type { FarmAnimal, FarmData, PlantedCrop, Season } from '../data/types'
-
-export const TOOLS = ['Axe', 'Pickaxe', 'Hoe', 'Watering Can', 'Trash Can']
-export const SKILLS = ['Farming', 'Mining', 'Foraging', 'Fishing', 'Combat']
+import type { FarmData, PlantedCrop, Season } from '../data/types'
 
 const CHAINS = ['Coop', 'Barn', 'Shed']
 const MAX_CHAIN_LEVEL = 3
 const MAX_BUILDING_COUNT = 99
-const MAX_TOOL_LEVEL = 4
-const MAX_SKILL_LEVEL = 10
+const MAX_ANIMAL_COUNT = 99
 
 export function defaultFarm(): FarmData {
-  return { buildings: {}, animals: [], crops: [], tools: {}, skills: {}, gold: 0, saving: null }
+  return { buildings: {}, animals: {}, crops: [], goal: null }
 }
 
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -31,12 +27,10 @@ function parseSeasonDay(v: unknown): { season: Season; day: number } | null {
   return { season: v.season, day: v.day }
 }
 
-// names limits which keys are kept (others are dropped); null keeps every key.
-function parseLevels(raw: unknown, names: string[] | null, max: (name: string) => number): Record<string, number> | null {
+function parseCounts(raw: unknown, max: (name: string) => number): Record<string, number> | null {
   if (!isRecord(raw)) return null
   const out: Record<string, number> = {}
   for (const [name, value] of Object.entries(raw)) {
-    if (names && !names.includes(name)) continue
     if (!isIntBetween(value, 0, max(name))) return null
     out[name] = value
   }
@@ -57,18 +51,23 @@ function parseCrop(v: unknown): PlantedCrop | null {
   return crop
 }
 
-function parseAnimal(v: unknown): FarmAnimal | null {
-  if (!isRecord(v) || typeof v.id !== 'string' || typeof v.type !== 'string' || typeof v.name !== 'string') return null
-  if (v.home !== 'Coop' && v.home !== 'Barn') return null
-  return { id: v.id, type: v.type, name: v.name, home: v.home }
+// The old shape listed named animals; a list becomes a count per type.
+function parseAnimals(raw: unknown): Record<string, number> | null {
+  if (!Array.isArray(raw)) return parseCounts(raw, () => MAX_ANIMAL_COUNT)
+  const out: Record<string, number> = {}
+  for (const entry of raw) {
+    if (!isRecord(entry) || typeof entry.type !== 'string') return null
+    out[entry.type] = (out[entry.type] ?? 0) + 1
+  }
+  return Object.values(out).every((n) => n <= MAX_ANIMAL_COUNT) ? out : null
 }
 
-function parseList<T extends { id: string }>(raw: unknown, parseItem: (v: unknown) => T | null): T[] | null {
+function parseCrops(raw: unknown): PlantedCrop[] | null {
   if (!Array.isArray(raw)) return null
-  const items: T[] = []
+  const items: PlantedCrop[] = []
   const seen = new Set<string>()
   for (const entry of raw) {
-    const item = parseItem(entry)
+    const item = parseCrop(entry)
     if (!item || seen.has(item.id)) return null
     seen.add(item.id)
     items.push(item)
@@ -79,13 +78,12 @@ function parseList<T extends { id: string }>(raw: unknown, parseItem: (v: unknow
 /** Returns a clean copy of a farm, or null when the input is invalid. Unknown keys are dropped. */
 export function parseFarm(raw: unknown): FarmData | null {
   if (!isRecord(raw)) return null
-  const buildings = parseLevels(raw.buildings, null, (name) => (CHAINS.includes(name) ? MAX_CHAIN_LEVEL : MAX_BUILDING_COUNT))
-  const tools = parseLevels(raw.tools, TOOLS, () => MAX_TOOL_LEVEL)
-  const skills = parseLevels(raw.skills, SKILLS, () => MAX_SKILL_LEVEL)
-  const animals = parseList(raw.animals, parseAnimal)
-  const crops = parseList(raw.crops, parseCrop)
-  if (!buildings || !tools || !skills || !animals || !crops) return null
-  if (typeof raw.gold !== 'number' || !Number.isInteger(raw.gold) || raw.gold < 0) return null
-  if (raw.saving !== null && typeof raw.saving !== 'string') return null
-  return { buildings, animals, crops, tools, skills, gold: raw.gold, saving: raw.saving }
+  const buildings = parseCounts(raw.buildings, (name) => (CHAINS.includes(name) ? MAX_CHAIN_LEVEL : MAX_BUILDING_COUNT))
+  const animals = parseAnimals(raw.animals)
+  const crops = parseCrops(raw.crops)
+  if (!buildings || !animals || !crops) return null
+  // Old saves have no goal (they had gold and saving, which are dropped)
+  const goal = raw.goal ?? null
+  if (goal !== null && typeof goal !== 'string') return null
+  return { buildings, animals, crops, goal }
 }

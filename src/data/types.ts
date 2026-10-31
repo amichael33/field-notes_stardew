@@ -159,20 +159,12 @@ export interface PlantedCrop {
   lastHarvest?: { season: Season; day: number }
 }
 
-export interface FarmAnimal {
-  id: string
-  type: string
-  name: string
-  home: 'Coop' | 'Barn'
-}
-
 /** Chains (Coop, Barn, Shed) store a level 0 to 3 under the root id; other buildings store a count. */
 export interface FarmData {
   buildings: Record<string, number>
-  animals: FarmAnimal[]
+  /** Animals owned, counted per `FarmAnimalType.type`. */
+  animals: Record<string, number>
   crops: PlantedCrop[]
-  tools: Record<string, number>
-  skills: Record<string, number>
-  gold: number
-  saving: string | null
+  /** A `FarmUpgrade.id` or `building:<id>`, or null. */
+  goal: string | null
 }
