@@ -3,6 +3,7 @@ import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../../test-utils'
 import AnimalsBox from './AnimalsBox'
+import BuildingsBox from './BuildingsBox'
 import { defaultSave, serializeSave } from '../../state/save'
 import { defaultFarm } from '../../state/farm-save'
 
@@ -83,5 +84,33 @@ describe('AnimalsBox', () => {
     expect(screen.getByRole('region', { name: 'Duck actions' })).toHaveClass('no-print')
     await userEvent.click(screen.getByRole('button', { name: 'Add an animal' }))
     expect(screen.getByRole('list', { name: 'Animals to add' }).parentElement).toHaveClass('no-print')
+  })
+
+  it('closes the picker when the last coop is removed', async () => {
+    seed({ Coop: 1 })
+    renderWithState(
+      <>
+        <AnimalsBox />
+        <BuildingsBox />
+      </>,
+    )
+    await userEvent.click(screen.getByRole('button', { name: 'Add an animal' }))
+    expect(screen.getByRole('list', { name: 'Animals to add' })).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Coop' }))
+    await userEvent.click(
+      within(screen.getByRole('region', { name: 'Coop actions' })).getByRole('button', { name: /^Remove/ }),
+    )
+    expect(screen.queryByRole('list', { name: 'Animals to add' })).not.toBeInTheDocument()
+  })
+
+  it('shows an unknown animal type as a tile that can be removed', async () => {
+    seed({}, { Dodo: 2 })
+    renderWithState(<AnimalsBox />)
+    await userEvent.click(screen.getByRole('button', { name: 'Dodo, 2' }))
+    const row = screen.getByRole('region', { name: 'Dodo actions' })
+    await userEvent.click(within(row).getByRole('button', { name: 'Remove one Dodo' }))
+    expect(savedFarm().animals).toEqual({ Dodo: 1 })
+    await userEvent.click(within(row).getByRole('button', { name: 'Remove one Dodo' }))
+    expect(savedFarm().animals).toEqual({})
   })
 })

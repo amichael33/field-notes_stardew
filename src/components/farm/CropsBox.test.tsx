@@ -110,4 +110,21 @@ describe('CropsBox', () => {
     await userEvent.click(within(grid).getByRole('button', { name: /^Parsnip/ }))
     expect(screen.getByRole('button', { name: 'Plant' }).parentElement?.parentElement).toHaveClass('no-print')
   })
+
+  it('names the crop in the action row', async () => {
+    seed(clock('spring', 1), [plant('a', 'parsnip', 1)])
+    renderWithState(<CropsBox />)
+    await userEvent.click(screen.getByRole('button', { name: 'Parsnip, 3 planted' }))
+    const row = screen.getByRole('region', { name: 'Parsnip actions' })
+    expect(row.textContent).toMatch(/^Parsnip\s*Ready Spring 5/)
+  })
+
+  it('shows an unknown crop as a tile that can be removed', async () => {
+    seed(clock('spring', 1), [plant('x', 'mystery', 1, 2)])
+    renderWithState(<CropsBox />)
+    await userEvent.click(screen.getByRole('button', { name: 'Unknown crop, 2 planted' }))
+    const row = screen.getByRole('region', { name: 'Unknown crop actions' })
+    await userEvent.click(within(row).getByRole('button', { name: 'Remove' }))
+    expect(savedCrops()).toEqual([])
+  })
 })

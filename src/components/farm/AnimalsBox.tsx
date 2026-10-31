@@ -13,8 +13,13 @@ export default function AnimalsBox() {
   const [picking, setPicking] = useState(false)
 
   const { animals, buildings: owned } = save.farm
-  const types = ANIMAL_TYPES.filter((a) => (animals[a.type] ?? 0) > 0)
-  const selected = types.find((a) => a.type === selectedType)
+  // Known types first, then any type in the save that this app does not know.
+  const known = ANIMAL_TYPES.map((a) => a.type)
+  const types = [
+    ...known.filter((type) => (animals[type] ?? 0) > 0),
+    ...Object.keys(animals).filter((type) => !known.includes(type) && animals[type] > 0),
+  ]
+  const selected = types.find((type) => type === selectedType)
   const addable = ANIMAL_TYPES.filter((a) => (owned[a.house] ?? 0) >= 1)
   const houses = capacityUsage(save.farm, BUILDINGS, ANIMAL_TYPES).filter(
     (h) => (owned[h.house] ?? 0) > 0 || h.used > 0,
@@ -33,18 +38,18 @@ export default function AnimalsBox() {
     <section className="aside-card">
       <h2>Animals</h2>
       <div className="farm-tiles">
-        {types.map((a) => (
+        {types.map((type) => (
           <FarmTile
-            key={a.type}
-            label={`${a.type}, ${animals[a.type]}`}
-            count={animals[a.type]}
-            selected={a.type === selectedType}
+            key={type}
+            label={`${type}, ${animals[type]}`}
+            count={animals[type]}
+            selected={type === selectedType}
             onClick={() => {
-              setSelectedType(a.type === selectedType ? null : a.type)
+              setSelectedType(type === selectedType ? null : type)
               setPicking(false)
             }}
           >
-            <FarmSprite kind="animal" id={a.type} />
+            <FarmSprite kind="animal" id={type} />
           </FarmTile>
         ))}
         <FarmTile
@@ -74,29 +79,29 @@ export default function AnimalsBox() {
         </p>
       ))}
       {selected && (
-        <div role="region" aria-label={`${selected.type} actions`} className="farm-actions no-print">
+        <div role="region" aria-label={`${selected} actions`} className="farm-actions no-print">
           <button
             type="button"
             className="btn-small"
-            aria-label={`Add one ${selected.type}`}
-            onClick={() => change(selected.type, 1)}
+            aria-label={`Add one ${selected}`}
+            onClick={() => change(selected, 1)}
           >
             +1
           </button>
           <button
             type="button"
             className="btn-small"
-            aria-label={`Remove one ${selected.type}`}
+            aria-label={`Remove one ${selected}`}
             onClick={() => {
-              if (animals[selected.type] === 1) setSelectedType(null)
-              change(selected.type, -1)
+              if (animals[selected] === 1) setSelectedType(null)
+              change(selected, -1)
             }}
           >
             −1
           </button>
         </div>
       )}
-      {picking && (
+      {picking && addable.length > 0 && (
         <div className="farm-picker no-print">
           <ul role="list" aria-label="Animals to add" className="farm-grid-list">
             {addable.map((a) => (

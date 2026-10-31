@@ -165,6 +165,6 @@ export interface FarmData {
   /** Animals owned, counted per `FarmAnimalType.type`. */
   animals: Record<string, number>
   crops: PlantedCrop[]
-  /** A `FarmUpgrade.id` or `building:<id>`, or null. */
+  /** A building id or `house:N`, or null. */
   goal: string | null
 }

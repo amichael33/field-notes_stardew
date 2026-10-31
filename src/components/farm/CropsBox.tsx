@@ -20,12 +20,14 @@ export default function CropsBox() {
   const [chosen, setChosen] = useState<string | null>(null)
   const [count, setCount] = useState(1)
 
-  const entries = save.farm.crops.filter((e) => cropById(e.crop))
+  const entries = save.farm.crops
+  const nameOf = (entry: PlantedCrop) => cropById(entry.crop)?.name ?? 'Unknown crop'
   const selected = entries.find((e) => e.id === selectedId)
   const chosenOption = cropOptions(CROPS, now.season).find((o) => o.id === chosen)
 
   const readyText = (entry: PlantedCrop) => {
-    const crop = cropById(entry.crop)!
+    const crop = cropById(entry.crop)
+    if (!crop) return ''
     const status = harvestStatus(entry, crop, save.clock)
     if (status === 'season-over') return 'Died at the season change'
     if (status === 'wont-finish') return 'Will not finish this season'
@@ -54,14 +56,15 @@ export default function CropsBox() {
     setCount(1)
   }
 
-  const selectedName = selected ? cropById(selected.crop)!.name : ''
+  const selectedName = selected ? nameOf(selected) : ''
+  const selectedCrop = selected ? cropById(selected.crop) : undefined
 
   return (
     <section className="aside-card">
       <h2>Crops planted</h2>
       <div className="farm-tiles">
         {entries.map((e) => {
-          const name = cropById(e.crop)!.name
+          const name = nameOf(e)
           return (
             <FarmTile
               key={e.id}
@@ -86,8 +89,9 @@ export default function CropsBox() {
       </div>
       {selected && (
         <div role="region" aria-label={`${selectedName} actions`} className="farm-actions no-print">
-          <span>{readyText(selected)}</span>
-          {harvestStatus(selected, cropById(selected.crop)!, save.clock) === 'ready' && (
+          <strong>{selectedName}</strong>
+          {selectedCrop && <span>{readyText(selected)}</span>}
+          {selectedCrop && harvestStatus(selected, selectedCrop, save.clock) === 'ready' && (
             <HarvestButton entry={selected} />
           )}
           <button
