@@ -28,7 +28,9 @@ async function main() {
   const farmBuildings = await readJson(path.join(root, 'src', 'data', 'farm-buildings.json'))
   const farmUpgrades = await readJson(path.join(root, 'src', 'data', 'farm-upgrades.json'))
   const materials = [...farmBuildings, ...farmUpgrades].flatMap((b) => b.materials.map((m) => m.item))
-  const names = [...new Set([...bundles.flatMap((b) => b.items.map((i) => i.name)), ...materials])].filter(
+  const perfection = await readJson(path.join(root, 'src', 'data', 'perfection.json'))
+  const perfectionItems = perfection.filter((p) => p.icon.type === 'item').map((p) => p.icon.id)
+  const names = [...new Set([...bundles.flatMap((b) => b.items.map((i) => i.name)), ...materials, ...perfectionItems])].filter(
     (n) => !handNames.has(n),
   )
   const objects = await readJson(path.join(game, 'Data', 'Objects.json'))

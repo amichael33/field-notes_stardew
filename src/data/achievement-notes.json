@@ -1,0 +1,43 @@
+{
+  "fishing": {
+    "text": "Catching Green Algae, White Algae, Seaweed, River Jelly, Sea Jelly, or Cave Jelly counts towards the 4 fishing achievements (Fisherman, Ol' Mariner, Master Angler, and Mother Catch). Catching Trash does not count. The quest fish for the Extended Family Qi's quest are not required for Master Angler."
+  },
+  "polyculture": {
+    "text": "There are exactly 28 crops that must be shipped (15 of each) to earn Polyculture.",
+    "groups": [
+      {
+        "title": "Spring crops",
+        "crops": ["Cauliflower", "Coffee Bean", "Garlic", "Green Bean", "Kale", "Parsnip", "Potato", "Rhubarb", "Strawberry"]
+      },
+      {
+        "title": "Summer crops",
+        "crops": ["Blueberry", "Corn", "Hops", "Hot Pepper", "Melon", "Radish", "Red Cabbage", "Starfruit", "Tomato", "Wheat"]
+      },
+      {
+        "title": "Fall crops",
+        "crops": ["Amaranth", "Artichoke", "Beet", "Bok Choy", "Cranberries", "Eggplant", "Grape", "Pumpkin", "Yam"]
+      }
+    ]
+  },
+  "monoculture": {
+    "text": "Ship 300 of one crop. Any of the 28 Polyculture crops works, or one of these five:",
+    "groups": [
+      {
+        "title": "Also counts",
+        "crops": ["Ancient Fruit", "Blue Jazz", "Fairy Rose", "Summer Spangle", "Tulip"]
+      }
+    ]
+  },
+  "shipment": {
+    "text": "At least one of every item shown in the Shipping Collection tab of the player menu must be shipped."
+  },
+  "helpwanted": {
+    "text": "The weekly quests on the Special Orders board and on Qi's Special Orders board count towards Gofer and A Big Help. Gofer sends 500g from Mayor Lewis the next day, and A Big Help sends 2,500g."
+  },
+  "friends": {
+    "text": "Friendship with the player's children also counts towards the friendship achievements."
+  },
+  "crafting": {
+    "text": "The Wedding Ring does not count towards the crafting achievements, even in Multiplayer games."
+  }
+}

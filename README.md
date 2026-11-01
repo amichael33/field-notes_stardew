@@ -16,7 +16,7 @@ This is an early version. It has the opening route with a checklist, bundles wit
 - **Community Center**: Community Center bundle items grouped by bundle, filterable by season, with where to get each item. Cards are staggered, and rooms show Locked or Unlocked based on how many bundles you have completed (Pantry and Fish Tank after 1, Boiler Room after 2, Bulletin Board after 3, Vault after 4, and the Missing Bundle after all the rest). A Community Center / Joja toggle hides the bundles on the Joja route.
 - **Item details and obtained items**: click an item's image for details (name, quantity, source, seasons, bundle). Click its name to mark it obtained: it leaves the Today list and is struck through on the Community Center tab. Obtained items are saved in your browser and included in Export / Import.
 - **People**: the game's own birthday calendar with each villager's portrait, and every villager's loved and liked gifts. With the clock running, each card says where that villager is now and where they go next; hover or click it to see the spot marked on the game's map for the current season; the map goes away when the pointer leaves it.
-- **Goals**: what each achievement requires.
+- **Goals**: a Needed for Perfection list (the 11 requirements and what each is worth, adding up to 100%) and all 49 achievements with their icons, what they unlock and notes such as the Polyculture and Monoculture crop lists. Spoilers (secret and late-game entries) are greyed out until you click them.
 - **Notes**: plain-text notes with bullets: type a dash and a space for a bullet, Enter continues it, Tab nests it. On both the Today card and the Notes tab, which edit the same saved note.
 - **Your tasks**: add your own tasks to any day under the Day plan. They are saved, included in Export / Import, and unfinished ones from earlier days stay listed.
 - **Saved in your browser**: checklist progress, plan task checkboxes, obtained items, notes, your plan goal and your Community Center / Joja route choice are kept between visits.
@@ -75,7 +75,7 @@ Known limits of the data today:
 
 ## Game art and icons
 
-The item icons are artwork from Stardew Valley and belong to ConcernedApe. They were unpacked from the author's own copy of the game using [StardewXnbHack](https://github.com/Pathoschild/StardewXnbHack) by Pathoschild. The wiki is not used for images. The gold amounts use a drawn gold-coin tile instead of game art.
+The item icons are artwork from Stardew Valley and belong to ConcernedApe. They were unpacked from the author's own copy of the game using [StardewXnbHack](https://github.com/Pathoschild/StardewXnbHack) by Pathoschild. The achievement icons on the Goals page come from the Stardew Valley Wiki, and 28 crop icons were drawn by hand (in `scripts/icons/hand/`); every other picture comes from the game files. The gold amounts use a drawn gold-coin tile instead of game art.
 
 To regenerate them, unpack the game into a `Content (unpacked)/` folder at the repo root with StardewXnbHack, then run:
 

@@ -1,0 +1,222 @@
+{
+  "Greenhorn": {
+    "icon": "achievements/greenhorn.jpg",
+    "unlocks": "Good Ol' Cap"
+  },
+  "Cowpoke": {
+    "icon": "achievements/cowpoke.jpg",
+    "unlocks": "Lucky Bow"
+  },
+  "Homesteader": {
+    "icon": "achievements/homesteader.jpg",
+    "unlocks": "Cool Cap"
+  },
+  "Millionaire": {
+    "icon": "achievements/millionaire.jpg",
+    "unlocks": "Bowler Hat"
+  },
+  "Legend": {
+    "icon": "achievements/legend.jpg",
+    "unlocks": "Sombrero",
+    "spoiler": true
+  },
+  "A Complete Collection": {
+    "icon": "achievements/a-complete-collection.jpg",
+    "unlocks": "Cowboy Hat"
+  },
+  "A New Friend": {
+    "icon": "achievements/a-new-friend.jpg",
+    "unlocks": "Butterfly Bow",
+    "note": "friends"
+  },
+  "Best Friends": {
+    "icon": "achievements/best-friends.jpg",
+    "unlocks": "Mouse Ears",
+    "note": "friends"
+  },
+  "The Beloved Farmer": {
+    "icon": "achievements/the-beloved-farmer.jpg",
+    "unlocks": "Cat Ears",
+    "note": "friends"
+  },
+  "Cliques": {
+    "icon": "achievements/cliques.jpg",
+    "unlocks": "Tiara",
+    "note": "friends"
+  },
+  "Networking": {
+    "icon": "achievements/networking.jpg",
+    "unlocks": "Santa Hat",
+    "note": "friends"
+  },
+  "Popular": {
+    "icon": "achievements/popular.jpg",
+    "unlocks": "Earmuffs",
+    "note": "friends"
+  },
+  "Cook": {
+    "icon": "achievements/cook.jpg",
+    "unlocks": "Delicate Bow"
+  },
+  "Sous Chef": {
+    "icon": "achievements/sous-chef.jpg",
+    "unlocks": "Plum Chapeau"
+  },
+  "Gourmet Chef": {
+    "icon": "achievements/gourmet-chef.jpg",
+    "unlocks": "Archer's Cap and Chef Hat"
+  },
+  "Moving Up": {
+    "icon": "achievements/moving-up.jpg",
+    "unlocks": "Tropiclip"
+  },
+  "Living Large": {
+    "icon": "achievements/living-large.jpg",
+    "unlocks": "Hunter's Cap"
+  },
+  "D.I.Y.": {
+    "icon": "achievements/d-i-y.jpg",
+    "unlocks": "Daisy",
+    "note": "crafting"
+  },
+  "Artisan": {
+    "icon": "achievements/artisan.jpg",
+    "unlocks": "Trucker Hat",
+    "note": "crafting"
+  },
+  "Craft Master": {
+    "icon": "achievements/craft-master.jpg",
+    "unlocks": "Gnome's Cap",
+    "note": "crafting"
+  },
+  "Fisherman": {
+    "icon": "achievements/fisherman.jpg",
+    "unlocks": "Sou'wester",
+    "note": "fishing"
+  },
+  "Ol' Mariner": {
+    "icon": "achievements/ol-mariner.jpg",
+    "unlocks": "Official Cap",
+    "note": "fishing"
+  },
+  "Master Angler": {
+    "icon": "achievements/master-angler.jpg",
+    "unlocks": "Eye Patch",
+    "note": "fishing"
+  },
+  "Mother Catch": {
+    "icon": "achievements/mother-catch.jpg",
+    "unlocks": "Watermelon Band",
+    "note": "fishing"
+  },
+  "Treasure Trove": {
+    "icon": "achievements/treasure-trove.jpg",
+    "unlocks": "Blue Bonnet"
+  },
+  "Gofer": {
+    "icon": "achievements/gofer.jpg",
+    "unlocks": "Polka Bow",
+    "note": "helpwanted"
+  },
+  "A Big Help": {
+    "icon": "achievements/a-big-help.jpg",
+    "unlocks": "Chicken Mask",
+    "note": "helpwanted"
+  },
+  "Polyculture": {
+    "icon": "achievements/polyculture.jpg",
+    "unlocks": "Cowpoke Hat",
+    "note": "polyculture"
+  },
+  "Monoculture": {
+    "icon": "achievements/monoculture.jpg",
+    "unlocks": "Cowgal Hat",
+    "note": "monoculture"
+  },
+  "Full Shipment": {
+    "icon": "achievements/full-shipment.jpg",
+    "unlocks": "Goblin Mask",
+    "note": "shipment"
+  },
+  "Prairie King": {
+    "icon": "achievements/prairie-king.jpg",
+    "unlocks": "Prairie King Arcade System"
+  },
+  "The Bottom": {
+    "icon": "achievements/the-bottom.jpg",
+    "unlocks": "Skull Key"
+  },
+  "Local Legend": {
+    "icon": "achievements/local-legend.jpg",
+    "unlocks": "Stardew Hero Trophy"
+  },
+  "Joja Co. Member Of The Year": {
+    "icon": "achievements/joja-co-member-of-the-year.jpg",
+    "unlocks": "Soda Machine"
+  },
+  "Mystery Of The Stardrops": {
+    "icon": "achievements/mystery-of-the-stardrops.jpg",
+    "spoiler": true
+  },
+  "Full House": {
+    "icon": "achievements/full-house.jpg",
+    "spoiler": true
+  },
+  "Singular Talent": {
+    "icon": "achievements/singular-talent.jpg"
+  },
+  "Master Of The Five Ways": {
+    "icon": "achievements/master-of-the-five-ways.jpg"
+  },
+  "Protector Of The Valley": {
+    "icon": "achievements/protector-of-the-valley.jpg"
+  },
+  "Fector's Challenge": {
+    "icon": "achievements/fector-s-challenge.jpg",
+    "spoiler": true
+  },
+  "A Distant Shore": {
+    "icon": "achievements/a-distant-shore.jpg",
+    "unlocks": "Paper Hat",
+    "spoiler": true
+  },
+  "Well-Read": {
+    "icon": "achievements/well-read.jpg",
+    "unlocks": "Pageboy Cap",
+    "spoiler": true
+  },
+  "Two Thumbs Up": {
+    "icon": "achievements/two-thumbs-up.jpg",
+    "unlocks": "Jester Hat"
+  },
+  "Blue Ribbon": {
+    "icon": "achievements/blue-ribbon.jpg",
+    "unlocks": "Blue Ribbon",
+    "spoiler": true
+  },
+  "An Unforgettable Soup": {
+    "icon": "achievements/an-unforgettable-soup.jpg",
+    "unlocks": "Governor's Hat",
+    "spoiler": true
+  },
+  "Good Neighbors": {
+    "icon": "achievements/good-neighbors.jpg",
+    "unlocks": "White Bow",
+    "spoiler": true
+  },
+  "Danger In The Deep": {
+    "icon": "achievements/danger-in-the-deep.jpg",
+    "unlocks": "Space Helmet",
+    "spoiler": true
+  },
+  "Infinite Power": {
+    "icon": "achievements/infinite-power.jpg",
+    "unlocks": "Infinity Crown",
+    "spoiler": true
+  },
+  "Perfection": {
+    "icon": "achievements/perfection.jpg",
+    "unlocks": "Junimo Hat",
+    "spoiler": true
+  }
+}
