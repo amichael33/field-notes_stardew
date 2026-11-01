@@ -386,12 +386,6 @@
     "why": "Sunday: The Queen of Sauce airs Stir Fry at 6am, and it is Lewis's birthday.",
     "tasks": [
       {
-        "id": "s7-tv",
-        "text": "Watch The Queen of Sauce for the Stir Fry recipe",
-        "place": "Farm",
-        "time": 360
-      },
-      {
         "id": "s7-water",
         "text": "Water the crops",
         "item": "Potato",
@@ -410,12 +404,6 @@
       }
     ],
     "rainTasks": [
-      {
-        "id": "rs7-tv",
-        "text": "Watch The Queen of Sauce for the Stir Fry recipe",
-        "place": "Farm",
-        "time": 360
-      },
       {
         "id": "rs7-lewis",
         "text": "It is Lewis's birthday; give him a gift if you have one he likes",
@@ -783,12 +771,6 @@
         "place": "Pelican Town"
       },
       {
-        "id": "s14-tv",
-        "text": "Watch The Queen of Sauce for the Coleslaw recipe",
-        "place": "Farm",
-        "time": 360
-      },
-      {
         "id": "s14-forage",
         "text": "Forage for any Spring Foraging items still missing",
         "item": "Daffodil",
@@ -801,12 +783,6 @@
         "id": "rs14-haley",
         "text": "It is Haley's birthday; give her a gift if you have one she likes",
         "place": "Pelican Town"
-      },
-      {
-        "id": "rs14-tv",
-        "text": "Watch The Queen of Sauce for the Coleslaw recipe",
-        "place": "Farm",
-        "time": 360
       },
       {
         "id": "rs14-forage",
@@ -1157,12 +1133,6 @@
     "why": "The Queen of Sauce airs Radish Salad, and the fastest parsnip batch finishes.",
     "tasks": [
       {
-        "id": "s21-tv",
-        "text": "Watch The Queen of Sauce for the Radish Salad recipe",
-        "place": "Farm",
-        "time": 360
-      },
-      {
         "id": "s21-harvest",
         "text": "Harvest the parsnips and do a last replant of Parsnip Seeds",
         "item": "Parsnip",
@@ -1176,12 +1146,6 @@
       }
     ],
     "rainTasks": [
-      {
-        "id": "rs21-tv",
-        "text": "Watch The Queen of Sauce for the Radish Salad recipe",
-        "place": "Farm",
-        "time": 360
-      },
       {
         "id": "rs21-harvest",
         "text": "Harvest the parsnips and do a last replant of Parsnip Seeds",
@@ -1505,12 +1469,6 @@
     "day": 28,
     "why": "Last day of Spring: harvest everything before the season ends.",
     "tasks": [
-      {
-        "id": "s28-tv",
-        "text": "Watch The Queen of Sauce for the Omelet recipe",
-        "place": "Farm",
-        "time": 360
-      },
       {
         "id": "s28-harvest",
         "text": "Harvest every crop; spring plants die at midnight",

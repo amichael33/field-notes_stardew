@@ -284,12 +284,6 @@
     "why": "The Queen of Sauce airs Stir Fry; keep reinvesting your income.",
     "tasks": [
       {
-        "id": "m7-tv",
-        "text": "Watch The Queen of Sauce for Stir Fry",
-        "place": "Farm",
-        "time": 360
-      },
-      {
         "id": "m7-water",
         "text": "Water all crops",
         "item": "Cauliflower",
@@ -302,12 +296,6 @@
       }
     ],
     "rainTasks": [
-      {
-        "id": "rm7-tv",
-        "text": "Watch The Queen of Sauce for Stir Fry",
-        "place": "Farm",
-        "time": 360
-      },
       {
         "id": "rm7-ship",
         "text": "Ship forage and fish gathered this week",
@@ -617,12 +605,6 @@
         "text": "Check progress toward the Large Pack (2,000g) at Pierre's",
         "place": "Pierre's General Store",
         "time": 540
-      },
-      {
-        "id": "m14-tv",
-        "text": "Watch The Queen of Sauce for Coleslaw",
-        "place": "Farm",
-        "time": 360
       }
     ],
     "rainTasks": [
@@ -631,12 +613,6 @@
         "text": "Check progress toward the Large Pack (2,000g) at Pierre's",
         "place": "Pierre's General Store",
         "time": 540
-      },
-      {
-        "id": "rm14-tv",
-        "text": "Watch The Queen of Sauce for Coleslaw",
-        "place": "Farm",
-        "time": 360
       },
       {
         "id": "r14-catfish",
@@ -956,12 +932,6 @@
     "why": "Strawberries from the Egg Festival are ready.",
     "tasks": [
       {
-        "id": "m21-tv",
-        "text": "Watch The Queen of Sauce for Radish Salad",
-        "place": "Farm",
-        "time": 360
-      },
-      {
         "id": "m21-harvest",
         "text": "Harvest Strawberries and do a last replant of Parsnip Seeds",
         "item": "Parsnip",
@@ -975,12 +945,6 @@
       }
     ],
     "rainTasks": [
-      {
-        "id": "rm21-tv",
-        "text": "Watch The Queen of Sauce for Radish Salad",
-        "place": "Farm",
-        "time": 360
-      },
       {
         "id": "rm21-harvest",
         "text": "Harvest Strawberries and do a last replant of Parsnip Seeds",
@@ -1269,12 +1233,6 @@
     "day": 28,
     "why": "Last day of Spring: harvest and ship everything, then buy Summer seeds.",
     "tasks": [
-      {
-        "id": "m28-tv",
-        "text": "Watch The Queen of Sauce for the Omelet recipe",
-        "place": "Farm",
-        "time": 360
-      },
       {
         "id": "m28-harvest",
         "text": "Harvest every crop; spring plants die at midnight",

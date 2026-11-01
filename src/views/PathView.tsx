@@ -6,6 +6,7 @@ import PathRibbon from '../components/today/PathRibbon'
 import PathCard from '../components/today/PathCard'
 import DayPlanCard from '../components/today/DayPlanCard'
 import MyTasksCard from '../components/today/MyTasksCard'
+import TvCard from '../components/today/TvCard'
 import NotesCard from '../components/today/NotesCard'
 import NextGoalCard from '../components/today/NextGoalCard'
 import ReadyCard from '../components/today/ReadyCard'
@@ -38,6 +39,7 @@ export default function PathView() {
       <div className="today-grid">
         <div className="today-main">
           <DayPlanCard fallback={<PathCard steps={steps} />} />
+          <TvCard />
           <MyTasksCard />
         </div>
         <aside className="today-aside">
