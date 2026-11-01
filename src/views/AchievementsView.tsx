@@ -69,9 +69,11 @@ function Notes({ keyName }: { keyName: string }) {
   )
 }
 
-/** Keeps the order, but puts every spoiler last. */
-const spoilersLast = <T,>(items: T[], isSpoiler: (t: T) => boolean) =>
-  [...items].sort((a, b) => Number(isSpoiler(a)) - Number(isSpoiler(b)))
+/** Keeps the order, but puts spoilers after the rest and finished goals after everything else. */
+const sortGoals = <T,>(items: T[], isSpoiler: (t: T) => boolean, isDone: (t: T) => boolean) => {
+  const rank = (t: T) => (isDone(t) ? 2 : 0) + (isSpoiler(t) ? 1 : 0)
+  return [...items].sort((a, b) => rank(a) - rank(b))
+}
 
 function Done({ id, name }: { id: string; name: string }) {
   const { save, toggle } = useSave()
@@ -104,9 +106,10 @@ export default function AchievementsView() {
         <h2>Needed for Perfection</h2>
         <p className="when">All of these together make up the 100% Perfection score.</p>
         <ul className="goal-list">
-          {spoilersLast(
+          {sortGoals(
             perfection.map((p, i) => ({ p, i })),
             ({ p }) => !!p.spoiler,
+            ({ p }) => save.checked.includes(`goal:p:${p.id}`),
           ).map(({ p, i }) =>
             p.spoiler && !revealed.has(`p:${p.id}`) ? (
               <Hidden key={p.id} label={`Hidden requirement ${i + 1}`} onReveal={() => reveal(`p:${p.id}`)} />
@@ -129,9 +132,10 @@ export default function AchievementsView() {
       <section className="card" aria-label="Achievements">
         <h2>Achievements</h2>
         <ul className="goal-list" aria-label="All achievements">
-          {spoilersLast(
+          {sortGoals(
             achievements.map((a, i) => ({ a, i })),
             ({ a }) => !!extras[a.name].spoiler,
+            ({ a }) => save.checked.includes(`goal:a:${a.name}`),
           ).map(({ a, i }) => {
             const e = extras[a.name]
             if (e.spoiler && !revealed.has(`a:${a.name}`)) {

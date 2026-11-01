@@ -96,4 +96,21 @@ describe('AchievementsView', () => {
     await userEvent.click(screen.getByRole('checkbox', { name: /^Perfection/ }))
     expect(JSON.parse(localStorage.getItem('field-notes-save')!).checked).toContain('goal:a:Perfection')
   })
+
+  it('moves a completed goal to the bottom of its list, and back when unticked', async () => {
+    renderWithState(<AchievementsView />)
+    const list = screen.getByRole('list', { name: 'All achievements' })
+    const names = () => [...list.children].map((li) => li.querySelector('strong')?.textContent)
+    expect(names()[0]).toBe('Greenhorn')
+    await userEvent.click(screen.getByRole('checkbox', { name: /^Greenhorn/ }))
+    expect(names()[names().length - 1]).toBe('Greenhorn')
+    expect(names()[0]).toBe('Cowpoke')
+    await userEvent.click(screen.getByRole('checkbox', { name: /^Greenhorn/ }))
+    expect(names()[0]).toBe('Greenhorn')
+    await userEvent.click(screen.getByRole('checkbox', { name: /^Fish Caught/ }))
+    const perf = [
+      ...screen.getByRole('region', { name: 'Needed for Perfection' }).querySelectorAll('ul > li'),
+    ]
+    expect(perf[perf.length - 1].querySelector('strong')?.textContent).toBe('Fish Caught')
+  })
 })
