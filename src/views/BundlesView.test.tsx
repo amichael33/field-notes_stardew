@@ -1,9 +1,53 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithState } from '../test-utils'
 import BundlesView from './BundlesView'
 import type { Bundle } from '../data/types'
+import { defaultSave, serializeSave } from '../state/save'
+
+vi.mock('../data/remixed-bundles.json', () => {
+  const b = (id: string, room: string) => ({
+    id,
+    room,
+    name: 'Name ' + id,
+    reward: 'Reward ' + id,
+    slotsRequired: 1,
+    items: [{ name: 'Thing ' + id, quantity: 1, seasons: 'any', source: 'Here' }],
+  })
+  return {
+    default: [
+      {
+        room: 'Crafts Room',
+        slots: [{ id: 'crafts', kind: 'fixed', pick: 1, bundles: [b('remix-fixed', 'Crafts Room')] }],
+      },
+      {
+        room: 'Pantry',
+        slots: [
+          {
+            id: 'pantry',
+            kind: 'alternatives',
+            pick: 1,
+            bundles: ['remix-b1', 'remix-b2', 'remix-b3'].map((id) => b(id, 'Pantry')),
+          },
+        ],
+      },
+      {
+        room: 'Boiler Room',
+        slots: [
+          {
+            id: 'boiler',
+            kind: 'pool',
+            pick: 3,
+            bundles: ['remix-p1', 'remix-p2', 'remix-p3', 'remix-p4', 'remix-p5'].map((id) =>
+              b(id, 'Boiler Room'),
+            ),
+          },
+        ],
+      },
+    ],
+  }
+})
 
 const sample: Bundle[] = [
   {
@@ -81,8 +125,14 @@ describe('BundlesView obtained items', () => {
     await userEvent.click(within(cards[0]).getByRole('button', { name: /^Shared Thing/ }))
     // The finished bundle moves to the bottom, so find each card by its heading.
     const card = (name: string) => screen.getByRole('heading', { name: new RegExp(name) }).closest('article')!
-    expect(within(card('Bundle a')).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(within(card('Bundle b')).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute('aria-pressed', 'false')
+    expect(within(card('Bundle a')).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+    expect(within(card('Bundle b')).getByRole('button', { name: /^Shared Thing/ })).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    )
   })
 
   it('ticking the first of two identical items leaves the second unticked', async () => {
@@ -123,13 +173,101 @@ describe('BundlesView order', () => {
     slotsRequired: 1,
     items: [{ name: 'Thing ' + id, quantity: 1, seasons: 'any', source: 'Here' }],
   })
-  const names = () => screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent?.split(' ').slice(0, 2).join(' '))
+  const names = () =>
+    screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent?.split(' ').slice(0, 2).join(' '))
 
   it('puts unlocked bundles first, locked next, and a finished bundle last', async () => {
-    renderWithState(<BundlesView bundles={[mk('a', 'Crafts Room'), mk('b', 'Vault'), mk('c', 'Crafts Room')]} />)
+    renderWithState(
+      <BundlesView bundles={[mk('a', 'Crafts Room'), mk('b', 'Vault'), mk('c', 'Crafts Room')]} />,
+    )
     expect(names()).toEqual(['Bundle a', 'Bundle c', 'Bundle b'])
     await userEvent.click(screen.getByRole('button', { name: /^Thing a/ }))
     // a is finished (moves last); that also unlocks nothing new for the Vault (needs 4)
     expect(names()).toEqual(['Bundle c', 'Bundle b', 'Bundle a'])
+  })
+})
+
+describe('BundlesView remixed mode', () => {
+  const seed = (patch: object = {}) => {
+    const base = defaultSave()
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({ ...base, profile: { ...base.profile, remixed: true }, ...patch }),
+    )
+  }
+  const saved = () => JSON.parse(localStorage.getItem('field-notes-save')!)
+  const heads = () => screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent ?? '')
+  beforeEach(() => localStorage.clear())
+
+  it('shows the switch with Standard pressed and standard cards by default', () => {
+    renderWithState(<BundlesView />)
+    expect(screen.getByRole('button', { name: 'Standard' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('heading', { name: /^Spring Foraging/ })).toBeInTheDocument()
+  })
+
+  it('clicking Remixed saves the mode and the standard cards disappear', async () => {
+    renderWithState(<BundlesView />)
+    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    expect(saved().profile.remixed).toBe(true)
+    expect(screen.queryByRole('heading', { name: /^Spring Foraging/ })).not.toBeInTheDocument()
+  })
+
+  it('shows the fixed bundle at once and an alternatives picker with three candidates', () => {
+    seed()
+    renderWithState(<BundlesView />)
+    expect(heads().some((h) => h.startsWith('Name remix-fixed'))).toBe(true)
+    expect(screen.getByRole('heading', { name: 'Pantry: pick your bundles' })).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /^Name remix-b/ })).toHaveLength(3)
+  })
+
+  it('picking a bundle saves it and replaces the picker with its card; Change reopens', async () => {
+    seed()
+    renderWithState(<BundlesView />)
+    await userEvent.click(screen.getByRole('button', { name: 'Name remix-b2' }))
+    expect(saved().remix.picks).toEqual({ pantry: ['remix-b2'] })
+    expect(screen.queryByRole('button', { name: 'Name remix-b1' })).not.toBeInTheDocument()
+    expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(true)
+    await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
+    expect(screen.getByRole('button', { name: 'Name remix-b1' })).toBeInTheDocument()
+  })
+
+  it('a pool refuses a fourth pick and keeps counting 3 of 3', async () => {
+    seed({ remix: { picks: { boiler: ['remix-p1', 'remix-p2'] } } })
+    renderWithState(<BundlesView />)
+    expect(screen.getByText(/2 of 3 picked/)).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Name remix-p3' }))
+    expect(screen.getByText(/3 of 3 picked/)).toBeInTheDocument()
+    await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
+    await userEvent.click(screen.getByRole('button', { name: 'Name remix-p4' }))
+    expect(saved().remix.picks.boiler).toEqual(['remix-p1', 'remix-p2', 'remix-p3'])
+    expect(screen.getByText(/3 of 3 picked/)).toBeInTheDocument()
+  })
+
+  it('obtained ticks survive switching modes and never show on standard cards', async () => {
+    seed()
+    renderWithState(<BundlesView />)
+    await userEvent.click(screen.getByRole('button', { name: /^Thing remix-fixed/ }))
+    expect(saved().checked).toContain('bundle:remix-fixed:Thing remix-fixed')
+    await userEvent.click(screen.getByRole('button', { name: 'Standard' }))
+    expect(screen.queryByText('Thing remix-fixed')).not.toBeInTheDocument()
+    expect(document.querySelectorAll('.obtained')).toHaveLength(0)
+    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    expect(screen.getByRole('button', { name: /^Thing remix-fixed/ })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('a room lock counts only chosen remixed bundles', async () => {
+    seed({ remix: { picks: { pantry: ['remix-b1'] } } })
+    renderWithState(<BundlesView />)
+    // The Pantry needs 1 complete bundle; only the chosen fixed and picked bundles can count.
+    expect(screen.getByText(/You have 0 of 1\./)).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: /^Thing remix-fixed/ }))
+    expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
+  })
+
+  it('the Joja route shows only its message, no switch', () => {
+    seed({ profile: { ...defaultSave().profile, remixed: true, route: 'joja' } })
+    renderWithState(<BundlesView />)
+    expect(screen.getByText('Bundles are not used on the Joja route.')).toBeInTheDocument()
+    expect(screen.queryByRole('group', { name: 'Bundle mode' })).not.toBeInTheDocument()
   })
 })

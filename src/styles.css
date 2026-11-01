@@ -396,3 +396,12 @@ select {
 .goal-row.done { opacity: 0.6; border-color: #3c7a4f; }
 .goal-done { display: inline-flex; min-height: 32px; vertical-align: middle; }
 .goal-done strong { font-weight: 800; }
+
+.mode-switch { display: inline-flex; margin-bottom: 12px; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.mode-switch button { min-height: 44px; padding: 0 16px; border: 0; background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
+.mode-switch button[aria-pressed='true'] { background: #3c7a4f; color: #fff; }
+.remix-candidates { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.remix-candidate { width: 100%; display: grid; gap: 4px; text-align: left; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
+.remix-candidate[aria-pressed='true'] { border-color: #3c7a4f; background: #e8f3ea; }
+.remix-pictures { display: flex; flex-wrap: wrap; gap: 4px; }
+.remix-pictures .item-icon, .remix-pictures .item-tile { width: 32px; height: 32px; }

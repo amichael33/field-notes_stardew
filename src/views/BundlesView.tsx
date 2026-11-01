@@ -1,18 +1,18 @@
-import {
-  bundleItemId,
-  bundleItemsBySeason,
-  bundleProgress,
-  roomRank,
-  roomStatus,
-} from '../data/selectors'
+import { bundleItemId, bundleItemsBySeason, bundleProgress, roomRank, roomStatus } from '../data/selectors'
 import { useAppState } from '../state/AppState'
 import { useSave } from '../state/SaveContext'
 import ItemRow from '../components/ItemRow'
 import Masonry from '../components/Masonry'
-import type { Bundle, BundleItem } from '../data/types'
+import ModeSwitch from '../components/bundles/ModeSwitch'
+import RemixPicker from '../components/bundles/RemixPicker'
+import { activeBundles } from '../data/remix'
+import type { Bundle, BundleItem, RemixRoom } from '../data/types'
 import bundlesJson from '../data/bundles.json'
+import remixedJson from '../data/remixed-bundles.json'
 
-export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bundles?: Bundle[] }) {
+const remixRooms = remixedJson as RemixRoom[]
+
+export default function BundlesView({ bundles: standard = bundlesJson as Bundle[] }: { bundles?: Bundle[] }) {
   const { season } = useAppState()
   const { save } = useSave()
   const route = save.profile.route
@@ -26,6 +26,8 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
     )
   }
 
+  const remixed = save.profile.remixed
+  const bundles = activeBundles(remixed ? 'remixed' : 'standard', standard, remixRooms, save.remix.picks)
   const rows = bundleItemsBySeason(bundles, season)
   const grouped = new Map<Bundle, { item: BundleItem; index: number }[]>()
   for (const { bundle, item, index } of rows) {
@@ -77,14 +79,20 @@ export default function BundlesView({ bundles = bundlesJson as Bundle[] }: { bun
     )
   })
 
+  const pickers = remixed
+    ? remixRooms.flatMap((room) =>
+        room.slots
+          .filter((slot) => slot.kind !== 'fixed')
+          .map((slot) => <RemixPicker key={slot.id} slot={slot} roomName={room.room} />),
+      )
+    : []
+  const allCards = [...pickers, ...cards]
+
   return (
     <section>
       <h1>Community Center</h1>
-      {grouped.size === 0 ? (
-        <p>No bundle items available this season.</p>
-      ) : (
-        <Masonry>{cards}</Masonry>
-      )}
+      <ModeSwitch />
+      {allCards.length === 0 ? <p>No bundle items available this season.</p> : <Masonry>{allCards}</Masonry>}
     </section>
   )
 }
