@@ -168,3 +168,22 @@ export interface FarmData {
   /** A building id or `house:N`, or null. */
   goal: string | null
 }
+
+/** One slot of a remixed community-center room: a fixed bundle, a choice of alternatives, or a pool to pick N from. */
+export interface RemixSlot {
+  id: string
+  kind: 'fixed' | 'alternatives' | 'pool'
+  /** How many bundles the player picks from this slot. */
+  pick: number
+  bundles: Bundle[]
+}
+
+export interface RemixRoom {
+  room: string
+  slots: RemixSlot[]
+}
+
+export interface RemixState {
+  /** Slot id to the chosen bundle ids. */
+  picks: Record<string, string[]>
+}
