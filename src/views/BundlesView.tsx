@@ -2,6 +2,7 @@ import { bundleItemId, bundleItemsBySeason, bundleProgress, roomRank, roomStatus
 import { useAppState } from '../state/AppState'
 import { useSave } from '../state/SaveContext'
 import ItemRow from '../components/ItemRow'
+import JojaPage from '../components/joja/JojaPage'
 import Masonry from '../components/Masonry'
 import ModeSwitch from '../components/bundles/ModeSwitch'
 import RemixPicker from '../components/bundles/RemixPicker'
@@ -17,14 +18,7 @@ export default function BundlesView({ bundles: standard = bundlesJson as Bundle[
   const { save } = useSave()
   const route = save.profile.route
 
-  if (route === 'joja') {
-    return (
-      <section>
-        <h1>Community Center</h1>
-        <p>Bundles are not used on the Joja route.</p>
-      </section>
-    )
-  }
+  if (route === 'joja') return <JojaPage />
 
   const remixed = save.profile.remixed
   const bundles = activeBundles(remixed ? 'remixed' : 'standard', standard, remixRooms, save.remix.picks)

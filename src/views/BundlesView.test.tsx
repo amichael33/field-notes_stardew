@@ -67,7 +67,7 @@ describe('BundlesView', () => {
   it('shows joja message on joja route', async () => {
     renderWithState(<BundlesView />)
     await userEvent.selectOptions(screen.getByLabelText(/Route/), 'joja')
-    expect(screen.getByText('Bundles are not used on the Joja route.')).toBeInTheDocument()
+    expect(screen.getByText(/Bundles are not used on the Joja route/)).toBeInTheDocument()
     expect(screen.queryByText('Spring Foraging')).not.toBeInTheDocument()
   })
 
@@ -295,7 +295,7 @@ describe('BundlesView remixed mode', () => {
   it('the Joja route shows only its message, no switch', () => {
     seed({ profile: { ...defaultSave().profile, remixed: true, route: 'joja' } })
     renderWithState(<BundlesView />)
-    expect(screen.getByText('Bundles are not used on the Joja route.')).toBeInTheDocument()
+    expect(screen.getByText(/Bundles are not used on the Joja route/)).toBeInTheDocument()
     expect(screen.queryByRole('group', { name: 'Bundle mode' })).not.toBeInTheDocument()
   })
 })

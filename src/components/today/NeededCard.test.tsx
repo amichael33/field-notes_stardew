@@ -96,3 +96,31 @@ describe('NeededCard remixed', () => {
     expect(screen.queryByText(PICK_LINE)).not.toBeInTheDocument()
   })
 })
+
+describe('NeededCard on the Joja route', () => {
+  beforeEach(() => localStorage.clear())
+
+  it('shows the next JojaMart purchase instead of bundles', () => {
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({
+        ...defaultSave(),
+        profile: { ...defaultSave().profile, route: 'joja' },
+        checked: ['joja:membership'],
+      }),
+    )
+    renderWithState(<NeededCard />)
+    expect(screen.getByText(/Bundles are not used on the Joja route/)).toBeInTheDocument()
+    expect(screen.getByText(/Next at JojaMart:/).parentElement).toHaveTextContent('Minecarts, 15,000g')
+  })
+
+  it('says everything is bought once the membership and every project are ticked', () => {
+    const all = ['membership', 'minecarts', 'panning', 'bridge', 'greenhouse', 'bus'].map((i) => `joja:${i}`)
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({ ...defaultSave(), profile: { ...defaultSave().profile, route: 'joja' }, checked: all }),
+    )
+    renderWithState(<NeededCard />)
+    expect(screen.getByText('Every JojaMart project is bought.')).toBeInTheDocument()
+  })
+})

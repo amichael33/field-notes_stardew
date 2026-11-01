@@ -406,3 +406,9 @@ select {
 .remix-candidate[aria-disabled='true'] { opacity: 0.5; }
 .remix-pictures { display: flex; flex-wrap: wrap; gap: 4px; }
 .remix-pictures .item-icon, .remix-pictures .item-tile { width: 32px; height: 32px; }
+
+/* JojaMart page */
+.joja-facts, .joja-stock { margin: 8px 0; padding-left: 1.2rem; }
+.joja-stock { columns: 2 220px; }
+.joja-price { margin-left: 6px; }
+.card ul.goal-list[aria-label='Membership'] { grid-template-columns: 1fr; }

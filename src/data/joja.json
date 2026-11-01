@@ -1,0 +1,90 @@
+{
+  "store": {
+    "hours": "9:00am to 11:00pm",
+    "closed": "After the player completes the Community Center",
+    "address": "North of the Blacksmith",
+    "manager": "Morris",
+    "membership": {
+      "id": "membership",
+      "name": "JojaMart Membership",
+      "price": 5000,
+      "description": "Morris offers it in the kiosk at the bottom right of the store once the Community Center is unlocked. It turns the Community Center into a Joja Warehouse, and the projects below replace the bundles. Prices match Pierre's afterwards (Sunflower Seeds are 100g)."
+    },
+    "facts": [
+      "JojaMart is open until 11pm and on Wednesdays, when Pierre's is closed.",
+      "Without a membership its prices are usually worse than Pierre's.",
+      "Only one project can be bought per day: the Joja Warehouse is built the day after the membership, then one project per day.",
+      "It is closed on festival days, except the Desert Festival, Trout Derby, SquidFest, Night Market and the Dance of the Moonlight Jellies.",
+      "Shane stocks shelves from 8:00 to 5:00 on weekdays, and on weekends when it rains. Sam sweeps from 12:50 to 5:00 on Mondays and Wednesdays. You cannot talk to them while they work, unless you give a gift."
+    ]
+  },
+  "projects": [
+    { "id": "minecarts", "name": "Minecarts", "price": 15000, "description": "Repairs the minecart system between the bus stop, the mountains and Pelican Town." },
+    { "id": "panning", "name": "Panning", "price": 20000, "description": "Removes the glimmering boulder near the mine entrance." },
+    { "id": "bridge", "name": "Bridge", "price": 25000, "description": "Repairs the broken bridge east of the Mines, giving access to the Quarry." },
+    { "id": "greenhouse", "name": "Greenhouse", "price": 35000, "description": "Repairs the old ruins on the farm into a greenhouse." },
+    { "id": "bus", "name": "Bus", "price": 40000, "description": "Repairs the bus that runs to the Calico Desert." }
+  ],
+  "stock": {
+    "permanent": [
+      { "name": "Joja Cola", "price": 75 },
+      { "name": "Joja Furniture Catalogue", "price": 25000 },
+      { "name": "Joja Wallpaper", "price": 20 },
+      { "name": "J. Cola Light", "price": 500 },
+      { "name": "Grass Starter", "price": 125 },
+      { "name": "Sugar", "price": 125 },
+      { "name": "Wheat Flour", "price": 125 },
+      { "name": "Rice", "price": 250 },
+      { "name": "Auto-Petter (Joja route only)", "price": 50000 },
+      { "name": "Wallpaper (random each day)", "price": 250 },
+      { "name": "Flooring (random each day)", "price": 250 }
+    ],
+    "spring": [
+      { "name": "Parsnip Seeds", "price": 25 },
+      { "name": "Bean Starter", "price": 75 },
+      { "name": "Cauliflower Seeds", "price": 100 },
+      { "name": "Potato Seeds", "price": 62 },
+      { "name": "Tulip Bulb", "price": 25 },
+      { "name": "Kale Seeds", "price": 87 },
+      { "name": "Jazz Seeds", "price": 37 }
+    ],
+    "summer": [
+      { "name": "Tomato Seeds", "price": 62 },
+      { "name": "Pepper Seeds", "price": 50 },
+      { "name": "Wheat Seeds", "price": 12 },
+      { "name": "Radish Seeds", "price": 50 },
+      { "name": "Melon Seeds", "price": 100 },
+      { "name": "Hops Starter", "price": 75 },
+      { "name": "Poppy Seeds", "price": 125 },
+      { "name": "Spangle Seeds", "price": 62 },
+      { "name": "Sunflower Seeds", "price": 125 }
+    ],
+    "fall": [
+      { "name": "Corn Seeds", "price": 187 },
+      { "name": "Eggplant Seeds", "price": 25 },
+      { "name": "Pumpkin Seeds", "price": 125 },
+      { "name": "Amaranth Seeds", "price": 87 },
+      { "name": "Grape Starter", "price": 75 },
+      { "name": "Yam Seeds", "price": 75 },
+      { "name": "Bok Choy Seeds", "price": 62 },
+      { "name": "Cranberry Seeds", "price": 300 },
+      { "name": "Sunflower Seeds", "price": 125 },
+      { "name": "Fairy Seeds", "price": 250 },
+      { "name": "Wheat Seeds", "price": 12 }
+    ],
+    "winter": []
+  },
+  "notSold": [
+    "General items: Bouquet, Catalogue and the Grass Starter Recipe.",
+    "Cooking ingredients: Oil and Vinegar.",
+    "Seeds: Corn Seeds in Summer (both stores have them in Fall), Garlic Seeds, Rice Shoot, Blueberry Seeds, Red Cabbage Seeds, Artichoke Seeds.",
+    "Fertilizers: Basic and Quality Fertilizer, Basic and Quality Retaining Soil, Speed-Gro and Deluxe Speed-Gro.",
+    "Fruit tree saplings: Cherry, Apricot, Orange, Peach, Pomegranate and Apple.",
+    "Pierre's is the only place to buy out-of-season seeds."
+  ],
+  "tips": [
+    "The Joja Co. Member Of The Year achievement needs every project, which takes at least six days.",
+    "Seed prices are higher than Pierre's until you buy the membership, except Sunflower Seeds (125g here, 200g at Pierre's).",
+    "If the Community Center is completed instead, Sam goes to work at the Museum and Shane becomes unemployed."
+  ]
+}

@@ -3,6 +3,7 @@ import { bundleItemId, bundleItemsBySeason, bundleProgress } from '../../data/se
 import { useAppState } from '../../state/AppState'
 import { useSave } from '../../state/SaveContext'
 import ItemRow from '../ItemRow'
+import { gold, nextJojaStep } from '../../data/joja'
 import { activeBundles, slotNeedsPick } from '../../data/remix'
 import bundlesJson from '../../data/bundles.json'
 import remixedJson from '../../data/remixed-bundles.json'
@@ -16,6 +17,7 @@ export default function NeededCard() {
   // Only what can be done now: the season filter if one is picked, otherwise the clock's season.
   const season = filter !== 'all' ? filter : (save.clock?.season ?? 'spring')
   const route = save.profile.route
+  const nextJoja = nextJojaStep(save.checked)
   const remixed = save.profile.remixed
   const bundles = activeBundles(remixed ? 'remixed' : 'standard', standard, remixRooms, save.remix.picks)
   const needsPick =
@@ -32,7 +34,16 @@ export default function NeededCard() {
       <p className="when cap">For {season}</p>
       {route !== 'joja' && needsPick && <p>Pick your remixed bundles on the Community Center tab.</p>}
       {route === 'joja' ? (
-        <p>Bundles are not used on the Joja route.</p>
+        <>
+          <p>Bundles are not used on the Joja route.</p>
+          {nextJoja ? (
+            <p>
+              <strong>Next at JojaMart:</strong> {nextJoja.name}, {gold(nextJoja.price)}
+            </p>
+          ) : (
+            <p>Every JojaMart project is bought.</p>
+          )}
+        </>
       ) : grouped.size === 0 ? (
         <p>No bundle items available this season.</p>
       ) : (
