@@ -266,16 +266,16 @@ describe('BundlesView remixed mode', () => {
     seed({ remix: { picks: { pantry: ['remix-b2'] } } })
     renderWithState(<BundlesView />)
     // The Pantry needs 1 complete bundle. Complete the picked b2 and the lock text goes away.
-    expect(screen.getByText(/You have 0 of 1./)).toBeInTheDocument()
+    expect(screen.getByText(/You have 0 of 1\./)).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: /^Thing remix-b2/ }))
-    expect(screen.queryByText(/You have d of 1./)).not.toBeInTheDocument()
+    expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
     // Swap the pick to b1: the completed but unpicked b2 must no longer count.
     await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
     await userEvent.click(screen.getByRole('button', { name: 'Name remix-b1' }))
-    expect(screen.getByText(/You have 0 of 1./)).toBeInTheDocument()
+    expect(screen.getByText(/You have 0 of 1\./)).toBeInTheDocument()
     // Picking the completed bundle again brings the count back.
     await userEvent.click(screen.getByRole('button', { name: 'Name remix-b2' }))
-    expect(screen.queryByText(/You have d of 1./)).not.toBeInTheDocument()
+    expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
   })
 
   it('the Joja route shows only its message, no switch', () => {
