@@ -49,12 +49,13 @@ export interface Recipe {
 
 export interface SaveData {
   version: 1
-  profile: { route: Route; farmType: string; planGoal: PlanGoal }
+  profile: { route: Route; farmType: string; planGoal: PlanGoal; remixed: boolean }
   checked: string[]
   notes: string
   clock: Clock | null
   customTasks: CustomTask[]
   farm: FarmData
+  remix: RemixState
 }
 
 /** A task the player added to a specific day. Its checkbox id is `custom:<id>`. */

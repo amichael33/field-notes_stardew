@@ -1,4 +1,4 @@
-import type { Clock, CustomTask, SaveData } from '../data/types'
+import type { Clock, CustomTask, RemixState, SaveData } from '../data/types'
 import { DEFAULT_PLAN_GOAL, isPlanGoal } from '../data/plans'
 import { isClock } from './clock'
 import { defaultFarm, parseFarm } from './farm-save'
@@ -8,19 +8,23 @@ type ParseResult = { ok: true; data: SaveData } | { ok: false; error: string }
 export function defaultSave(): SaveData {
   return {
     version: 1,
-    profile: { route: 'community-center', farmType: 'standard', planGoal: 'community-center' },
+    profile: {
+      route: 'community-center',
+      farmType: 'standard',
+      planGoal: 'community-center',
+      remixed: false,
+    },
     checked: [],
     notes: '',
     clock: null,
     customTasks: [],
     farm: defaultFarm(),
+    remix: { picks: {} },
   }
 }
 
 export function toggleChecked(save: SaveData, id: string): SaveData {
-  const checked = save.checked.includes(id)
-    ? save.checked.filter((c) => c !== id)
-    : [...save.checked, id]
+  const checked = save.checked.includes(id) ? save.checked.filter((c) => c !== id) : [...save.checked, id]
   return { ...save, checked }
 }
 
@@ -57,6 +61,8 @@ export function parseSave(json: string): ParseResult {
   }
   const planGoal = profile.planGoal === undefined ? DEFAULT_PLAN_GOAL : profile.planGoal
   if (!isPlanGoal(planGoal)) return { ok: false, error: 'The save plan goal is invalid.' }
+  const remixed = profile.remixed === undefined ? false : profile.remixed
+  if (typeof remixed !== 'boolean') return { ok: false, error: 'The save remix setting is invalid.' }
   if (!Array.isArray(raw.checked) || !raw.checked.every((c) => typeof c === 'string')) {
     return { ok: false, error: 'The save checklist is invalid.' }
   }
@@ -93,16 +99,29 @@ export function parseSave(json: string): ParseResult {
     if (!parsedFarm) return { ok: false, error: 'The save farm is invalid.' }
     farm = parsedFarm
   }
+  const remix: RemixState = { picks: {} }
+  if (raw.remix !== undefined) {
+    if (!isRecord(raw.remix) || !isRecord(raw.remix.picks)) {
+      return { ok: false, error: 'The save remix picks are invalid.' }
+    }
+    for (const [slot, ids] of Object.entries(raw.remix.picks)) {
+      if (!Array.isArray(ids) || !ids.every((id) => typeof id === 'string')) {
+        return { ok: false, error: 'The save remix picks are invalid.' }
+      }
+      remix.picks[slot] = [...ids]
+    }
+  }
   return {
     ok: true,
     data: {
       version: 1,
-      profile: { route: profile.route, farmType: profile.farmType, planGoal },
+      profile: { route: profile.route, farmType: profile.farmType, planGoal, remixed },
       checked: [...raw.checked],
       notes: raw.notes,
       clock,
       customTasks,
       farm,
+      remix,
     },
   }
 }

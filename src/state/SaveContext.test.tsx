@@ -70,9 +70,7 @@ describe('SaveProvider', () => {
     const { result } = renderHook(() => useSave(), { wrapper })
     const other = { ...defaultSave(), notes: 'from other tab' }
     act(() => {
-      window.dispatchEvent(
-        new StorageEvent('storage', { key: KEY, newValue: serializeSave(other) }),
-      )
+      window.dispatchEvent(new StorageEvent('storage', { key: KEY, newValue: serializeSave(other) }))
     })
     expect(result.current.save.notes).toBe('from other tab')
   })
@@ -145,6 +143,21 @@ describe('SaveProvider', () => {
     })
   })
 
+  describe('remix', () => {
+    it('setRemixed and setRemixPicks persist and survive a remount', () => {
+      const first = renderHook(() => useSave(), { wrapper })
+      act(() => first.result.current.setRemixed(true))
+      act(() => first.result.current.setRemixPicks({ s: ['remix-x'] }))
+      const stored = JSON.parse(localStorage.getItem(KEY)!)
+      expect(stored.profile.remixed).toBe(true)
+      expect(stored.remix.picks).toEqual({ s: ['remix-x'] })
+      first.unmount()
+      const second = renderHook(() => useSave(), { wrapper })
+      expect(second.result.current.save.profile.remixed).toBe(true)
+      expect(second.result.current.save.remix.picks).toEqual({ s: ['remix-x'] })
+    })
+  })
+
   describe('clock', () => {
     const run = { season: 'spring', day: 3, minutes: 700, weather: 'sunny', status: 'running' } as const
 
@@ -161,7 +174,10 @@ describe('SaveProvider', () => {
       const { result } = renderHook(() => useSave(), { wrapper })
       act(() => {
         window.dispatchEvent(
-          new StorageEvent('storage', { key: KEY, newValue: serializeSave({ ...defaultSave(), clock: { ...run } }) }),
+          new StorageEvent('storage', {
+            key: KEY,
+            newValue: serializeSave({ ...defaultSave(), clock: { ...run } }),
+          }),
         )
       })
       expect(result.current.save.clock).toEqual(run)
@@ -195,9 +211,7 @@ describe('SaveProvider', () => {
       const before = result.current.save
       let res: ReturnType<typeof result.current.importSave> | undefined
       act(() => {
-        res = result.current.importSave(
-          JSON.stringify({ ...defaultSave(), clock: { ...run, day: 99 } }),
-        )
+        res = result.current.importSave(JSON.stringify({ ...defaultSave(), clock: { ...run, day: 99 } }))
       })
       expect(res?.ok).toBe(false)
       expect(result.current.save).toBe(before)

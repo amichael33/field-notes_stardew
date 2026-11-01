@@ -10,6 +10,7 @@ describe('save', () => {
       route: 'community-center',
       farmType: 'standard',
       planGoal: 'community-center',
+      remixed: false,
     })
     expect(s.checked).toEqual([])
     expect(s.notes).toBe('')
@@ -87,7 +88,7 @@ describe('save plan goal', () => {
     const s = { ...base, profile: { ...base.profile, planGoal: 'money' as const } }
     expect(parseSave(serializeSave(s))).toEqual({ ok: true, data: s })
     const r = parseSave(JSON.stringify({ ...s, profile: { ...s.profile, extra: 1 } }))
-    expect(r.ok && Object.keys(r.data.profile).sort()).toEqual(['farmType', 'planGoal', 'route'])
+    expect(r.ok && Object.keys(r.data.profile).sort()).toEqual(['farmType', 'planGoal', 'remixed', 'route'])
   })
 })
 
@@ -113,7 +114,13 @@ describe('save clock', () => {
   it('keeps only the five clock fields from an imported file', () => {
     const r = parseSave(JSON.stringify({ ...defaultSave(), clock: { ...clock, extra: 'x', more: { a: 1 } } }))
     expect(r.ok && r.data.clock).toEqual(clock)
-    expect(r.ok && Object.keys(r.data.clock!).sort()).toEqual(['day', 'minutes', 'season', 'status', 'weather'])
+    expect(r.ok && Object.keys(r.data.clock!).sort()).toEqual([
+      'day',
+      'minutes',
+      'season',
+      'status',
+      'weather',
+    ])
   })
 
   it('rejects an invalid clock', () => {
@@ -134,5 +141,46 @@ describe('save clock', () => {
     const s = { ...defaultSave(), farm: { ...defaultFarm(), goal: 'house:1' } }
     expect(JSON.parse(serializeSave(s)).farm.goal).toBe('house:1')
     expect(parseSave(serializeSave(s))).toEqual({ ok: true, data: s })
+  })
+})
+
+describe('save remix', () => {
+  it('defaults remixed to false and picks to empty for old saves', () => {
+    const old = defaultSave() as unknown as Record<string, unknown>
+    const profile = { ...(old.profile as Record<string, unknown>) }
+    delete profile.remixed
+    delete old.remix
+    const r = parseSave(JSON.stringify({ ...old, profile }))
+    expect(r.ok && r.data.profile.remixed).toBe(false)
+    expect(r.ok && r.data.remix).toEqual({ picks: {} })
+    expect(defaultSave().profile.remixed).toBe(false)
+    expect(defaultSave().remix).toEqual({ picks: {} })
+  })
+
+  it('round trips remixed and picks, keeping unknown ids', () => {
+    const base = defaultSave()
+    const s = {
+      ...base,
+      profile: { ...base.profile, remixed: true },
+      remix: { picks: { 'unknown-slot': ['remix-x', 'remix-unknown'] } },
+    }
+    expect(parseSave(serializeSave(s))).toEqual({ ok: true, data: s })
+    expect(JSON.parse(serializeSave(s)).profile.remixed).toBe(true)
+    expect(JSON.parse(serializeSave(s)).remix.picks['unknown-slot']).toEqual(['remix-x', 'remix-unknown'])
+  })
+
+  it('rejects a non-boolean remixed', () => {
+    const base = defaultSave()
+    const r = parseSave(JSON.stringify({ ...base, profile: { ...base.profile, remixed: 'yes' } }))
+    expect(r).toEqual({ ok: false, error: 'The save remix setting is invalid.' })
+  })
+
+  it('rejects invalid picks', () => {
+    const base = defaultSave()
+    const msg = { ok: false, error: 'The save remix picks are invalid.' }
+    expect(parseSave(JSON.stringify({ ...base, remix: { picks: { s: 'remix-x' } } }))).toEqual(msg)
+    expect(parseSave(JSON.stringify({ ...base, remix: { picks: { s: ['a', 3] } } }))).toEqual(msg)
+    expect(parseSave(JSON.stringify({ ...base, remix: { picks: [] } }))).toEqual(msg)
+    expect(parseSave(JSON.stringify({ ...base, remix: 'x' }))).toEqual(msg)
   })
 })

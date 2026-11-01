@@ -9,6 +9,8 @@ interface SaveApi {
   save: SaveData
   setRoute: (r: Route) => void
   setPlanGoal: (goal: PlanGoal) => void
+  setRemixed: (on: boolean) => void
+  setRemixPicks: (picks: Record<string, string[]>) => void
   toggle: (id: string) => void
   setNotes: (text: string) => void
   addCustomTask: (task: Omit<CustomTask, 'id'>) => void
@@ -84,6 +86,14 @@ export function SaveProvider({ children }: { children: ReactNode }) {
     dirty.current = true
     setSave((s) => ({ ...s, profile: { ...s.profile, planGoal } }))
   }, [])
+  const setRemixed = useCallback((remixed: boolean) => {
+    dirty.current = true
+    setSave((s) => ({ ...s, profile: { ...s.profile, remixed } }))
+  }, [])
+  const setRemixPicks = useCallback((picks: Record<string, string[]>) => {
+    dirty.current = true
+    setSave((s) => ({ ...s, remix: { ...s.remix, picks } }))
+  }, [])
   const toggle = useCallback((id: string) => {
     dirty.current = true
     setSave((s) => toggleChecked(s, id))
@@ -130,6 +140,8 @@ export function SaveProvider({ children }: { children: ReactNode }) {
         save,
         setRoute,
         setPlanGoal,
+        setRemixed,
+        setRemixPicks,
         toggle,
         setNotes,
         addCustomTask,
