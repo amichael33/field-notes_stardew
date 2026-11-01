@@ -30,6 +30,12 @@ vi.mock('../../data/plans', async (orig) => ({
           { id: 's2-water', text: 'Water crops' },
         ],
       },
+      {
+        season: 'spring',
+        day: 3,
+        why: 'Gather for the bundles.',
+        tasks: [{ id: 's3-bundle', text: 'Hand in the Spring Foraging bundle' }],
+      },
     ],
     money: [],
   },
@@ -37,11 +43,16 @@ vi.mock('../../data/plans', async (orig) => ({
 
 const base: Clock = { season: 'spring', day: 1, minutes: 540, weather: 'sunny', status: 'paused' }
 
-function seed(clock: Clock | null, checked: string[] = [], route: 'community-center' | 'joja' = 'community-center') {
+function seed(
+  clock: Clock | null,
+  checked: string[] = [],
+  route: 'community-center' | 'joja' = 'community-center',
+  remixed = false,
+) {
   const d = defaultSave()
   localStorage.setItem(
     'field-notes-save',
-    serializeSave({ ...d, clock, checked, profile: { ...d.profile, route } }),
+    serializeSave({ ...d, clock, checked, profile: { ...d.profile, route, remixed } }),
   )
 }
 
@@ -53,6 +64,21 @@ function renderCard() {
 
 describe('DayPlanCard', () => {
   beforeEach(() => localStorage.clear())
+
+  it('notes that bundle steps follow the standard list only in Remixed mode on a bundle day', () => {
+    const note = 'Bundle steps follow the standard list.'
+    seed({ ...base, day: 3 }, [], 'community-center', true)
+    const { unmount } = renderCard()
+    expect(screen.getByText(note)).toBeInTheDocument()
+    unmount()
+    seed({ ...base, day: 3 })
+    const second = renderCard()
+    expect(screen.queryByText(note)).not.toBeInTheDocument()
+    second.unmount()
+    seed({ ...base, day: 2 }, [], 'community-center', true)
+    renderCard()
+    expect(screen.queryByText(note)).not.toBeInTheDocument()
+  })
 
   it('treats a null clock as Spring 1', () => {
     seed(null)

@@ -1,11 +1,14 @@
-import type { Bundle, BundleItem } from '../../data/types'
+import type { Bundle, BundleItem, RemixRoom } from '../../data/types'
 import { bundleItemId, bundleItemsBySeason, bundleProgress } from '../../data/selectors'
 import { useAppState } from '../../state/AppState'
 import { useSave } from '../../state/SaveContext'
 import ItemRow from '../ItemRow'
+import { activeBundles, slotNeedsPick } from '../../data/remix'
 import bundlesJson from '../../data/bundles.json'
+import remixedJson from '../../data/remixed-bundles.json'
 
-const bundles = bundlesJson as Bundle[]
+const standard = bundlesJson as Bundle[]
+const remixRooms = remixedJson as RemixRoom[]
 
 export default function NeededCard() {
   const { season: filter } = useAppState()
@@ -13,6 +16,10 @@ export default function NeededCard() {
   // Only what can be done now: the season filter if one is picked, otherwise the clock's season.
   const season = filter !== 'all' ? filter : (save.clock?.season ?? 'spring')
   const route = save.profile.route
+  const remixed = save.profile.remixed
+  const bundles = activeBundles(remixed ? 'remixed' : 'standard', standard, remixRooms, save.remix.picks)
+  const needsPick =
+    remixed && remixRooms.some((room) => room.slots.some((slot) => slotNeedsPick(slot, save.remix.picks)))
   const grouped = new Map<Bundle, { item: BundleItem; index: number }[]>()
   // Only season-specific items: year-round ones (bars, minerals, gold) can be done any time.
   for (const { bundle, item, index } of bundleItemsBySeason(bundles, season)) {
@@ -23,6 +30,7 @@ export default function NeededCard() {
     <section className="card aside-card">
       <h2>Needed this season</h2>
       <p className="when cap">For {season}</p>
+      {route !== 'joja' && needsPick && <p>Pick your remixed bundles on the Community Center tab.</p>}
       {route === 'joja' ? (
         <p>Bundles are not used on the Joja route.</p>
       ) : grouped.size === 0 ? (
@@ -30,7 +38,9 @@ export default function NeededCard() {
       ) : (
         [...grouped.entries()].map(([bundle, items]) => {
           const { obtained, required, complete } = bundleProgress(bundle, save.checked)
-          const remaining = items.filter(({ item, index }) => !save.checked.includes(bundleItemId(bundle, item, index)))
+          const remaining = items.filter(
+            ({ item, index }) => !save.checked.includes(bundleItemId(bundle, item, index)),
+          )
           // Nothing seasonal left to get now (the rest is year-round): leave the bundle out.
           if (!complete && remaining.length === 0) return null
           return (
