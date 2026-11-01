@@ -243,25 +243,39 @@ describe('BundlesView remixed mode', () => {
     expect(screen.getByText(/3 of 3 picked/)).toBeInTheDocument()
   })
 
-  it('obtained ticks survive switching modes and never show on standard cards', async () => {
-    seed()
+  it('obtained ticks stay with their own mode and never show on the other mode cards', async () => {
     renderWithState(<BundlesView />)
+    const horseradish = () => screen.getAllByRole('button', { name: /^Wild Horseradish/ })[0]
+    await userEvent.click(horseradish())
+    expect(saved().checked).toContain('bundle:spring-foraging:Wild Horseradish')
+    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
     await userEvent.click(screen.getByRole('button', { name: /^Thing remix-fixed/ }))
     expect(saved().checked).toContain('bundle:remix-fixed:Thing remix-fixed')
+    expect(screen.queryByRole('button', { name: /^Wild Horseradish/ })).not.toBeInTheDocument()
+    expect(document.querySelectorAll('.obtained')).toHaveLength(1)
     await userEvent.click(screen.getByRole('button', { name: 'Standard' }))
-    expect(screen.queryByText('Thing remix-fixed')).not.toBeInTheDocument()
-    expect(document.querySelectorAll('.obtained')).toHaveLength(0)
+    expect(screen.queryByRole('button', { name: /^Thing remix-fixed/ })).not.toBeInTheDocument()
+    expect(horseradish()).toHaveAttribute('aria-pressed', 'true')
+    expect(document.querySelectorAll('.obtained')).toHaveLength(1)
     await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
     expect(screen.getByRole('button', { name: /^Thing remix-fixed/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(document.querySelectorAll('.obtained')).toHaveLength(1)
   })
 
   it('a room lock counts only chosen remixed bundles', async () => {
-    seed({ remix: { picks: { pantry: ['remix-b1'] } } })
+    seed({ remix: { picks: { pantry: ['remix-b2'] } } })
     renderWithState(<BundlesView />)
-    // The Pantry needs 1 complete bundle; only the chosen fixed and picked bundles can count.
-    expect(screen.getByText(/You have 0 of 1\./)).toBeInTheDocument()
-    await userEvent.click(screen.getByRole('button', { name: /^Thing remix-fixed/ }))
-    expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
+    // The Pantry needs 1 complete bundle. Complete the picked b2 and the lock text goes away.
+    expect(screen.getByText(/You have 0 of 1./)).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: /^Thing remix-b2/ }))
+    expect(screen.queryByText(/You have d of 1./)).not.toBeInTheDocument()
+    // Swap the pick to b1: the completed but unpicked b2 must no longer count.
+    await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
+    await userEvent.click(screen.getByRole('button', { name: 'Name remix-b1' }))
+    expect(screen.getByText(/You have 0 of 1./)).toBeInTheDocument()
+    // Picking the completed bundle again brings the count back.
+    await userEvent.click(screen.getByRole('button', { name: 'Name remix-b2' }))
+    expect(screen.queryByText(/You have d of 1./)).not.toBeInTheDocument()
   })
 
   it('the Joja route shows only its message, no switch', () => {
