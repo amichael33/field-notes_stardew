@@ -392,3 +392,7 @@ select {
 .goal-crops li { line-height: 0; }
 .goal-crops .item-icon, .goal-crops .item-tile { width: 36px; height: 36px; }
 @media print { .spoiler-btn { display: none; } }
+
+.goal-row.done { opacity: 0.6; border-color: #3c7a4f; }
+.goal-done { display: inline-flex; min-height: 32px; vertical-align: middle; }
+.goal-done strong { font-weight: 800; }

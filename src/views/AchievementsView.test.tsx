@@ -63,4 +63,37 @@ describe('AchievementsView', () => {
     expect(mono).toHaveLength(5)
     for (const crop of [...poly, ...mono]) expect(icons, crop).toHaveProperty([crop])
   })
+
+  it('puts every spoiler after the other entries in both lists', () => {
+    renderWithState(<AchievementsView />)
+    const perf = [
+      ...screen.getByRole('region', { name: 'Needed for Perfection' }).querySelectorAll('ul > li'),
+    ]
+    const ach = [...screen.getByRole('list', { name: 'All achievements' }).children]
+    for (const items of [perf, ach]) {
+      const firstHidden = items.findIndex((li) => li.classList.contains('goal-hidden'))
+      expect(firstHidden).toBeGreaterThan(0)
+      expect(items.slice(firstHidden).every((li) => li.classList.contains('goal-hidden'))).toBe(true)
+    }
+  })
+
+  it('marks an entry done with a checkbox that is saved', async () => {
+    renderWithState(<AchievementsView />)
+    const box = screen.getByRole('checkbox', { name: /^Greenhorn/ })
+    expect(box).not.toBeChecked()
+    await userEvent.click(box)
+    expect(box).toBeChecked()
+    expect(JSON.parse(localStorage.getItem('field-notes-save')!).checked).toContain('goal:a:Greenhorn')
+    await userEvent.click(screen.getByRole('checkbox', { name: /^Fish Caught/ }))
+    expect(JSON.parse(localStorage.getItem('field-notes-save')!).checked).toContain('goal:p:fish')
+  })
+
+  it('only offers the done checkbox for a spoiler after it is revealed', async () => {
+    renderWithState(<AchievementsView />)
+    expect(screen.queryByRole('checkbox', { name: /^Perfection/ })).not.toBeInTheDocument()
+    const card = screen.getByRole('listitem', { name: 'Hidden achievement 49' })
+    await userEvent.click(within(card).getByRole('button'))
+    await userEvent.click(screen.getByRole('checkbox', { name: /^Perfection/ }))
+    expect(JSON.parse(localStorage.getItem('field-notes-save')!).checked).toContain('goal:a:Perfection')
+  })
 })

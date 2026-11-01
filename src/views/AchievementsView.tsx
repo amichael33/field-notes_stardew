@@ -6,6 +6,7 @@ import notesJson from '../data/achievement-notes.json'
 import perfectionJson from '../data/perfection.json'
 import ItemIcon from '../components/ItemIcon'
 import FarmSprite from '../components/farm/FarmSprite'
+import { useSave } from '../state/SaveContext'
 
 const achievements = achievementsJson as Achievement[]
 const extras = extrasJson as Record<
@@ -68,7 +69,22 @@ function Notes({ keyName }: { keyName: string }) {
   )
 }
 
+/** Keeps the order, but puts every spoiler last. */
+const spoilersLast = <T,>(items: T[], isSpoiler: (t: T) => boolean) =>
+  [...items].sort((a, b) => Number(isSpoiler(a)) - Number(isSpoiler(b)))
+
+function Done({ id, name }: { id: string; name: string }) {
+  const { save, toggle } = useSave()
+  return (
+    <label className="row-check goal-done">
+      <input type="checkbox" checked={save.checked.includes(id)} onChange={() => toggle(id)} />
+      <strong>{name}</strong>
+    </label>
+  )
+}
+
 export default function AchievementsView() {
+  const { save } = useSave()
   const [revealed, setRevealed] = useState<Set<string>>(new Set())
   const reveal = (id: string) => setRevealed((s) => new Set(s).add(id))
 
@@ -88,14 +104,20 @@ export default function AchievementsView() {
         <h2>Needed for Perfection</h2>
         <p className="when">All of these together make up the 100% Perfection score.</p>
         <ul className="goal-list">
-          {perfection.map((p, i) =>
+          {spoilersLast(
+            perfection.map((p, i) => ({ p, i })),
+            ({ p }) => !!p.spoiler,
+          ).map(({ p, i }) =>
             p.spoiler && !revealed.has(`p:${p.id}`) ? (
               <Hidden key={p.id} label={`Hidden requirement ${i + 1}`} onReveal={() => reveal(`p:${p.id}`)} />
             ) : (
-              <li key={p.id} className="goal-row">
+              <li
+                key={p.id}
+                className={save.checked.includes(`goal:p:${p.id}`) ? 'goal-row done' : 'goal-row'}
+              >
                 <span className="goal-pic">{perfIcon(p)}</span>
                 <div>
-                  <strong>{p.name}</strong> <span className="tag">{p.count}</span>{' '}
+                  <Done id={`goal:p:${p.id}`} name={p.name} /> <span className="tag">{p.count}</span>{' '}
                   <span className="when">{p.weight}% of Perfection</span>
                   <p className="row-detail">{p.description}</p>
                 </div>
@@ -107,7 +129,10 @@ export default function AchievementsView() {
       <section className="card" aria-label="Achievements">
         <h2>Achievements</h2>
         <ul className="goal-list" aria-label="All achievements">
-          {achievements.map((a, i) => {
+          {spoilersLast(
+            achievements.map((a, i) => ({ a, i })),
+            ({ a }) => !!extras[a.name].spoiler,
+          ).map(({ a, i }) => {
             const e = extras[a.name]
             if (e.spoiler && !revealed.has(`a:${a.name}`)) {
               return (
@@ -119,12 +144,15 @@ export default function AchievementsView() {
               )
             }
             return (
-              <li key={a.name} className="goal-row">
+              <li
+                key={a.name}
+                className={save.checked.includes(`goal:a:${a.name}`) ? 'goal-row done' : 'goal-row'}
+              >
                 <span className="goal-pic">
                   <AchievementIcon name={a.name} />
                 </span>
                 <div>
-                  <strong>{a.name}</strong> <span className="when">{a.requirement}</span>
+                  <Done id={`goal:a:${a.name}`} name={a.name} /> <span className="when">{a.requirement}</span>
                   {e.unlocks && <p className="row-detail">Unlocks: {e.unlocks}</p>}
                   {e.note && <Notes keyName={e.note} />}
                 </div>
