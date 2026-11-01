@@ -857,5 +857,1021 @@
         ]
       }
     ]
+  },
+  {
+    "room": "Fish Tank",
+    "slots": [
+      {
+        "id": "fish-tank-1",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-river-fish",
+            "room": "Fish Tank",
+            "name": "River Fish",
+            "reward": "Deluxe Bait (30)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Sunfish",
+                "quantity": 1,
+                "seasons": ["spring", "summer"],
+                "source": "Found in Rivers, 6am – 7pm, Spring and Summer during sunny weather. Found in the Riverlands Farm or in the Wilderness Farm pond during rainy weather"
+              },
+              {
+                "name": "Catfish",
+                "quantity": 1,
+                "seasons": ["spring", "fall"],
+                "source": "Found in Rivers and Secret Woods Pond, 6am – midnight, Spring and Fall. Only when raining"
+              },
+              {
+                "name": "Shad",
+                "quantity": 1,
+                "seasons": ["spring", "summer", "fall"],
+                "source": "Found in Rivers, 9am – 2am, Spring, Summer, and Fall. Only when raining"
+              },
+              {
+                "name": "Tiger Trout",
+                "quantity": 1,
+                "seasons": ["fall", "winter"],
+                "source": "Found in Rivers, 6am – 7pm, Fall and Winter"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fish-tank-2",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-lake-fish",
+            "room": "Fish Tank",
+            "name": "Lake Fish",
+            "reward": "Dressed Spinner (1)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Largemouth Bass",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in the Mountain Lake, 6am – 7pm, All Seasons"
+              },
+              {
+                "name": "Carp",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in the Mountain Lake or Cindersap Forest pond, Anytime, during Spring, Summer, or Fall. Found in Secret Woods or Sewer, Anytime, All Seasons"
+              },
+              {
+                "name": "Bullhead",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in the Mountain Lake, Anytime, All Seasons"
+              },
+              {
+                "name": "Sturgeon",
+                "quantity": 1,
+                "seasons": ["summer", "winter"],
+                "source": "Found in the Mountain Lake, 6am – 7pm, Summer and Winter"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fish-tank-3",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-ocean-fish",
+            "room": "Fish Tank",
+            "name": "Ocean Fish",
+            "reward": "Warp Totem: Beach (5)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Sardine",
+                "quantity": 1,
+                "seasons": ["spring", "fall", "winter"],
+                "source": "Found in the Ocean, 6am – 7pm, Spring, Fall, and Winter"
+              },
+              {
+                "name": "Tuna",
+                "quantity": 1,
+                "seasons": ["summer", "winter"],
+                "source": "Found in the Ocean, 6am – 7pm, Summer and Winter"
+              },
+              {
+                "name": "Red Snapper",
+                "quantity": 1,
+                "seasons": ["summer", "fall"],
+                "source": "Found in the Ocean, 6am – 7pm, Summer and Fall. Only when raining"
+              },
+              {
+                "name": "Tilapia",
+                "quantity": 1,
+                "seasons": ["summer", "fall"],
+                "source": "Found in the Ocean, 6am – 2pm, Summer and Fall"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fish-tank-4",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-night-fishing",
+            "room": "Fish Tank",
+            "name": "Night Fishing",
+            "reward": "Glow Ring (1)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Walleye",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Found in Rivers, Lakes and Forest Pond, 12pm – 2am, Fall (Winter with Rain Totem). Only when raining"
+              },
+              {
+                "name": "Bream",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in Rivers, 6pm – 2am, All Seasons"
+              },
+              {
+                "name": "Eel",
+                "quantity": 1,
+                "seasons": ["spring", "fall"],
+                "source": "Found in the Ocean, 4pm – 2am, Spring or Fall. Only when raining"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fish-tank-5",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-crab-pot",
+            "room": "Fish Tank",
+            "name": "Crab Pot",
+            "reward": "Crab Pot (3)",
+            "slotsRequired": 5,
+            "items": [
+              {
+                "name": "Lobster",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean)"
+              },
+              {
+                "name": "Crayfish",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (freshwater)"
+              },
+              {
+                "name": "Crab",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean), drops from Rock Crabs or Lava Crabs in The Mines"
+              },
+              {
+                "name": "Cockle",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean), Beach Foraging"
+              },
+              {
+                "name": "Mussel",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean), Beach Foraging"
+              },
+              {
+                "name": "Shrimp",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean)"
+              },
+              {
+                "name": "Snail",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (freshwater)"
+              },
+              {
+                "name": "Periwinkle",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (freshwater)"
+              },
+              {
+                "name": "Oyster",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean), Beach Foraging"
+              },
+              {
+                "name": "Clam",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Caught in Crab Pots (ocean), Beach Foraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fish-tank-6",
+        "kind": "alternatives",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-specialty-fish",
+            "room": "Fish Tank",
+            "name": "Specialty Fish",
+            "reward": "Dish O' The Sea (5)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Pufferfish",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Found in the Ocean, 12pm – 4pm, Summer during sunny weather"
+              },
+              {
+                "name": "Ghostfish",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in ponds in The Mines floors 20 and 60, Anytime, All Seasons. May also be dropped by Ghosts"
+              },
+              {
+                "name": "Sandfish",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in the pond in The Desert, 6am – 8pm, All Seasons"
+              },
+              {
+                "name": "Woodskip",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Found in the Secret Woods and the Forest Farm, Anytime, All Seasons"
+              }
+            ]
+          },
+          {
+            "id": "remix-quality-fish",
+            "room": "Fish Tank",
+            "name": "Quality Fish",
+            "reward": "Dish O' The Sea (5)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Largemouth Bass (gold quality)",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Mountain Lake or Wilderness Farm, all seasons"
+              },
+              {
+                "name": "Shad (gold quality)",
+                "quantity": 1,
+                "seasons": ["spring", "summer", "fall"],
+                "source": "River, when raining, all seasons except Winter"
+              },
+              {
+                "name": "Tuna (gold quality)",
+                "quantity": 1,
+                "seasons": ["summer", "winter"],
+                "source": "Ocean, Summer or Winter"
+              },
+              {
+                "name": "Walleye (gold quality)",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "River, Mountain Lake, Forest Pond, or Forest Farm; when raining; Fall (or Winter with Rain Totem)"
+              }
+            ]
+          },
+          {
+            "id": "remix-master-fishers",
+            "room": "Fish Tank",
+            "name": "Master Fisher's",
+            "reward": "Dish O' The Sea (5)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Lava Eel",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "The Mines on the 100th floor during all seasons"
+              },
+              {
+                "name": "Scorpion Carp",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "The Desert during all seasons"
+              },
+              {
+                "name": "Octopus",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer in the ocean and (more rarely) in Garbage Cans, and submarine ride at the Night Market (about 2% chance)"
+              },
+              {
+                "name": "Blobfish",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Submarine ride at the Night Market (Winter 15-17)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "room": "Boiler Room",
+    "slots": [
+      {
+        "id": "boiler-room-1",
+        "kind": "pool",
+        "pick": 3,
+        "bundles": [
+          {
+            "id": "remix-blacksmiths",
+            "room": "Boiler Room",
+            "name": "Blacksmith's",
+            "reward": "Furnace (1)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Copper Bar",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Smelting Copper Ore in the Furnace"
+              },
+              {
+                "name": "Iron Bar",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Smelting Iron Ore in the Furnace, Crafting the \"Transmute (Fe)\" recipe"
+              },
+              {
+                "name": "Gold Bar",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Smelting Gold Ore in the Furnace, Crafting the \"Transmute (Au)\" recipe"
+              }
+            ]
+          },
+          {
+            "id": "remix-geologists",
+            "room": "Boiler Room",
+            "name": "Geologist's",
+            "reward": "Omni Geode (5)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Quartz",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging on all floors of The Mines"
+              },
+              {
+                "name": "Earth Crystal",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging on floors 1-39 of The Mines, Geodes, Omni Geodes, drop from Duggies in the Mines (floors 1-29)"
+              },
+              {
+                "name": "Frozen Tear",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging on floors 40-79 of The Mines, Frozen Geodes, Omni Geodes, drop from Dust Sprites in the Mines (floors 40-79)"
+              },
+              {
+                "name": "Fire Quartz",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging on floors 80-120 of The Mines, Magma Geodes, Omni Geodes"
+              }
+            ]
+          },
+          {
+            "id": "remix-adventurers",
+            "room": "Boiler Room",
+            "name": "Adventurer's",
+            "reward": "Small Magnet Ring (1)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Slime",
+                "quantity": 99,
+                "seasons": "any",
+                "source": "Dropped by Slimes"
+              },
+              {
+                "name": "Bat Wing",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Dropped by Bats in The Mines and the Skull Cavern"
+              },
+              {
+                "name": "Solar Essence",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Dropped by Ghosts, Squid Kids, or Metal Heads in The Mines, or by Mummies in the Skull Cavern; Fish Pond product from Sunfish; buy from Krobus"
+              },
+              {
+                "name": "Void Essence",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Dropped by Shadow Brutes in The Mines or Serpents in the Skull Cavern; Fish Pond product from Void Salmon; buy from Krobus"
+              },
+              {
+                "name": "Bone Fragment",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Dropped by Skeletons in The Mines or crates and barrels in Skull Cavern, Artifact Spots"
+              }
+            ]
+          },
+          {
+            "id": "remix-treasure-hunters",
+            "room": "Boiler Room",
+            "name": "Treasure Hunter's",
+            "reward": "Lucky Lunch (1)",
+            "slotsRequired": 6,
+            "items": [
+              {
+                "name": "Amethyst",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests"
+              },
+              {
+                "name": "Aquamarine",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests"
+              },
+              {
+                "name": "Diamond",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests"
+              },
+              {
+                "name": "Emerald",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests"
+              },
+              {
+                "name": "Ruby",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests"
+              },
+              {
+                "name": "Topaz",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gem Node or individual nodes for each gem type in The Mines; Panning; Fishing Treasure Chests"
+              }
+            ]
+          },
+          {
+            "id": "remix-engineers",
+            "room": "Boiler Room",
+            "name": "Engineer's",
+            "reward": "Furnace (2)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Iridium Ore",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Mines, Skull Cavern, Magma Geode, Omni Geode"
+              },
+              {
+                "name": "Battery Pack",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Lightning Rod, purchase from Traveling Cart"
+              },
+              {
+                "name": "Refined Quartz",
+                "quantity": 5,
+                "seasons": "any",
+                "source": "Furnace product from Quartz or Fire Quartz, Recycling Machine product from Broken Glasses or Broken CD"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "room": "Bulletin Board",
+    "slots": [
+      {
+        "id": "bulletin-board-1",
+        "kind": "pool",
+        "pick": 5,
+        "bundles": [
+          {
+            "id": "remix-chefs",
+            "room": "Bulletin Board",
+            "name": "Chef's",
+            "reward": "Pink Cake (3)",
+            "slotsRequired": 6,
+            "items": [
+              {
+                "name": "Maple Syrup",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Tapped Maple Tree"
+              },
+              {
+                "name": "Fiddlehead Fern",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Foraging in the Secret Woods"
+              },
+              {
+                "name": "Truffle",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Pigs"
+              },
+              {
+                "name": "Poppy",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Maki Roll",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cooking (recipe sources: The Queen of Sauce, The Saloon)"
+              },
+              {
+                "name": "Fried Egg",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cooking"
+              }
+            ]
+          },
+          {
+            "id": "remix-dye",
+            "room": "Bulletin Board",
+            "name": "Dye",
+            "reward": "Seed Maker (1)",
+            "slotsRequired": 6,
+            "items": [
+              {
+                "name": "Red Mushroom",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging in The Mines, Summer or Fall Foraging in the Secret Woods, The Farm Cave (mushroom option), Tapping a Mushroom Tree, Mushroom Log"
+              },
+              {
+                "name": "Beet",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops, seeds purchased at Oasis"
+              },
+              {
+                "name": "Sea Urchin",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Beach Foraging, after using 300 wood to fix the bridge to the right side of the beach"
+              },
+              {
+                "name": "Amaranth",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops"
+              },
+              {
+                "name": "Sunflower",
+                "quantity": 1,
+                "seasons": ["summer", "fall"],
+                "source": "Summer / Fall Crops"
+              },
+              {
+                "name": "Starfruit",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops, seeds purchased at Oasis"
+              },
+              {
+                "name": "Duck Feather",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Ducks"
+              },
+              {
+                "name": "Cactus Fruit",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraged in Desert; Indoor-only Crops, seeds purchased at Oasis"
+              },
+              {
+                "name": "Aquamarine",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Aquamarine Nodes, boxes in The Mines, Fishing Treasure Chests"
+              },
+              {
+                "name": "Blueberry",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Red Cabbage",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops (Red Cabbage Seeds are available at Pierre's General Store in year 2+)"
+              },
+              {
+                "name": "Iridium Bar",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Can be smelted in a furnace; Rarely obtained as a monster drop."
+              }
+            ]
+          },
+          {
+            "id": "remix-field-research",
+            "room": "Bulletin Board",
+            "name": "Field Research",
+            "reward": "Recycling Machine (1)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Purple Mushroom",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "The Mines, The Farm Cave (mushroom option), Forest Farm Map Foraging in Fall, Mushroom Log"
+              },
+              {
+                "name": "Nautilus Shell",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Winter Beach Foraging (Note: NOT the Nautilus Fossil artifact)"
+              },
+              {
+                "name": "Chub",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Can be found in the mountain lake and river during all seasons, any time"
+              },
+              {
+                "name": "Frozen Geode",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "The Mines floors 40-79"
+              }
+            ]
+          },
+          {
+            "id": "remix-fodder",
+            "room": "Bulletin Board",
+            "name": "Fodder",
+            "reward": "Heater (1)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Wheat",
+                "quantity": 10,
+                "seasons": ["summer", "fall"],
+                "source": "Summer / Fall Crops"
+              },
+              {
+                "name": "Hay",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Purchase at Marnie's Ranch or Desert Trader, or harvest from Grass or Wheat."
+              },
+              {
+                "name": "Apple",
+                "quantity": 3,
+                "seasons": ["fall"],
+                "source": "Apple Trees during Fall, The Farm Cave (fruit bat option)"
+              }
+            ]
+          },
+          {
+            "id": "remix-enchanters",
+            "room": "Bulletin Board",
+            "name": "Enchanter's",
+            "reward": "Gold Bar (5)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Oak Resin",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Tapped Oak Tree"
+              },
+              {
+                "name": "Wine",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Keg"
+              },
+              {
+                "name": "Rabbit's Foot",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Rabbits, Serpent drop in Skull Cavern (0.8%)"
+              },
+              {
+                "name": "Pomegranate",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Pomegranate Trees during Fall, The Farm Cave (fruit bat option)"
+              }
+            ]
+          },
+          {
+            "id": "remix-childrens",
+            "room": "Bulletin Board",
+            "name": "Children's",
+            "reward": "Battery Pack (3)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Salmonberry",
+                "quantity": 10,
+                "seasons": ["spring"],
+                "source": "Spring forage, days 15-18 only, Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Cookie",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cooking recipe; random gift in mail from the player's mother or Evelyn"
+              },
+              {
+                "name": "Ancient Doll",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Artifact dug up from Mountain, Bus Stop, Forest, or Town; Fishing Treasure Chests"
+              },
+              {
+                "name": "Ice Cream",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cooking recipe; purchase from Ice Cream Stand during Summer, or from the Oasis on Sundays"
+              }
+            ]
+          },
+          {
+            "id": "remix-foragers",
+            "room": "Bulletin Board",
+            "name": "Forager's",
+            "reward": "Tapper (3)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Salmonberry",
+                "quantity": 50,
+                "seasons": ["spring"],
+                "source": "Spring forage, days 15-18 only, Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Blackberry",
+                "quantity": 50,
+                "seasons": ["fall"],
+                "source": "Fall forage, especially days 8-11; Fall Seeds"
+              },
+              {
+                "name": "Wild Plum",
+                "quantity": 15,
+                "seasons": ["fall"],
+                "source": "Fall forage, Fall Seeds, Farm Cave (fruit bat option)"
+              }
+            ]
+          },
+          {
+            "id": "remix-home-cooks",
+            "room": "Bulletin Board",
+            "name": "Home Cook's",
+            "reward": "Complete Breakfast (5)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Egg",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Chicken (\"any\": includes Duck, Void, and Ostrich, but not Dinosaur)"
+              },
+              {
+                "name": "Milk",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Cow, Goat (\"any\": any size, including Goat)"
+              },
+              {
+                "name": "Wheat Flour",
+                "quantity": 100,
+                "seasons": "any",
+                "source": "Mill product from Wheat, purchase from Pierre's General Store"
+              }
+            ]
+          },
+          {
+            "id": "remix-helpers",
+            "room": "Bulletin Board",
+            "name": "Helper's",
+            "reward": "Stardrop Tea (1)",
+            "slotsRequired": 2,
+            "items": [
+              {
+                "name": "Prize Ticket",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Reward for Help Wanted Quests"
+              },
+              {
+                "name": "Mystery Box",
+                "quantity": 5,
+                "seasons": "any",
+                "source": "Found through various means (Fishing, Mining, chopping Trees)"
+              }
+            ]
+          },
+          {
+            "id": "remix-spirits-eve",
+            "room": "Bulletin Board",
+            "name": "Spirit's Eve",
+            "reward": "Complete Breakfast (5)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Jack-O-Lantern",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Purchasable on Spirit's Eve"
+              },
+              {
+                "name": "Corn",
+                "quantity": 10,
+                "seasons": ["summer", "fall"],
+                "source": "Summer / Fall Crops"
+              },
+              {
+                "name": "Bat Wing",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Dropped by Bats in The Mines or Skull Cavern"
+              }
+            ]
+          },
+          {
+            "id": "remix-winter-star",
+            "room": "Bulletin Board",
+            "name": "Winter Star",
+            "reward": "Mystery Box (3)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Holly",
+                "quantity": 5,
+                "seasons": ["winter"],
+                "source": "Winter Foraging"
+              },
+              {
+                "name": "Plum Pudding",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cooking recipe from Queen of Sauce"
+              },
+              {
+                "name": "Stuffing",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cooking recipe from Pam's 7 Heart Event"
+              },
+              {
+                "name": "Powdermelon",
+                "quantity": 5,
+                "seasons": ["winter"],
+                "source": "Winter Crops"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "room": "Vault",
+    "slots": [
+      {
+        "id": "vault-1",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-vault-2500",
+            "room": "Vault",
+            "name": "2,500g",
+            "reward": "Chocolate Cake (3)",
+            "slotsRequired": 1,
+            "items": [
+              {
+                "name": "2,500g",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gold"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vault-2",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-vault-5000",
+            "room": "Vault",
+            "name": "5,000g",
+            "reward": "Quality Fertilizer (30)",
+            "slotsRequired": 1,
+            "items": [
+              {
+                "name": "5,000g",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gold"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vault-3",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-vault-10000",
+            "room": "Vault",
+            "name": "10,000g",
+            "reward": "Lightning Rod (1)",
+            "slotsRequired": 1,
+            "items": [
+              {
+                "name": "10,000g",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gold"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vault-4",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-vault-25000",
+            "room": "Vault",
+            "name": "25,000g",
+            "reward": "Crystalarium (1)",
+            "slotsRequired": 1,
+            "items": [
+              {
+                "name": "25,000g",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Gold"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]

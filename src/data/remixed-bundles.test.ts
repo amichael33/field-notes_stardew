@@ -134,3 +134,95 @@ describe('slotsRequired matching the standard twins', () => {
     expect(need('Artisan')).toBe(6)
   })
 })
+
+describe('Fish Tank', () => {
+  it('has 6 slots, the last offering three alternatives', () => {
+    const slotList = room('Fish Tank').slots
+    expect(slotList).toHaveLength(6)
+    const last = slotList[5]
+    expect(last.kind).toBe('alternatives')
+    expect(last.bundles.map((b) => b.name)).toEqual(['Specialty Fish', 'Quality Fish', "Master Fisher's"])
+  })
+
+  it('keeps the standard counts for the fish bundles', () => {
+    const need = (name: string) => bundles.find((b) => b.bundle.name === name)!.bundle.slotsRequired
+    expect(need('River Fish')).toBe(4)
+    expect(need('Night Fishing')).toBe(3)
+    expect(need('Crab Pot')).toBe(5)
+    expect(need("Master Fisher's")).toBe(4)
+  })
+})
+
+describe('Boiler Room', () => {
+  it('is a single pool that picks 3', () => {
+    const slotList = room('Boiler Room').slots
+    expect(slotList).toHaveLength(1)
+    expect(slotList[0].id).toBe('boiler-room-1')
+    expect(slotList[0].kind).toBe('pool')
+    expect(slotList[0].pick).toBe(3)
+    expect(slotList[0].bundles.map((b) => b.name)).toEqual([
+      "Blacksmith's",
+      "Geologist's",
+      "Adventurer's",
+      "Treasure Hunter's",
+      "Engineer's",
+    ])
+  })
+
+  it('needs 4 of 5 Adventurer items including Bone Fragment', () => {
+    const b = bundleNamed(slotNamed('Boiler Room', "Adventurer's"), "Adventurer's")
+    expect(b.slotsRequired).toBe(4)
+    expect(b.items).toHaveLength(5)
+    expect(b.items.map((i) => i.name)).toContain('Bone Fragment')
+  })
+})
+
+describe('Bulletin Board', () => {
+  it('is a single pool that picks 5 of the wiki bundles', () => {
+    const slotList = room('Bulletin Board').slots
+    expect(slotList).toHaveLength(1)
+    expect(slotList[0].id).toBe('bulletin-board-1')
+    expect(slotList[0].kind).toBe('pool')
+    expect(slotList[0].pick).toBe(5)
+    expect(slotList[0].bundles).toHaveLength(11)
+  })
+
+  it("has the Home Cook's bundle with 100 Wheat Flour", () => {
+    const b = bundleNamed(slotNamed('Bulletin Board', "Home Cook's"), "Home Cook's")
+    const flour = b.items.find((i) => i.name === 'Wheat Flour')!
+    expect(flour.quantity).toBe(100)
+  })
+
+  it('needs 6 of the 12 Dye items', () => {
+    const b = bundleNamed(slotNamed('Bulletin Board', 'Dye'), 'Dye')
+    expect(b.items).toHaveLength(12)
+    expect(b.slotsRequired).toBe(6)
+  })
+})
+
+describe('Vault', () => {
+  it('has 4 fixed gold slots', () => {
+    const slotList = room('Vault').slots
+    expect(slotList).toHaveLength(4)
+    expect(slotList.every((s) => s.kind === 'fixed')).toBe(true)
+    expect(slotList.map((s) => s.bundles[0].items[0].name)).toEqual([
+      '2,500g',
+      '5,000g',
+      '10,000g',
+      '25,000g',
+    ])
+  })
+})
+
+describe('whole file', () => {
+  it('has exactly the six rooms', () => {
+    expect(rooms.map((r) => r.room)).toEqual([
+      'Crafts Room',
+      'Pantry',
+      'Fish Tank',
+      'Boiler Room',
+      'Bulletin Board',
+      'Vault',
+    ])
+  })
+})
