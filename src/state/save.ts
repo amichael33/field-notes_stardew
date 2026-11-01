@@ -99,17 +99,20 @@ export function parseSave(json: string): ParseResult {
     if (!parsedFarm) return { ok: false, error: 'The save farm is invalid.' }
     farm = parsedFarm
   }
-  const remix: RemixState = { picks: {} }
+  let remix: RemixState = { picks: {} }
   if (raw.remix !== undefined) {
     if (!isRecord(raw.remix) || !isRecord(raw.remix.picks)) {
       return { ok: false, error: 'The save remix picks are invalid.' }
     }
+    const entries: [string, string[]][] = []
     for (const [slot, ids] of Object.entries(raw.remix.picks)) {
       if (!Array.isArray(ids) || !ids.every((id) => typeof id === 'string')) {
         return { ok: false, error: 'The save remix picks are invalid.' }
       }
-      remix.picks[slot] = [...ids]
+      entries.push([slot, [...ids]])
     }
+    // fromEntries defines own properties, so a "__proto__" slot cannot swap the prototype.
+    remix = { picks: Object.fromEntries(entries) }
   }
   return {
     ok: true,

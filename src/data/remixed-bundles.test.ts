@@ -226,3 +226,37 @@ describe('whole file', () => {
     ])
   })
 })
+
+describe('pinned counts the wiki leaves unstated or states in passing', () => {
+  const rows: [string, number, number][] = [
+    ['Garden', 5, 5],
+    ['Wild Medicine', 4, 4],
+    ["Fish Farmer's", 3, 3],
+    ["Brewer's", 5, 5],
+    ['Rare Crops', 2, 2],
+    ["Treasure Hunter's", 6, 6],
+    ['Quality Fish', 4, 4],
+    ['Crab Pot', 5, 10],
+    ['Sticky', 1, 1],
+    ['Summer Foraging', 3, 3],
+    ['Fall Foraging', 4, 4],
+    ['Construction', 4, 4],
+  ]
+  it.each(rows)('%s needs %i of %i', (name, need, total) => {
+    const b = bundles.find((x) => x.bundle.name === name)!.bundle
+    expect(b.slotsRequired).toBe(need)
+    expect(b.items).toHaveLength(total)
+  })
+})
+
+describe('remixed bundle ids and sources', () => {
+  it('has no single-letter hyphen segments in ids', () => {
+    for (const { bundle } of bundles) expect(bundle.id, bundle.id).not.toMatch(/-[a-z](-|$)/)
+  })
+
+  it('says iridium quality also works for every Quality Fish item', () => {
+    const b = bundles.find((x) => x.bundle.name === 'Quality Fish')!.bundle
+    expect(b.items).toHaveLength(4)
+    for (const item of b.items) expect(item.source).toMatch(/iridium quality also works/)
+  })
+})

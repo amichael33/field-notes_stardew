@@ -662,7 +662,7 @@
             ]
           },
           {
-            "id": "remix-fish-farmer-s",
+            "id": "remix-fish-farmers",
             "room": "Pantry",
             "name": "Fish Farmer's",
             "reward": "Worm Bin (1)",
@@ -816,7 +816,7 @@
             ]
           },
           {
-            "id": "remix-brewer-s",
+            "id": "remix-brewers",
             "room": "Pantry",
             "name": "Brewer's",
             "reward": "Keg (1)",
@@ -1140,25 +1140,25 @@
                 "name": "Largemouth Bass (gold quality)",
                 "quantity": 1,
                 "seasons": "any",
-                "source": "Mountain Lake or Wilderness Farm, all seasons"
+                "source": "Mountain Lake or Wilderness Farm, all seasons (iridium quality also works)"
               },
               {
                 "name": "Shad (gold quality)",
                 "quantity": 1,
                 "seasons": ["spring", "summer", "fall"],
-                "source": "River, when raining, all seasons except Winter"
+                "source": "River, when raining, all seasons except Winter (iridium quality also works)"
               },
               {
                 "name": "Tuna (gold quality)",
                 "quantity": 1,
                 "seasons": ["summer", "winter"],
-                "source": "Ocean, Summer or Winter"
+                "source": "Ocean, Summer or Winter (iridium quality also works)"
               },
               {
                 "name": "Walleye (gold quality)",
                 "quantity": 1,
                 "seasons": ["fall"],
-                "source": "River, Mountain Lake, Forest Pond, or Forest Farm; when raining; Fall (or Winter with Rain Totem)"
+                "source": "River, Mountain Lake, Forest Pond, or Forest Farm; when raining; Fall (or Winter with Rain Totem) (iridium quality also works)"
               }
             ]
           },

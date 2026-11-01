@@ -169,6 +169,23 @@ describe('save remix', () => {
     expect(JSON.parse(serializeSave(s)).remix.picks['unknown-slot']).toEqual(['remix-x', 'remix-unknown'])
   })
 
+  it('imports a __proto__ pick slot as an own key without touching prototypes', () => {
+    const base = defaultSave()
+    const text = JSON.stringify({ ...base, remix: { picks: {} } }).replace(
+      '"picks":{}',
+      '"picks":{"__proto__":["remix-x"],"ok":["remix-y"]}',
+    )
+    const r = parseSave(text)
+    expect(r.ok).toBe(true)
+    if (!r.ok) return
+    const picks = r.data.remix.picks
+    expect(Object.getPrototypeOf(picks)).toBe(Object.prototype)
+    expect(Object.keys(picks)).toEqual(['__proto__', 'ok'])
+    expect(({} as Record<string, unknown>).length).toBeUndefined()
+    expect(Object.getPrototypeOf({})).toBe(Object.prototype)
+    expect(Object.prototype.hasOwnProperty.call(Object.prototype, '0')).toBe(false)
+  })
+
   it('rejects a non-boolean remixed', () => {
     const base = defaultSave()
     const r = parseSave(JSON.stringify({ ...base, profile: { ...base.profile, remixed: 'yes' } }))
