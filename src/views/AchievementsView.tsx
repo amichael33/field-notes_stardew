@@ -58,7 +58,7 @@ function Notes({ keyName }: { keyName: string }) {
           <h3>{g.title}</h3>
           <ul className="goal-crops">
             {g.crops.map((c) => (
-              <li key={c} title={c} aria-label={c}>
+              <li key={c} title={c} aria-label={c} data-tip={c} tabIndex={0} className="tip-focus">
                 <ItemIcon name={c} />
               </li>
             ))}

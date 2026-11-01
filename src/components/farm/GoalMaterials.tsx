@@ -14,6 +14,8 @@ export default function GoalMaterials({ target }: { target: BuildTarget }) {
             role="listitem"
             aria-label={label}
             title={label}
+            data-tip={label}
+            tabIndex={0}
             style={{ cursor: 'default' }}
           >
             <ItemIcon name={m.item} />

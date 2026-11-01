@@ -447,3 +447,29 @@ select {
   .weather-toggle { width: 100%; }
   .weather-toggle .banner-btn { flex: 1; }
 }
+
+/* Touch screens have no hover: a tap focuses the picture and shows its name above it. */
+@media (hover: none) {
+  .tip-focus { position: relative; }
+  .farm-tile[data-tip]:focus::before,
+  .item-icon-only[data-tip]:focus::before,
+  .tip-focus[data-tip]:focus::before,
+  .cal-bday:focus::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: var(--header);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .cal-bday:focus { z-index: 2; }
+}

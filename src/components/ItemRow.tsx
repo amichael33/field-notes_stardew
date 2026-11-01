@@ -35,6 +35,7 @@ export default function ItemRow({ bundle, item, showSource, index, iconOnly }: P
         aria-label={`${item.name}${item.quantity > 1 ? ` x${item.quantity}` : ''}`}
         aria-pressed={obtained}
         title={item.name}
+        data-tip={item.name}
         onClick={() => toggle(id)}
       >
         <ItemIcon name={item.name} />

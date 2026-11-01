@@ -22,6 +22,7 @@ export default function FarmTile({
       type="button"
       className={className ? `farm-tile ${className}` : 'farm-tile'}
       aria-label={label}
+      data-tip={label}
       aria-pressed={selected}
       onClick={onClick}
       disabled={disabled}
