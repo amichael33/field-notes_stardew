@@ -124,3 +124,13 @@ describe('Pantry', () => {
     expect(names).toContain('Carrot')
   })
 })
+
+describe('slotsRequired matching the standard twins', () => {
+  it('uses the standard counts when the wiki states none', () => {
+    const need = (name: string) => bundles.find((b) => b.bundle.name === name)!.bundle.slotsRequired
+    expect(need('Exotic Foraging')).toBe(5)
+    expect(need('Quality Crops')).toBe(3)
+    expect(need('Animal')).toBe(5)
+    expect(need('Artisan')).toBe(6)
+  })
+})

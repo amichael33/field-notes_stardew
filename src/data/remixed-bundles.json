@@ -266,7 +266,7 @@
             "room": "Crafts Room",
             "name": "Exotic Foraging",
             "reward": "Autumn's Bounty (5)",
-            "slotsRequired": 9,
+            "slotsRequired": 5,
             "items": [
               {
                 "name": "Coconut",
@@ -518,7 +518,7 @@
             "room": "Pantry",
             "name": "Quality Crops",
             "reward": "Preserves Jar (1)",
-            "slotsRequired": 11,
+            "slotsRequired": 3,
             "items": [
               {
                 "name": "Parsnip (gold quality)",
@@ -621,7 +621,7 @@
             "room": "Pantry",
             "name": "Animal",
             "reward": "Cheese Press (1)",
-            "slotsRequired": 6,
+            "slotsRequired": 5,
             "items": [
               {
                 "name": "Large Milk",
@@ -739,7 +739,7 @@
             "room": "Pantry",
             "name": "Artisan",
             "reward": "Keg (1)",
-            "slotsRequired": 12,
+            "slotsRequired": 6,
             "items": [
               {
                 "name": "Truffle Oil",
