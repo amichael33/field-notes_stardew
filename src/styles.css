@@ -414,3 +414,36 @@ select {
 .joja-stock .item-icon, .joja-stock .item-coin, .joja-stock .item-tile { width: 32px; height: 32px; flex: none; }
 .joja-price { margin-left: 6px; }
 .card ul.goal-list[aria-label='Membership'] { grid-template-columns: 1fr; }
+
+/* Phones: slim header, bottom tab bar, compact filters and clock. Wider screens are unchanged. */
+@media (max-width: 640px) {
+  .app { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  .header-inner { flex-wrap: nowrap; justify-content: space-between; padding: 8px 12px; }
+  .site-title { font-size: 1.3rem; margin-right: 0; }
+  .header-actions { gap: 6px; }
+  .header-actions .btn { min-height: 40px; padding: 0 10px; font-size: 14px; }
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    flex: none;
+    flex-wrap: nowrap;
+    gap: 0;
+    background: var(--header);
+    border-top: 1px solid var(--header-soft);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  nav .tab { flex: 1 1 0; min-width: 0; min-height: 56px; justify-content: center; text-align: center; padding: 0 2px; border-radius: 0; font-size: 12px; line-height: 1.15; }
+  .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .controls label { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .controls label:nth-of-type(3), .controls small { grid-column: 1 / -1; }
+  .controls select { width: 100%; min-height: 44px; }
+  .banner-controls { width: 100%; }
+  .banner-buttons { flex-wrap: wrap; width: 100%; }
+  .banner-buttons .banner-btn { flex: 1 1 auto; }
+  .banner-buttons .banner-btn:last-child { flex-basis: 100%; }
+  .weather-toggle { width: 100%; }
+  .weather-toggle .banner-btn { flex: 1; }
+}
