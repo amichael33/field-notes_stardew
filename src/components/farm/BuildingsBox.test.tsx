@@ -136,10 +136,14 @@ describe('BuildingsBox', () => {
     expect(within(row).getByRole('button', { name: '★ Set Cellar as goal' })).toBeInTheDocument()
   })
 
-  it('shows readable initials for house tiles', () => {
+  it('shows the house picture on house tiles, with the upgrade name on hover', () => {
     seed({ 'house:1': 1, 'house:2': 1 })
     const { container } = renderWithState(<BuildingsBox />)
-    const letters = [...container.querySelectorAll('.farm-tile .item-tile')].map((e) => e.textContent)
-    expect(letters).toEqual(['K', 'CR'])
+    const imgs = [...container.querySelectorAll('.farm-tile img')]
+    expect(imgs.map((i) => i.getAttribute('src'))).toEqual([
+      'farm/buildings/Farmhouse.png',
+      'farm/buildings/Farmhouse.png',
+    ])
+    expect(imgs.map((i) => i.getAttribute('title'))).toEqual(['Kitchen', "Children's room"])
   })
 })

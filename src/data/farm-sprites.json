@@ -21,7 +21,8 @@
     "Slime Hutch": "farm/buildings/Slime Hutch.png",
     "Stable": "farm/buildings/Stable.png",
     "Water Obelisk": "farm/buildings/Water Obelisk.png",
-    "Well": "farm/buildings/Well.png"
+    "Well": "farm/buildings/Well.png",
+    "Farmhouse": "farm/buildings/Farmhouse.png"
   },
   "animals": {
     "Blue Chicken": "farm/animals/Blue Chicken.png",

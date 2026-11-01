@@ -5,9 +5,17 @@
 export const HAND_MAPPINGS = { 'Large Brown Egg': '182', 'Large Goat Milk': '438', Stone: '390' }
 export const GOLD_AMOUNTS = ['2,500g', '5,000g', '10,000g', '25,000g']
 
+/** The item name for a hand-made icon file: "Blue_Jazz.png" is "Blue Jazz". @param {string} file */
+export function handIconName(file) {
+  return file.replace(/\.png$/i, '').replace(/_/g, ' ')
+}
+
 /** @param {string} name */
 export function slugify(name) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
 }
 
 /** @param {string} name */

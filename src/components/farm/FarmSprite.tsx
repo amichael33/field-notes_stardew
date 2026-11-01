@@ -17,21 +17,27 @@ export default function FarmSprite({
   id,
   size = 48,
   label,
+  title,
 }: {
   kind: 'building' | 'animal'
   id: string
   size?: number
   label?: string
+  /** Shown on hover. */
+  title?: string
 }) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null)
   const map = kind === 'building' ? sprites.buildings : sprites.animals
-  const src = Object.prototype.hasOwnProperty.call(map, id) ? map[id] : undefined
+  // Every house upgrade (Kitchen, Children's room, Cellar) is drawn as the farmhouse.
+  const key = kind === 'building' && id.startsWith('house:') ? 'Farmhouse' : id
+  const src = Object.prototype.hasOwnProperty.call(map, key) ? map[key] : undefined
 
   if (src && failedSrc !== src) {
     return (
       <img
         src={src}
         alt=""
+        title={title}
         width={size}
         height={size}
         style={{ imageRendering: 'pixelated', objectFit: 'contain' }}
@@ -40,7 +46,7 @@ export default function FarmSprite({
     )
   }
   return (
-    <span className="item-tile" aria-hidden="true" style={{ width: size, height: size }}>
+    <span className="item-tile" aria-hidden="true" title={title} style={{ width: size, height: size }}>
       {initials(label ?? id)}
     </span>
   )

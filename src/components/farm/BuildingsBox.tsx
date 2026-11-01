@@ -49,7 +49,7 @@ export default function BuildingsBox() {
                 setPicking(false)
               }}
             >
-              <FarmSprite kind="building" id={t.id} label={t.name} />
+              <FarmSprite kind="building" id={t.id} label={t.name} title={t.name} />
               {goal !== null && upcoming?.id === goal && <GoalStar />}
             </FarmTile>
           )
@@ -101,7 +101,7 @@ export default function BuildingsBox() {
           <ul role="list" aria-label="Buildings to build" className="farm-grid-list">
             {targets.map((t) => (
               <li key={t.id} className="farm-pick">
-                <FarmSprite kind="building" id={t.id} label={t.name} />
+                <FarmSprite kind="building" id={t.id} label={t.name} title={t.name} />
                 <span className="farm-pick-name">
                   {t.name}
                   {t.id === goal && <GoalStar />}

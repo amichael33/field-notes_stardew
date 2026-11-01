@@ -23,8 +23,15 @@ describe('FarmSprite', () => {
   })
 
   it('uses the label for the fallback initials', () => {
-    const { container } = render(<FarmSprite kind="building" id="house:2" label="Children's room" />)
+    const { container } = render(<FarmSprite kind="building" id="Mystery Hut" label="Children's room" />)
     expect(container.querySelector('.item-tile')?.textContent).toBe('CR')
+  })
+
+  it('shows the farmhouse picture for a house upgrade, with its name on hover', () => {
+    const { container } = render(<FarmSprite kind="building" id="house:2" title="Children's room" />)
+    const img = container.querySelector('img')
+    expect(img?.getAttribute('src')).toBe('farm/buildings/Farmhouse.png')
+    expect(img).toHaveAttribute('title', "Children's room")
   })
 
   it('renders a lettered tile for an unknown id', () => {

@@ -1,15 +1,17 @@
 import { existsSync } from 'node:fs'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { PNG } from 'pngjs'
 import { spriteOrigin, cropSprite, sheetFor } from './crop.mjs'
-import { matchItems, slugify, baseName } from './match.mjs'
+import { matchItems, slugify, baseName, handIconName } from './match.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
 const game = path.join(root, 'Content (unpacked)')
 const outDir = path.join(root, 'public', 'items')
 const mapFile = path.join(root, 'src', 'data', 'item-icons.json')
+// Icons drawn by hand (48x48 PNGs named like Blue_Jazz.png). They win over game sprites.
+const handDir = path.join(root, 'scripts', 'icons', 'hand')
 
 const readJson = async (p) => JSON.parse((await readFile(p, 'utf8')).replace(/^﻿/, ''))
 const readPng = async (p) => PNG.sync.read(await readFile(p))
@@ -20,7 +22,15 @@ async function main() {
     process.exit(1)
   }
   const bundles = await readJson(path.join(root, 'src', 'data', 'bundles.json'))
-  const names = [...new Set(bundles.flatMap((b) => b.items.map((i) => i.name)))]
+  const handFiles = existsSync(handDir) ? (await readdir(handDir)).filter((f) => /\.png$/i.test(f)) : []
+  const handNames = new Set(handFiles.map(handIconName))
+  // Bundle items plus the materials the Farm tab shows in building and upgrade costs.
+  const farmBuildings = await readJson(path.join(root, 'src', 'data', 'farm-buildings.json'))
+  const farmUpgrades = await readJson(path.join(root, 'src', 'data', 'farm-upgrades.json'))
+  const materials = [...farmBuildings, ...farmUpgrades].flatMap((b) => b.materials.map((m) => m.item))
+  const names = [...new Set([...bundles.flatMap((b) => b.items.map((i) => i.name)), ...materials])].filter(
+    (n) => !handNames.has(n),
+  )
   const objects = await readJson(path.join(game, 'Data', 'Objects.json'))
   const strings = await readJson(path.join(game, 'Strings', 'Objects.json'))
   const { matched, gold, unmatched } = matchItems(names, objects, strings)
@@ -48,9 +58,17 @@ async function main() {
     }
     map[name] = `items/${slug}.png`
   }
+  for (const file of handFiles) {
+    const name = handIconName(file)
+    const slug = slugify(name)
+    await copyFile(path.join(handDir, file), path.join(outDir, `${slug}.png`))
+    map[name] = `items/${slug}.png`
+  }
   const sorted = Object.fromEntries(Object.entries(map).sort(([a], [b]) => a.localeCompare(b)))
   await writeFile(mapFile, JSON.stringify(sorted, null, 2) + '\n')
-  console.log(`Wrote ${written.size} icons for ${Object.keys(matched).length} items (${gold.length} gold amounts have no icon).`)
+  console.log(
+    `Wrote ${written.size} icons for ${Object.keys(matched).length} items and copied ${handFiles.length} hand-made icons (${gold.length} gold amounts have no icon).`,
+  )
 }
 
 main().catch((e) => {

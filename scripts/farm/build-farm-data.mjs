@@ -12,8 +12,7 @@ const outDir = path.join(root, 'src', 'data')
 const readJson = async (p) => JSON.parse((await readFile(p, 'utf8')).replace(/^﻿/, ''))
 const byKey = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
 const publicDir = path.join(root, 'public', 'farm')
-const write = (name, rows) =>
-  writeFile(path.join(outDir, name), JSON.stringify(rows, null, 2) + '\n')
+const write = (name, rows) => writeFile(path.join(outDir, name), JSON.stringify(rows, null, 2) + '\n')
 
 // Crops one sprite out of a game texture and writes it under public/farm. Returns the
 // public-relative path, or null when the texture is missing.
@@ -76,6 +75,10 @@ async function main() {
     const rel = await writeSprite(raw.Texture, spriteRect(raw), 'building', b.id)
     if (rel) sprites.buildings[b.id] = rel
   }
+  // The farmhouse picture stands in for every house upgrade (Kitchen, Children's room, Cellar).
+  const house = buildingsRaw.Farmhouse
+  const houseRel = house && (await writeSprite(house.Texture, spriteRect(house), 'building', 'Farmhouse'))
+  if (houseRel) sprites.buildings.Farmhouse = houseRel
   for (const a of animals) {
     const raw = animalsRaw[a.type]
     const { w, h } = animalFrame(raw)
@@ -87,7 +90,9 @@ async function main() {
   await write('farm-buildings.json', buildings)
   await write('farm-animals.json', animals)
   await write('farm-crops.json', crops)
-  console.log(`Wrote ${buildings.length} buildings, ${animals.length} animals, ${crops.length} crops, ${Object.keys(sprites.buildings).length + Object.keys(sprites.animals).length} sprites.`)
+  console.log(
+    `Wrote ${buildings.length} buildings, ${animals.length} animals, ${crops.length} crops, ${Object.keys(sprites.buildings).length + Object.keys(sprites.animals).length} sprites.`,
+  )
 }
 
 main().catch((e) => {

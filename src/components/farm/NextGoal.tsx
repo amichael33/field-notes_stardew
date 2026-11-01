@@ -30,7 +30,7 @@ export default function NextGoal() {
       ) : (
         <>
           <p className="goal-title">
-            <FarmSprite kind="building" id={target.id} label={target.name} size={96} />
+            <FarmSprite kind="building" id={target.id} label={target.name} title={target.name} size={96} />
             <strong>{target.name}</strong>
           </p>
           {target.builder && target.buildDays !== null && (

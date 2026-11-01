@@ -12,36 +12,33 @@ const farmCrops = crops as FarmCrop[]
 const farmAnimals = animals as FarmAnimalType[]
 const farmUpgrades = upgrades as FarmUpgrade[]
 
-// Items with no bundled icon yet: Iridium Bar is the hand-checked upgrade bar the bundles lack;
-// the rest are materials of Fish Pond, Junimo Hut and the obelisks, which no bundle or recipe uses.
-// Remove an entry once its icon is added.
-const ICONLESS = new Set<string>([
-  'Iridium Bar',
-  'Seaweed',
-  'Green Algae',
-  'Dragon Tooth',
-  'Banana',
-  'Starfruit',
-  'Fiber',
-  'Clay',
-  'Refined Quartz',
-  'Coral',
-])
-
 const unique = (xs: string[]) => new Set(xs).size === xs.length
 
 describe('farm buildings', () => {
   it('upgradesFrom names another building', () => {
     const ids = new Set(farmBuildings.map((b) => b.id))
     for (const b of farmBuildings) {
-      if (b.upgradesFrom) expect(ids.has(b.upgradesFrom), `${b.id} upgrades from ${b.upgradesFrom}`).toBe(true)
+      if (b.upgradesFrom)
+        expect(ids.has(b.upgradesFrom), `${b.id} upgrades from ${b.upgradesFrom}`).toBe(true)
     }
   })
 
   it('every material has an icon', () => {
     const missing = farmBuildings
       .flatMap((b) => b.materials.map((m) => m.item))
-      .filter((item) => !(item in icons) && !ICONLESS.has(item))
+      .filter((item) => !(item in icons))
+    expect(missing).toEqual([])
+  })
+
+  it('every house upgrade material has an icon', () => {
+    const missing = farmUpgrades
+      .flatMap((u) => u.materials.map((m) => m.item))
+      .filter((item) => !(item in icons))
+    expect(missing).toEqual([])
+  })
+
+  it('every crop has a picture', () => {
+    const missing = farmCrops.map((c) => c.name).filter((name) => !(name in icons))
     expect(missing).toEqual([])
   })
 
@@ -106,8 +103,14 @@ describe('farm sprites', () => {
   const spriteMap = sprites as { buildings: Record<string, string>; animals: Record<string, string> }
 
   it('has a sprite for every building', () => {
-    const missing = farmBuildings.map((b) => b.id).filter((id) => !spriteMap.buildings[id] && !UNSPRITED.has(id))
+    const missing = farmBuildings
+      .map((b) => b.id)
+      .filter((id) => !spriteMap.buildings[id] && !UNSPRITED.has(id))
     expect(missing).toEqual([])
+  })
+
+  it('has the farmhouse picture used for every house upgrade', () => {
+    expect(spriteMap.buildings.Farmhouse).toBe('farm/buildings/Farmhouse.png')
   })
 
   it('has a sprite for every animal type', () => {

@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, it, expect } from 'vitest'
-import { slugify, baseName, matchItems } from './match.mjs'
+import { slugify, baseName, matchItems, handIconName } from './match.mjs'
 
 const obj = (Name, DisplayName, SpriteIndex, Texture = null) => ({ Name, DisplayName, SpriteIndex, Texture })
 
@@ -61,5 +61,13 @@ describe('matchItems', () => {
   it('reports a truly unknown name as unmatched', () => {
     const r = matchItems(['Nonexistent'], { 1: obj('Leek', '', 5) }, {})
     expect(r.unmatched).toEqual(['Nonexistent'])
+  })
+})
+
+describe('handIconName', () => {
+  it('turns a hand-made icon file name into the item name', () => {
+    expect(handIconName('Blue_Jazz.png')).toBe('Blue Jazz')
+    expect(handIconName('Strawberry.png')).toBe('Strawberry')
+    expect(handIconName('Sweet_Gem_Berry.PNG')).toBe('Sweet Gem Berry')
   })
 })
