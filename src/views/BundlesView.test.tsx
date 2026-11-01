@@ -216,29 +216,29 @@ describe('BundlesView remixed mode', () => {
     seed()
     renderWithState(<BundlesView />)
     expect(heads().some((h) => h.startsWith('Name remix-fixed'))).toBe(true)
-    expect(screen.getByRole('heading', { name: 'Pantry: pick your bundles' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Pantry: Name remix-b1 or Name remix-b2 or Name remix-b3' })).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: /^Name remix-b/ })).toHaveLength(3)
   })
 
   it('picking a bundle saves it and replaces the picker with its card; Change reopens', async () => {
     seed()
     renderWithState(<BundlesView />)
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-b2' }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-b2/ }))
     expect(saved().remix.picks).toEqual({ pantry: ['remix-b2'] })
-    expect(screen.queryByRole('button', { name: 'Name remix-b1' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /^Name remix-b1/ })).not.toBeInTheDocument()
     expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(true)
     await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
-    expect(screen.getByRole('button', { name: 'Name remix-b1' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /^Name remix-b1/ })).toBeInTheDocument()
   })
 
   it('a pool refuses a fourth pick and keeps counting 3 of 3', async () => {
     seed({ remix: { picks: { boiler: ['remix-p1', 'remix-p2'] } } })
     renderWithState(<BundlesView />)
     expect(screen.getByText(/2 of 3 picked/)).toBeInTheDocument()
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-p3' }))
-    expect(screen.getByText(/3 of 3 picked/)).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-p3/ }))
+    expect(screen.getByText(/Picked: Name remix-p1, Name remix-p2, Name remix-p3/)).toBeInTheDocument()
     await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-p4' }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-p4/ }))
     expect(saved().remix.picks.boiler).toEqual(['remix-p1', 'remix-p2', 'remix-p3'])
     expect(screen.getByText(/3 of 3 picked/)).toBeInTheDocument()
   })
@@ -262,6 +262,20 @@ describe('BundlesView remixed mode', () => {
     expect(document.querySelectorAll('.obtained')).toHaveLength(1)
   })
 
+  it('picks survive a Remixed -> Standard -> Remixed round trip', async () => {
+    const picks = { pantry: ['remix-b2'], boiler: ['remix-p1', 'remix-p2'] }
+    seed({ remix: { picks } })
+    renderWithState(<BundlesView />)
+    expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(true)
+    await userEvent.click(screen.getByRole('button', { name: 'Standard' }))
+    expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(false)
+    expect(saved().remix.picks).toEqual(picks)
+    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    expect(saved().remix.picks).toEqual(picks)
+    expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(true)
+    expect(heads().some((h) => h.startsWith('Name remix-p1'))).toBe(true)
+  })
+
   it('a room lock counts only chosen remixed bundles', async () => {
     seed({ remix: { picks: { pantry: ['remix-b2'] } } })
     renderWithState(<BundlesView />)
@@ -271,10 +285,10 @@ describe('BundlesView remixed mode', () => {
     expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
     // Swap the pick to b1: the completed but unpicked b2 must no longer count.
     await userEvent.click(screen.getAllByRole('button', { name: 'Change' })[0])
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-b1' }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-b1/ }))
     expect(screen.getByText(/You have 0 of 1\./)).toBeInTheDocument()
     // Picking the completed bundle again brings the count back.
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-b2' }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-b2/ }))
     expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
   })
 

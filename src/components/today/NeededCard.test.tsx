@@ -76,6 +76,18 @@ describe('NeededCard remixed', () => {
     expect(screen.getByRole('button', { name: 'Daffodil' })).toBeInTheDocument()
   })
 
+  it('shows only the Joja message on the Joja route in Remixed mode', () => {
+    const d = defaultSave()
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({ ...d, profile: { ...d.profile, route: 'joja', remixed: true } }),
+    )
+    renderWithState(<NeededCard />)
+    expect(screen.getByText('Bundles are not used on the Joja route.')).toBeInTheDocument()
+    expect(screen.queryByText(PICK_LINE)).not.toBeInTheDocument()
+    expect(screen.queryByText('Fixed Spring')).not.toBeInTheDocument()
+  })
+
   it('is unchanged in standard mode', () => {
     seed(false)
     renderWithState(<NeededCard />)

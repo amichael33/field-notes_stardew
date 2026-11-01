@@ -403,5 +403,6 @@ select {
 .remix-candidates { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
 .remix-candidate { width: 100%; display: grid; gap: 4px; text-align: left; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
 .remix-candidate[aria-pressed='true'] { border-color: #3c7a4f; background: #e8f3ea; }
+.remix-candidate[aria-disabled='true'] { opacity: 0.5; }
 .remix-pictures { display: flex; flex-wrap: wrap; gap: 4px; }
 .remix-pictures .item-icon, .remix-pictures .item-tile { width: 32px; height: 32px; }

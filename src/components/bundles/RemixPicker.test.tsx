@@ -28,20 +28,48 @@ describe('RemixPicker', () => {
 
   it('titles the card and lists the candidates with their rewards', () => {
     renderWithState(<RemixPicker slot={alts} roomName="Pantry" />)
-    expect(screen.getByRole('heading', { name: 'Pantry: pick your bundles' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Pantry: Name remix-1 or Name remix-2 or Name remix-3' })).toBeInTheDocument()
     expect(screen.getByText(/Pick 1/)).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: /^Name remix-/ })).toHaveLength(3)
     expect(screen.getByText('Reward: Reward remix-2')).toBeInTheDocument()
   })
 
+  it('titles a pool with its pick count and a collapsed slot names what was picked', async () => {
+    renderWithState(<RemixPicker slot={pool} roomName="Boiler Room" />)
+    expect(screen.getByRole('heading', { name: 'Boiler Room: pick 2 of 3 bundles' })).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-1/ }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-3/ }))
+    expect(screen.getByText(/Picked: Name remix-1, Name remix-3/)).toBeInTheDocument()
+    expect(screen.queryByText(/of 2 picked/)).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Change' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Boiler Room/ }).closest('article')).toHaveClass('no-print')
+  })
+
+  it('the button name includes the bundle name and reward', () => {
+    renderWithState(<RemixPicker slot={alts} roomName="Pantry" />)
+    expect(screen.getByRole('button', { name: /Name remix-2.*Reward: Reward remix-2/ })).toBeInTheDocument()
+  })
+
+  it('marks unpicked candidates aria-disabled once a pool is full', async () => {
+    renderWithState(<RemixPicker slot={pool} roomName="Boiler Room" />)
+    const third = () => screen.getByRole('button', { name: /^Name remix-3/ })
+    expect(third()).not.toHaveAttribute('aria-disabled')
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-1/ }))
+    expect(third()).not.toHaveAttribute('aria-disabled')
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-2/ }))
+    await userEvent.click(screen.getByRole('button', { name: 'Change' }))
+    expect(third()).toHaveAttribute('aria-disabled', 'true')
+    expect(screen.getByRole('button', { name: /^Name remix-1/ })).not.toHaveAttribute('aria-disabled')
+  })
+
   it('picking an alternative saves it and collapses; Change reopens', async () => {
     renderWithState(<RemixPicker slot={alts} roomName="Pantry" />)
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-2' }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-2/ }))
     expect(picks()).toEqual({ a: ['remix-2'] })
-    expect(screen.queryByRole('button', { name: 'Name remix-1' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /^Name remix-1/ })).not.toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'Change' }))
-    expect(screen.getByRole('button', { name: 'Name remix-2' })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('button', { name: 'Name remix-1' })).toHaveAttribute('aria-pressed', 'false')
+    expect(screen.getByRole('button', { name: /^Name remix-2/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: /^Name remix-1/ })).toHaveAttribute('aria-pressed', 'false')
   })
 
   it('a pool counts picks and refuses one past pick', async () => {
@@ -51,10 +79,10 @@ describe('RemixPicker', () => {
     )
     renderWithState(<RemixPicker slot={pool} roomName="Boiler Room" />)
     expect(screen.getByText(/1 of 2 picked/)).toBeInTheDocument()
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-2' }))
-    expect(screen.getByText(/2 of 2 picked/)).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-2/ }))
+    expect(screen.getByText(/Picked: Name remix-1, Name remix-2/)).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'Change' }))
-    await userEvent.click(screen.getByRole('button', { name: 'Name remix-3' }))
+    await userEvent.click(screen.getByRole('button', { name: /^Name remix-3/ }))
     expect(picks()).toEqual({ p: ['remix-1', 'remix-2'] })
     expect(screen.getByText(/2 of 2 picked/)).toBeInTheDocument()
   })

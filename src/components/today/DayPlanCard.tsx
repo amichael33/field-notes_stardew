@@ -62,7 +62,11 @@ export default function DayPlanCard({ fallback }: { fallback: ReactNode }) {
         </span>
       </div>
       <p>{plan.day.why}</p>
-      {profile.remixed && plan.tasks.some((t) => /bundle/i.test(t.text)) && (
+      {profile.remixed &&
+        profile.route !== "joja" &&
+        [...plan.tasks, ...missed.flatMap((d) => d.tasks)].some((t) =>
+          /bundle/i.test(t.text),
+        ) && (
         <p className="when">Bundle steps follow the standard list.</p>
       )}
       {plan.raining && <p className="rain-banner">Rainy day plan</p>}

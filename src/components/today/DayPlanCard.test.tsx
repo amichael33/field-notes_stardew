@@ -36,6 +36,12 @@ vi.mock('../../data/plans', async (orig) => ({
         why: 'Gather for the bundles.',
         tasks: [{ id: 's3-bundle', text: 'Hand in the Spring Foraging bundle' }],
       },
+      {
+        season: 'spring',
+        day: 4,
+        why: 'A quiet day.',
+        tasks: [{ id: 's4-water', text: 'Water crops' }],
+      },
     ],
     money: [],
   },
@@ -78,6 +84,20 @@ describe('DayPlanCard', () => {
     seed({ ...base, day: 2 }, [], 'community-center', true)
     renderCard()
     expect(screen.queryByText(note)).not.toBeInTheDocument()
+  })
+
+  it('hides the note on the Joja route even in Remixed mode', () => {
+    seed({ ...base, day: 3 }, [], 'joja', true)
+    renderCard()
+    expect(screen.queryByText('Bundle steps follow the standard list.')).not.toBeInTheDocument()
+  })
+
+  it('shows the note when the bundle task is only among the carried-over tasks', () => {
+    seed({ ...base, day: 4 }, [], 'community-center', true)
+    renderCard()
+    const list = screen.getByRole('list', { name: 'Day tasks' })
+    expect(within(list).queryByLabelText('Hand in the Spring Foraging bundle', { exact: false })).toBeNull()
+    expect(screen.getByText('Bundle steps follow the standard list.')).toBeInTheDocument()
   })
 
   it('treats a null clock as Spring 1', () => {

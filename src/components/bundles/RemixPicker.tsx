@@ -11,11 +11,24 @@ export default function RemixPicker({ slot, roomName }: { slot: RemixSlot; roomN
   const picked = new Set(chosenBundles(slot, picks).map((bundle) => bundle.id))
   const complete = !slotNeedsPick(slot, picks)
   const collapsed = complete && !open
-  const count = slot.pick === 1 ? 'Pick 1' : `${picked.size} of ${slot.pick} picked`
+  const full = slot.kind === 'pool' && picked.size >= slot.pick
+  const title =
+    slot.kind === 'pool'
+      ? `${roomName}: pick ${slot.pick} of ${slot.bundles.length} bundles`
+      : `${roomName}: ${slot.bundles.map((bundle) => bundle.name).join(' or ')}`
+  const count = collapsed
+    ? `Picked: ${chosenBundles(slot, picks)
+        .map((bundle) => bundle.name)
+        .join(', ')}`
+    : slot.pick === 1
+      ? 'Pick 1'
+      : `${picked.size} of ${slot.pick} picked`
 
   return (
-    <article className="card bundle-card remix-picker">
-      <h2>{roomName}: pick your bundles</h2>
+    <article
+      className={collapsed ? 'card bundle-card remix-picker no-print' : 'card bundle-card remix-picker'}
+    >
+      <h2>{title}</h2>
       <p className="when">
         {count}
         {complete && (
@@ -34,8 +47,8 @@ export default function RemixPicker({ slot, roomName }: { slot: RemixSlot; roomN
               <button
                 type="button"
                 className="remix-candidate"
-                aria-label={bundle.name}
                 aria-pressed={picked.has(bundle.id)}
+                aria-disabled={full && !picked.has(bundle.id) ? 'true' : undefined}
                 onClick={() => setRemixPicks(togglePick(slot, picks, bundle.id))}
               >
                 <strong>{bundle.name}</strong>
