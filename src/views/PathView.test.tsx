@@ -146,10 +146,10 @@ describe('PathView aside cards', () => {
   const sorted = [...steps].sort((a, b) => a.order - b.order)
   const meet = sorted.find((s) => s.order === 2)!
 
-  it('aside cards appear in order: Notes for tomorrow, Next goal, Needed this season, Where is everyone', () => {
+  it('aside cards appear in order: Notes, Next goal, Needed this season, Where is everyone', () => {
     renderWithState(<PathView />)
     const names = screen.getAllByRole('heading').map((h) => h.textContent)
-    const idx = ['Notes for tomorrow', 'Next goal', 'Needed this season', 'Where is everyone'].map(
+    const idx = ['Notes', 'Next goal', 'Needed this season', 'Where is everyone'].map(
       (n) => names.indexOf(n),
     )
     idx.forEach((i) => expect(i).toBeGreaterThanOrEqual(0))
@@ -174,16 +174,16 @@ describe('PathView aside cards', () => {
 
   it('notes persist across a remount', async () => {
     const { unmount } = renderWithState(<PathView />)
-    await userEvent.type(screen.getByLabelText('Notes for tomorrow'), 'buy seeds')
+    await userEvent.type(screen.getByLabelText('Notes'), 'buy seeds')
     unmount()
     renderWithState(<PathView />)
-    expect(screen.getByLabelText('Notes for tomorrow')).toHaveValue('buy seeds')
+    expect(screen.getByLabelText('Notes')).toHaveValue('buy seeds')
   })
 
   it('a very long unbroken note stays in the textarea', async () => {
     renderWithState(<PathView />)
     const long = 'x'.repeat(300)
-    const box = screen.getByLabelText('Notes for tomorrow')
+    const box = screen.getByLabelText('Notes')
     await userEvent.click(box)
     await userEvent.paste(long)
     expect(box).toHaveValue(long)

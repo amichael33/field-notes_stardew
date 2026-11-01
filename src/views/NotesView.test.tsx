@@ -16,7 +16,7 @@ describe('NotesView', () => {
     await userEvent.type(screen.getByLabelText('Notes'), 'buy parsnip seeds')
     first.unmount()
     renderWithState(<PathView />)
-    expect(screen.getByLabelText('Notes for tomorrow')).toHaveValue('buy parsnip seeds')
+    expect(screen.getByLabelText('Notes')).toHaveValue('buy parsnip seeds')
   })
 
   it('the Today card and the Notes tab share the same note', async () => {
@@ -26,7 +26,9 @@ describe('NotesView', () => {
         <NotesView />
       </>,
     )
-    await userEvent.type(screen.getByLabelText('Notes for tomorrow'), 'water the kale')
-    expect(screen.getByLabelText('Notes')).toHaveValue('water the kale')
+    const [card, page] = screen.getAllByLabelText('Notes')
+    await userEvent.type(card, 'water the kale')
+    expect(card).toHaveValue('water the kale')
+    expect(page).toHaveValue('water the kale')
   })
 })
