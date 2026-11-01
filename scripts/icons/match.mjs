@@ -2,7 +2,7 @@
  * @typedef {{ Name: string, DisplayName: string, Texture: string | null, SpriteIndex: number }} GameObject
  */
 
-export const HAND_MAPPINGS = { 'Large Brown Egg': '182', 'Large Goat Milk': '438', Stone: '390' }
+export const HAND_MAPPINGS = { 'Large Brown Egg': '182', 'Large Goat Milk': '438', Stone: '390', 'J. Cola Light': '167' }
 export const GOLD_AMOUNTS = ['2,500g', '5,000g', '10,000g', '25,000g']
 
 /** The item name for a hand-made icon file: "Blue_Jazz.png" is "Blue Jazz". @param {string} file */

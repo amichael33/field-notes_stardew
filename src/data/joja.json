@@ -35,9 +35,9 @@
       { "name": "Sugar", "price": 125 },
       { "name": "Wheat Flour", "price": 125 },
       { "name": "Rice", "price": 250 },
-      { "name": "Auto-Petter (Joja route only)", "price": 50000 },
-      { "name": "Wallpaper (random each day)", "price": 250 },
-      { "name": "Flooring (random each day)", "price": 250 }
+      { "name": "Auto-Petter", "price": 50000, "note": "Joja route only" },
+      { "name": "Wallpaper", "price": 250, "note": "random each day" },
+      { "name": "Flooring", "price": 250, "note": "random each day" }
     ],
     "spring": [
       { "name": "Parsnip Seeds", "price": 25 },

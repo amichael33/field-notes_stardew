@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest'
+import { existsSync } from 'node:fs'
+import icons from './item-icons.json'
 import { JOJA, JOJA_TOTAL, MEMBERSHIP, PROJECTS, jojaId, nextJojaStep, gold } from './joja'
 
 describe('joja data', () => {
@@ -38,5 +40,18 @@ describe('nextJojaStep', () => {
 describe('gold', () => {
   it('formats with a thousands separator', () => {
     expect(gold(15000)).toBe('15,000g')
+  })
+})
+
+describe('joja stock icons', () => {
+  it('gives every stock item an icon file that exists', () => {
+    const map = icons as Record<string, string | null>
+    for (const list of Object.values(JOJA.stock)) {
+      for (const item of list) {
+        const src = map[item.name]
+        expect(src, item.name).toBeTruthy()
+        expect(existsSync(`public/${src}`), item.name).toBe(true)
+      }
+    }
   })
 })

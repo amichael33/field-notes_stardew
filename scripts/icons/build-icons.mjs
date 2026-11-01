@@ -34,11 +34,14 @@ async function main() {
   const remixedItems = remixed.flatMap((r) =>
     r.slots.flatMap((s) => s.bundles.flatMap((b) => b.items.map((i) => i.name))),
   )
+  const joja = await readJson(path.join(root, 'src', 'data', 'joja.json'))
+  const jojaItems = Object.values(joja.stock).flatMap((l) => l.map((i) => i.name))
   const names = [
     ...new Set([
       ...bundles.flatMap((b) => b.items.map((i) => i.name)),
       ...remixedItems,
       ...materials,
+      ...jojaItems,
       ...perfectionItems,
     ]),
   ].filter((n) => !handNames.has(n))

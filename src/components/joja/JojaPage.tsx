@@ -1,9 +1,32 @@
 import { JOJA, JOJA_TOTAL, MEMBERSHIP, PROJECTS, gold, jojaId } from '../../data/joja'
 import type { Season } from '../../data/types'
+import ItemIcon from '../ItemIcon'
 import { useSave } from '../../state/SaveContext'
 
 const SEASONS: Season[] = ['spring', 'summer', 'fall', 'winter']
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
+interface StockItem {
+  name: string
+  price: number
+  note?: string
+}
+
+function StockList({ items }: { items: StockItem[] }) {
+  return (
+    <ul className="joja-stock">
+      {items.map((i) => (
+        <li key={i.name}>
+          <ItemIcon name={i.name} />
+          <span>
+            {i.name}
+            {i.note ? ` (${i.note})` : ''} <span className="when">{gold(i.price)}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 function Step({
   id,
@@ -38,7 +61,7 @@ export default function JojaPage() {
   const now = save.clock?.season ?? 'spring'
   // The current season first, then the rest in calendar order; winter has no stock.
   const order = [now, ...SEASONS.filter((s) => s !== now)]
-  const stock = JOJA.stock as Record<string, { name: string; price: number }[]>
+  const stock = JOJA.stock as Record<string, StockItem[]>
   return (
     <section>
       <h1>Community Center</h1>
@@ -75,24 +98,12 @@ export default function JojaPage() {
       <section className="card" aria-label="Stock and prices">
         <h2>Stock and prices</h2>
         <h3>Always in stock</h3>
-        <ul className="joja-stock">
-          {JOJA.stock.permanent.map((i) => (
-            <li key={i.name}>
-              {i.name} <span className="when">{gold(i.price)}</span>
-            </li>
-          ))}
-        </ul>
+        <StockList items={JOJA.stock.permanent} />
         {order.map((s) =>
           stock[s].length === 0 ? null : (
             <div key={s}>
               <h3>{cap(s)} stock</h3>
-              <ul className="joja-stock">
-                {stock[s].map((i) => (
-                  <li key={i.name}>
-                    {i.name} <span className="when">{gold(i.price)}</span>
-                  </li>
-                ))}
-              </ul>
+              <StockList items={stock[s]} />
             </div>
           ),
         )}

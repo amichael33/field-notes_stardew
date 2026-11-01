@@ -409,6 +409,8 @@ select {
 
 /* JojaMart page */
 .joja-facts, .joja-stock { margin: 8px 0; padding-left: 1.2rem; }
-.joja-stock { columns: 2 220px; }
+.joja-stock { columns: 2 220px; list-style: none; padding-left: 0; }
+.joja-stock li { display: flex; align-items: center; gap: 8px; break-inside: avoid; margin-bottom: 4px; }
+.joja-stock .item-icon, .joja-stock .item-coin, .joja-stock .item-tile { width: 32px; height: 32px; flex: none; }
 .joja-price { margin-left: 6px; }
 .card ul.goal-list[aria-label='Membership'] { grid-template-columns: 1fr; }
