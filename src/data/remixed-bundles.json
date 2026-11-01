@@ -1,0 +1,861 @@
+[
+  {
+    "room": "Crafts Room",
+    "slots": [
+      {
+        "id": "crafts-room-1",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-spring-foraging",
+            "room": "Crafts Room",
+            "name": "Spring Foraging",
+            "reward": "Spring Seeds (30)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Wild Horseradish",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Foraging"
+              },
+              {
+                "name": "Daffodil",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Foraging, buy from Pierre at Flower Dance"
+              },
+              {
+                "name": "Leek",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Foraging"
+              },
+              {
+                "name": "Dandelion",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Foraging, buy from Pierre at Flower Dance"
+              },
+              {
+                "name": "Spring Onion",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Foraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafts-room-2",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-summer-foraging",
+            "room": "Crafts Room",
+            "name": "Summer Foraging",
+            "reward": "Summer Seeds (30)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Grape",
+                "quantity": 1,
+                "seasons": ["summer", "fall"],
+                "source": "Summer Foraging, Fall Farming"
+              },
+              {
+                "name": "Spice Berry",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Foraging, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Sweet Pea",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Foraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafts-room-3",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-fall-foraging",
+            "room": "Crafts Room",
+            "name": "Fall Foraging",
+            "reward": "Fall Seeds (30)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Common Mushroom",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Foraging, Spring & Fall Foraging in the Secret Woods, The Farm Cave (mushroom option), Tapping a Mushroom Tree, Mushroom Log"
+              },
+              {
+                "name": "Wild Plum",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Foraging, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Hazelnut",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Foraging"
+              },
+              {
+                "name": "Blackberry",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Foraging, The Farm Cave (fruit bat option)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafts-room-4",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-winter-foraging",
+            "room": "Crafts Room",
+            "name": "Winter Foraging",
+            "reward": "Winter Seeds (30)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Winter Root",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Tilling soil or Artifact Spots in Winter, dropped by Blue Slimes on floors 41-79 of The Mines"
+              },
+              {
+                "name": "Crystal Fruit",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Winter Foraging, dropped by Dust Sprites on floors 41-79 of The Mines"
+              },
+              {
+                "name": "Snow Yam",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Tilling soil or Artifact Spots in Winter"
+              },
+              {
+                "name": "Crocus",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Winter Foraging"
+              },
+              {
+                "name": "Holly",
+                "quantity": 1,
+                "seasons": ["winter"],
+                "source": "Winter Foraging"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafts-room-5",
+        "kind": "alternatives",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-construction",
+            "room": "Crafts Room",
+            "name": "Construction",
+            "reward": "Charcoal Kiln (1)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Wood",
+                "quantity": 99,
+                "seasons": "any",
+                "source": "Chopping Trees or branches with an Axe"
+              },
+              {
+                "name": "Wood",
+                "quantity": 99,
+                "seasons": "any",
+                "source": "Chopping Trees or branches with an Axe"
+              },
+              {
+                "name": "Stone",
+                "quantity": 99,
+                "seasons": "any",
+                "source": "Smashing stones with a Pickaxe"
+              },
+              {
+                "name": "Hardwood",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Chopping Large Stumps or Large Logs with an upgraded Axe, smashing crates in The Mines, cutting down Mahogany trees"
+              }
+            ]
+          },
+          {
+            "id": "remix-sticky",
+            "room": "Crafts Room",
+            "name": "Sticky",
+            "reward": "Charcoal Kiln (1)",
+            "slotsRequired": 1,
+            "items": [
+              {
+                "name": "Sap",
+                "quantity": 500,
+                "seasons": "any",
+                "source": "Chopping Trees, drop from Slimes"
+              }
+            ]
+          },
+          {
+            "id": "remix-forest",
+            "room": "Crafts Room",
+            "name": "Forest",
+            "reward": "Charcoal Kiln (1)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Moss",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Chopping Trees"
+              },
+              {
+                "name": "Fiber",
+                "quantity": 200,
+                "seasons": "any",
+                "source": "Destroying Weeds or harvesting Fiber Seeds"
+              },
+              {
+                "name": "Acorn",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Shaking/Chopping Oak Trees"
+              },
+              {
+                "name": "Maple Seed",
+                "quantity": 10,
+                "seasons": "any",
+                "source": "Shaking/Chopping Maple Trees"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafts-room-6",
+        "kind": "alternatives",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-exotic-foraging",
+            "room": "Crafts Room",
+            "name": "Exotic Foraging",
+            "reward": "Autumn's Bounty (5)",
+            "slotsRequired": 9,
+            "items": [
+              {
+                "name": "Coconut",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Desert Foraging"
+              },
+              {
+                "name": "Cactus Fruit",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Desert Foraging"
+              },
+              {
+                "name": "Cave Carrot",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "The Mines, either smashing boxes or tilling soil"
+              },
+              {
+                "name": "Red Mushroom",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging in The Mines, Summer or Fall Foraging in the Secret Woods, The Farm Cave (mushroom option), Tapping a Mushroom Tree, Forest Farm Map in Fall, Mushroom Log"
+              },
+              {
+                "name": "Purple Mushroom",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "The Mines, The Farm Cave (mushroom option), Forest Farm Map, Foraging in Fall, Mushroom Log"
+              },
+              {
+                "name": "Maple Syrup",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Tapped Maple Tree"
+              },
+              {
+                "name": "Oak Resin",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Tapped Oak Tree"
+              },
+              {
+                "name": "Pine Tar",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Tapped Pine Tree"
+              },
+              {
+                "name": "Morel",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Foraging in the Secret Woods or Forest Farm Map in Spring, The Farm Cave (mushroom option), Mushroom Log"
+              }
+            ]
+          },
+          {
+            "id": "remix-wild-medicine",
+            "room": "Crafts Room",
+            "name": "Wild Medicine",
+            "reward": "Cookout Kit (2)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Purple Mushroom",
+                "quantity": 5,
+                "seasons": "any",
+                "source": "The Mines, The Farm Cave (mushroom option), Forest Farm Map Foraging in Fall, Mushroom Log"
+              },
+              {
+                "name": "Fiddlehead Fern",
+                "quantity": 5,
+                "seasons": ["summer"],
+                "source": "Summer forage in the Secret Woods, Prehistoric levels in Skull Cavern, Green Rain Trees"
+              },
+              {
+                "name": "White Algae",
+                "quantity": 5,
+                "seasons": "any",
+                "source": "Fishing, Monster drops"
+              },
+              {
+                "name": "Hops",
+                "quantity": 5,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "room": "Pantry",
+    "slots": [
+      {
+        "id": "pantry-1",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-spring-crops",
+            "room": "Pantry",
+            "name": "Spring Crops",
+            "reward": "Speed-Gro (20)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Parsnip",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Green Bean",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Cauliflower",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Potato",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Kale",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Carrot",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pantry-2",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-summer-crops",
+            "room": "Pantry",
+            "name": "Summer Crops",
+            "reward": "Quality Sprinkler (1)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Tomato",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Hot Pepper",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Blueberry",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Melon",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Summer Squash",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pantry-3",
+        "kind": "fixed",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-fall-crops",
+            "room": "Pantry",
+            "name": "Fall Crops",
+            "reward": "Bee House (1)",
+            "slotsRequired": 4,
+            "items": [
+              {
+                "name": "Corn",
+                "quantity": 1,
+                "seasons": ["summer", "fall"],
+                "source": "Summer / Fall Crops"
+              },
+              {
+                "name": "Eggplant",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops"
+              },
+              {
+                "name": "Pumpkin",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops"
+              },
+              {
+                "name": "Yam",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops, dropped by Duggies on floors 6-29 of The Mines (3%)"
+              },
+              {
+                "name": "Broccoli",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pantry-4",
+        "kind": "alternatives",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-quality-crops",
+            "room": "Pantry",
+            "name": "Quality Crops",
+            "reward": "Preserves Jar (1)",
+            "slotsRequired": 11,
+            "items": [
+              {
+                "name": "Parsnip (gold quality)",
+                "quantity": 5,
+                "seasons": ["spring"],
+                "source": "Gold quality Spring Crops"
+              },
+              {
+                "name": "Green Bean (gold quality)",
+                "quantity": 5,
+                "seasons": ["spring"],
+                "source": "Gold quality Spring Crops"
+              },
+              {
+                "name": "Potato (gold quality)",
+                "quantity": 5,
+                "seasons": ["spring"],
+                "source": "Gold quality Spring Crops"
+              },
+              {
+                "name": "Cauliflower (gold quality)",
+                "quantity": 5,
+                "seasons": ["spring"],
+                "source": "Gold quality Spring Crops"
+              },
+              {
+                "name": "Melon (gold quality)",
+                "quantity": 5,
+                "seasons": ["summer"],
+                "source": "Gold quality Summer Crops"
+              },
+              {
+                "name": "Blueberry (gold quality)",
+                "quantity": 5,
+                "seasons": ["summer"],
+                "source": "Gold quality Summer Crops"
+              },
+              {
+                "name": "Hot Pepper (gold quality)",
+                "quantity": 5,
+                "seasons": ["summer"],
+                "source": "Gold quality Summer Crops"
+              },
+              {
+                "name": "Pumpkin (gold quality)",
+                "quantity": 5,
+                "seasons": ["fall"],
+                "source": "Gold quality Fall Crops"
+              },
+              {
+                "name": "Yam (gold quality)",
+                "quantity": 5,
+                "seasons": ["fall"],
+                "source": "Gold quality Fall Crops"
+              },
+              {
+                "name": "Eggplant (gold quality)",
+                "quantity": 5,
+                "seasons": ["fall"],
+                "source": "Gold quality Fall Crops"
+              },
+              {
+                "name": "Corn (gold quality)",
+                "quantity": 5,
+                "seasons": ["summer", "fall"],
+                "source": "Gold quality Summer / Fall Crops"
+              }
+            ]
+          },
+          {
+            "id": "remix-rare-crops",
+            "room": "Pantry",
+            "name": "Rare Crops",
+            "reward": "Preserves Jar (1)",
+            "slotsRequired": 2,
+            "items": [
+              {
+                "name": "Ancient Fruit",
+                "quantity": 1,
+                "seasons": ["spring", "summer", "fall"],
+                "source": "Spring / Summer / Fall Crops; seed obtained from Ancient Seed artifact"
+              },
+              {
+                "name": "Sweet Gem Berry",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops; Rare Seed purchased from Traveling Cart"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pantry-5",
+        "kind": "alternatives",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-animal",
+            "room": "Pantry",
+            "name": "Animal",
+            "reward": "Cheese Press (1)",
+            "slotsRequired": 6,
+            "items": [
+              {
+                "name": "Large Milk",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cows"
+              },
+              {
+                "name": "Large Brown Egg",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Chickens"
+              },
+              {
+                "name": "Large Egg",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Chickens"
+              },
+              {
+                "name": "Large Goat Milk",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Goats"
+              },
+              {
+                "name": "Wool",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Sheep, Rabbits"
+              },
+              {
+                "name": "Duck Egg",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Ducks"
+              }
+            ]
+          },
+          {
+            "id": "remix-fish-farmer-s",
+            "room": "Pantry",
+            "name": "Fish Farmer's",
+            "reward": "Worm Bin (1)",
+            "slotsRequired": 3,
+            "items": [
+              {
+                "name": "Roe",
+                "quantity": 15,
+                "seasons": "any",
+                "source": "Fish Pond product from many Fish, Fishing Treasure Chests"
+              },
+              {
+                "name": "Aged Roe",
+                "quantity": 15,
+                "seasons": "any",
+                "source": "Preserves Jar product from Roe"
+              },
+              {
+                "name": "Squid Ink",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Squid Kid drop; Fish Pond product from Squid and Midnight Squid"
+              }
+            ]
+          },
+          {
+            "id": "remix-garden",
+            "room": "Pantry",
+            "name": "Garden",
+            "reward": "Quality Sprinkler (1)",
+            "slotsRequired": 5,
+            "items": [
+              {
+                "name": "Tulip",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Blue Jazz",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Spring Crops"
+              },
+              {
+                "name": "Summer Spangle",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Summer Crops"
+              },
+              {
+                "name": "Sunflower",
+                "quantity": 1,
+                "seasons": ["summer", "fall"],
+                "source": "Summer/Fall Crops"
+              },
+              {
+                "name": "Fairy Rose",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Fall Crops"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pantry-6",
+        "kind": "alternatives",
+        "pick": 1,
+        "bundles": [
+          {
+            "id": "remix-artisan",
+            "room": "Pantry",
+            "name": "Artisan",
+            "reward": "Keg (1)",
+            "slotsRequired": 12,
+            "items": [
+              {
+                "name": "Truffle Oil",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Oil Maker product from Truffle"
+              },
+              {
+                "name": "Cloth",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Loom, Recycling a Soggy Newspaper, Desert Trader"
+              },
+              {
+                "name": "Goat Cheese",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cheese Press"
+              },
+              {
+                "name": "Cheese",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Cheese Press, Desert Trader"
+              },
+              {
+                "name": "Honey",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Bee House, Oasis"
+              },
+              {
+                "name": "Jelly",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Preserves Jar"
+              },
+              {
+                "name": "Apple",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Apple Trees during Fall, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Apricot",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Apricot Trees during Spring, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Orange",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Orange Trees during Summer, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Peach",
+                "quantity": 1,
+                "seasons": ["summer"],
+                "source": "Peach Trees during Summer, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Pomegranate",
+                "quantity": 1,
+                "seasons": ["fall"],
+                "source": "Pomegranate Trees during Fall, The Farm Cave (fruit bat option)"
+              },
+              {
+                "name": "Cherry",
+                "quantity": 1,
+                "seasons": ["spring"],
+                "source": "Cherry Trees during Spring, The Farm Cave (fruit bat option)"
+              }
+            ]
+          },
+          {
+            "id": "remix-brewer-s",
+            "room": "Pantry",
+            "name": "Brewer's",
+            "reward": "Keg (1)",
+            "slotsRequired": 5,
+            "items": [
+              {
+                "name": "Mead",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Keg product from Honey"
+              },
+              {
+                "name": "Pale Ale",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Keg product from Hops"
+              },
+              {
+                "name": "Wine",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Keg product from Fruits"
+              },
+              {
+                "name": "Juice",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Keg product from Vegetables"
+              },
+              {
+                "name": "Green Tea",
+                "quantity": 1,
+                "seasons": "any",
+                "source": "Keg product from Tea Leaves"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

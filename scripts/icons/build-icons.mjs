@@ -30,9 +30,18 @@ async function main() {
   const materials = [...farmBuildings, ...farmUpgrades].flatMap((b) => b.materials.map((m) => m.item))
   const perfection = await readJson(path.join(root, 'src', 'data', 'perfection.json'))
   const perfectionItems = perfection.filter((p) => p.icon.type === 'item').map((p) => p.icon.id)
-  const names = [...new Set([...bundles.flatMap((b) => b.items.map((i) => i.name)), ...materials, ...perfectionItems])].filter(
-    (n) => !handNames.has(n),
+  const remixed = await readJson(path.join(root, 'src', 'data', 'remixed-bundles.json'))
+  const remixedItems = remixed.flatMap((r) =>
+    r.slots.flatMap((s) => s.bundles.flatMap((b) => b.items.map((i) => i.name))),
   )
+  const names = [
+    ...new Set([
+      ...bundles.flatMap((b) => b.items.map((i) => i.name)),
+      ...remixedItems,
+      ...materials,
+      ...perfectionItems,
+    ]),
+  ].filter((n) => !handNames.has(n))
   const objects = await readJson(path.join(game, 'Data', 'Objects.json'))
   const strings = await readJson(path.join(game, 'Strings', 'Objects.json'))
   const { matched, gold, unmatched } = matchItems(names, objects, strings)
