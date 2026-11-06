@@ -472,6 +472,9 @@ select {
 }
 
 /* Farm planting */
-.count-input { width: 5.5rem; min-height: 36px; padding: 0 8px; font: inherit; border: 1px solid var(--line-strong); border-radius: 8px; text-align: center; }
 .plant-cost { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
 .plant-cost h3 { margin: 0 0 4px; }
+.plant-pick { flex-direction: column; align-items: flex-start; }
+.count-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; max-width: 100%; }
+.count-input { width: 4.5rem; min-height: 44px; padding: 0 8px; font: inherit; font-size: 16px; font-weight: 700; text-align: center; border: 1px solid var(--line-strong); border-radius: 8px; -moz-appearance: textfield; appearance: textfield; }
+.count-input::-webkit-outer-spin-button, .count-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }

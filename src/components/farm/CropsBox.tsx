@@ -132,8 +132,9 @@ export default function CropsBox() {
             ))}
           </ul>
           {chosenOption && (
-            <div className="farm-actions">
-              <span>{chosenOption.label}</span>
+            <div className="farm-actions plant-pick">
+              <strong>{chosenOption.label}</strong>
+              <div className="count-row">
               <button
                 type="button"
                 className="btn-small"
@@ -162,6 +163,7 @@ export default function CropsBox() {
               <button type="button" className="btn-small" onClick={plantChosen}>
                 Plant
               </button>
+              </div>
             </div>
           )}
           {chosenOption && chosenSeeds && <PlantCost seeds={chosenSeeds} count={count} />}

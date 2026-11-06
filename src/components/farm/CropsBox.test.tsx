@@ -108,7 +108,7 @@ describe('CropsBox', () => {
     const grid = screen.getByRole('list', { name: 'Crops to plant' })
     expect(grid.parentElement).toHaveClass('no-print')
     await userEvent.click(within(grid).getByRole('button', { name: /^Parsnip/ }))
-    expect(screen.getByRole('button', { name: 'Plant' }).parentElement?.parentElement).toHaveClass('no-print')
+    expect(screen.getByRole('button', { name: 'Plant' }).closest('.farm-picker')).toHaveClass('no-print')
   })
 
   it('names the crop in the action row', async () => {
