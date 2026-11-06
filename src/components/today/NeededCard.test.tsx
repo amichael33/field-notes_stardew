@@ -88,6 +88,37 @@ describe('NeededCard remixed', () => {
     expect(screen.queryByText('Fixed Spring')).not.toBeInTheDocument()
   })
 
+  it('leaves a finished bundle out, and says so when none is left to do', () => {
+    const d = defaultSave()
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({
+        ...d,
+        profile: { ...d.profile, remixed: true },
+        checked: ['bundle:remix-fixed-spring:Leek'],
+        remix: { picks: { 'pool-1': ['remix-pool-spring'] } },
+      }),
+    )
+    renderWithState(<NeededCard />)
+    expect(screen.queryByText('Fixed Spring')).not.toBeInTheDocument()
+    expect(screen.getByText('Pool Spring')).toBeInTheDocument()
+  })
+
+  it('shows a plain line when every bundle for the season is finished', () => {
+    const d = defaultSave()
+    localStorage.setItem(
+      'field-notes-save',
+      serializeSave({
+        ...d,
+        profile: { ...d.profile, remixed: true },
+        checked: ['bundle:remix-fixed-spring:Leek', 'bundle:remix-pool-spring:Daffodil'],
+        remix: { picks: { 'pool-1': ['remix-pool-spring'] } },
+      }),
+    )
+    renderWithState(<NeededCard />)
+    expect(screen.getByText('No bundle items needed this season.')).toBeInTheDocument()
+  })
+
   it('is unchanged in standard mode', () => {
     seed(false)
     renderWithState(<NeededCard />)

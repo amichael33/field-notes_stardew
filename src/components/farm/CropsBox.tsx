@@ -8,8 +8,10 @@ import { useSave } from '../../state/SaveContext'
 import ItemIcon from '../ItemIcon'
 import FarmTile from './FarmTile'
 import HarvestButton from './HarvestButton'
+import PlantCost from './PlantCost'
 
 const SPRING_1: SeasonDay = { season: 'spring', day: 1 }
+const MAX_COUNT = 99999
 const title = (date: SeasonDay) => `${date.season[0].toUpperCase()}${date.season.slice(1)} ${date.day}`
 
 export default function CropsBox() {
@@ -18,12 +20,15 @@ export default function CropsBox() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [picking, setPicking] = useState(false)
   const [chosen, setChosen] = useState<string | null>(null)
-  const [count, setCount] = useState(1)
+  const [countText, setCountText] = useState('1')
+  // Typed numbers are kept as typed until the box loses focus; anything unusable counts as 1.
+  const count = Math.min(MAX_COUNT, Math.max(1, parseInt(countText, 10) || 1))
 
   const entries = save.farm.crops
   const nameOf = (entry: PlantedCrop) => cropById(entry.crop)?.name ?? 'Unknown crop'
   const selected = entries.find((e) => e.id === selectedId)
   const chosenOption = cropOptions(CROPS, now.season).find((o) => o.id === chosen)
+  const chosenSeeds = chosen ? cropById(chosen)?.seeds : undefined
 
   const readyText = (entry: PlantedCrop) => {
     const crop = cropById(entry.crop)
@@ -46,14 +51,14 @@ export default function CropsBox() {
     }))
     setChosen(null)
     setPicking(false)
-    setCount(1)
+    setCountText('1')
   }
 
   const togglePicking = () => {
     setPicking(!picking)
     setSelectedId(null)
     setChosen(null)
-    setCount(1)
+    setCountText('1')
   }
 
   const selectedName = selected ? nameOf(selected) : ''
@@ -129,11 +134,29 @@ export default function CropsBox() {
           {chosenOption && (
             <div className="farm-actions">
               <span>{chosenOption.label}</span>
-              <button type="button" className="btn-small" onClick={() => setCount(Math.max(1, count - 1))}>
+              <button
+                type="button"
+                className="btn-small"
+                onClick={() => setCountText(String(Math.max(1, count - 1)))}
+              >
                 −
               </button>
-              <span>{count}</span>
-              <button type="button" className="btn-small" onClick={() => setCount(Math.min(999, count + 1))}>
+              <input
+                type="number"
+                inputMode="numeric"
+                min={1}
+                max={MAX_COUNT}
+                className="count-input"
+                aria-label="Number to plant"
+                value={countText}
+                onChange={(e) => setCountText(e.target.value)}
+                onBlur={() => setCountText(String(count))}
+              />
+              <button
+                type="button"
+                className="btn-small"
+                onClick={() => setCountText(String(Math.min(MAX_COUNT, count + 1)))}
+              >
                 +
               </button>
               <button type="button" className="btn-small" onClick={plantChosen}>
@@ -141,6 +164,7 @@ export default function CropsBox() {
               </button>
             </div>
           )}
+          {chosenOption && chosenSeeds && <PlantCost seeds={chosenSeeds} count={count} />}
         </div>
       )}
     </section>

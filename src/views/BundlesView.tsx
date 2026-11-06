@@ -4,7 +4,6 @@ import { useSave } from '../state/SaveContext'
 import ItemRow from '../components/ItemRow'
 import JojaPage from '../components/joja/JojaPage'
 import Masonry from '../components/Masonry'
-import ModeSwitch from '../components/bundles/ModeSwitch'
 import RemixPicker from '../components/bundles/RemixPicker'
 import { activeBundles } from '../data/remix'
 import type { Bundle, BundleItem, RemixRoom } from '../data/types'
@@ -85,7 +84,6 @@ export default function BundlesView({ bundles: standard = bundlesJson as Bundle[
   return (
     <section>
       <h1>Community Center</h1>
-      <ModeSwitch />
       {allCards.length === 0 ? <p>No bundle items available this season.</p> : <Masonry>{allCards}</Masonry>}
     </section>
   )

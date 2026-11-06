@@ -39,7 +39,8 @@ describe('NextGoal', () => {
     renderWithState(<NextGoal />)
     expect(screen.getByRole('heading', { name: 'Next goal' })).toBeInTheDocument()
     expect(screen.getByText('Barn')).toBeInTheDocument()
-    expect(screen.getByText('6,000g')).toBeInTheDocument()
+    expect(screen.getByLabelText('6,000g')).toHaveTextContent('6k')
+    expect(screen.getByLabelText('6,000g')).toHaveClass('item-icon-only')
     expect(screen.getByText('from Robin, 3 days')).toBeInTheDocument()
     expect(screen.getByLabelText('350 Wood')).toHaveTextContent('350')
     expect(screen.getByLabelText('150 Stone')).toHaveTextContent('150')
@@ -73,7 +74,7 @@ describe('NextGoal', () => {
     seed('Barn', { Barn: 1 })
     renderWithState(<NextGoal />)
     expect(screen.getByText('Pick a goal with ★ in Buildings.')).toBeInTheDocument()
-    expect(screen.queryByText('6,000g')).not.toBeInTheDocument()
+    expect(screen.queryByLabelText('6,000g')).not.toBeInTheDocument()
   })
 
   it('renders the sprite at 96px', () => {

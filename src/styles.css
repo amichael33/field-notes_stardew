@@ -397,9 +397,6 @@ select {
 .goal-done { display: inline-flex; min-height: 32px; vertical-align: middle; }
 .goal-done strong { font-weight: 800; }
 
-.mode-switch { display: inline-flex; margin-bottom: 12px; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
-.mode-switch button { min-height: 44px; padding: 0 16px; border: 0; background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
-.mode-switch button[aria-pressed='true'] { background: #3c7a4f; color: #fff; }
 .remix-candidates { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
 .remix-candidate { width: 100%; display: grid; gap: 4px; text-align: left; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
 .remix-candidate[aria-pressed='true'] { border-color: #3c7a4f; background: #e8f3ea; }
@@ -473,3 +470,8 @@ select {
   }
   .cal-bday:focus { z-index: 2; }
 }
+
+/* Farm planting */
+.count-input { width: 5.5rem; min-height: 36px; padding: 0 8px; font: inherit; border: 1px solid var(--line-strong); border-radius: 8px; text-align: center; }
+.plant-cost { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+.plant-cost h3 { margin: 0 0 4px; }

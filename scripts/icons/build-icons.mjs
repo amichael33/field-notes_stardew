@@ -36,12 +36,19 @@ async function main() {
   )
   const joja = await readJson(path.join(root, 'src', 'data', 'joja.json'))
   const jojaItems = Object.values(joja.stock).flatMap((l) => l.map((i) => i.name))
+  const costs = await readJson(path.join(root, 'src', 'data', 'farm-costs.json'))
+  const costItems = [
+    ...Object.keys(costs.seeds),
+    ...costs.fertilizers.map((f) => f.name),
+    ...costs.sprinklers.flatMap((s) => [s.name, ...s.materials.map((m) => m.item)]),
+  ]
   const names = [
     ...new Set([
       ...bundles.flatMap((b) => b.items.map((i) => i.name)),
       ...remixedItems,
       ...materials,
       ...jojaItems,
+      ...costItems,
       ...perfectionItems,
     ]),
   ].filter((n) => !handNames.has(n))

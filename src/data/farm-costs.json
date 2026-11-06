@@ -1,0 +1,119 @@
+{
+  "note": "Prices are Pierre's General Store, from the game files. Seeds missing here are not sold at Pierre's.",
+  "seeds": {
+    "Amaranth Seeds": 70,
+    "Artichoke Seeds": 30,
+    "Bean Starter": 60,
+    "Blueberry Seeds": 80,
+    "Bok Choy Seeds": 50,
+    "Cauliflower Seeds": 80,
+    "Corn Seeds": 150,
+    "Cranberry Seeds": 240,
+    "Eggplant Seeds": 20,
+    "Fairy Seeds": 200,
+    "Garlic Seeds": 40,
+    "Grape Starter": 60,
+    "Hops Starter": 60,
+    "Jazz Seeds": 30,
+    "Kale Seeds": 70,
+    "Melon Seeds": 80,
+    "Parsnip Seeds": 20,
+    "Pepper Seeds": 40,
+    "Poppy Seeds": 100,
+    "Potato Seeds": 50,
+    "Pumpkin Seeds": 100,
+    "Radish Seeds": 40,
+    "Red Cabbage Seeds": 100,
+    "Rice Shoot": 40,
+    "Spangle Seeds": 50,
+    "Sunflower Seeds": 100,
+    "Tomato Seeds": 50,
+    "Tulip Bulb": 20,
+    "Wheat Seeds": 10,
+    "Yam Seeds": 60
+  },
+  "fertilizers": [
+    {
+      "name": "Basic Fertilizer",
+      "price": 50,
+      "note": "Pierre's after day 15"
+    },
+    {
+      "name": "Quality Fertilizer",
+      "price": 75,
+      "note": "Pierre's from year 2"
+    },
+    {
+      "name": "Basic Retaining Soil",
+      "price": 50,
+      "note": "Pierre's after day 15"
+    },
+    {
+      "name": "Quality Retaining Soil",
+      "price": 75,
+      "note": "Pierre's from year 2"
+    },
+    {
+      "name": "Speed-Gro",
+      "price": 50,
+      "note": "Pierre's after day 15"
+    },
+    {
+      "name": "Deluxe Speed-Gro",
+      "price": 75,
+      "note": "Pierre's from year 2"
+    }
+  ],
+  "sprinklers": [
+    {
+      "name": "Sprinkler",
+      "covers": 4,
+      "materials": [
+        {
+          "item": "Copper Bar",
+          "amount": 1
+        },
+        {
+          "item": "Iron Bar",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Quality Sprinkler",
+      "covers": 8,
+      "materials": [
+        {
+          "item": "Iron Bar",
+          "amount": 1
+        },
+        {
+          "item": "Gold Bar",
+          "amount": 1
+        },
+        {
+          "item": "Refined Quartz",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Iridium Sprinkler",
+      "covers": 24,
+      "materials": [
+        {
+          "item": "Gold Bar",
+          "amount": 1
+        },
+        {
+          "item": "Iridium Bar",
+          "amount": 1
+        },
+        {
+          "item": "Battery Pack",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

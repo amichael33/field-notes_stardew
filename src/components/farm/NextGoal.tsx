@@ -1,7 +1,7 @@
 import { useSave } from '../../state/SaveContext'
 import FarmSprite from './FarmSprite'
 import GoalMaterials from './GoalMaterials'
-import { gold, useGoalReached, useGoalTarget } from './goal'
+import { useGoalReached, useGoalTarget } from './goal'
 
 export default function NextGoal() {
   const { save, updateFarm } = useSave()
@@ -36,7 +36,6 @@ export default function NextGoal() {
           {target.builder && target.buildDays !== null && (
             <p className="row-detail">{`from ${target.builder}, ${target.buildDays} ${target.buildDays === 1 ? 'day' : 'days'}`}</p>
           )}
-          <p>{gold(target.cost)}</p>
           <GoalMaterials target={target} />
           {clear}
         </>

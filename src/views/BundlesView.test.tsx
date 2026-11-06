@@ -199,15 +199,15 @@ describe('BundlesView remixed mode', () => {
   const heads = () => screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent ?? '')
   beforeEach(() => localStorage.clear())
 
-  it('shows the switch with Standard pressed and standard cards by default', () => {
+  it('shows the standard cards by default, with the route set to Community Center', () => {
     renderWithState(<BundlesView />)
-    expect(screen.getByRole('button', { name: 'Standard' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByLabelText(/Route/)).toHaveValue('community-center')
     expect(screen.getByRole('heading', { name: /^Spring Foraging/ })).toBeInTheDocument()
   })
 
-  it('clicking Remixed saves the mode and the standard cards disappear', async () => {
+  it('choosing Remixed Community Center saves the mode and the standard cards disappear', async () => {
     renderWithState(<BundlesView />)
-    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    await userEvent.selectOptions(screen.getByLabelText(/Route/), 'remixed')
     expect(saved().profile.remixed).toBe(true)
     expect(screen.queryByRole('heading', { name: /^Spring Foraging/ })).not.toBeInTheDocument()
   })
@@ -248,16 +248,16 @@ describe('BundlesView remixed mode', () => {
     const horseradish = () => screen.getAllByRole('button', { name: /^Wild Horseradish/ })[0]
     await userEvent.click(horseradish())
     expect(saved().checked).toContain('bundle:spring-foraging:Wild Horseradish')
-    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    await userEvent.selectOptions(screen.getByLabelText(/Route/), 'remixed')
     await userEvent.click(screen.getByRole('button', { name: /^Thing remix-fixed/ }))
     expect(saved().checked).toContain('bundle:remix-fixed:Thing remix-fixed')
     expect(screen.queryByRole('button', { name: /^Wild Horseradish/ })).not.toBeInTheDocument()
     expect(document.querySelectorAll('.obtained')).toHaveLength(1)
-    await userEvent.click(screen.getByRole('button', { name: 'Standard' }))
+    await userEvent.selectOptions(screen.getByLabelText(/Route/), 'community-center')
     expect(screen.queryByRole('button', { name: /^Thing remix-fixed/ })).not.toBeInTheDocument()
     expect(horseradish()).toHaveAttribute('aria-pressed', 'true')
     expect(document.querySelectorAll('.obtained')).toHaveLength(1)
-    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    await userEvent.selectOptions(screen.getByLabelText(/Route/), 'remixed')
     expect(screen.getByRole('button', { name: /^Thing remix-fixed/ })).toHaveAttribute('aria-pressed', 'true')
     expect(document.querySelectorAll('.obtained')).toHaveLength(1)
   })
@@ -267,10 +267,10 @@ describe('BundlesView remixed mode', () => {
     seed({ remix: { picks } })
     renderWithState(<BundlesView />)
     expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(true)
-    await userEvent.click(screen.getByRole('button', { name: 'Standard' }))
+    await userEvent.selectOptions(screen.getByLabelText(/Route/), 'community-center')
     expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(false)
     expect(saved().remix.picks).toEqual(picks)
-    await userEvent.click(screen.getByRole('button', { name: 'Remixed' }))
+    await userEvent.selectOptions(screen.getByLabelText(/Route/), 'remixed')
     expect(saved().remix.picks).toEqual(picks)
     expect(heads().some((h) => h.startsWith('Name remix-b2'))).toBe(true)
     expect(heads().some((h) => h.startsWith('Name remix-p1'))).toBe(true)
@@ -292,10 +292,10 @@ describe('BundlesView remixed mode', () => {
     expect(screen.queryByText(/You have \d of 1\./)).not.toBeInTheDocument()
   })
 
-  it('the Joja route shows only its message, no switch', () => {
+  it('the Joja route shows only its message', () => {
     seed({ profile: { ...defaultSave().profile, remixed: true, route: 'joja' } })
     renderWithState(<BundlesView />)
     expect(screen.getByText(/Bundles are not used on the Joja route/)).toBeInTheDocument()
-    expect(screen.queryByRole('group', { name: 'Bundle mode' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: /^Spring Foraging/ })).not.toBeInTheDocument()
   })
 })

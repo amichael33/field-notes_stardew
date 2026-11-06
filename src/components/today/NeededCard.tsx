@@ -28,6 +28,14 @@ export default function NeededCard() {
     if (item.seasons === 'any') continue
     grouped.set(bundle, [...(grouped.get(bundle) ?? []), { item, index }])
   }
+  // A finished bundle, or one with nothing seasonal left to get now, is left out.
+  const visible = [...grouped.entries()].flatMap(([bundle, items]) => {
+    const { obtained, required, complete } = bundleProgress(bundle, save.checked)
+    const remaining = items.filter(
+      ({ item, index }) => !save.checked.includes(bundleItemId(bundle, item, index)),
+    )
+    return complete || remaining.length === 0 ? [] : [{ bundle, remaining, obtained, required }]
+  })
   return (
     <section className="card aside-card">
       <h2>Needed this season</h2>
@@ -44,47 +52,33 @@ export default function NeededCard() {
             <p>Every JojaMart project is bought.</p>
           )}
         </>
-      ) : grouped.size === 0 ? (
-        <p>No bundle items available this season.</p>
+      ) : visible.length === 0 ? (
+        <p>No bundle items needed this season.</p>
       ) : (
-        [...grouped.entries()].map(([bundle, items]) => {
-          const { obtained, required, complete } = bundleProgress(bundle, save.checked)
-          const remaining = items.filter(
-            ({ item, index }) => !save.checked.includes(bundleItemId(bundle, item, index)),
-          )
-          // Nothing seasonal left to get now (the rest is year-round): leave the bundle out.
-          if (!complete && remaining.length === 0) return null
-          return (
-            <div key={bundle.id} className="needed-bundle">
-              <div className="needed-head">
-                <strong>{bundle.name}</strong>
-                <span className="when">
-                  {obtained} of {required}
-                </span>
-              </div>
-              <div className="progress" aria-hidden="true">
-                <div
-                  className="progress-fill"
-                  style={{ width: `${required > 0 ? Math.min(100, (obtained / required) * 100) : 0}%` }}
-                />
-              </div>
-              {complete ? (
-                <p className="when needed-label">Complete</p>
-              ) : (
-                <>
-                  <p className="when needed-label">Still needed</p>
-                  <ul className="item-list icon-grid" aria-label={`Still needed for ${bundle.name}`}>
-                    {remaining.map(({ item, index }) => (
-                      <li key={bundleItemId(bundle, item, index)}>
-                        <ItemRow bundle={bundle} item={item} index={index} iconOnly />
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
+        visible.map(({ bundle, remaining, obtained, required }) => (
+          <div key={bundle.id} className="needed-bundle">
+            <div className="needed-head">
+              <strong>{bundle.name}</strong>
+              <span className="when">
+                {obtained} of {required}
+              </span>
             </div>
-          )
-        })
+            <div className="progress" aria-hidden="true">
+              <div
+                className="progress-fill"
+                style={{ width: `${required > 0 ? Math.min(100, (obtained / required) * 100) : 0}%` }}
+              />
+            </div>
+            <p className="when needed-label">Still needed</p>
+            <ul className="item-list icon-grid" aria-label={`Still needed for ${bundle.name}`}>
+              {remaining.map(({ item, index }) => (
+                <li key={bundleItemId(bundle, item, index)}>
+                  <ItemRow bundle={bundle} item={item} index={index} iconOnly />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
       )}
     </section>
   )

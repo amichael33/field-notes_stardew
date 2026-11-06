@@ -18,7 +18,8 @@ export default function ItemIcon({ name }: { name: string }) {
   const known = Object.prototype.hasOwnProperty.call(icons, name)
   const src = known ? icons[name] : undefined
 
-  if (known && src === null) {
+  // Any amount of gold is a coin, not just the few the bundles use.
+  if ((known && src === null) || /^[\d,]+g$/.test(name)) {
     return (
       <svg className="item-coin" width={48} height={48} viewBox="0 0 48 48" role="img" aria-label="Gold">
         <circle cx="24" cy="24" r="20" fill="#f0b33d" stroke="#a8741a" strokeWidth="4" />
